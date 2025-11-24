@@ -400,14 +400,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/users/details/{id} ",
+							"raw": "{{BaseURL}}/users/details/:{id} ",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
 								"details",
-								"{id} "
+								":{id} "
+							],
+							"variable": [
+								{
+									"key": "{id} ",
+									"value": "{{id}}"
+								}
 							]
 						}
 					},
