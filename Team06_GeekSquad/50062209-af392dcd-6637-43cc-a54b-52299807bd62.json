@@ -788,7 +788,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2fe64a5c-eb27-49fd-b480-f5c8a3f6558a",
+				"id": "ba82d983-59b1-4c29-aa48-8a4345ab4f2c",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -800,7 +800,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "49bdd098-acd0-49df-9d9a-3dff639eca00",
+				"id": "b624383b-cbb5-4f58-8938-5b45751ada17",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
