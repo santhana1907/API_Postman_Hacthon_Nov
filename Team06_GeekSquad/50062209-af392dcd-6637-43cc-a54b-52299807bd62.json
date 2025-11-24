@@ -608,16 +608,9 @@
 			"name": "UserLoginController",
 			"item": [
 				{
-					"name": "New Request",
-					"id": "50319862-9bc8a30b-4417-4bba-bb17-99db5ab6ae7c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
+					"name": "New Folder",
+					"item": [],
+					"id": "50319862-77ddc6dd-5533-446c-b7c5-ae12e21e0827"
 				}
 			],
 			"id": "50062209-a3aa88bd-573a-410c-99dc-8fc5de4f5b03"
