@@ -1033,7 +1033,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b4fb7adc-aecb-4693-a76f-4220c97bed40",
+				"id": "1ff8268e-b3e6-4027-a8a2-05c672550b3f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1045,7 +1045,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0b50412c-7cf3-457a-80c6-8c168f0b1349",
+				"id": "6ce64e8c-3aa4-40bf-b953-7616cd2119aa",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1066,8 +1066,7 @@
 		},
 		{
 			"key": "id",
-			"value": "",
-			"type": "default"
+			"value": ""
 		}
 	]
 }
