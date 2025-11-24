@@ -923,7 +923,7 @@
 											"    pm.response.to.have.status(400);\r",
 											"});\r",
 											"\r",
-											"m.test(\"Response message is 'EmailId not found'\", function () {\r",
+											"pm.test(\"Response message is 'EmailId not found'\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.message).to.include(\"Not Found\");\r",
 											"});"
@@ -931,6 +931,13 @@
 										"type": "text/javascript",
 										"packages": {},
 										"requests": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"packages": {},
+										"type": "text/javascript"
 									}
 								}
 							],
@@ -959,6 +966,18 @@
 										"login"
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-6c262804-e0b5-4b8e-8429-421c8ec353fb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
 							},
 							"response": []
 						}
