@@ -51,7 +51,114 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "50062209-f19915ea-1a04-4d4b-b938-31534a5b690d",
+							"name": "UserLogin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Nov 2025 19:47:44 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=c5qoxUZ1k%2B9vrlopaTpRcqZ4okRuS1bzpDJrkFrXfi8%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764013664\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=c5qoxUZ1k%2B9vrlopaTpRcqZ4okRuS1bzpDJrkFrXfi8%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764013664\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMTM2NjQsImV4cCI6MTc2NDA0MjQ2NH0.sp7Bhsxm5q_5BicvEQAHQbsCEe-Zo9qtHJt94_YaSxai6pfyx5dUPKpCdCu74xDrit76UFR3SU0krTGUNEN81Q\",\n    \"type\": \"Bearer\",\n    \"userId\": \"U66\",\n    \"email\": \"team6@gmail.com\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_STAFF\"\n    ],\n    \"status\": \"Active\",\n    \"passwordExpired\": false\n}"
+						}
+					]
 				},
 				{
 					"name": "CreateUser",
