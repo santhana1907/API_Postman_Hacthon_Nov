@@ -823,6 +823,31 @@
 				},
 				{
 					"name": "GetallActiveUsers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2f8ec42-94d9-40f0-b49b-c44937c978ed",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 100ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50062209-706cd3e4-73de-4c2a-9aaf-afacf1f33237",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
