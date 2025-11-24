@@ -1035,6 +1035,7 @@
 											"pm.test(\"Status code is 401\", function () {\r",
 											"    pm.response.to.have.status(401);\r",
 											"});\r",
+											"\r",
 											"pm.test(\"Response message is Bad credentials\", function () {\r",
 											"    pm.expect(pm.response.json().message).to.eql(\"Bad credentials\");\r",
 											"});"
@@ -1085,6 +1086,18 @@
 										"login"
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-4d784ae3-13f0-427c-8f1b-af8203d35102",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
 							},
 							"response": []
 						}
