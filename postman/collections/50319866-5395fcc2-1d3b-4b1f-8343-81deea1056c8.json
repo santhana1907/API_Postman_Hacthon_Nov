@@ -521,7 +521,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
