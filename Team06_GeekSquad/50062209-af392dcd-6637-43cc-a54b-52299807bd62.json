@@ -760,7 +760,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Invalid content type",
 							"event": [
 								{
 									"listen": "test",
@@ -806,6 +806,18 @@
 										"login"
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-82947324-aee3-4409-aeb6-439ef6fbe743",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
 							},
 							"response": []
 						}
