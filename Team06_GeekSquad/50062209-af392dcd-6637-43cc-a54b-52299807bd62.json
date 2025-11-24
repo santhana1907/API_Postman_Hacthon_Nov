@@ -1040,7 +1040,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "3a4a1063-df09-40ce-aea3-355384e5770b",
+				"id": "848ecee4-091f-4bb4-ad70-9b3986a1a63f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1052,7 +1052,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b8c8de26-a9a8-4a54-bb59-eed7c56f6f50",
+				"id": "8d9e4d35-6424-4b4d-b624-e5261d6c6d7b",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1068,6 +1068,7 @@
 			"value": ""
 		},
 		{
+			"key": "invalid_password",
 			"value": ""
 		}
 	]
