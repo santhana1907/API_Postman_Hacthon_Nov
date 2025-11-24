@@ -612,13 +612,55 @@
 					"item": [
 						{
 							"name": "Empty credentials",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f37c6caf-b732-4f48-9bec-c5d4134bcdc0",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response message is 'EmailId is mandatory'\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.oneOf(\"EmailId is mandatory\", \"Password is mandatory\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-ea4e1fb8-822f-4536-91dd-694dcf037109",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"password\": \"\",\r\n\"userLoginEmailId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
 							},
 							"response": []
 						}
