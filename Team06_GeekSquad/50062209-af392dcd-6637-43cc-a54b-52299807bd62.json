@@ -612,7 +612,57 @@
 					"item": [
 						{
 							"name": "New Folder",
-							"item": [],
+							"item": [
+								{
+									"name": "Invalid password",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "92de4ac2-c565-4bc0-9e0e-02645d3b2778",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"pm.test(\"Body matches error message\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"password must contain\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {},
+												"requests": {}
+											}
+										}
+									],
+									"id": "50319862-6c262804-e0b5-4b8e-8429-421c8ec353fb",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\"password\": \"{{$password}}\",\r\n\"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseURL}}/login",
+											"host": [
+												"{{BaseURL}}"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": []
+								}
+							],
 							"id": "50319862-7ca34114-08a0-4ff4-9098-a3b60db61fd2"
 						},
 						{
@@ -956,55 +1006,6 @@
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n\"password\": \"ApiHackathon@6\",\r\n\"userLoginEmailId\":\"team61@gmail.com\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BaseURL}}/login",
-									"host": [
-										"{{BaseURL}}"
-									],
-									"path": [
-										"login"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Invalid password",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "92de4ac2-c565-4bc0-9e0e-02645d3b2778",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"pm.test(\"Body matches error message\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"password must contain\");\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
-									}
-								}
-							],
-							"id": "50319862-6c262804-e0b5-4b8e-8429-421c8ec353fb",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\"password\": \"{{$password}}\",\r\n\"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
