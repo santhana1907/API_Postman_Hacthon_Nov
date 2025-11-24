@@ -977,8 +977,8 @@
 									"script": {
 										"id": "92de4ac2-c565-4bc0-9e0e-02645d3b2778",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
 											"});\r",
 											"pm.test(\"Body matches error message\", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"password must contain\");\r",
