@@ -497,6 +497,31 @@
 				},
 				{
 					"name": "GetUserDetailsByID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ab08078c-39c2-4e8f-a666-7c54d3a8cc19",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50062209-acde1929-90ef-4ba1-a035-1f8daa79e962",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
