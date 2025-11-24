@@ -624,7 +624,7 @@
 											"\r",
 											"pm.test(\"Response message is 'EmailId is mandatory'\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData.message).to.oneOf(\"EmailId is mandatory\", \"Password is mandatory\");\r",
+											"    pm.expect(jsonData.message).to.oneOf([\"EmailId is mandatory\", \"Password is mandatory\"]);\r",
 											"});"
 										],
 										"type": "text/javascript",
