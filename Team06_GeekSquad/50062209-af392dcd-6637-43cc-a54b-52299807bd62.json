@@ -138,6 +138,22 @@
 				},
 				{
 					"name": "GetUsersforProgram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2d6784e5-e1c9-4679-93d0-aeaf829dc205",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50062209-86600dba-6dc0-43c4-bc6b-6ccb43c101fc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
