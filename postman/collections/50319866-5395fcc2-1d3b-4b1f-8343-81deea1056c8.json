@@ -513,8 +513,23 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer"
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}//batches/batchId/{batchId}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"",
+								"batches",
+								"batchId",
+								"{batchId}"
+							]
+						}
 					},
 					"response": []
 				}
