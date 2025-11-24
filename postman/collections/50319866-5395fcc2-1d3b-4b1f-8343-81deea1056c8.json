@@ -555,7 +555,18 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/batches/batchName/{batchName}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"batches",
+								"batchName",
+								"{batchName}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -566,8 +577,29 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/batches/program/{programId}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"batches",
+								"program",
+								"{programId}"
+							]
+						}
 					},
 					"response": []
 				},
