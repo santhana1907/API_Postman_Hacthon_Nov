@@ -931,7 +931,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ff10e75f-e8cd-4439-af13-636a52273ec4",
+				"id": "f02b6d24-cabc-49e7-9ce4-03b2c27d7c82",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -939,7 +939,7 @@
 					"\r",
 					"// 1. Load JSON data once\r",
 					"\r",
-					"let lmsData = pm.variables.get(\"lms\");\r",
+					"let lmsData = pm.variables.get(\"lmsDataFile\");\r",
 					"\r",
 					"if (!lmsData) {\r",
 					"    let fileData = pm.iterationData.toObject();\r",
@@ -1028,7 +1028,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "32495cb5-00f4-4e5c-b557-7719113bbb21",
+				"id": "7383f08d-d3cf-4f67-8321-9e6510dfe477",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
