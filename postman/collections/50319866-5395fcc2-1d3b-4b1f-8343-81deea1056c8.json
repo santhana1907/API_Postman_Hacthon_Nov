@@ -613,7 +613,7 @@
 			"name": "UserLoginController",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "UserLogin",
 					"id": "50319866-05a48703-a04c-4b12-9a31-ee3038c8b7ef",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
