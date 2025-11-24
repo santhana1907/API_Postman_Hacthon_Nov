@@ -912,7 +912,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Invalid Email Id",
 							"id": "50319862-8fd2c496-6d3a-467d-a21b-d7ac1ffb7fe0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
