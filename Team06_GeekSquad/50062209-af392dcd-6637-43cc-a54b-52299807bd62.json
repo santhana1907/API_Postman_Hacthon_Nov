@@ -536,6 +536,31 @@
 				},
 				{
 					"name": "GetCountofActiveandInactiveUsers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "76e3d785-ade9-40b3-997b-c9f70f0ec28e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50062209-57bc5716-205d-46db-9cdc-bd62f41ae94e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
