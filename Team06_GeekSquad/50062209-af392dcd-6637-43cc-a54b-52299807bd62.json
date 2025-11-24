@@ -1025,7 +1025,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Bad Credentials",
 							"id": "50319862-c0e72027-3115-4487-b66c-243322ee43c9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
