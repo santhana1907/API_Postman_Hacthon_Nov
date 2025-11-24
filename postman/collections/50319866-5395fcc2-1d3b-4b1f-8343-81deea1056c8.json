@@ -441,16 +441,36 @@
 		},
 		{
 			"name": "ProgramBatchController",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "50319866-1b5a7065-35d3-43d3-939c-e51bcc86dcd7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "50319866-5794d5ff-dd07-4d0c-aa88-2700d804fdbe",
 			"auth": {
-				"type": "bearer"
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{authToken}}",
+						"type": "string"
+					}
+				]
 			},
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "8a122306-0721-4383-9602-84deadf9acb4",
+						"id": "e6dc44e5-6545-4d6e-b786-e71d882ca8b5",
 						"type": "text/javascript",
 						"packages": {},
 						"requests": {},
@@ -462,7 +482,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "3773836a-7ecf-445d-a222-63a33f655ffc",
+						"id": "be688a53-0d86-436f-9061-929d3402a3ec",
 						"type": "text/javascript",
 						"packages": {},
 						"requests": {},
