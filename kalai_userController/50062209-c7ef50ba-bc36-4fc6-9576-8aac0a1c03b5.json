@@ -666,6 +666,9 @@
 								"id": "c01b0c0d-d41d-4cb3-bd7f-c51d21a2f948",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"});\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"pm.test(\"Body matches string\", function () {\r",
