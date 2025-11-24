@@ -1090,7 +1090,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Valid Credentials",
 							"id": "50319862-4d784ae3-13f0-427c-8f1b-af8203d35102",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
