@@ -970,7 +970,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Invalid password",
 							"event": [
 								{
 									"listen": "test",
