@@ -862,6 +862,27 @@
 						},
 						{
 							"name": "Missing Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "36039cb0-c9de-44ab-ae0b-f4c7bbd9f873",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response message is 'Password is mandatory'\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.include(\"Password is mandatory\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-3c6883e5-72f3-437a-a0e0-c50196ca2fcc",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -871,7 +892,12 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"password\": \"\",\r\n\"userLoginEmailId\":\"team6@gmail.com\"\r\n}"
+									"raw": "{\r\n\"password\": \"\",\r\n\"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{BaseURL}}/login",
