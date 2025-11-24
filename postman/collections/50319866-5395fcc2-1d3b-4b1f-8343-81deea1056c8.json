@@ -548,7 +548,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "GetBatchbyBatchName",
 					"id": "50319866-ae0060ac-f020-4f53-82f8-19bdae66f526",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
