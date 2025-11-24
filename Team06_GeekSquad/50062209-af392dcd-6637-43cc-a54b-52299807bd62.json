@@ -611,7 +611,7 @@
 					"name": "User SignIn",
 					"item": [
 						{
-							"name": "New Folder",
+							"name": "Invalid Password combination",
 							"item": [
 								{
 									"name": "Invalid password",
