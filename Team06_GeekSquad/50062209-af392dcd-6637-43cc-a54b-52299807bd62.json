@@ -788,7 +788,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1d7e8edd-ae0b-4e0e-9976-f5a9a01f31eb",
+				"id": "b4fb7adc-aecb-4693-a76f-4220c97bed40",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -800,7 +800,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b38ac452-751c-48bf-b4f0-0c1dcf60400a",
+				"id": "0b50412c-7cf3-457a-80c6-8c168f0b1349",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -818,6 +818,11 @@
 		{
 			"key": "batchId",
 			"value": ""
+		},
+		{
+			"key": "id",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
