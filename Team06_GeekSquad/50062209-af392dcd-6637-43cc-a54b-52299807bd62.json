@@ -1026,6 +1026,25 @@
 						},
 						{
 							"name": "Bad Credentials",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4e0427cc-80a1-496f-8529-e490060074c9",
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"pm.test(\"Response message is Bad credentials\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.eql(\"Bad credentials\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-c0e72027-3115-4487-b66c-243322ee43c9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1050,7 +1069,12 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"password\":\"ApiHackathon@60\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}"
+									"raw": "{\r\n    \"password\":\"ApiHackathon@60\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
 									"raw": "{{BaseURL}}/login",
