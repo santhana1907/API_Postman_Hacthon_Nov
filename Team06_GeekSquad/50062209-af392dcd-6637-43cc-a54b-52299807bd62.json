@@ -810,7 +810,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Missing EmailId",
 							"event": [
 								{
 									"listen": "test",
@@ -861,7 +861,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Missing Password",
 							"id": "50319862-3c6883e5-72f3-437a-a0e0-c50196ca2fcc",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
