@@ -443,7 +443,7 @@
 			"name": "ProgramBatchController",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "CreateNewBatch",
 					"id": "50319866-1b5a7065-35d3-43d3-939c-e51bcc86dcd7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
