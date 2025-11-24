@@ -442,7 +442,36 @@
 		{
 			"name": "ProgramBatchController",
 			"item": [],
-			"id": "50319866-5794d5ff-dd07-4d0c-aa88-2700d804fdbe"
+			"id": "50319866-5794d5ff-dd07-4d0c-aa88-2700d804fdbe",
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8a122306-0721-4383-9602-84deadf9acb4",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3773836a-7ecf-445d-a222-63a33f655ffc",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "ProgramController",
