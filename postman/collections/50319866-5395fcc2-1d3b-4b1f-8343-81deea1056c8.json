@@ -611,7 +611,20 @@
 		},
 		{
 			"name": "UserLoginController",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "50319866-05a48703-a04c-4b12-9a31-ee3038c8b7ef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "50319866-a425467b-82d1-4ff3-bcc9-c276d9c3cc7b"
 		}
 	],
