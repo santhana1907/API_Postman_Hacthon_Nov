@@ -560,7 +560,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "GetBatchbyProgramId",
 					"id": "50319866-4dc775e4-5eb3-4fe4-b24b-417401ac1619",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
