@@ -665,7 +665,27 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Invalid Endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "934e625e-edfa-4d62-a9eb-91c5b83aa95b",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'Invalid endpoint'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid endpoint\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-d4156593-ec25-4204-9ff5-f1b6639414d5",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -678,15 +698,21 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"password\": \"ApiHackathon@6\",\r\n\"userLoginEmailId\":\"team6@gmail.com\"\r\n}"
+									"raw": "{\r\n\"password\": \"ApiHackathon@6\",\r\n\"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
-									"raw": "{{BaseURL}}/signin",
+									"raw": "{{BaseURL}}/login/1",
 									"host": [
 										"{{BaseURL}}"
 									],
 									"path": [
-										"signin"
+										"login",
+										"1"
 									]
 								}
 							},
