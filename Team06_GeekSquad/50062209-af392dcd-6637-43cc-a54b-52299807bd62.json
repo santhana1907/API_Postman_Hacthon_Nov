@@ -761,13 +761,51 @@
 						},
 						{
 							"name": "New Request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "73a0752a-7270-437b-bf4d-7d184cd9aedb",
+										"exec": [
+											"pm.test(\"Status code is 415\", function () {\r",
+											"    pm.response.to.have.status(415);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'Content-Type not supported'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include('Content-Type not supported');\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-00a741d6-60b2-402a-9fd7-9f420d2de8d8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"password\": \"ApiHackathon@6\",\r\n\"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
 							},
 							"response": []
 						}
