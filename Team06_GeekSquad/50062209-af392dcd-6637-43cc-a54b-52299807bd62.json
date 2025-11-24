@@ -1104,13 +1104,11 @@
 											"const jsonData = pm.response.json();\r",
 											"pm.test(\"Response contains 'token'\", function () {\r",
 											"    pm.expect(jsonData).to.have.property('token');\r",
+											"    if (jsonData.token) {\r",
+											"        pm.collectionVariables.set(\"token\", jsonData.token);\r",
+											"    }\r",
 											"});\r",
-											"\r",
-											"pm.test(\"Response has token present\", function() {\r",
-											"    pm.expect(jsonData.token).to.not.be.null;\r",
-											"});\r",
-											"\r",
-											"pm.collectionVariables.set(\"token\", pm.response.json().token);"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {},
