@@ -578,8 +578,37 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"batchDescription\": \"string\",\r\n\"batchId\": 0,\r\n\"batchName\": \"string\",\r\n\"batchNoOfClasses\": 0,\r\n\"batchStatus\": \"string\",\r\n\"programId\": 0,\r\n\"programName\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/batches/{batchId}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"batches",
+								"{batchId}"
+							]
+						}
 					},
 					"response": []
 				}
