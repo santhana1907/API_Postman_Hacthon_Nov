@@ -622,7 +622,7 @@
 											"    pm.response.to.have.status(400);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Response message is 'EmailId is mandatory'\", function () {\r",
+											"pm.test(\"Response message is 'EmailId or password is mandatory'\", function () {\r",
 											"    var jsonData = pm.response.json();\r",
 											"    pm.expect(jsonData.message).to.oneOf([\"EmailId is mandatory\", \"Password is mandatory\"]);\r",
 											"});"
