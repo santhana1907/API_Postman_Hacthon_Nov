@@ -641,7 +641,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "25ea2620-4daa-41ec-951a-736660d1dfc3",
+				"id": "40324709-4a41-4175-b6cc-eca83d19c829",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -653,7 +653,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e4c2b83b-af46-44f4-83a7-89186723f125",
+				"id": "560bcea4-da6d-4e2a-9aa8-3231e1e8f637",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -665,7 +665,7 @@
 	],
 	"variable": [
 		{
-			"key": "BaseURL",
+			"key": "pro",
 			"value": ""
 		},
 		{
