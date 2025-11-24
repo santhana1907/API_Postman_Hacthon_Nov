@@ -611,7 +611,7 @@
 					"name": "User SignIn",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "Empty credentials",
 							"id": "50319862-ea4e1fb8-822f-4536-91dd-694dcf037109",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
