@@ -611,6 +611,11 @@
 					"name": "User SignIn",
 					"item": [
 						{
+							"name": "New Folder",
+							"item": [],
+							"id": "50319862-7ca34114-08a0-4ff4-9098-a3b60db61fd2"
+						},
+						{
 							"name": "Empty credentials",
 							"event": [
 								{
