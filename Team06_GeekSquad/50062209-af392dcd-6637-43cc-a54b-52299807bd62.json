@@ -2214,7 +2214,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Response has 'password saved\", function () {\r",
-											"    pm.expect(pm.response.json().message).to.be.eq(\"password saved\");\r",
+											"    pm.expect(pm.response.json().message).to.be.eq(\"Password saved\");\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response has 'success' as true\", function () {\r",
