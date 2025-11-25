@@ -1310,7 +1310,53 @@
 						},
 						{
 							"name": "Missing Request Body",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "041c8e47-efd2-48ab-a565-8bbe5c09bf66",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'request body is missing'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"request body is missing\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-6a77a14b-4c49-4c2e-a1cf-a1bab8b70dc3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/login/forgotpassword/confirmEmail",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login",
+										"forgotpassword",
+										"confirmEmail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-b78d9029-c94e-43a6-bc42-81d155cd6348",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
