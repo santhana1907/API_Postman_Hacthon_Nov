@@ -1251,8 +1251,21 @@
 					"id": "50319862-77ddc6dd-5533-446c-b7c5-ae12e21e0827"
 				},
 				{
-					"name": "New Folder",
-					"item": [],
+					"name": "ForgotPasswordConfirmEmail",
+					"item": [
+						{
+							"name": "New Request",
+							"id": "50319862-63b3416d-d36e-4bc0-8762-6a3b4d568185",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
 					"id": "50319862-02676f97-3fa1-4aa6-9331-33ab5a38615d"
 				}
 			],
