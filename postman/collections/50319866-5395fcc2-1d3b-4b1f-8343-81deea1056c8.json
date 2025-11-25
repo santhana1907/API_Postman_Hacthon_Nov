@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "22b68613-7b12-4fd4-a199-b569c9f03f2f",
+				"id": "fd06b5f8-3638-47f7-b56d-1973686eb8dd",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1012,7 +1012,7 @@
 					"        return;\r",
 					"    }\r",
 					"\r",
-					"    // Check if there's data available for current request\r",
+					"    \r",
 					"    if (!currentRequest.data || !Array.isArray(currentRequest.data) || currentRequest.data.length === 0) {\r",
 					"        console.log(`No test data available for request '${pm.info.requestName}'`);\r",
 					"        return;\r",
@@ -1033,7 +1033,7 @@
 					"        }\r",
 					"    });\r",
 					"\r",
-					"    // NOW CALLING THE LOG FUNCTION HERE\r",
+					"   \r",
 					"    logTestCaseInfo(scenarioData);\r",
 					"\r",
 					"    // Configure URL based on scenario\r",
@@ -1155,7 +1155,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8b296c20-2ff5-4c3c-9bc0-4405370cecd2",
+				"id": "bc08bc4e-7438-4b06-840d-fe07fbf1a4b5",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
