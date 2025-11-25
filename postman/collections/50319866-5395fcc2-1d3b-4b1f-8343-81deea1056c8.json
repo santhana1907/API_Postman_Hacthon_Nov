@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fd06b5f8-3638-47f7-b56d-1973686eb8dd",
+				"id": "84281f73-3af6-44fe-a229-2c0fd616b62f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1036,7 +1036,7 @@
 					"   \r",
 					"    logTestCaseInfo(scenarioData);\r",
 					"\r",
-					"    // Configure URL based on scenario\r",
+					"    \r",
 					"    configureRequestURL(scenarioData);\r",
 					"    \r",
 					"    // Configure Authorization header\r",
@@ -1155,7 +1155,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "bc08bc4e-7438-4b06-840d-fe07fbf1a4b5",
+				"id": "3400a9aa-4292-4866-8d17-3d4c99fd81e8",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
