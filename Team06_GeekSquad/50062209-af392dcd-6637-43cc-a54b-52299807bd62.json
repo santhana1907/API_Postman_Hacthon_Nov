@@ -1355,7 +1355,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Invalid ContentType",
 							"id": "50319862-b78d9029-c94e-43a6-bc42-81d155cd6348",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
