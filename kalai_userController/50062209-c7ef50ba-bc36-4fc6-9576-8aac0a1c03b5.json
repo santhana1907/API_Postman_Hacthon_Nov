@@ -820,7 +820,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n"
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{BaseURL}}/v2/users",
