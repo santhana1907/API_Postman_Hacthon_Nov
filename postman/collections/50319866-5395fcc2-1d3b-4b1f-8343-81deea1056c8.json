@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "388d0c87-06d8-4add-9995-45775d3170c7",
+				"id": "9da70c62-bd3d-4d1c-9584-f7223e795473",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1094,7 +1094,7 @@
 					"    }\r",
 					"}\r",
 					"\r",
-					"// Helper function to configure authorization\r",
+					"// function to configure authorization\r",
 					"function configureAuthorization(scenarioData) {\r",
 					"    try {\r",
 					"        const includeAuth = (scenarioData.auth || \"\").toString().toLowerCase();\r",
@@ -1156,7 +1156,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7e5f6a0d-ab02-4c06-8d22-94c8b28ba25d",
+				"id": "7d5459c2-e63a-48f8-982d-4cf120736dcc",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
