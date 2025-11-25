@@ -1947,7 +1947,67 @@
 						},
 						{
 							"name": "Missing EmailId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9935e0cd-7d7b-4f0e-a089-fa261d96b09d",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'EmailId is mandatory'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"EmailId is mandatory\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-59d67ac8-5647-4bde-bfdf-31235d71792a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/resetPassword",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"resetPassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-762b8677-81d1-417c-acb4-7e9896b25f67",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
