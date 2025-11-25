@@ -1046,7 +1046,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get User By RoleId",
 					"id": "50318661-468a69b8-bf6e-42f8-ab52-89a61dbb7ee4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
