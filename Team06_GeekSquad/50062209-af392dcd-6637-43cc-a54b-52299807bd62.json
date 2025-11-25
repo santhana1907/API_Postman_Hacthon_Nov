@@ -1718,7 +1718,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "No Authentication",
 							"id": "50319862-ee3835bd-8466-4440-b557-9256a76ca236",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
