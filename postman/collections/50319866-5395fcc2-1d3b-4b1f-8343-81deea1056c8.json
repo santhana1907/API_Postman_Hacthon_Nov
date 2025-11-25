@@ -931,7 +931,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a3fc4ba9-1909-4976-85c8-cebaf4706d1d",
+				"id": "a5c082e8-a9ea-4550-99cb-cd72fad8af27",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1089,7 +1089,7 @@
 					"    }\r",
 					"}\r",
 					"\r",
-					"// ✅  FUNCTION IS NOW BEING CALLED IN THE MAIN FLOW (Line 46)\r",
+					"// FUNCTION IS NOW BEING CALLED IN THE MAIN FLOW (Line 46)\r",
 					"function logTestCaseInfo(variables) {\r",
 					"    console.log(`--- Test Case: ${variables.scenario || 'Unnamed Scenario'} ---`);\r",
 					"    console.log(`Request: ${pm.info.requestName}`);\r",
@@ -1106,7 +1106,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "73c68526-3de6-41fa-af4e-c414f51aabea",
+				"id": "92d5481c-51d8-4569-9ce2-bc300d5eff03",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
