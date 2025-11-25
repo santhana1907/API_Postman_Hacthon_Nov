@@ -2066,7 +2066,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Invalid EmailId",
 							"id": "50319862-5ea1aefe-a950-4b7c-9e38-2e2eba39c41c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
