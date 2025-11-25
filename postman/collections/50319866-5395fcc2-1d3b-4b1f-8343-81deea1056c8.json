@@ -931,7 +931,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1da6e484-5c55-42c1-8577-7e8fc06a1864",
+				"id": "1d3c624a-6d9a-403a-aaef-e5d4902e03a0",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1012,10 +1012,10 @@
 					"}\r",
 					"\r",
 					"// Helper function to configure request URL\r",
-					"function configureRequestURL(variables) {\r",
+					"function configureRequestURL(scenarioData) {\r",
 					"    try {\r",
-					"        const scenario = variables.scenario || \"\";\r",
-					"        const endpoint = variables.endpoint || \"\";\r",
+					"        const scenario = scenarioData.scenario || \"\";\r",
+					"        const endpoint = scenarioData.endpoint || \"\";\r",
 					"        \r",
 					"        let baseUrl;\r",
 					"\r",
@@ -1106,7 +1106,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e6a4aaa6-d97e-4ddc-8bc3-1434af1b9311",
+				"id": "8c7e0f1c-9696-4c3d-96a0-0f6f38a4b963",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
