@@ -2202,7 +2202,7 @@
 							"response": []
 						},
 						{
-							"name": "Wrong Password",
+							"name": "Valid Credentials",
 							"id": "50319862-fdc8d943-508c-4e17-892a-b26f7401b694",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
