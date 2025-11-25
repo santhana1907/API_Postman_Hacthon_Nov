@@ -1669,6 +1669,11 @@
 					"name": "Reset Password",
 					"item": [
 						{
+							"name": "New Folder",
+							"item": [],
+							"id": "50319862-94afe0b2-97da-45d6-a656-6862375a3840"
+						},
+						{
 							"name": "Invalid Endpoint",
 							"event": [
 								{
