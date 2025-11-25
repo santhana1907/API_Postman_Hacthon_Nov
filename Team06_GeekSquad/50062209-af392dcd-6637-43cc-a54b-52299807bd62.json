@@ -1466,13 +1466,56 @@
 						},
 						{
 							"name": "Invalid emailId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9dff704f-2614-42f4-9021-1cbc295d5ce9",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response should contain 'Invalid Email'\", function () {\r",
+											"    pm.expect(pm.response.json().status).to.eq(\"Invalid Email\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-120b74dd-333f-4e36-8c84-733d830959eb",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userLoginEmailId\":\"team61@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login/forgotpassword/confirmEmail",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login",
+										"forgotpassword",
+										"confirmEmail"
+									]
+								}
 							},
 							"response": []
 						}
