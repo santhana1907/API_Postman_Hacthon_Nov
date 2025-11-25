@@ -931,7 +931,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "95634f41-e8e3-434b-b6fe-aaba362bf771",
+				"id": "517c28df-f889-444b-93cc-2959fd5da46b",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -972,7 +972,7 @@
 					"    // Get the next test case data\r",
 					"    const scenarioData = currentRequest.data[0]; // Use first element instead of shift to avoid mutation issues\r",
 					"\r",
-					"    if (!variables || typeof variables !== 'object') {\r",
+					"    if (!scenarioData || typeof scenarioData !== 'object') {\r",
 					"        console.log('Invalid test case data');\r",
 					"        return;\r",
 					"    }\r",
@@ -1106,7 +1106,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a7f88bc8-e769-43a0-ac5c-5ca17b5c023c",
+				"id": "144f1412-fe20-4d76-9bfd-6a7db74a5146",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
