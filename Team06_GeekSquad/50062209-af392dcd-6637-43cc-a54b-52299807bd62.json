@@ -1670,7 +1670,68 @@
 					"item": [
 						{
 							"name": "Invalid password combination",
-							"item": [],
+							"item": [
+								{
+									"name": "Invalid Password",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "9d736989-c6ad-4d96-9146-5267278256d5",
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response body contains correct message\", function () {\r",
+													"    pm.expect(pm.response.json().message).to.include(\"password must contain\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {},
+												"requests": {}
+											}
+										}
+									],
+									"id": "50319862-17af9202-8ab3-4a4b-bb92-18fcca8f267c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"password\": \"{{invalid_password}}\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{BaseURL}}/resetPassword",
+											"host": [
+												"{{BaseURL}}"
+											],
+											"path": [
+												"resetPassword"
+											]
+										}
+									},
+									"response": []
+								}
+							],
 							"id": "50319862-94afe0b2-97da-45d6-a656-6862375a3840"
 						},
 						{
@@ -2112,66 +2173,6 @@
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team61@gmail.com\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BaseURL}}/resetPassword",
-									"host": [
-										"{{BaseURL}}"
-									],
-									"path": [
-										"resetPassword"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Invalid Password",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "9d736989-c6ad-4d96-9146-5267278256d5",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response body contains correct message\", function () {\r",
-											"    pm.expect(pm.response.json().message).to.include(\"password must contain\");\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
-									}
-								}
-							],
-							"id": "50319862-17af9202-8ab3-4a4b-bb92-18fcca8f267c",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"password\": \"{{invalid_password}}\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
