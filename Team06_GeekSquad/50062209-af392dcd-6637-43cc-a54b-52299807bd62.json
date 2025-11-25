@@ -1696,7 +1696,14 @@
 							},
 							"request": {
 								"auth": {
-									"type": "noauth"
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1705,13 +1712,13 @@
 									"raw": "{\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}"
 								},
 								"url": {
-									"raw": "{{BaseURL}}/login/resetpassword",
+									"raw": "{{BaseURL}}/resetpassword/10",
 									"host": [
 										"{{BaseURL}}"
 									],
 									"path": [
-										"login",
-										"resetpassword"
+										"resetpassword",
+										"10"
 									]
 								}
 							},
