@@ -2007,13 +2007,61 @@
 						},
 						{
 							"name": "Missing Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "5fc5ebee-2415-4aab-8e95-6aea777eed5f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'Password is mandatory'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Password is mandatory\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-762b8677-81d1-417c-acb4-7e9896b25f67",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/resetPassword",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"resetPassword"
+									]
+								}
 							},
 							"response": []
 						}
