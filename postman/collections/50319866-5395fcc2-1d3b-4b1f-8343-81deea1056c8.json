@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "84281f73-3af6-44fe-a229-2c0fd616b62f",
+				"id": "66809c0d-1063-4b34-b35a-dca48349159d",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1098,7 +1098,7 @@
 					"    try {\r",
 					"        const includeAuth = (scenarioData.auth || \"\").toString().toLowerCase();\r",
 					"        \r",
-					"        // Remove existing Authorization header if present\r",
+					"        \r",
 					"        pm.request.headers.remove(\"Authorization\");\r",
 					"        \r",
 					"        switch (includeAuth) {\r",
@@ -1155,7 +1155,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3400a9aa-4292-4866-8d17-3d4c99fd81e8",
+				"id": "049182b9-710e-488b-ade7-a99e21898d41",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
