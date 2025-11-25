@@ -2222,7 +2222,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"password\": \"{{password}}\",\r\n    \"userLoginEmailId\":\"{{userEmailId}}\"\r\n}",
+									"raw": "{\r\n    \"password\": \"ApiHackathon@60\",\r\n    \"userLoginEmailId\":\"{{userEmailId}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
