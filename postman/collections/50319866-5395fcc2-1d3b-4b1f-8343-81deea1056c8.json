@@ -981,13 +981,12 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d09ca29c-1853-4e71-808a-19df91566859",
+				"id": "d89f5a78-dc8a-47e2-a005-20ceac40054c",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
 				"exec": [
-					"try {\r",
-					"   \r",
+					"try {   \r",
 					"    if (typeof pm.variables.get('requestData') !== 'object') {\r",
 					"        pm.variables.set('requestData', pm.iterationData.toObject());\r",
 					"    }\r",
@@ -1026,7 +1025,7 @@
 					"        return;\r",
 					"    }\r",
 					"\r",
-					"    // Set all variables from test data\r",
+					"    \r",
 					"    Object.entries(scenarioData).forEach(([key, value]) => {\r",
 					"        if (value !== undefined && value !== null) {\r",
 					"            pm.variables.set(key, value.toString());\r",
@@ -1155,7 +1154,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b33c6b2d-7101-456f-8056-63ad0e121de4",
+				"id": "1213a1f7-8778-46f4-a0bc-b6cfe5ebeeee",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
