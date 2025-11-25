@@ -931,7 +931,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a6f03c23-b34b-435c-b9d9-e64ae6159cbb",
+				"id": "7e323a39-a8d7-455a-ad69-cdf8860b2ac3",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -984,7 +984,7 @@
 					"        }\r",
 					"    });\r",
 					"\r",
-					"    // ✅ NOW CALLING THE LOG FUNCTION HERE\r",
+					"    // NOW CALLING THE LOG FUNCTION HERE\r",
 					"    logTestCaseInfo(variables);\r",
 					"\r",
 					"    // Configure URL based on scenario\r",
@@ -1106,7 +1106,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "dcfdc737-cda4-420f-8a27-57f7aa109346",
+				"id": "b34f509e-b1d8-42a1-9256-37f95f047cfe",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
