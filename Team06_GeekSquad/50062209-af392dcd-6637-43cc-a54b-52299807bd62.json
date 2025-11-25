@@ -1411,13 +1411,56 @@
 						},
 						{
 							"name": "Empty EmailId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e5502203-c2ff-429a-a3b7-0644d0a64c5d",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'EmailId is mandatory'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"EmailId is mandatory\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-54ebd74e-905b-43dd-a0ab-96b92a5b29d6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userLoginEmailId\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login/forgotpassword/confirmEmail",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login",
+										"forgotpassword",
+										"confirmEmail"
+									]
+								}
 							},
 							"response": []
 						}
