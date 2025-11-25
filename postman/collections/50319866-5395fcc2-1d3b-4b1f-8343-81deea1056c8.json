@@ -981,13 +981,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "343ac4f9-4f92-490d-bcf9-e0c740178123",
+				"id": "6f971325-3c96-4f59-b43e-8b3fe79e3ee5",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
 				"exec": [
 					"try {\r",
-					"       \r",
+					"\r",
 					"    if (typeof pm.variables.get('requestData') !== 'object') {\r",
 					"        pm.variables.set('requestData', pm.iterationData.toObject());\r",
 					"    }\r",
@@ -998,12 +998,10 @@
 					"        console.log('Invalid data structure or no requests array found');\r",
 					"        return;\r",
 					"    }\r",
-					"\r",
 					"    if (Object.keys(requestData).length === 0) {\r",
 					"        console.log('No external data provided/data set is empty');\r",
 					"        return;\r",
 					"    }\r",
-					"\r",
 					"    // Find current request data \r",
 					"    const currentRequest = requestData.requests.find(({ request }) => request === pm.info.requestName);\r",
 					"\r",
@@ -1155,7 +1153,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "60e3d559-e602-4c9e-95d1-723caa449e04",
+				"id": "73ed6934-34dd-42c6-8bad-eccaef709eba",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
