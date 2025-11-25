@@ -931,7 +931,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "517c28df-f889-444b-93cc-2959fd5da46b",
+				"id": "fea0373c-9dc3-4c63-a562-f74617ef5376",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -977,7 +977,7 @@
 					"        return;\r",
 					"    }\r",
 					"\r",
-					"    // Set all variables from test data\r",
+					"    // Set all scenarioData from test data\r",
 					"    Object.entries(variables).forEach(([key, value]) => {\r",
 					"        if (value !== undefined && value !== null) {\r",
 					"            pm.variables.set(key, value.toString());\r",
@@ -1106,7 +1106,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "144f1412-fe20-4d76-9bfd-6a7db74a5146",
+				"id": "050f1dd2-1227-42fa-a061-51a1d9b56c81",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
