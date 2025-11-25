@@ -757,7 +757,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"userComments\": \"\",\r\n\"userEduPg\": \"String\",\r\n\"userEduUg\": \"String\",\r\n\"userFirstName\": \"Guchitra\",\r\n\"userId\": \"U130\",\r\n\"userLastName\": \"Prasad\",\r\n\"userMiddleName\": \"\",\r\n\"userLinkedinUrl\": \"String\",\r\n\"userLocation\": \"String\",\r\n\"userLoginEmail\":” “ ,\r\n\"userPhoneNumber\": 0,\r\n\"userTimeZone\": \"String\",\r\n\"userVisaStatus\": \"String\r\n"
+							"raw": "{\r\n\"userComments\": \"sergsr\",\r\n\"userEduPg\": \"ergzregzr\",\r\n\"userEduUg\": \"agergg\",\r\n\"userFirstName\": \"shemeeba\",\r\n\"userId\": \"\",\r\n\"userLastName\": \"pps\",\r\n\"userMiddleName\": \"S\",\r\n\"userLinkedinUrl\": \"https://www.linkedin.com/in/shemmy/\",\r\n\"userLocation\": \"toronto\",\r\n\"userLoginEmail\":”shemeebapunathil@gmail.com “ ,\r\n\"userPhoneNumber\": 5458652,\r\n\"userTimeZone\": \"PST\",\r\n\"userVisaStatus\": \"H4\"\r\n"
 						},
 						"url": {
 							"raw": "{{BaseURL}}/users/:userId",
