@@ -1362,8 +1362,8 @@
 									"script": {
 										"id": "e3317fa0-ab31-4a97-bf8c-b734e0499cc5",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
+											"pm.test(\"Status code is 415\", function () {\r",
+											"    pm.response.to.have.status(415);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response has Content type not supported\", function () {\r",
