@@ -2203,6 +2203,26 @@
 						},
 						{
 							"name": "Valid Credentials",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "502ca6ff-6e2c-4550-b415-fd5eaf55b478",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has 'password saved\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.be.eq(\"password saved\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-fdc8d943-508c-4e17-892a-b26f7401b694",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
