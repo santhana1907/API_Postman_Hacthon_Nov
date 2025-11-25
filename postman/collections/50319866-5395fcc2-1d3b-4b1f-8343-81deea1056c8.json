@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "46541e70-fed6-425e-b51b-ebf9c2f443c9",
+				"id": "e2d6ffcc-8eb4-42bd-9dd4-6d0d70262855",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1148,7 +1148,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b6ecd59b-76fd-43a3-b21f-674ba0727cb5",
+				"id": "feedcea2-509b-4e60-8086-c73343c57fbc",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1158,7 +1158,7 @@
 					"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 					"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 					"// ====================\r",
-					"// SMART COMMON TESTS\r",
+					"//  COMMON TESTS\r",
 					"// ====================\r",
 					"\r",
 					"const testSuite = {\r",
