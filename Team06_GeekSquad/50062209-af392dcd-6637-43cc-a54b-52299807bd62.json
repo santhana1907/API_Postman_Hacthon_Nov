@@ -1887,6 +1887,26 @@
 						},
 						{
 							"name": "Missing credentials",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d8daf2c2-e0cb-4bfd-ad8c-6b1ede3e45bb",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'Password or EmailId is mandatory'\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.have.oneOf([\"Password is mandatory\", \"EmailId is mandatory\"]);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-5ffe2ca2-c1ff-4867-8368-ae49b7ce03ef",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
