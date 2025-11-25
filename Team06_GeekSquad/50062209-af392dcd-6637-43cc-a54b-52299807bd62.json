@@ -2198,8 +2198,31 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"{{password}}\",\r\n    \"userLoginEmailId\":\"{{userEmailId}}\"\r\n}"
+								},
+								"url": {
+									"raw": "{{BaseURL}}/resetPassword",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"resetPassword"
+									]
+								}
 							},
 							"response": []
 						}
