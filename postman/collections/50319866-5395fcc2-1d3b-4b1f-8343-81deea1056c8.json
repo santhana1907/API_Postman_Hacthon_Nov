@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "86f7bd19-5988-42da-ae0d-b6a360fa39be",
+				"id": "a156593a-c1cb-4206-b4b6-e9b92a8eb37d",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1148,7 +1148,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d5b08a7a-2fe0-46d0-8519-296c894adc2f",
+				"id": "292e97cb-ff4a-47e6-a19c-81825642fc56",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1177,7 +1177,7 @@
 					"\r",
 					"    checkHeaders: function() {\r",
 					"        const contentType = pm.variables.get('contentType') || 'application/json';\r",
-					"        pm.test(`✓ Content-Type: ${contentType}`, () => {\r",
+					"        pm.test(` Content-Type: ${contentType}`, () => {\r",
 					"            pm.response.to.have.header('Content-Type', contentType);\r",
 					"        });\r",
 					"    },\r",
