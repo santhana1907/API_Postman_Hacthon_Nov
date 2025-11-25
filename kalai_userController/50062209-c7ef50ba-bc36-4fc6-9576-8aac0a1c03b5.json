@@ -1003,13 +1003,13 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Delete User",
 					"id": "50318661-95517e92-f1bb-4876-9e63-0c6cf77d93c2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": []
 					},
 					"response": []
