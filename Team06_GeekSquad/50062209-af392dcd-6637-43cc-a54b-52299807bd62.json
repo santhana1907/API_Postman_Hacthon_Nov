@@ -2215,6 +2215,10 @@
 											"\r",
 											"pm.test(\"Response has 'password saved\", function () {\r",
 											"    pm.expect(pm.response.json().message).to.be.eq(\"password saved\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has 'success' as true\", function () {\r",
+											"    pm.expect(pm.response.json().success).to.be.true;\r",
 											"});"
 										],
 										"type": "text/javascript",
