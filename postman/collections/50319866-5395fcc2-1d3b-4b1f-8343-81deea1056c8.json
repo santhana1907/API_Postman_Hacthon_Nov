@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "94015c3a-c6b0-4096-9720-069a0240eacb",
+				"id": "86f7bd19-5988-42da-ae0d-b6a360fa39be",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1148,7 +1148,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2ca84c09-9383-4185-9f40-fb99ad77dc3c",
+				"id": "d5b08a7a-2fe0-46d0-8519-296c894adc2f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1169,7 +1169,7 @@
 					"        });\r",
 					"        \r",
 					"        if (message) {\r",
-					"            pm.test(`✓ Status text: \"${message}\"`, () => {\r",
+					"            pm.test(`Status text: \"${message}\"`, () => {\r",
 					"                pm.expect(pm.response.status).to.equal(message);\r",
 					"            });\r",
 					"        }\r",
