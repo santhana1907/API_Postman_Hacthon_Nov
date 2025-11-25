@@ -885,6 +885,24 @@
 			"item": [
 				{
 					"name": "UserSignIn",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "980d156a-ea7b-499c-8236-60abac06f337",
+								"exec": [
+									"if (pm.response.code === 200)\r",
+									"{\r",
+									"    let response = pm.response.json(); \r",
+									"    pm.environment.set(\"BearerToken\", response.token);\r",
+									"}  "
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319866-05a48703-a04c-4b12-9a31-ee3038c8b7ef",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
