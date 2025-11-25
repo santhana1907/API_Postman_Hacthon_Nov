@@ -1160,7 +1160,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Validate signIn Response",
 							"id": "50319862-0cad1629-e506-4dcf-adb2-fe2bf3870553",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
