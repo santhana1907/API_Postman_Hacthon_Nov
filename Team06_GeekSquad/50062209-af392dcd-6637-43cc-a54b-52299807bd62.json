@@ -1670,13 +1670,50 @@
 					"item": [
 						{
 							"name": "Invalid Endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e2d5b366-fc98-4013-9060-8b457f0b539b",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'Invalid endpoint'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid endpoint\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-5232d5ea-0d23-432c-a416-7f841385a21b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}"
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login/resetpassword",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login",
+										"resetpassword"
+									]
+								}
 							},
 							"response": []
 						}
