@@ -1010,7 +1010,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"password\": \"{{password}}\",\r\n\"userLoginEmailId\":\"{{userEmailId}}\"\r\n}",
+									"raw": "{\r\n\"password\": \"{{password}}\",\r\n\"userLoginEmailId\":\"team61@gmail.com\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
