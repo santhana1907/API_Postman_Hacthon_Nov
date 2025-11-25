@@ -533,9 +533,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}//batches/batchId/{batchId}",
+							"raw": "{{baseURL}}//batches/batchId/{batchId}",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"",
