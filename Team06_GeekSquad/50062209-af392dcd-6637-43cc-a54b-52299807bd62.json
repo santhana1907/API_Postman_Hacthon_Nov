@@ -1161,13 +1161,85 @@
 						},
 						{
 							"name": "Validate signIn Response",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "340141df-dcdc-4a95-8453-afc9d2061b23",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.test(\"Respone has userId\", function() {\r",
+											"    pm.expect(jsonData).to.have.property('userId');\r",
+											"    pm.collectionVariables.set(\"userId\", jsonData.userId);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has user email\", function() {\r",
+											"    pm.expect(jsonData).to.have.property('email');\r",
+											"    pm.expect(jsonData.email).to.equal(pm.collectionVariables.get(\"userEmailId\")); \r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has user role\", function() {\r",
+											"    pm.expect(jsonData).to.have.property('role');\r",
+											"    pm.expect(jsonData.roles).to.have.members([\"ROLE_ADMIN\", \"ROLE_STAFF\"]); \r",
+											"\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has user status\", function() {\r",
+											"    pm.expect(jsonData).to.have.property('status');\r",
+											"    pm.expect(jsonData.status).to.eq(\"ACTIVE\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-0cad1629-e506-4dcf-adb2-fe2bf3870553",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "ApiHackathon@6",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "team6@gmail.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
 							},
 							"response": []
 						}
