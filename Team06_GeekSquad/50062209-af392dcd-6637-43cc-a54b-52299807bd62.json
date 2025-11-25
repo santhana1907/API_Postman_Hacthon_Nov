@@ -1410,7 +1410,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Empty EmailId",
 							"id": "50319862-54ebd74e-905b-43dd-a0ab-96b92a5b29d6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
