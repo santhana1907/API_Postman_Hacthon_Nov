@@ -1776,6 +1776,26 @@
 						},
 						{
 							"name": "Missing Request Body",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "45165cd4-6ff4-4a31-89cb-0af82590bc17",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'Required request body is missing'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"request body is missing\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-d3f1b0cb-8bda-47aa-b164-4b3e8bc71724",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
