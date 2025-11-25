@@ -444,6 +444,35 @@
 			"item": [
 				{
 					"name": "CreateNewBatch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7940809e-6dcf-49ec-8344-d10d581ed46f",
+								"exec": [
+									"if (pm.response.code === 201) {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the batchId field\r",
+									"    if (jsonData && jsonData.batchId && jsonData.batchName) {\r",
+									"    \r",
+									"        pm.environment.set(\"BatchId\", jsonData.batchId);              \r",
+									"        pm.environment.set(\"BatchName\", jsonData.batchName);\r",
+									"        console.log(\"Batch ID: \" + jsonData.batchId + \" Batch Name: \" + jsonData.batchName);  \r",
+									"            \r",
+									"    } else {\r",
+									"        console.log(\"Batch ID/Batch Name not found in the response.\");\r",
+									"    }\r",
+									"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319866-1b5a7065-35d3-43d3-939c-e51bcc86dcd7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
