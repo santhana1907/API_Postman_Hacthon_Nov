@@ -1254,7 +1254,27 @@
 					"name": "ForgotPasswordConfirmEmail",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "Invalid Endpoint",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9b3aaf6c-bc80-4f84-85c7-b77136783956",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains 'Invalid endpoint'\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Invalid endpoint\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-63b3416d-d36e-4bc0-8762-6a3b4d568185",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1285,6 +1305,18 @@
 										"confirm"
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-6a77a14b-4c49-4c2e-a1cf-a1bab8b70dc3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
 							},
 							"response": []
 						}
