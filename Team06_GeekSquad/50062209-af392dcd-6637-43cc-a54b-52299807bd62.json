@@ -1781,8 +1781,27 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/resetPassword",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"resetPassword"
+									]
+								}
 							},
 							"response": []
 						}
