@@ -931,7 +931,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a1ca5159-14b9-49a8-982d-8107e0c010e8",
+				"id": "e9f50198-2fed-4846-b18a-c43e6a652409",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1067,7 +1067,7 @@
 					"                break;\r",
 					"                \r",
 					"            case 'invalid':\r",
-					"                const invalidToken = variables.invalidToken || \"Invalid_Token_Value_12345\";\r",
+					"                const invalidToken = scenarioData.invalidToken || \"Invalid_Token_Value_12345\";\r",
 					"                pm.request.headers.add({ \r",
 					"                    key: 'Authorization', \r",
 					"                    value: `Bearer ${invalidToken}` \r",
@@ -1090,12 +1090,12 @@
 					"}\r",
 					"\r",
 					"// FUNCTION IS NOW BEING CALLED IN THE MAIN FLOW (Line 46)\r",
-					"function logTestCaseInfo(variables) {\r",
-					"    console.log(`--- Test Case: ${variables.scenario || 'Unnamed Scenario'} ---`);\r",
+					"function logTestCaseInfo(scenarioData) {\r",
+					"    console.log(`--- Test Case: ${scenarioData.scenario || 'Unnamed Scenario'} ---`);\r",
 					"    console.log(`Request: ${pm.info.requestName}`);\r",
 					"    console.log(`Iteration: ${pm.info.iteration} of ${pm.info.iterationCount}`);\r",
-					"    console.log(`Endpoint: ${variables.endpoint}`);\r",
-					"    console.log(`Expected Status: ${variables.expectedStatusCode}`);\r",
+					"    console.log(`Endpoint: ${scenarioData.endpoint}`);\r",
+					"    console.log(`Expected Status: ${scenarioData.expectedStatusCode}`);\r",
 					"    console.log('---');\r",
 					"}\r",
 					"\r",
@@ -1106,7 +1106,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "dba1b2dd-3cb7-4c96-aeeb-e4e88b51cabe",
+				"id": "f2265f94-b6f0-4c4f-aead-087ce7af176a",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
