@@ -945,13 +945,60 @@
 				},
 				{
 					"name": "Get User By RoleId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d12d83ff-bb16-49d5-89ac-c6f85906ff56",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318661-468a69b8-bf6e-42f8-ab52-89a61dbb7ee4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDI0NjIsImV4cCI6MTc2NDAzMTI2Mn0.gXz82HDsmXWHqz6QE9AC8PPIu87ID85oF8xtA1jrG0z7vrIW5UihJxOuAHLUa2pzujmpzl1782IQgCeZEOn-ZQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n"
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/roles/:roleId",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roles",
+								":roleId"
+							],
+							"variable": [
+								{
+									"key": "roleId",
+									"value": ""
+								}
+							]
+						}
 					},
 					"response": []
 				}
