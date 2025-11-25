@@ -991,8 +991,13 @@
 								{
 									"listen": "prerequest",
 									"script": {
+										"id": "0cfe4e89-48ef-4804-8401-48e0e9f9c4a3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
 										"packages": {},
-										"type": "text/javascript"
+										"requests": {}
 									}
 								}
 							],
@@ -1005,7 +1010,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"password\": \"ApiHackathon@6\",\r\n\"userLoginEmailId\":\"team61@gmail.com\"\r\n}",
+									"raw": "{\r\n\"password\": \"{{password}}\",\r\n\"userLoginEmailId\":\"{{userEmailId}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
