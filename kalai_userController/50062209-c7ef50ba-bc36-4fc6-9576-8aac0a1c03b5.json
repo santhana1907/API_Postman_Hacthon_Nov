@@ -826,7 +826,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"loginStatus\": \"string\",\r\n\"password\": \"string\",\r\n\"roleIds\": [\r\n\"R02\"\r\n],\r\n\"status\": \"string\",\r\n\"userLoginEmail\": \"string\"\r\n}\r\n",
+							"raw": "{\r\n\"loginStatus\": \"string\",\r\n\"password\": \"ApiHackathon@6\",\r\n\"roleIds\": [\r\n\"R02\"\r\n],\r\n\"status\": \"string\",\r\n\"userLoginEmail\": \"string\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
