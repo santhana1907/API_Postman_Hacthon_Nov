@@ -820,7 +820,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "AddNewProgram",
 					"id": "50319866-958d4cd5-ce09-4ee3-b20e-ef55ccd22914",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
