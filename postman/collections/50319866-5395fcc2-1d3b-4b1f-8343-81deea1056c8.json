@@ -826,8 +826,37 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"programDescription\": \"String\",\r\n\"programName\": \"String\",\r\n\"programStatus\": \"String\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}//saveprogram",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"",
+								"saveprogram"
+							]
+						}
 					},
 					"response": []
 				}
