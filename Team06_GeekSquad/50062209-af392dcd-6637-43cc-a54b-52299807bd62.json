@@ -1520,7 +1520,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Valid EmailId",
 							"id": "50319862-905d798e-3da5-4832-8896-17930d858b05",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
