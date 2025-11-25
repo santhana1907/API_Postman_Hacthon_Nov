@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8fc3bf77-5b6a-4e1d-8602-6564a05778fc",
+				"id": "22b68613-7b12-4fd4-a199-b569c9f03f2f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -993,8 +993,7 @@
 					"    }\r",
 					"\r",
 					"    const requestData = pm.variables.get('requestData');\r",
-					"\r",
-					"    // Validate request data structure\r",
+					"    \r",
 					"    if (typeof requestData !== 'object' || !requestData.requests || !Array.isArray(requestData.requests)) {\r",
 					"        console.log('Invalid data structure or no requests array found');\r",
 					"        return;\r",
@@ -1156,7 +1155,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1c21b479-d043-40d2-a795-99f8c5206ac1",
+				"id": "8b296c20-2ff5-4c3c-9bc0-4405370cecd2",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
