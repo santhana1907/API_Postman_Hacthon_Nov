@@ -1187,7 +1187,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "bf1e506c-5925-4e37-8aef-0e4118da6a63",
+				"id": "a057370c-afba-4ae2-ad6d-5a2ea34781cf",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1199,7 +1199,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "52355fd4-9e18-43f2-9eda-e0593ca77c80",
+				"id": "43d39835-8d35-4377-b6ff-743fe3c5dd65",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1221,6 +1221,11 @@
 		{
 			"key": "token",
 			"value": ""
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
