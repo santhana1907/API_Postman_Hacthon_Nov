@@ -1669,7 +1669,7 @@
 					"name": "Reset Password",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "Invalid Endpoint",
 							"id": "50319862-5232d5ea-0d23-432c-a416-7f841385a21b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
