@@ -784,7 +784,7 @@
 					"response": []
 				},
 				{
-					"name": "Update User Copy",
+					"name": "Update User Login Status",
 					"event": [
 						{
 							"listen": "test",
