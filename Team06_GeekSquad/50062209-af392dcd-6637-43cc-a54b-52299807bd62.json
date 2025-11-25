@@ -2013,8 +2013,8 @@
 									"script": {
 										"id": "5fc5ebee-2415-4aab-8e95-6aea777eed5f",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response body contains 'Password is mandatory'\", function () {\r",
@@ -2122,6 +2122,18 @@
 										"resetPassword"
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-17af9202-8ab3-4a4b-bb92-18fcca8f267c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
 							},
 							"response": []
 						}
