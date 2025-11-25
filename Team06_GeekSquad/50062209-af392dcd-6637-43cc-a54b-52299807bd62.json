@@ -1309,7 +1309,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Missing Request Body",
 							"id": "50319862-6a77a14b-4c49-4c2e-a1cf-a1bab8b70dc3",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
