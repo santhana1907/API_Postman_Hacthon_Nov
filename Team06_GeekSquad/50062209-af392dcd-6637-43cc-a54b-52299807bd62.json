@@ -1717,7 +1717,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"password\": \"{{invalid_password}}\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+											"raw": "{\r\n    \"password\": \"{{invalid_password}}\",\r\n    \"userLoginEmailId\":\"{{userEmailId}}\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
