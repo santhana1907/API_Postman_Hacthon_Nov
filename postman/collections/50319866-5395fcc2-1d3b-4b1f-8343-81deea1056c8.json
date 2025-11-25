@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "66809c0d-1063-4b34-b35a-dca48349159d",
+				"id": "d09ca29c-1853-4e71-808a-19df91566859",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1004,7 +1004,7 @@
 					"        return;\r",
 					"    }\r",
 					"\r",
-					"    // Find current request data with better error handling\r",
+					"    // Find current request data \r",
 					"    const currentRequest = requestData.requests.find(({ request }) => request === pm.info.requestName);\r",
 					"\r",
 					"    if (!currentRequest) {\r",
@@ -1155,7 +1155,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "049182b9-710e-488b-ade7-a99e21898d41",
+				"id": "b33c6b2d-7101-456f-8056-63ad0e121de4",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
