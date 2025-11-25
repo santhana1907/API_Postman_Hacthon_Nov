@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a3e5ce84-335c-4215-b6c8-f5e3ed2abf40",
+				"id": "94015c3a-c6b0-4096-9720-069a0240eacb",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1148,7 +1148,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4f9d2062-e4bf-4913-882d-5803a3f40518",
+				"id": "2ca84c09-9383-4185-9f40-fb99ad77dc3c",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1156,7 +1156,7 @@
 					"// Common validation methods for all requests in the collection\r",
 					"\r",
 					"const code = pm.variables.get(\"expectedStatusCode\");\r",
-					"const statusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+					"const message = pm.variables.get(\"expectedStatusMessage\");\r",
 					"// ====================\r",
 					"//  COMMON TESTS\r",
 					"// ====================\r",
