@@ -981,13 +981,13 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7ca05908-1ceb-4e45-b3ca-877085e0b247",
+				"id": "8fc3bf77-5b6a-4e1d-8602-6564a05778fc",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
 				"exec": [
 					"try {\r",
-					"    // Initialize requestData if not exists or not an object\r",
+					"   \r",
 					"    if (typeof pm.variables.get('requestData') !== 'object') {\r",
 					"        pm.variables.set('requestData', pm.iterationData.toObject());\r",
 					"    }\r",
@@ -1156,7 +1156,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "76e1111d-8e07-4867-9f63-92ac8cb0a621",
+				"id": "1c21b479-d043-40d2-a795-99f8c5206ac1",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
