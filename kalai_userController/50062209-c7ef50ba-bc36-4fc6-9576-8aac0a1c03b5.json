@@ -928,7 +928,7 @@
 					"response": []
 				},
 				{
-					"name": "Get User Batch Id by User",
+					"name": "Get User Batch Id by User Id",
 					"id": "50318661-e31805f9-77f1-45de-8b7e-4c68226a6fc9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
