@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9da70c62-bd3d-4d1c-9584-f7223e795473",
+				"id": "7ca05908-1ceb-4e45-b3ca-877085e0b247",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1061,7 +1061,7 @@
 					"    console.error('Stack trace:', error.stack);\r",
 					"}\r",
 					"\r",
-					"// Helper function to configure request URL\r",
+					"// function to configure request URL\r",
 					"function configureRequestURL(scenarioData) {\r",
 					"    try {\r",
 					"        const scenario = scenarioData.scenario || \"\";\r",
@@ -1156,7 +1156,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7d5459c2-e63a-48f8-982d-4cf120736dcc",
+				"id": "76e1111d-8e07-4867-9f63-92ac8cb0a621",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
