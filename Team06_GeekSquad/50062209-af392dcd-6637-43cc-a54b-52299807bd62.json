@@ -1575,7 +1575,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "Validate response",
 							"id": "50319862-ed54045f-bd48-4e05-ac1d-91cbf976e2c0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
