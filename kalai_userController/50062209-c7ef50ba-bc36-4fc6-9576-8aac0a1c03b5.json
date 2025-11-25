@@ -994,7 +994,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get User Roles",
 					"id": "50318661-eeb58052-418e-494a-9ba9-f21c2538057b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
