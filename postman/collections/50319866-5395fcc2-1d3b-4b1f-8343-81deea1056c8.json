@@ -981,7 +981,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "71160527-2d63-4322-81c2-e7a91247feb6",
+				"id": "15e23970-b85f-41c5-ae93-5d3473c34bf6",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1148,38 +1148,15 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "386841c3-d52a-4157-9973-9d3dc6b34561",
+				"id": "04e489d6-0e2c-4f58-855a-ae28802230c1",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
 				"exec": [
 					"// Common validation methods for all requests in the collection\r",
 					"\r",
-					"// 1. Validate response status code\r",
-					"pm.test(\"Status code is valid (200, 201, 204, 400, 401, 403, 404, 409, 422, 500)\", function () {\r",
-					"    const validCodes = [200, 201, 204, 400, 401, 403, 404, 409, 422, 500];\r",
-					"    pm.expect(validCodes).to.include(pm.response.code);\r",
-					"    console.log(`Validated status code: ${pm.response.code}`);\r",
-					"});\r",
-					"\r",
-					"// 2. Validate response status message\r",
-					"pm.test(\"Status message is valid (OK, Created, No Content, Bad Request, Unauthorized, Forbidden, Not Found, Conflict, Unprocessable Entity, Internal Server Error)\", function () {\r",
-					"    const validMessages = [\r",
-					"        \"OK\", \"Created\", \"No Content\", \"Bad Request\", \"Unauthorized\", \"Forbidden\", \"Not Found\", \"Conflict\", \"Unprocessable Entity\", \"Internal Server Error\"\r",
-					"    ];\r",
-					"    pm.expect(validMessages).to.include(pm.response.status);\r",
-					"    console.log(`Validated status message: ${pm.response.status}`);\r",
-					"});\r",
-					"\r",
-					"// 3. Placeholder for custom validations\r",
-					"pm.test(\"Custom validation placeholder\", function () {\r",
-					"    // Example: Check for required fields in JSON response\r",
-					"    // Uncomment and customize as needed for your API\r",
-					"    // var jsonData = pm.response.json();\r",
-					"    // pm.expect(jsonData).to.have.property('id');\r",
-					"    // pm.expect(jsonData).to.have.property('name');\r",
-					"    console.log('Custom validation placeholder executed. Add your custom checks here.');\r",
-					"});\r",
+					"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+					"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 					""
 				]
 			}
