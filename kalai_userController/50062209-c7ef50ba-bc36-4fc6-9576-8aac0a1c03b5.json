@@ -929,7 +929,73 @@
 				},
 				{
 					"name": "Get User Batch Id by User Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51158472-d756-4dbc-b5fa-3ff8accb9e3f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.value).to.eql(100);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318661-e31805f9-77f1-45de-8b7e-4c68226a6fc9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDI0NjIsImV4cCI6MTc2NDAzMTI2Mn0.gXz82HDsmXWHqz6QE9AC8PPIu87ID85oF8xtA1jrG0z7vrIW5UihJxOuAHLUa2pzujmpzl1782IQgCeZEOn-ZQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n"
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/user/:userId",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "50318661-eeb58052-418e-494a-9ba9-f21c2538057b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
