@@ -748,7 +748,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwNDMwMDYsImV4cCI6MTc2NDA3MTgwNn0.ha3cpWUeReZYc6xyFQxFTLgaWg4S64U10YK2YClh_P6KJxEkTXezi7LpxWJkdObMAoFuF6vRCA2GUUA65J9o5A",
+									"value": "{{authToken}}",
 									"type": "string"
 								}
 							]
@@ -757,15 +757,22 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n"
+							"raw": "{\r\n\"userComments\": \"\",\r\n\"userEduPg\": \"String\",\r\n\"userEduUg\": \"String\",\r\n\"userFirstName\": \"Guchitra\",\r\n\"userId\": \"U130\",\r\n\"userLastName\": \"Prasad\",\r\n\"userMiddleName\": \"\",\r\n\"userLinkedinUrl\": \"String\",\r\n\"userLocation\": \"String\",\r\n\"userLoginEmail\":” “ ,\r\n\"userPhoneNumber\": 0,\r\n\"userTimeZone\": \"String\",\r\n\"userVisaStatus\": \"String\r\n"
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users",
+							"raw": "{{BaseURL}}/users/:userId",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
-								"users"
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "{{userId}}"
+								}
 							]
 						}
 					},
