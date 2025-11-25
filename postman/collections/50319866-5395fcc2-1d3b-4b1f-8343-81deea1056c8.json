@@ -632,9 +632,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/batches/{batchId}",
+							"raw": "{{baseURL}}/batches/{batchId}",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"batches",
@@ -664,9 +664,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/batches/{id}",
+							"raw": "{{baseURL}}/batches/{id}",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"batches",
