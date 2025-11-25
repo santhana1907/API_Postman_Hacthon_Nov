@@ -967,7 +967,7 @@
 							"response": []
 						},
 						{
-							"name": "Invalid Email Id",
+							"name": "Wrong Email Id",
 							"event": [
 								{
 									"listen": "test",
