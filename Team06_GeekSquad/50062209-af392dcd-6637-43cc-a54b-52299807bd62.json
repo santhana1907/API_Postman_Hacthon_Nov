@@ -1260,8 +1260,31 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login/forgotpassword/confirm",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login",
+										"forgotpassword",
+										"confirm"
+									]
+								}
 							},
 							"response": []
 						}
