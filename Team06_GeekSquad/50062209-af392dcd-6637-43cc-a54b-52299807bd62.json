@@ -1726,13 +1726,51 @@
 						},
 						{
 							"name": "No Authentication",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "521a8933-f382-47d3-b6dc-074a1ada7eee",
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-ee3835bd-8466-4440-b557-9256a76ca236",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/resetPassword",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"resetPassword"
+									]
+								}
 							},
 							"response": []
 						}
