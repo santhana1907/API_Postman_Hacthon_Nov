@@ -2127,6 +2127,26 @@
 						},
 						{
 							"name": "Invalid Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9d736989-c6ad-4d96-9146-5267278256d5",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response body contains correct message\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.include(\"password must contain\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-17af9202-8ab3-4a4b-bb92-18fcca8f267c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
