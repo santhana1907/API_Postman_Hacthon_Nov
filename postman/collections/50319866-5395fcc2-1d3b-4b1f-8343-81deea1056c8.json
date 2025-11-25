@@ -949,7 +949,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f4df4865-0422-4fba-b861-5fb77374629d",
+				"id": "d9c6de4f-525c-470e-ba69-45733088731f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1041,7 +1041,7 @@
 					"            baseUrl = pm.variables.get(\"invalidBase_URL\") || \"https://invalid-base-url.example.com\";\r",
 					"            console.warn(\"Using invalid base URL for scenario:\", scenario);\r",
 					"        } else {\r",
-					"            baseUrl = pm.environment.get(\"BaseURL\") || pm.collectionVariables.get(\"Base_URL\");\r",
+					"            baseUrl = pm.environment.get(\"BaseURL\") || pm.collectionVariables.get(\"BaseURL\");\r",
 					"        }\r",
 					"\r",
 					"        if (!baseUrl) {\r",
@@ -1124,7 +1124,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4cf53e2b-543a-4bc3-81d2-0ee5273f9e1a",
+				"id": "b2b0d9bf-81c3-4338-b265-4f6f6907d148",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
