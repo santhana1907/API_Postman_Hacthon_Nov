@@ -784,6 +784,76 @@
 					"response": []
 				},
 				{
+					"name": "Update User Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c01b0c0d-d41d-4cb3-bd7f-c51d21a2f948",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"});\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318661-cde4932c-86a5-4a97-9a7d-05b23af137b8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"userComments\": \"string\",\r\n\"userEduPg\": \"string\",\r\n\"userEduUg\": \"string\",\r\n\"userFirstName\": \"sasha\",\r\n\"userId\": \"string\",\r\n\"userLastName\": \"prabhu\",\r\n\"userMiddleName\": \"string\",\r\n\"userLinkedinUrl\": \"www.linkedin.com/in/sashaprabhu\",\r\n\"userLocation\": \"string\",\r\n\"userLoginEmail\":\"sashaprabhu32@gmail.com\",\r\n\"userPhoneNumber\":\"+91 2345869989\",\r\n\"userTimeZone\": \"EST\",\r\n\"userVisaStatus\": \"H4-EAD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/:userId",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"id": "27fe3429-2e7f-4066-9540-c5866939ebec",
+									"key": "userId",
+									"value": "{{userId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetallUsers with facets/filters",
 					"event": [
 						{
