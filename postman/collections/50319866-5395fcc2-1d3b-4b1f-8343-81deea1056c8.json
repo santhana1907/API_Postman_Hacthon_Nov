@@ -931,7 +931,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a5c082e8-a9ea-4550-99cb-cd72fad8af27",
+				"id": "306d19ff-74ab-470c-a822-6a9b8f057925",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -956,7 +956,7 @@
 					"    }\r",
 					"\r",
 					"    // Find current request data with better error handling\r",
-					"    const currentRequest = requestData.requests.find(({ name }) => name === pm.info.requestName);\r",
+					"    const currentRequest = requestData.requests.find(({ request }) => name === pm.info.requestName);\r",
 					"\r",
 					"    if (!currentRequest) {\r",
 					"        console.log(`Request '${pm.info.requestName}' has no data defined in JSON file.`);\r",
@@ -1106,7 +1106,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "92d5481c-51d8-4569-9ce2-bc300d5eff03",
+				"id": "0fdd888a-0687-4a8b-b8f6-392e3f06d18a",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
