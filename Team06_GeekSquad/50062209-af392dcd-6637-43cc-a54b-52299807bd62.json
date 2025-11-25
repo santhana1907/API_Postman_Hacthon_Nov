@@ -1838,7 +1838,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Response has Content Type not supported\", function () {\r",
-											"    pm.expect(pm.respons.text()).to.include(\"Content-Type not supported\");\r",
+											"    pm.expect(pm.response.text()).to.include(\"Content-Type not supported\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -1882,6 +1882,18 @@
 										"resetPassword"
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-5ffe2ca2-c1ff-4867-8368-ae49b7ce03ef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
 							},
 							"response": []
 						}
