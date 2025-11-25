@@ -1944,6 +1944,18 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50319862-59d67ac8-5647-4bde-bfdf-31235d71792a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "50319862-1bc0f9ec-742d-4033-892d-a141d8bc729b"
