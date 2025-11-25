@@ -1521,13 +1521,56 @@
 						},
 						{
 							"name": "Valid EmailId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "698cd876-8178-4307-87ce-cb78cf09f8d0",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has 'Email sent'\", function () {\r",
+											"    pm.expect(pm.response.json().status).to.include(\"Email sent\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-905d798e-3da5-4832-8896-17930d858b05",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login/forgotpassword/confirmEmail",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login",
+										"forgotpassword",
+										"confirmEmail"
+									]
+								}
 							},
 							"response": []
 						}
