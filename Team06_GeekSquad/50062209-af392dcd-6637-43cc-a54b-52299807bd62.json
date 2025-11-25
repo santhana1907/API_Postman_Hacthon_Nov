@@ -1025,7 +1025,7 @@
 							"response": []
 						},
 						{
-							"name": "Bad Credentials",
+							"name": "Wrong password",
 							"event": [
 								{
 									"listen": "test",
