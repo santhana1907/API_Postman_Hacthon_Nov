@@ -1827,6 +1827,26 @@
 						},
 						{
 							"name": "Invalid Content Type",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d2421c10-04d4-4eb0-8602-c74a882324a9",
+										"exec": [
+											"pm.test(\"Status code is 415\", function () {\r",
+											"    pm.response.to.have.status(415);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response has Content Type not supported\", function () {\r",
+											"    pm.expect(pm.respons.text()).to.include(\"Content-Type not supported\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
 							"id": "50319862-5ad6eb3a-0ead-4ad3-9b48-01d5387b9a1c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1849,7 +1869,7 @@
 									"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
 									"options": {
 										"raw": {
-											"language": "json"
+											"language": "text"
 										}
 									}
 								},
