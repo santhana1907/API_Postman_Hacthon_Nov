@@ -464,9 +464,15 @@
 									"pm.test(\"Response time is less than 200ms\", function () {\r",
 									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
 									"});\r",
-									"pm.test(\"Status message is Created\", function () {\r",
-									"    pm.response.to.have.status(\"Created\");\r",
-									"});"
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Token is present in response\", function () {\r",
+									"    pm.expect(pm.response.json().token).to.not.be.null;\r",
+									"    });\r",
+									"    pm.test(\"User ID is present in response\", function () {\r",
+									"        pm.expect(pm.response.json().userId).to.not.be.null;\r",
+									"        });"
 								],
 								"type": "text/javascript",
 								"packages": {},
