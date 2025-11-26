@@ -694,6 +694,32 @@
 				},
 				{
 					"name": "UpdateProgrambyProgramName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a9133101-9e00-4779-8d05-8962a7a0abab",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318648-ba40540c-d645-4d53-8f64-5e9ddf0bbc9a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -704,7 +730,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDMyMzgsImV4cCI6MTc2NDAzMjAzOH0.OLbKcoCijbUsjNmf4s2v8fPuzYqZBcakzi7m4yHhY1shGAWyMV_idKC5KL7TNGe5GDzSMveQNvWbBkk24obUlg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzU4NDYsImV4cCI6MTc2NDIwNDY0Nn0.Thmdwk4Xik4h4bcJflcyIUSq7WQt6b7OQ33l7244tHR3pITd8iysKXxAKfulpMPgYgaQGOTsU2qizBFE3IM35A",
 									"type": "string"
 								}
 							]
@@ -721,17 +747,13 @@
 							}
 						},
 						"url": {
-							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/program/DA",
-							"protocol": "https",
+							"raw": "{{BaseURL}}/program/Testing",
 							"host": [
-								"lms-hackathon-nov-2025-8dd40899c026",
-								"herokuapp",
-								"com"
+								"{{BaseURL}}"
 							],
 							"path": [
-								"lms",
 								"program",
-								"DA"
+								"Testing"
 							]
 						}
 					},
