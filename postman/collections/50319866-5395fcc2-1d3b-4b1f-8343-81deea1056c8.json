@@ -245,6 +245,100 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "AddNewProgram Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c0139d4-a843-447c-acba-705c72086f95",
+								"exec": [
+									"if (pm.response.code === 201) {  \r",
+									"    var jsonData = pm.response.json();\r",
+									"    console.log(\"Full API Response:\", JSON.stringify(jsonData, null, 1));\r",
+									"\r",
+									"   \r",
+									"    let programIds = pm.environment.get(\"programIds\");\r",
+									"\r",
+									"    try {\r",
+									"        //storing program id in to callection veriable to delete in future\r",
+									"        programIds = programIds ? JSON.parse(programIds) : [];\r",
+									"\r",
+									"    } catch (e) {\r",
+									"        console.log(\"Error parsing programIds, resetting to empty array.\");\r",
+									"        programIds = [];\r",
+									"    }\r",
+									"\r",
+									"    if (jsonData.programId && !programIds.includes(jsonData.programId)) {\r",
+									"        programIds.push(jsonData.programId);\r",
+									"        pm.environment.set(\"programIds\", JSON.stringify(programIds));\r",
+									"        console.log(\"Updated programIds array:\", programIds);\r",
+									"        pm.environment.set(\"programID\",String(programIds[0]));\r",
+									"    } else {\r",
+									"        console.log(\"programId already exists or not found in response.\");\r",
+									"    }\r",
+									"\r",
+									" \r",
+									"    let ProgramNames = pm.environment.get(\"ProgramNames\");\r",
+									"\r",
+									"    try {\r",
+									"   \r",
+									"        ProgramNames = ProgramNames ? JSON.parse(ProgramNames) : [];\r",
+									"\r",
+									"    } catch (e) {\r",
+									"        console.log(\"Error parsing programNames, resetting to empty array.\");\r",
+									"        ProgramNames = [];\r",
+									"    }\r",
+									"\r",
+									"    if (jsonData.programName && !ProgramNames.includes(jsonData.programName)) {\r",
+									"        ProgramNames.push(jsonData.programName);\r",
+									"        pm.environment.set(\"ProgramNames\", JSON.stringify(ProgramNames));\r",
+									"        pm.environment.set(\"ProgramName\", String(ProgramNames[1]));\r",
+									"        // pm.environment.set(\"ProgramName\",ProgramNames[1] );\r",
+									"        console.log(\"Updated programName array:\",pm.environment.get(\"ProgramName\"));\r",
+									"    } else {\r",
+									"        console.log(\"programName already exists or not found in response.\");\r",
+									"    }\r",
+									"}\r",
+									"else \r",
+									"{\r",
+									"console.log(\"201 not found in responce\", pm.response.code);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319866-5580505a-5bc1-40cf-b226-5a622ae5404d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"programDescription\": \"{{programDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/saveprogram",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"saveprogram"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50319866-9a4cb814-87b6-4118-a845-1bedab5b8307",
