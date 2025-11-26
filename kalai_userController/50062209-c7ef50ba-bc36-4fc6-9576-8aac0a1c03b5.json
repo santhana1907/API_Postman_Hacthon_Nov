@@ -601,12 +601,13 @@
 							"script": {
 								"id": "f806eb0b-e80e-41ad-a996-5cec6743d89f",
 								"exec": [
-									"if(pm.response.to.have.status(200)) {\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"login failed. Status code:\" + pm.response.status);\r",
-									"}\r",
-									"    "
+									"\r",
+									"    pm.test(\"Login Successful\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"    pm.test(\"Token is present in response\",function (){\r",
+									"        pm.expect (responseJson).to.have.property('access_token');\r",
+									"    });"
 								],
 								"type": "text/javascript",
 								"packages": {},
