@@ -936,7 +936,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDMyMzgsImV4cCI6MTc2NDAzMjAzOH0.OLbKcoCijbUsjNmf4s2v8fPuzYqZBcakzi7m4yHhY1shGAWyMV_idKC5KL7TNGe5GDzSMveQNvWbBkk24obUlg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzc4MzksImV4cCI6MTc2NDIwNjYzOX0.hXXzSic9WcLlDs_uQ1kp3VLW9xuTB0zi7RADpTVnXHZ9TgPVDu4zibVEsRIIUVr7qaquhXWpuQVm5HMZQUmX6g",
 									"type": "string"
 								}
 							]
@@ -944,17 +944,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/deletebyprogname/Cucumber",
-							"protocol": "https",
+							"raw": "{{BaseURL}}/deletebyprogname/Testing",
 							"host": [
-								"lms-hackathon-nov-2025-8dd40899c026",
-								"herokuapp",
-								"com"
+								"{{BaseURL}}"
 							],
 							"path": [
-								"lms",
 								"deletebyprogname",
-								"Cucumber"
+								"Testing"
 							]
 						}
 					},
