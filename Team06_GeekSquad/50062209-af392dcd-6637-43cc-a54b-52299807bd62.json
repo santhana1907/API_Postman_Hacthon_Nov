@@ -248,7 +248,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n\"userComments\": \"{{userComments}}\", \r\n\"userEduPg\": \"{{userEduPg}}\", \r\n\"userEduUg\": \"{{userEduUg}}\", \r\n\"userFirstName\": \"{{userFirstName}}\", \r\n\"userLastName\": \"{{userLastName}}\", \r\n\"userLinkedinUrl\": \"{{userLinkedinUrl}}\", \r\n\"userLocation\": \"{{userLocation}}\", \r\n\"userMiddleName\": \"{{userMiddleName}}\", \r\n\"userPhoneNumber\": \"{{userPhoneNumber}}\", \r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"{{roleId}}\", \r\n\"userRoleStatus\": \"{{userRoleStatus}}\" \r\n} \r\n], \r\n\"userTimeZone\": \"{{userTimeZone}}\", \r\n\"userVisaStatus\": \"{{userVisaStatus}}\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"{{userLoginEmail}}\", \r\n   \"loginStatus\" : \"{{loginStatus}}\", \r\n  \"status\":  \"{{status}}\" \r\n  }   } ",
+							"raw": "{ \r\n\"userComments\": \"{{userComments}}\", \r\n\"userEduPg\": \"{{userEduPg}}\", \r\n\"userEduUg\": \"{{userEduUg}}\", \r\n\"userFirstName\": \"{{userFirstName}}\", \r\n\"userLastName\": \"{{userLastName}}\", \r\n\"userLinkedinUrl\": \"{{userLinkedinUrl}}\", \r\n\"userLocation\": \"{{userLocation}}\", \r\n\"userMiddleName\": \"{{userMiddleName}}\", \r\n\"userPhoneNumber\": \"{{userPhoneNumber}}\", \r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"{{roleId}}\", \r\n\"userRoleStatus\": \"{{userRoleStatus}}\" \r\n} \r\n], \r\n\"userTimeZone\": \"{{userTimeZone}}\", \r\n\"userVisaStatus\": \"{{userVisaStatus}}\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"{{userLoginEmail}}\", \r\n   \"loginStatus\" : \"{{loginStatus}}\", \r\n  \"status\":  \"{{status}}\" \r\n  }   \r\n  } ",
 							"options": {
 								"raw": {
 									"language": "json"
