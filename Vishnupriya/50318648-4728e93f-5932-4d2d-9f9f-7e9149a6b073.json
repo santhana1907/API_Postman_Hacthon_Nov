@@ -991,7 +991,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"programDescription\": \"Postman Training\",\r\n\"programName\": \"APITestingwithCucumber\",\r\n\"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n\"programDescription\": \"Postman Training\",\r\n\"programName\": \"APITestingSDET\",\r\n\"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
