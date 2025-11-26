@@ -974,7 +974,9 @@
 									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 									"});\r",
 									"pm.test(\"Status message is OK\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");"
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -1001,7 +1003,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"programDescription\": \"Postman Training\",\r\n\"programName\": \"QATestingWithAPI\",\r\n\"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n\"programDescription\": \"Postman Training\",\r\n\"programName\": \"APITestingwithCucumber\",\r\n\"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
