@@ -959,7 +959,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\": \"team6@gmail.com\"\r\n}",
+							"raw": "{\r\n\"programDescription\": \"Postman Training\",\r\n\"programName\": \"Testing\",\r\n\"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
