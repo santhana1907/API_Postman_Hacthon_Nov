@@ -592,6 +592,41 @@
 				},
 				{
 					"name": "Get by ProgramId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb8c7e05-8659-4f64-873a-dc9e4c286021",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Program name is Cucumber\", function () {\r",
+									"    pm.expect(pm.response.json().programName).to.eql(\"Cucumber\");\r",
+									"    });\r",
+									"    pm.test(\"Program description is QA Test Assure\", function () {\r",
+									"        pm.expect(pm.response.json().programDescription).to.eql(\"QA Test Assure\");\r",
+									"        });\r",
+									"        pm.test(\"Program status is Active\", function () {\r",
+									"            pm.expect(pm.response.json().programStatus).to.eql(\"Active\");\r",
+									"            });\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318648-73f18e58-c7e2-43cb-ab45-c6f683d7b961",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
