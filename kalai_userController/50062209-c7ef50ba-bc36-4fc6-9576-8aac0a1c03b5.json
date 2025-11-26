@@ -694,6 +694,21 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7ed6c06a-f007-43c6-ac4b-61f13f48953b",
+								"exec": [
+									"pm.request.headers.add({\r",
+									"    key:'Authorization',\r",
+									"    value: 'Bearer' + pm.environment.get('accessToken') \r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50062209-74cbbe6d-4c34-4da5-b147-0f4049735565",
