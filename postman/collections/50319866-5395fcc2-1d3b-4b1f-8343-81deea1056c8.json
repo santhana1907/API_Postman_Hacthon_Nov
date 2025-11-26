@@ -707,21 +707,11 @@
 				}
 			],
 			"id": "50319866-5794d5ff-dd07-4d0c-aa88-2700d804fdbe",
-			"auth": {
-				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "{{authToken}}",
-						"type": "string"
-					}
-				]
-			},
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "e6dc44e5-6545-4d6e-b786-e71d882ca8b5",
+						"id": "ce8abf18-0126-475f-881d-e0752b44f384",
 						"type": "text/javascript",
 						"packages": {},
 						"requests": {},
@@ -733,7 +723,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be688a53-0d86-436f-9061-929d3402a3ec",
+						"id": "dad2135f-ab1e-4ae1-bbad-2ec2951081aa",
 						"type": "text/javascript",
 						"packages": {},
 						"requests": {},
