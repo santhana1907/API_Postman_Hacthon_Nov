@@ -6,8 +6,95 @@
 	},
 	"item": [
 		{
+			"name": "UserLoginController",
+			"item": [],
+			"id": "50062209-a3aa88bd-573a-410c-99dc-8fc5de4f5b03"
+		},
+		{
 			"name": "UserController-2",
 			"item": [
+				{
+					"name": "UserController-1",
+					"item": [
+						{
+							"name": "UserLogin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "f806eb0b-e80e-41ad-a996-5cec6743d89f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "50062209-97e6bb46-cfaf-4e52-9bf5-ac8c3f8161e8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "ApiHackathon@6",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "team6@gmail.com",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/login",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "50062209-e37b77a7-f62a-4daf-ab99-0cc25deff6cc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
+					"id": "50062209-606c1348-cc2c-4e70-8f03-f62afb77c679"
+				},
 				{
 					"name": "UserLogin",
 					"event": [
@@ -1411,93 +1498,6 @@
 				}
 			],
 			"id": "50062209-41c3eed6-6bb1-45a9-84bf-feab99f6e8e3"
-		},
-		{
-			"name": "UserController-1",
-			"item": [
-				{
-					"name": "UserLogin",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "f806eb0b-e80e-41ad-a996-5cec6743d89f",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Successful POST request\", function () {\r",
-									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50062209-97e6bb46-cfaf-4e52-9bf5-ac8c3f8161e8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "ApiHackathon@6",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "team6@gmail.com",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/login",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "New Request",
-					"id": "50062209-e37b77a7-f62a-4daf-ab99-0cc25deff6cc",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			],
-			"id": "50062209-606c1348-cc2c-4e70-8f03-f62afb77c679"
-		},
-		{
-			"name": "UserLoginController",
-			"item": [],
-			"id": "50062209-a3aa88bd-573a-410c-99dc-8fc5de4f5b03"
 		},
 		{
 			"name": "SkillMasterController",
