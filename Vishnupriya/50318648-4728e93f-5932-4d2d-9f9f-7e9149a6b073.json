@@ -880,6 +880,34 @@
 				},
 				{
 					"name": "Delete By Program Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3c60fef3-ce14-4c1b-9720-b775876a6485",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Status message is No Content\", function () {\r",
+									"    pm.response.to.have.status(\"No Content\");\r",
+									"});\r",
+									"pm.test(\"Response body contains the correct message\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Program Name -Cucumber is deleted Successfully!\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318648-838cd015-fc8c-4b7f-adc6-59fb58c3bfe1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
