@@ -925,7 +925,36 @@
 					"response": []
 				}
 			],
-			"id": "50319866-9a4cb814-87b6-4118-a845-1bedab5b8307"
+			"id": "50319866-9a4cb814-87b6-4118-a845-1bedab5b8307",
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "80ba019f-a8e6-4507-aa21-17272ffe77bf",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "20b46500-6793-4238-a85d-304e54489eaf",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "UserController-1",
