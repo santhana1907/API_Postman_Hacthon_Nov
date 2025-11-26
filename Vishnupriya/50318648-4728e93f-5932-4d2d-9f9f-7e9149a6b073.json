@@ -6,443 +6,9 @@
 	},
 	"item": [
 		{
-			"name": "UserController-2",
-			"item": [
-				{
-					"name": "UserLogin",
-					"id": "50318648-716a98f7-12bd-472f-a9e9-dfc7be2b4c7d",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "ApiHackathon@6",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "team6@gmail.com",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/login",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "CreateUser",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "ea206f1c-dd93-4ba5-b2de-e529881b90e7",
-								"exec": [
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"pm.test(\"Successful POST request\", function () {\r",
-									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
-									"});\r",
-									"pm.test(\"Status message is 'Created'\", function () {\r",
-									"    pm.response.to.have.status(\"Created\");\r",
-									"});\r",
-									"pm.test(\"Response time is less than 1200ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "8362cdd2-0e78-4e54-8b56-e1bb169c95d9",
-								"exec": [
-									"let randomPhonenumber = \"+1\" + Math.floor(1000000000 + Math.random() * 9000000000);\r",
-									"pm.environment.set(\"phoneNumber\", randomPhonenumber);"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50318648-5113a218-21b1-4efc-8845-f9acf12d6dca",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \r\n\"userComments\": \"New user\", \r\n\"userEduPg\": \"MBA\", \r\n\"userEduUg\": \"BBA\", \r\n\"userFirstName\": \"Kevin\", \r\n\"userLastName\": \"Arthur\", \r\n\"userLinkedinUrl\": \"www.linkedin.com/in/Kevin-Arthur\", \r\n\"userLocation\": \"England\", \r\n\"userMiddleName\": \"Lee\", \r\n\"userPhoneNumber\": \"{{phoneNumber}}\", \r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"R03\", \r\n\"userRoleStatus\": \"Active\" \r\n} \r\n], \r\n\"userTimeZone\": \"PST\", \r\n\"userVisaStatus\": \"NA\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"Kev123@gmail.com\", \r\n   \"loginStatus\" : \"Active\", \r\n  \"status\":  \"Active\" \r\n  }   } ",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/users/roleStatus",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"roleStatus"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetUsersforProgram",
-					"id": "50318648-7c4a242a-cd85-4a29-af89-50d230a78c64",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/users/programs/{programId}",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"programs",
-								"{programId}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetUsersByProgramBatches",
-					"id": "50318648-615edfd0-045c-428d-b5b4-48322ab9f4f9",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}} /users/programBatch/{batchId} ",
-							"host": [
-								"{{BaseURL}} "
-							],
-							"path": [
-								"users",
-								"programBatch",
-								"{batchId} "
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetUserDetailsByID",
-					"id": "50318648-b6a7b48b-9dcc-456a-8713-938f7965302a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/users/details/{id} ",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"details",
-								"{id} "
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetCountofActiveandInactiveUsers",
-					"id": "50318648-aa09c1dc-301f-40bc-b620-3ff05887cb89",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/users/byStatus",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"byStatus"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetallActiveUsers",
-					"id": "50318648-101f50c3-e7a6-4360-896f-0ca12bfffaec",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/users/activeUsers",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"activeUsers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetAllRoles",
-					"id": "50318648-34c20444-8a7c-4dd1-8899-63379c5ac410",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/roles",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"roles"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetEmailofAllUserwithActiveuser",
-					"id": "50318648-720759ec-60b9-4d4e-ac57-59c918dee5a8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/fetch-emails",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"fetch-emails"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "UpdateUserRoleProgramBatchStatus",
-					"id": "50318648-fd2de2af-10b7-4cf2-813e-7214712ec6cf",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/{userId}",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"roleProgramBatchStatus",
-								"{userId}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "UpdateUserRoleID",
-					"id": "50318648-e2a6f4eb-728a-4836-92ed-97fc734f99e8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/users/roleId/{userID}",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"roleId",
-								"{userID}"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"id": "50318648-074a803b-16bc-4fbe-be7d-a2a163f057fe"
-		},
-		{
-			"name": "ProgramBatchController",
+			"name": "UserLoginController",
 			"item": [],
-			"id": "50318648-4d0e20bb-bfce-450a-af51-af3b48dbb100"
+			"id": "50318648-d3c9f80f-0e81-47cf-bd16-fd5711f83293"
 		},
 		{
 			"name": "ProgramController",
@@ -1025,6 +591,445 @@
 			"id": "50318648-446dc627-510f-402f-a33a-cc48165eea9e"
 		},
 		{
+			"name": "UserController-2",
+			"item": [
+				{
+					"name": "UserLogin",
+					"id": "50318648-716a98f7-12bd-472f-a9e9-dfc7be2b4c7d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ApiHackathon@6",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "team6@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/login",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ea206f1c-dd93-4ba5-b2de-e529881b90e7",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Status message is 'Created'\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8362cdd2-0e78-4e54-8b56-e1bb169c95d9",
+								"exec": [
+									"let randomPhonenumber = \"+1\" + Math.floor(1000000000 + Math.random() * 9000000000);\r",
+									"pm.environment.set(\"phoneNumber\", randomPhonenumber);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-5113a218-21b1-4efc-8845-f9acf12d6dca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"userComments\": \"New user\", \r\n\"userEduPg\": \"MBA\", \r\n\"userEduUg\": \"BBA\", \r\n\"userFirstName\": \"Kevin\", \r\n\"userLastName\": \"Arthur\", \r\n\"userLinkedinUrl\": \"www.linkedin.com/in/Kevin-Arthur\", \r\n\"userLocation\": \"England\", \r\n\"userMiddleName\": \"Lee\", \r\n\"userPhoneNumber\": \"{{phoneNumber}}\", \r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"R03\", \r\n\"userRoleStatus\": \"Active\" \r\n} \r\n], \r\n\"userTimeZone\": \"PST\", \r\n\"userVisaStatus\": \"NA\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"Kev123@gmail.com\", \r\n   \"loginStatus\" : \"Active\", \r\n  \"status\":  \"Active\" \r\n  }   } ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/roleStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersforProgram",
+					"id": "50318648-7c4a242a-cd85-4a29-af89-50d230a78c64",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/programs/{programId}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"programs",
+								"{programId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersByProgramBatches",
+					"id": "50318648-615edfd0-045c-428d-b5b4-48322ab9f4f9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}} /users/programBatch/{batchId} ",
+							"host": [
+								"{{BaseURL}} "
+							],
+							"path": [
+								"users",
+								"programBatch",
+								"{batchId} "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserDetailsByID",
+					"id": "50318648-b6a7b48b-9dcc-456a-8713-938f7965302a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/details/{id} ",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"details",
+								"{id} "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCountofActiveandInactiveUsers",
+					"id": "50318648-aa09c1dc-301f-40bc-b620-3ff05887cb89",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/byStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"byStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetallActiveUsers",
+					"id": "50318648-101f50c3-e7a6-4360-896f-0ca12bfffaec",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/activeUsers",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"activeUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllRoles",
+					"id": "50318648-34c20444-8a7c-4dd1-8899-63379c5ac410",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/roles",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEmailofAllUserwithActiveuser",
+					"id": "50318648-720759ec-60b9-4d4e-ac57-59c918dee5a8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/fetch-emails",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"fetch-emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserRoleProgramBatchStatus",
+					"id": "50318648-fd2de2af-10b7-4cf2-813e-7214712ec6cf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/{userId}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleProgramBatchStatus",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserRoleID",
+					"id": "50318648-e2a6f4eb-728a-4836-92ed-97fc734f99e8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/roleId/{userID}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleId",
+								"{userID}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50318648-074a803b-16bc-4fbe-be7d-a2a163f057fe"
+		},
+		{
+			"name": "ProgramBatchController",
+			"item": [],
+			"id": "50318648-4d0e20bb-bfce-450a-af51-af3b48dbb100"
+		},
+		{
 			"name": "UserController-1",
 			"item": [
 				{
@@ -1261,11 +1266,6 @@
 				}
 			],
 			"id": "50318648-c138bbe6-7a1f-4b80-a9d9-aa22ef8702a4"
-		},
-		{
-			"name": "UserLoginController",
-			"item": [],
-			"id": "50318648-d3c9f80f-0e81-47cf-bd16-fd5711f83293"
 		},
 		{
 			"name": "SkillMasterController",
