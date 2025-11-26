@@ -946,13 +946,20 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzQ1NzIsImV4cCI6MTc2NDIwMzM3Mn0.cgIadIlqjSH_6xV_q0FPOcBvUdvoUaOEps2z3TsWN_QyPunG-VdL9CjfIZjJJkJC7V0iFb1fxJg75wKr1xDFNQ",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"password\": \"\",\r\n\"userLoginEmailId\":\"\"\r\n}"
+							"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\": \"team6@gmail.com\"\r\n}"
 						},
 						"url": {
 							"raw": "{{BaseURL}}/saveprogram",
