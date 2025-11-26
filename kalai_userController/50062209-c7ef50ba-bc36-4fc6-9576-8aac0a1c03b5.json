@@ -605,6 +605,9 @@
 									"    pm.test(\"Login Successful\", function () {\r",
 									"        pm.response.to.have.status(200);\r",
 									"    });\r",
+									"    const responseJson = pm.response.json();\r",
+									"    const authToken = responseJson.access_token;\r",
+									"    pm.environment.set(\"authToken\",authToken);\r",
 									"    pm.test(\"Token is present in response\",function (){\r",
 									"        pm.expect (responseJson).to.have.property('access_token');\r",
 									"    });"
