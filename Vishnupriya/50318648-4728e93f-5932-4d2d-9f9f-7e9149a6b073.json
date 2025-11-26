@@ -6,11 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "UserLoginController",
-			"item": [],
-			"id": "50318648-d3c9f80f-0e81-47cf-bd16-fd5711f83293"
-		},
-		{
 			"name": "ProgramController",
 			"item": [
 				{
