@@ -1271,18 +1271,6 @@
 			"name": "SkillMasterController",
 			"item": [],
 			"id": "50318648-8d200c16-e37a-4c73-b85b-945d19698d8c"
-		},
-		{
-			"name": "New Request",
-			"id": "50318648-a31c8d78-81ba-46a2-90ad-fc3304c956ab",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
 		}
 	],
 	"event": [
