@@ -916,14 +916,11 @@
 				}
 			],
 			"id": "50319866-9a4cb814-87b6-4118-a845-1bedab5b8307",
-			"auth": {
-				"type": "bearer"
-			},
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "80ba019f-a8e6-4507-aa21-17272ffe77bf",
+						"id": "b665a1f7-9d14-4735-95a5-a62e4f6295ee",
 						"type": "text/javascript",
 						"packages": {},
 						"requests": {},
@@ -935,7 +932,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "20b46500-6793-4238-a85d-304e54489eaf",
+						"id": "3a26efc3-e47e-41e8-b46c-5d82e0971faf",
 						"type": "text/javascript",
 						"packages": {},
 						"requests": {},
