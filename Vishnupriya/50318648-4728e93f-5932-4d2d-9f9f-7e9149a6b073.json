@@ -738,7 +738,7 @@
 					"response": []
 				},
 				{
-					"name": "Update by Program ID",
+					"name": "UpdateProgrambyProgram ID",
 					"event": [
 						{
 							"listen": "test",
