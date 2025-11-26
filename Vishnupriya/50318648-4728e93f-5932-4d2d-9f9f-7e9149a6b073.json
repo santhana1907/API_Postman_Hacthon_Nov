@@ -875,7 +875,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete By Program Name",
+					"name": "DeleteProgramByProgramName",
 					"event": [
 						{
 							"listen": "test",
