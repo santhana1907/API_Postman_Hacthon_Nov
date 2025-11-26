@@ -524,7 +524,7 @@
 					"response": []
 				},
 				{
-					"name": "Get data",
+					"name": "Get Allprogram",
 					"event": [
 						{
 							"listen": "test",
