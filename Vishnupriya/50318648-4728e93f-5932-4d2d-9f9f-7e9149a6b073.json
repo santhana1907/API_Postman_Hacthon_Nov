@@ -743,6 +743,37 @@
 				},
 				{
 					"name": "Update by Program ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b78f1191-5dc3-4906-86d2-7f0ecb90926a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Program ID is 37\", function () {\r",
+									"    pm.expect(pm.response.json().programId).to.equal(37);\r",
+									"});\r",
+									"pm.test(\"Program Name is Cucumber\", function () {\r",
+									"    pm.expect(pm.response.json().programName).to.equal(\"Cucumber\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318648-58a26617-885e-4c73-b63c-773883480dab",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
