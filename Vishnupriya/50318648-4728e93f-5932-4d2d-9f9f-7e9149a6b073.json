@@ -976,6 +976,12 @@
 									"pm.test(\"Status message is OK\", function () {\r",
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
+									"pm.test(\"Program ID is present and is a number\", function () {\r",
+									"    pm.expect(pm.response.json().programId).to.be.a('number');\r",
+									"});\r",
+									"pm.test(\"Program Name is present and is a string\", function () {\r",
+									"    pm.expect(pm.response.json().programName).to.be.a('string');\r",
+									"});\r",
 									""
 								],
 								"type": "text/javascript",
