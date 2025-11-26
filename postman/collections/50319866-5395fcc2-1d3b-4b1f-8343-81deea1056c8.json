@@ -245,12 +245,11 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}//saveprogram",
+							"raw": "{{baseURL}}/saveprogram",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
-								"",
 								"saveprogram"
 							]
 						}
