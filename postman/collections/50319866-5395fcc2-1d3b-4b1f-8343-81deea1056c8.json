@@ -1092,7 +1092,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e098837b-4409-4aaa-9d47-645ec93446ec",
+				"id": "4c52f9b1-b54a-49c3-a243-5979894b785a",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1259,7 +1259,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c50161fd-6a93-42af-aba2-a07010dc851d",
+				"id": "17c2b566-a537-4810-a57f-cef3a6390814",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1276,7 +1276,7 @@
 					"    // Core validations\r",
 					"    checkStatus: function(code, message) {\r",
 					"        pm.test(`Status should be ${code}`, () => {\r",
-					"            pm.response.to.have.status(code);\r",
+					"            pm.response.to.have.status(Numbercode);\r",
 					"        });\r",
 					"        \r",
 					"        if (message) {\r",
