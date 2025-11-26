@@ -939,7 +939,7 @@
 					"response": []
 				},
 				{
-					"name": "Add Newprogram",
+					"name": "AddNewprogram",
 					"id": "50318648-e5764edd-4175-4d15-b5ca-bc767b0ca2ac",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
