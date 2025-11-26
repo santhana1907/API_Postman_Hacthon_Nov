@@ -621,13 +621,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "password",
-									"value": "ApiHackathon@6",
+									"key": "username",
+									"value": "{{userLoginEmailId}}",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "team6@gmail.com",
+									"key": "password",
+									"value": "{{password}}",
 									"type": "string"
 								}
 							]
