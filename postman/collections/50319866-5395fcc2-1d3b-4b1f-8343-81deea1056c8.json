@@ -73,6 +73,215 @@
 			"id": "50319866-a425467b-82d1-4ff3-bcc9-c276d9c3cc7b"
 		},
 		{
+			"name": "ProgramController",
+			"item": [
+				{
+					"name": "Post data",
+					"id": "50319866-facf39a9-d323-4ef8-b1b5-3e2904fc8e04",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get data",
+					"id": "50319866-01236564-35ab-4406-b86a-f7a8c2fe453e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ProgramId",
+					"id": "50319866-b382ab53-9f01-4a20-b9cd-1e4edecedfb8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Program Users",
+					"id": "50319866-430966ec-0e5a-4835-b963-f6bea2b56e08",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update by ProgramName",
+					"id": "50319866-734acc95-d80c-4971-a564-dd2db8e4bbb7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update by Program ID",
+					"id": "50319866-561d60cf-560f-4c59-9d3e-b15f14e47117",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewProgram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c0139d4-a843-447c-acba-705c72086f95",
+								"exec": [
+									"if (pm.response.code === 201) {  \r",
+									"    var jsonData = pm.response.json();\r",
+									"    console.log(\"Full API Response:\", JSON.stringify(jsonData, null, 1));\r",
+									"\r",
+									"   \r",
+									"    let programIds = pm.environment.get(\"programIds\");\r",
+									"\r",
+									"    try {\r",
+									"        //storing program id in to callection veriable to delete in future\r",
+									"        programIds = programIds ? JSON.parse(programIds) : [];\r",
+									"\r",
+									"    } catch (e) {\r",
+									"        console.log(\"Error parsing programIds, resetting to empty array.\");\r",
+									"        programIds = [];\r",
+									"    }\r",
+									"\r",
+									"    if (jsonData.programId && !programIds.includes(jsonData.programId)) {\r",
+									"        programIds.push(jsonData.programId);\r",
+									"        pm.environment.set(\"programIds\", JSON.stringify(programIds));\r",
+									"        console.log(\"Updated programIds array:\", programIds);\r",
+									"        pm.environment.set(\"programID\",String(programIds[0]));\r",
+									"    } else {\r",
+									"        console.log(\"programId already exists or not found in response.\");\r",
+									"    }\r",
+									"\r",
+									" \r",
+									"    let ProgramNames = pm.environment.get(\"ProgramNames\");\r",
+									"\r",
+									"    try {\r",
+									"   \r",
+									"        ProgramNames = ProgramNames ? JSON.parse(ProgramNames) : [];\r",
+									"\r",
+									"    } catch (e) {\r",
+									"        console.log(\"Error parsing programNames, resetting to empty array.\");\r",
+									"        ProgramNames = [];\r",
+									"    }\r",
+									"\r",
+									"    if (jsonData.programName && !ProgramNames.includes(jsonData.programName)) {\r",
+									"        ProgramNames.push(jsonData.programName);\r",
+									"        pm.environment.set(\"ProgramNames\", JSON.stringify(ProgramNames));\r",
+									"        pm.environment.set(\"ProgramName\", String(ProgramNames[1]));\r",
+									"        // pm.environment.set(\"ProgramName\",ProgramNames[1] );\r",
+									"        console.log(\"Updated programName array:\",pm.environment.get(\"ProgramName\"));\r",
+									"    } else {\r",
+									"        console.log(\"programName already exists or not found in response.\");\r",
+									"    }\r",
+									"}\r",
+									"else \r",
+									"{\r",
+									"console.log(\"201 not found in responce\", pm.response.code);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319866-958d4cd5-ce09-4ee3-b20e-ef55ccd22914",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"programDescription\": \"{{programDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}//saveprogram",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"",
+								"saveprogram"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50319866-9a4cb814-87b6-4118-a845-1bedab5b8307",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b665a1f7-9d14-4735-95a5-a62e4f6295ee",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a26efc3-e47e-41e8-b46c-5d82e0971faf",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "UserController-2",
 			"item": [
 				{
@@ -781,215 +990,6 @@
 					"listen": "test",
 					"script": {
 						"id": "dad2135f-ab1e-4ae1-bbad-2ec2951081aa",
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {},
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "ProgramController",
-			"item": [
-				{
-					"name": "Post data",
-					"id": "50319866-facf39a9-d323-4ef8-b1b5-3e2904fc8e04",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Get data",
-					"id": "50319866-01236564-35ab-4406-b86a-f7a8c2fe453e",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Get by ProgramId",
-					"id": "50319866-b382ab53-9f01-4a20-b9cd-1e4edecedfb8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Get by Program Users",
-					"id": "50319866-430966ec-0e5a-4835-b963-f6bea2b56e08",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Update by ProgramName",
-					"id": "50319866-734acc95-d80c-4971-a564-dd2db8e4bbb7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Update by Program ID",
-					"id": "50319866-561d60cf-560f-4c59-9d3e-b15f14e47117",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "AddNewProgram",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "9c0139d4-a843-447c-acba-705c72086f95",
-								"exec": [
-									"if (pm.response.code === 201) {  \r",
-									"    var jsonData = pm.response.json();\r",
-									"    console.log(\"Full API Response:\", JSON.stringify(jsonData, null, 1));\r",
-									"\r",
-									"   \r",
-									"    let programIds = pm.environment.get(\"programIds\");\r",
-									"\r",
-									"    try {\r",
-									"        //storing program id in to callection veriable to delete in future\r",
-									"        programIds = programIds ? JSON.parse(programIds) : [];\r",
-									"\r",
-									"    } catch (e) {\r",
-									"        console.log(\"Error parsing programIds, resetting to empty array.\");\r",
-									"        programIds = [];\r",
-									"    }\r",
-									"\r",
-									"    if (jsonData.programId && !programIds.includes(jsonData.programId)) {\r",
-									"        programIds.push(jsonData.programId);\r",
-									"        pm.environment.set(\"programIds\", JSON.stringify(programIds));\r",
-									"        console.log(\"Updated programIds array:\", programIds);\r",
-									"        pm.environment.set(\"programID\",String(programIds[0]));\r",
-									"    } else {\r",
-									"        console.log(\"programId already exists or not found in response.\");\r",
-									"    }\r",
-									"\r",
-									" \r",
-									"    let ProgramNames = pm.environment.get(\"ProgramNames\");\r",
-									"\r",
-									"    try {\r",
-									"   \r",
-									"        ProgramNames = ProgramNames ? JSON.parse(ProgramNames) : [];\r",
-									"\r",
-									"    } catch (e) {\r",
-									"        console.log(\"Error parsing programNames, resetting to empty array.\");\r",
-									"        ProgramNames = [];\r",
-									"    }\r",
-									"\r",
-									"    if (jsonData.programName && !ProgramNames.includes(jsonData.programName)) {\r",
-									"        ProgramNames.push(jsonData.programName);\r",
-									"        pm.environment.set(\"ProgramNames\", JSON.stringify(ProgramNames));\r",
-									"        pm.environment.set(\"ProgramName\", String(ProgramNames[1]));\r",
-									"        // pm.environment.set(\"ProgramName\",ProgramNames[1] );\r",
-									"        console.log(\"Updated programName array:\",pm.environment.get(\"ProgramName\"));\r",
-									"    } else {\r",
-									"        console.log(\"programName already exists or not found in response.\");\r",
-									"    }\r",
-									"}\r",
-									"else \r",
-									"{\r",
-									"console.log(\"201 not found in responce\", pm.response.code);\r",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50319866-958d4cd5-ce09-4ee3-b20e-ef55ccd22914",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{authToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\"programDescription\": \"{{programDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}//saveprogram",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"",
-								"saveprogram"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"id": "50319866-9a4cb814-87b6-4118-a845-1bedab5b8307",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "b665a1f7-9d14-4735-95a5-a62e4f6295ee",
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {},
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "3a26efc3-e47e-41e8-b46c-5d82e0971faf",
 						"type": "text/javascript",
 						"packages": {},
 						"requests": {},
