@@ -1096,7 +1096,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f0d109e7-f698-45b1-9d17-98ebb2d6224f",
+				"id": "25060cf6-0a22-4515-9b86-e4e5457522dd",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1217,7 +1217,7 @@
 					"                        key: 'Authorization', \r",
 					"                        value: `Bearer ${validToken}` \r",
 					"                    });\r",
-					"                    console.log(\"Added valid Authorization header : ${validToken} \");\r",
+					"                    console.log(\"Added valid Authorization header\"\");\r",
 					"                } else {\r",
 					"                    console.warn(\"Valid BearerToken not found in environment/collection variables\");\r",
 					"                }\r",
@@ -1263,7 +1263,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2158f93f-3d5b-4af7-bdca-18a0ba0af6c2",
+				"id": "3b27c9e9-4e46-45dd-a035-6538aafde56a",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
