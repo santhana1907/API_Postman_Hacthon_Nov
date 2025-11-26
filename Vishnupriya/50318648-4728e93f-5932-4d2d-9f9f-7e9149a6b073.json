@@ -575,15 +575,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/allPrograms",
-							"protocol": "https",
+							"raw": "{{BaseURL}}/allPrograms",
 							"host": [
-								"lms-hackathon-nov-2025-8dd40899c026",
-								"herokuapp",
-								"com"
+								"{{BaseURL}}"
 							],
 							"path": [
-								"lms",
 								"allPrograms"
 							]
 						}
