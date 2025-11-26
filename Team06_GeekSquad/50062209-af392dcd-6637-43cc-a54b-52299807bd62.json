@@ -515,6 +515,8 @@
 											"    }\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Response contains 'userId'\", function () {\r",
+											"    \r",
 											"pm.test(\"Response contains 'type'\", function () {\r",
 											"    pm.expect(jsonData).to.have.property('type');\r",
 											"    pm.expect(jsonData.type).to.equal(\"Bearer\");\r",
