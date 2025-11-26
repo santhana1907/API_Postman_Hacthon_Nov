@@ -648,7 +648,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"{{password}}\",\r\n    \"userLoginEmailId\":\"{{userLoginEmailId}}\"\r\n}",
+							"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
