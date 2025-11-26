@@ -525,6 +525,38 @@
 				},
 				{
 					"name": "Get data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "925d8536-84c6-4df6-b0c2-160f2fc2761c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response body is not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.be.empty;\r",
+									"});\r",
+									"pm.test(\"Response body is an array\", function () {\r",
+									"    pm.expect(pm.response.json()).to.be.an(\"array\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318648-7f788f76-fabd-4d1a-9c41-87fae9aa57dd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
