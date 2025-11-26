@@ -614,8 +614,13 @@
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "c6f2a892-410a-4d1e-aa0b-c7f3ea066079",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
 								"packages": {},
-								"type": "text/javascript"
+								"requests": {}
 							}
 						}
 					],
@@ -628,13 +633,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "username",
-									"value": "{{userLoginEmailId}}",
+									"key": "password",
+									"value": "ApiHackathon@6",
 									"type": "string"
 								},
 								{
-									"key": "password",
-									"value": "{{password}}",
+									"key": "username",
+									"value": "team6@gmail.com",
 									"type": "string"
 								}
 							]
