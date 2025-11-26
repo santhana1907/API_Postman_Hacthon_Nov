@@ -962,6 +962,30 @@
 				},
 				{
 					"name": "AddNewprogram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0183678c-3c27-4976-9c4b-24c10902586c",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318648-e5764edd-4175-4d15-b5ca-bc767b0ca2ac",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
