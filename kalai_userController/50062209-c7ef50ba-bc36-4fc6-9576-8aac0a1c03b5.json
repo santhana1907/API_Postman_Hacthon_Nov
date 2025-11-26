@@ -610,6 +610,13 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
 						}
 					],
 					"id": "50062209-1b06c8eb-f953-42ac-9584-984b067ed003",
@@ -636,7 +643,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":{{password}},\r\n    \"userLoginEmailId\":{{userLoginEmailId}}\r\n}",
+							"raw": "{\r\n    \"password\":\"{{password}}\",\r\n    \"userLoginEmailId\":\"{{userLoginEmailId}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
