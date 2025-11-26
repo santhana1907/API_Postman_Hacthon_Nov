@@ -524,7 +524,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Allprogram",
+					"name": "Get Allprograms",
 					"event": [
 						{
 							"listen": "test",
