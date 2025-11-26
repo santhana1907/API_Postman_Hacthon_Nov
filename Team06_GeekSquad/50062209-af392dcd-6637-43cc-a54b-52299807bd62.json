@@ -501,7 +501,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n\"userFirstName\": \"Amy\", \r\n\"userLastName\": \"Sandra\", \r\n\"userLocation\": \"India\",  \r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"R03\", \r\n\"userRoleStatus\": \"Active\" \r\n} \r\n], \r\n\"userTimeZone\": \"IST\", \r\n\"userVisaStatus\": \"H1B\", \r\n\"userLogin\": { \r\n   \"loginStatus\" : \"Active\"\r\n  }   \r\n  } ",
+							"raw": "{ \r\n\"userFirstName\": \"Amy\", \r\n\"userLastName\": \"Sandra\", \r\n\"userLocation\": \"India\",  \r\n\"userPhoneNumber\": \"+91 9876543209\",\r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"R03\", \r\n\"userRoleStatus\": \"Active\" \r\n} \r\n], \r\n\"userTimeZone\": \"IST\", \r\n\"userVisaStatus\": \"H1B\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"AmySandra@gmail.com\",\r\n   \"loginStatus\" : \"Active\"\r\n  }   \r\n  } ",
 							"options": {
 								"raw": {
 									"language": "json"
