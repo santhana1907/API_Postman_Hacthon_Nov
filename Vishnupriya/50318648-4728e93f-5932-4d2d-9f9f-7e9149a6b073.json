@@ -658,7 +658,7 @@
 					"response": []
 				},
 				{
-					"name": "GetAllby Program Users",
+					"name": "GetAllProgramsWithUsers",
 					"id": "50318648-b6156285-9a12-456e-9b5a-050b8cae9893",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
