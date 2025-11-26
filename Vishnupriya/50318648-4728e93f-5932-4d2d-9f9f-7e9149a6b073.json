@@ -587,7 +587,7 @@
 					"response": []
 				},
 				{
-					"name": "GetbyProgramId",
+					"name": "GetProgrambyProgramId",
 					"event": [
 						{
 							"listen": "test",
