@@ -443,6 +443,37 @@
 			"name": "ProgramBatchController",
 			"item": [
 				{
+					"name": "GetAllBatches",
+					"id": "50319866-4d7ab450-85ac-4141-9a94-7b3c801b9695",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/batches",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "CreateNewBatch",
 					"event": [
 						{
@@ -489,37 +520,6 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseURL}}/batches",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"batches"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetAllBatches",
-					"id": "50319866-4d7ab450-85ac-4141-9a94-7b3c801b9695",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{authToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "{{baseURL}}/batches",
 							"host": [
