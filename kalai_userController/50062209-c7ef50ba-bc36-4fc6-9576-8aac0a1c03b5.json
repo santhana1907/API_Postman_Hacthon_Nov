@@ -605,11 +605,10 @@
 									"    pm.test(\"Login Successful\", function () {\r",
 									"        pm.response.to.have.status(200);\r",
 									"    });\r",
-									"    const responseJson = pm.response.json();\r",
-									"    const authToken = responseJson.Bearer_token;\r",
-									"    pm.environment.set(\"authToken\",authToken);\r",
+									"   var jsonData = pm.response.json();\r",
+									"    pm.collectionVariables.set(\"accessToken\",jsonData.access_token);\r",
 									"    pm.test(\"Token is present in response\",function (){\r",
-									"        pm.expect (responseJson).to.have.property('Bearer_token');\r",
+									"        pm.expect (responseJson).to.have.property('access_token');\r",
 									"    });"
 								],
 								"type": "text/javascript",
@@ -1380,6 +1379,10 @@
 		},
 		{
 			"key": "authToken",
+			"value": ""
+		},
+		{
+			"key": "accessToken",
 			"value": ""
 		}
 	]
