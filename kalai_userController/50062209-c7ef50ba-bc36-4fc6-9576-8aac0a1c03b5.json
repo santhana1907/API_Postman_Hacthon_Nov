@@ -606,7 +606,7 @@
 									"        pm.response.to.have.status(200);\r",
 									"    });\r",
 									"   var jsonData = pm.response.json();\r",
-									"    pm.environment.set(\"accessToken\",jsonData.data.accessToken);\r",
+									"    pm.environment.set(\"accessToken\",jsonData.accessToken);\r",
 									"    pm.test(\"Token is present in response\",function (){\r",
 									"        pm.expect (responseJson).to.have.property('access_token');\r",
 									"    });"
