@@ -693,7 +693,7 @@
 					"response": []
 				},
 				{
-					"name": "Update by ProgramName",
+					"name": "UpdateProgrambyProgramName",
 					"id": "50318648-ba40540c-d645-4d53-8f64-5e9ddf0bbc9a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
