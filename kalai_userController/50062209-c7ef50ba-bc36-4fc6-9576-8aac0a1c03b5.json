@@ -1054,6 +1054,25 @@
 				},
 				{
 					"name": "ForgotPasswordConfirmEmail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d57c47f4-7255-4dbc-89dc-d1cd9ac60b6e",
+								"exec": [
+									" pm.test(\"Response has expected json message\", function() {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var message = jsonData.message.replace(/:.*/, \"\");\r",
+									"    console.log(\"Checking response json message: \" + message);\r",
+									"    pm.expect(message).to.oneOf([pm.variables.get(\"expectedJsonMessage\"), pm.variables.get(\"expectedJsonMessage2\")]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-554f92a3-d4b8-4856-b6ea-915cfafb9053",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
