@@ -932,7 +932,36 @@
 					"response": []
 				}
 			],
-			"id": "50062209-c1a1449b-fc95-4357-b8e7-818ce5fcdb6d"
+			"id": "50062209-c1a1449b-fc95-4357-b8e7-818ce5fcdb6d",
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2a6f9d6a-1892-4d1a-88f6-39de3d1198ae",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a6996b8c-cae6-4ca0-825a-634c0c740cc0",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "UserController-2",
