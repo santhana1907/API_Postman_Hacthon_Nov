@@ -939,7 +939,7 @@
 								"id": "5e3754ab-23e9-4ecd-9a36-d34b4798b0e4",
 								"exec": [
 									"pm.test(\"Response body contains expected message\", function () {\r",
-									"    if (pm.response.code === 404) {\r",
+									"    if (pm.response.code === 404 || pm.response.code === 415) {\r",
 									"        console.log(\"Checking plain text message\" + pm.response.text());\r",
 									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));\r",
 									"    }\r",
