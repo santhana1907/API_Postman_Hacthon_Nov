@@ -954,6 +954,22 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "af870247-e0dc-4521-949e-4fb7ca2f8b25",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {\r",
+									"    pm.request.body.update({\r",
+									"        mode: 'none'\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50062209-d34cc30a-dab8-46a6-9d56-00dc2d10ae95",
