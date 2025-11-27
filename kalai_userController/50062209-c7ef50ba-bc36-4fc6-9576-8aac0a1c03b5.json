@@ -1053,13 +1053,13 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "ForgotPasswordConfirmEmail",
 					"id": "50319862-554f92a3-d4b8-4856-b6ea-915cfafb9053",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": []
 					},
 					"response": []
