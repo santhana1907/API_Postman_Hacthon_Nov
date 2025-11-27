@@ -932,6 +932,28 @@
 			"item": [
 				{
 					"name": "User SignIn",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5e3754ab-23e9-4ecd-9a36-d34b4798b0e4",
+								"exec": [
+									"pm.test(\"Response body contains expected message\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    if (jsonData != null) {\r",
+									"        pm.expect(jsonData.message).to.include(\"{{expectedJsonMessage}}\");\r",
+									"    }\r",
+									"    else {\r",
+									"        pm.expect(pm.response.text()).to.include(\"{{expectedMessage}}\");\r",
+									"    }\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50062209-d34cc30a-dab8-46a6-9d56-00dc2d10ae95",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
