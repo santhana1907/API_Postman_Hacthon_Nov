@@ -941,7 +941,7 @@
 									"pm.test(\"Response body contains expected message\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
 									"    if (jsonData != null) {\r",
-									"        pm.expect(jsonData.message).to.include(\"{{expectedJsonMessage}}\");\r",
+									"        pm.expect(jsonData.message).to.oneOf(\"{{expectedJsonMessage}}\", \"{{expectedJsonMessage2}}\");\r",
 									"    }\r",
 									"    else {\r",
 									"        pm.expect(pm.response.text()).to.include(\"{{expectedMessage}}\");\r",
