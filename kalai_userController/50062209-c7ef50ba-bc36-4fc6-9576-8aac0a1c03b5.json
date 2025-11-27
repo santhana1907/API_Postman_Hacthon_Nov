@@ -945,8 +945,9 @@
 									"    }\r",
 									"    else {\r",
 									"        var jsonData = pm.response.json();\r",
-									"        console.log(\"Checking response json message\" + jsonData.message);\r",
-									"        pm.expect(jsonData.message).to.oneOf([pm.variables.get(\"expectedJsonMessage\"), pm.variables.get(\"expectedJsonMessage2\")]);\r",
+									"        var message = jsonData.message.replace(/:.*/, \"\");\r",
+									"        console.log(\"Checking response json message\" + message);\r",
+									"        pm.expect(message).to.oneOf([pm.variables.get(\"expectedJsonMessage\"), pm.variables.get(\"expectedJsonMessage2\")]);\r",
 									"    }\r",
 									"});"
 								],
