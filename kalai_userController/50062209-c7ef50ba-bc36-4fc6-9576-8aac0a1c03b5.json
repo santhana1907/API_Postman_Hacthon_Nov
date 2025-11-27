@@ -965,7 +965,14 @@
 									"    pm.request.body.update({\r",
 									"        mode: 'none'\r",
 									"    });\r",
-									"}"
+									"}\r",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {\r",
+									"    pm.request.headers.upsert({\r",
+									"        key : \"Content-Type\",\r",
+									"        value: \"text/plain\"\r",
+									"    });\r",
+									"}\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
