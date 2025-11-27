@@ -514,8 +514,6 @@
 											"        pm.collectionVariables.set(\"token\", jsonData.token);\r",
 											"    }\r",
 											"});\r",
-											"\r",
-											"pm.test(\"Response contains 'userId'\", function () {\r",
 											"    \r",
 											"pm.test(\"Response contains 'type'\", function () {\r",
 											"    pm.expect(jsonData).to.have.property('type');\r",
