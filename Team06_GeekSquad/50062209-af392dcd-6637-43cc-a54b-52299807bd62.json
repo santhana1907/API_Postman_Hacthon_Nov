@@ -460,7 +460,7 @@
 									"});\r",
 									"pm.test(\"Schema validation\", () => {\r",
 									"const schema = {\r",
-									"  \"type\": \"object\",\r",
+									"  \"type\": \"array\",\r",
 									"  \"properties\": {\r",
 									"    \"userId\": {\r",
 									"      \"type\": \"string\"\r",
