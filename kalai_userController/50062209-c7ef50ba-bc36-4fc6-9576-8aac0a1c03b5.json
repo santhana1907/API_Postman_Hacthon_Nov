@@ -953,6 +953,7 @@
 									"\r",
 									"        pm.test(\"Response has user role\", function() {\r",
 									"            pm.expect(jsonData).to.have.property('roles');\r",
+									"            console.log(\"Checking expected Roles\" + pm.variables.get(\"expectedRoles\"));\r",
 									"            pm.expect(jsonData.roles).to.equal(pm.variables.get(\"expectedRoles\")); \r",
 									"\r",
 									"        });\r",
