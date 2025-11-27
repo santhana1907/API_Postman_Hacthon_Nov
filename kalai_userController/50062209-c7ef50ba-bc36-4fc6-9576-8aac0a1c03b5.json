@@ -443,7 +443,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"loginStatus\": \"Active\",\r\n\"password\": \"{{}password}}\",\r\n\"roleIds\": [\r\n\"R02\"\r\n],\r\n\"status\": \"string\",\r\n\"userLoginEmail\": \"string\"\r\n}\r\n",
+							"raw": "{\r\n\"loginStatus\": \"Active\",\r\n\"password\": \"{{password}}\",\r\n\"roleIds\": [\r\n\"R02\"\r\n],\r\n\"status\": \"string\",\r\n\"userLoginEmail\": \"string\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
