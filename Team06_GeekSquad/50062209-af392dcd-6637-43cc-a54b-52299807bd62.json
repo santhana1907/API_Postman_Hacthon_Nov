@@ -554,14 +554,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/programs/:programId",
+							"raw": "{{BaseURL}}/users/programs/:programId/",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
 								"programs",
-								":programId"
+								":programId",
+								""
 							],
 							"variable": [
 								{
