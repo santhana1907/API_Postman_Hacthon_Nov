@@ -223,12 +223,12 @@
 							"basic": [
 								{
 									"key": "password",
-									"value": "ApiHackathon@6",
+									"value": "{{password}}",
 									"type": "string"
 								},
 								{
 									"key": "username",
-									"value": "team6@gmail.com",
+									"value": "{{userLoginEmailId}}",
 									"type": "string"
 								}
 							]
