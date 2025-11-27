@@ -1572,39 +1572,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "New Request",
-					"id": "50062209-d099cc0e-57f2-4251-8e3e-a6bffe35e316",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQyMTUyMTAsImV4cCI6MTc2NDI0NDAxMH0.6rOP7q5ezuFYbcyJIhqz4DeVTRKW-TIIyGO5iZKyXUcU7hP9zhXwh7YJNoJM92J7AGhLwqVZ30A_Tw8MdPgzAA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/users/user/U67",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"user",
-								"U67"
-							]
-						}
-					},
-					"response": []
 				}
 			],
 			"id": "50062209-d8d428f2-918d-4010-8dde-6f95aa9a10f3"
