@@ -1442,22 +1442,37 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQyMTc4MTEsImV4cCI6MTc2NDI0NjYxMX0.E-dZETunaAUqp6zSw6xvYiz5v-JRRYH6uncsbYdz19CUpe7RoOtIcvZIyrJ91EHSnxZ02Un1TSFOl6dj1oBMrw",
 									"type": "string"
 								}
 							]
 						},
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"programId\": 99, \r\n  \"roleId\": \"R01\", \r\n  \"userId\": \"U101\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": 10, \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"Active\" \r\n    } \r\n  ] \r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/{userId}",
+							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/:userId",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
 								"roleProgramBatchStatus",
-								"{userId}"
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "{{id}}"
+								}
 							]
 						}
 					},
