@@ -954,6 +954,7 @@
 									"        pm.test(\"Response has user role\", function() {\r",
 									"            pm.expect(jsonData).to.have.property('roles');\r",
 									"            let expectedRole = pm.iterationData.get(\"expectedRoles\");\r",
+									"            console.log(\"expected status code \" + pm.iterationData.get(\"expectedStatusCode\"));\r",
 									"            console.log(\"Checking expected Roles \" + expectedRole);\r",
 									"            pm.expect(jsonData.roles).to.have.members(expectedRole); \r",
 									"\r",
