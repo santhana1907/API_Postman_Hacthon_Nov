@@ -504,7 +504,7 @@
 							"variable": [
 								{
 									"key": "programId",
-									"value": "{{programId}}"
+									"value": ""
 								}
 							]
 						}
