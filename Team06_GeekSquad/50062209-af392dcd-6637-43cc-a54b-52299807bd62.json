@@ -492,7 +492,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNjczMzgsImV4cCI6MTc2NDE5NjEzOH0.ekF05Q6VdQp-d2IRA4rQHqZupCxn1ieP4ZxHOqF06QqNkFVXA7SixfCLHZXcz8h80pNrJI9Wu1h9AcjlhpnzaA",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQyMDQ1NTIsImV4cCI6MTc2NDIzMzM1Mn0.O92YfPzzqyfUBzvxCY1u8KCU8HYqMbvagkvEsxSMIhhdLk4txorv2HZ0NgCiByNRQST93RPeFw2Vuw-_YC_RMA",
 									"type": "string"
 								}
 							]
@@ -501,7 +501,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n\"userFirstName\": \"Amy\", \r\n\"userLastName\": \"Sandra\", \r\n\"userLocation\": \"India\",  \r\n\"userPhoneNumber\": \"+91 9876543209\",\r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"R03\", \r\n\"userRoleStatus\": \"Active\" \r\n} \r\n], \r\n\"userTimeZone\": \"IST\", \r\n\"userVisaStatus\": \"H1B\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"AmySandra@gmail.com\",\r\n   \"loginStatus\" : \"Active\"\r\n  }   \r\n  } ",
+							"raw": "{ \r\n\"userFirstName\": \"Amy\", \r\n\"userLastName\": \"Sandra\", \r\n\"userLocation\": \"India\",  \r\n\"userPhoneNumber\": \"+91 9876543209\",\r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"R03\", \r\n\"userRoleStatus\": \"Active\" \r\n} \r\n], \r\n\"userTimeZone\": \"IST\", \r\n\"userVisaStatus\": \"\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"AmySandra@gmail.com\",\r\n   \"loginStatus\" : \"Active\"\r\n  }   \r\n  } ",
 							"options": {
 								"raw": {
 									"language": "json"
