@@ -971,6 +971,15 @@
 									"language": "json"
 								}
 							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login"
+							]
 						}
 					},
 					"response": []
