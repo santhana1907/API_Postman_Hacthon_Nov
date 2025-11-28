@@ -1190,7 +1190,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0702ab78-b704-4090-8010-df97d4322d92",
+				"id": "073bcf2c-8e5c-43ac-9877-a0be163ea9ff",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1325,14 +1325,15 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "896aede0-2204-4680-9fb9-b12f0e5e2137",
+				"id": "333c8e46-ccaf-407c-8461-286419ebfcf2",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
 				"exec": [
 					"pm.test(\"Verify status code\", function () {\r",
-					"    pm.response.to.have.status(pm.variables.get(\"\"));\r",
-					"});"
+					"    pm.response.to.have.status(pm.variables.get(\"expectedStatusCode\"));\r",
+					"});\r",
+					""
 				]
 			}
 		}
