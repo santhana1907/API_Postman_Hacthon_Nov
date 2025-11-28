@@ -649,6 +649,25 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"schema validation\",() => {\r",
+									"    const schema = {\r",
+									" \r",
+									"        \"roleId\": \"R02\",\r",
+									"        \"roleName\": \"ROLE_STAFF\",\r",
+									"        \"userId\": \"U03\",\r",
+									"        \"userFirstName\": \"Mary\",\r",
+									"        \"userLastName\": \"Poppins\",\r",
+									"        \"userRoleStatus\": \"Active\",\r",
+									"        \"userPhoneNumber\": \"9562867512\",\r",
+									"        \"userLocation\": \"Pittsburgh\",\r",
+									"        \"userTimeZone\": \"EST\",\r",
+									"        \"userLinkedinUrl\": \"https://www.linkedin.com/in/MaryPoppins/\",\r",
+									"        \"userEduUg\": \"Information Technology\",\r",
+									"        \"userVisaStatus\": \"GC-EAD\",\r",
+									"        \"userLoginEmail\": null\r",
+									"    };\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -676,7 +695,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n"
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{BaseURL}}/users/roles",
