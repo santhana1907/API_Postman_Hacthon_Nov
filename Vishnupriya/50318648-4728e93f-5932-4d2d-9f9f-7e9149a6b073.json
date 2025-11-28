@@ -133,7 +133,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDMyMzgsImV4cCI6MTc2NDAzMjAzOH0.OLbKcoCijbUsjNmf4s2v8fPuzYqZBcakzi7m4yHhY1shGAWyMV_idKC5KL7TNGe5GDzSMveQNvWbBkk24obUlg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzc4MzksImV4cCI6MTc2NDIwNjYzOX0.hXXzSic9WcLlDs_uQ1kp3VLW9xuTB0zi7RADpTVnXHZ9TgPVDu4zibVEsRIIUVr7qaquhXWpuQVm5HMZQUmX6g",
 									"type": "string"
 								}
 							]
@@ -199,7 +199,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDE5ODUsImV4cCI6MTc2NDAzMDc4NX0.BgtX52o0TukATTlxt-XVzZWn0ntaQe4jo_3NHKYePrJHy4f7o-mzQ3SShsFQsLfhG8J39aK_J2VcfATHqVmnxQ",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzc4MzksImV4cCI6MTc2NDIwNjYzOX0.hXXzSic9WcLlDs_uQ1kp3VLW9xuTB0zi7RADpTVnXHZ9TgPVDu4zibVEsRIIUVr7qaquhXWpuQVm5HMZQUmX6g",
 									"type": "string"
 								}
 							]
@@ -207,15 +207,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/programs/37",
-							"protocol": "https",
+							"raw": "{{BaseURL}}/programs/37",
 							"host": [
-								"lms-hackathon-nov-2025-8dd40899c026",
-								"herokuapp",
-								"com"
+								"{{BaseURL}}"
 							],
 							"path": [
-								"lms",
 								"programs",
 								"37"
 							]
