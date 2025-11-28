@@ -1190,7 +1190,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b199a1a8-aed7-4d76-b37a-ab0c154d6e50",
+				"id": "f262848a-1e2b-4fb7-bff2-5d3dd2944435",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1325,7 +1325,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "03b9509a-92c3-4d1c-8610-20540054acf7",
+				"id": "350e9394-d526-44d7-95ef-0d348790a624",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1334,7 +1334,7 @@
 					"    pm.response.to.have.status(pm.variables.get(\"expectedStatusCode\"));\r",
 					"});\r",
 					"\r",
-					""
+					"pm.test(\"Verof\")"
 				]
 			}
 		}
