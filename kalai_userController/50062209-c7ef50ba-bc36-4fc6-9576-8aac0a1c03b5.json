@@ -1105,6 +1105,7 @@
 									"    pm.test(\"Response has expected json message\", function() {\r",
 									"        var jsonData = pm.response.json();\r",
 									"        console.log(\"Checking response json message: \" + jsonData.message);\r",
+									"        pm.expect(jsonData).to.have.property('message');\r",
 									"        pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));\r",
 									"    });\r",
 									"}"
