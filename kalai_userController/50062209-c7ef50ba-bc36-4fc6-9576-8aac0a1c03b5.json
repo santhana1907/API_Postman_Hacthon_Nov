@@ -1202,6 +1202,29 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2d9c9c41-809f-4718-bb72-e96906cee765",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {",
+									"    pm.request.body.update({",
+									"        mode: 'none'",
+									"    });",
+									"}",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    pm.request.headers.upsert({",
+									"        key : \"Content-Type\",",
+									"        value: \"text/plain\"",
+									"    });",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50319862-f879c46f-5b9d-45a4-bd58-be3632c2f2d1",
