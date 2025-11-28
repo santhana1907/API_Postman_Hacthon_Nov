@@ -1290,7 +1290,7 @@
 			"name": "SkillMasterController",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Create New Skill",
 					"id": "50319862-d9c0fdd2-a52a-4c17-93e5-0255045aa967",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
