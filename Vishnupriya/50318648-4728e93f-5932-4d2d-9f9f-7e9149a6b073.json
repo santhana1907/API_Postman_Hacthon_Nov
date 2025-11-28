@@ -326,7 +326,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"TestingClass\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"BDDCucumber\",\r\n    \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -334,13 +334,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/program/Testing",
+							"raw": "{{BaseURL}}/program/BDDCucumber",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"program",
-								"Testing"
+								"BDDCucumber"
 							]
 						}
 					},
