@@ -429,7 +429,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{authToken}}",
+									"value": "{{bearer}}",
 									"type": "string"
 								}
 							]
@@ -438,7 +438,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n"
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{BaseURL}}/users/:id",
