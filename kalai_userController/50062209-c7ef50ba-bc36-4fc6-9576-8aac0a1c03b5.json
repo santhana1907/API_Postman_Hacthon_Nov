@@ -1360,11 +1360,13 @@
 								"id": "70d48597-34cf-45a1-ab76-6042dac9fe17",
 								"exec": [
 									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {",
+									"    console.log(\"Updating request body to none\");",
 									"    pm.request.body.update({",
 									"        mode: 'none'",
 									"    });",
 									"}",
 									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    console.log(\"Updating request header content type to text\");",
 									"    pm.request.headers.upsert({",
 									"        key : \"Content-Type\",",
 									"        value: \"text/plain\"",
