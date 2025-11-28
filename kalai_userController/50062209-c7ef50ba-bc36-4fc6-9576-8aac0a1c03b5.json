@@ -1359,7 +1359,7 @@
 							"script": {
 								"id": "70d48597-34cf-45a1-ab76-6042dac9fe17",
 								"exec": [
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {",
 									"    pm.request.body.update({",
 									"        mode: 'none'",
 									"    });",
