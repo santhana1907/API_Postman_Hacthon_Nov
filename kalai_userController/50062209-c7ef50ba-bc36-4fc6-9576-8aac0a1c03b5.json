@@ -642,6 +642,31 @@
 				},
 				{
 					"name": "GetUsersforProgram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4eed1693-c7b1-477c-a050-da38d973fead",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'Created'\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50062209-41a21e09-5e54-46a1-a7fd-477db0620ed1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -659,15 +684,6 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{BaseURL}}/users/programs/{programId}",
 							"host": [
