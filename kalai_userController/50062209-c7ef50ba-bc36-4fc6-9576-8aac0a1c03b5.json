@@ -1410,13 +1410,93 @@
 				},
 				{
 					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "98409f5b-100a-486b-ad3d-49002a1f4299",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var jsonData = pm.response.json();",
+									"    pm.test(\"Response has 'Email sent'\", function () {",
+									"        pm.expect(pm.response.json().status).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"",
+									"    pm.test(\"Response contains 'token'\", function () {",
+									"        pm.expect(jsonData).to.have.property('token');",
+									"    });",
+									"",
+									"    pm.test(\"Response contains 'type'\", function () {",
+									"        pm.expect(jsonData).to.have.property('type');",
+									"        pm.expect(jsonData.type).to.equal(\"Bearer\");",
+									"    });",
+									"",
+									"    pm.test(\"Respone has userId\", function() {",
+									"        pm.expect(jsonData).to.have.property('userId');",
+									"    });",
+									"",
+									"    pm.test(\"Response has user email\", function() {",
+									"        pm.expect(jsonData).to.have.property('email');",
+									"        pm.expect(jsonData.email).to.equal(pm.variables.get(\"userEmail\")); ",
+									"    });",
+									"",
+									"    pm.test(\"Response has user role\", function() {",
+									"        pm.expect(jsonData).to.have.property('roles');",
+									"        let expectedRole = pm.variables.get(\"expectedRoles\");",
+									"        pm.expect(jsonData.roles).to.have.members(expectedRole.split(\",\")); ",
+									"    });",
+									"",
+									"    pm.test(\"Response has passwordExpired\", function() {",
+									"        pm.expect(jsonData).to.have.property('passwordExpired');",
+									"        pm.expect(jsonData.passwordExpired).to.be.false;",
+									"    });",
+									"}",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {",
+									"    pm.test(\"Response has expected text message\", function() {",
+									"        console.log(\"Checking plain text message \" + pm.response.text());",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"}",
+									"else if (pm.response.code === 400) {",
+									"    pm.test(\"Response has expected json message\", function() {",
+									"        var jsonData = pm.response.json();",
+									"        console.log(\"Checking response json message: \" + jsonData.message);",
+									"        pm.expect(jsonData).to.have.property('message');",
+									"        pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-87468a30-7194-4c4a-812f-a265ce2413ba",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T22:26:58.778Z\",\n  \"lastModTime\": \"2025-11-28T22:26:58.778Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/SaveSkillMaster",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"SaveSkillMaster"
+							]
+						}
 					},
 					"response": []
 				}
