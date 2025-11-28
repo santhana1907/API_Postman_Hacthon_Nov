@@ -1190,7 +1190,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "93f43486-607c-4d42-a859-07fafe811f36",
+				"id": "b449b00c-4b95-4744-bd5b-09812aff1c53",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1325,12 +1325,12 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6eaa8692-fa34-4701-81bb-bbad0ffc338f",
+				"id": "84bb4a58-3a4c-4a62-8f07-fc251fb42326",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
 				"exec": [
-					"pm.test(\"Status code is 200\", function () {\r",
+					"pm.test(\"Verify \", function () {\r",
 					"    pm.response.to.have.status(200);\r",
 					"});"
 				]
