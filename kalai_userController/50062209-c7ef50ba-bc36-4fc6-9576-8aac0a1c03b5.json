@@ -1173,6 +1173,37 @@
 				},
 				{
 					"name": "ResetPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "39e4752f-bbc2-4e98-98ef-181e6713a8ae",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var jsonData = pm.response.json();",
+									"    ",
+									"}",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {",
+									"    pm.test(\"Response has expected text message\", function() {",
+									"        console.log(\"Checking plain text message \" + pm.response.text());",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"}",
+									"else {",
+									"    pm.test(\"Response has expected json message\", function() {",
+									"        var jsonData = pm.response.json();",
+									"        console.log(\"Checking response json message: \" + jsonData.message);",
+									"        pm.expect(jsonData).to.have.property('message');",
+									"        pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-f879c46f-5b9d-45a4-bd58-be3632c2f2d1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1185,7 +1216,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userLoginEmailId\":\"{{userEmail}}\"\r\n}"
+							"raw": "{\r\n    \"password\": \"{{password}}\",\r\n    \"userLoginEmailId\":\"{{userEmail}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{baseURL}}/login/resetPassword",
