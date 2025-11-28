@@ -1181,7 +1181,9 @@
 								"exec": [
 									"if (pm.response.code === 200) {",
 									"    var jsonData = pm.response.json();",
-									"    ",
+									"    pm.test(\"Response has 'Password saved'\", function () {",
+									"        pm.expect(pm.response.json().message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
 									"}",
 									"else if (pm.response.code === 404 || pm.response.code === 415) {",
 									"    pm.test(\"Response has expected text message\", function() {",
