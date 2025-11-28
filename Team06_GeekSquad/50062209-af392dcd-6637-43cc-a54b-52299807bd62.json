@@ -1764,7 +1764,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n  \"programId\": 99, \r\n  \"roleId\": \"R01\", \r\n  \"userId\": \"U101\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": 10, \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"Active\" \r\n    } \r\n  ] \r\n} ",
+							"raw": "{ \r\n  \"programId\": 99, \r\n  \"roleId\": \"R03\", \r\n  \"userId\": \"U101\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": 9, \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"Active\" \r\n    } \r\n  ] \r\n} ",
 							"options": {
 								"raw": {
 									"language": "json"
