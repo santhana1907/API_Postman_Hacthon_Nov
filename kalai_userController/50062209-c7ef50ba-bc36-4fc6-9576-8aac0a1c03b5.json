@@ -928,6 +928,11 @@
 			"id": "50062209-c1a1449b-fc95-4357-b8e7-818ce5fcdb6d"
 		},
 		{
+			"name": "SkillMasterController",
+			"item": [],
+			"id": "50062209-ea169146-1f2b-400d-8cc9-fe5cfd0d23e0"
+		},
+		{
 			"name": "UserLoginController",
 			"item": [
 				{
@@ -944,11 +949,6 @@
 				}
 			],
 			"id": "50062209-c54a4833-6cab-4322-9b86-a77d86eb3c71"
-		},
-		{
-			"name": "SkillMasterController",
-			"item": [],
-			"id": "50062209-ea169146-1f2b-400d-8cc9-fe5cfd0d23e0"
 		}
 	],
 	"event": [
