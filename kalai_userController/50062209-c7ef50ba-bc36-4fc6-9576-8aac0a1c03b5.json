@@ -1299,12 +1299,12 @@
 							"script": {
 								"id": "dc72b0ef-75f6-4029-97e0-c6e25bf4a9f0",
 								"exec": [
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
+									"if (pm.variables.get(\"scenario\").include(\"no request body\")) {",
 									"    pm.request.body.update({",
 									"        mode: 'none'",
 									"    });",
 									"}",
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"if (pm.variables.get(\"scenario\").include(\"invalid content\")) {",
 									"    pm.request.headers.upsert({",
 									"        key : \"Content-Type\",",
 									"        value: \"text/plain\"",
