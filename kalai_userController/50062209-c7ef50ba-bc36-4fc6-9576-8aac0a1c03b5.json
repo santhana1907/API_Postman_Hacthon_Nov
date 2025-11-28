@@ -379,19 +379,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/:userId",
+							"raw": "{{BaseURL}}/users/userId",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
+								"userId"
 							]
 						}
 					},
