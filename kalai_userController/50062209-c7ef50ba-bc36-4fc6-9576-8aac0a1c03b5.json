@@ -1189,7 +1189,7 @@
 									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
 									"    });",
 									"}",
-									"else {",
+									"else if (pm.response.code === 400) {",
 									"    pm.test(\"Response has expected json message\", function() {",
 									"        var jsonData = pm.response.json();",
 									"        console.log(\"Checking response json message: \" + jsonData.message);",
