@@ -1120,8 +1120,25 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userLoginEmailId\":\"{{userEmail}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/login/resetPassword",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login",
+								"resetPassword"
+							]
+						}
 					},
 					"response": []
 				}
