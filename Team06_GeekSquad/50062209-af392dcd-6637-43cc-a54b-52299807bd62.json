@@ -2295,7 +2295,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"skill1\",\n  \"creationTime\": \"2025-11-28T22:26:58.778Z\",\n  \"lastModTime\": \"2025-11-28T22:26:58.778Z\"\n}",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2303,12 +2303,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/saveSkillMaster",
+							"raw": "{{BaseURL}}/SaveSkillMaster",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
-								"saveSkillMaster"
+								"SaveSkillMaster"
 							]
 						}
 					},
