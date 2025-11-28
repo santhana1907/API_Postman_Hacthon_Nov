@@ -1803,7 +1803,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzNjMxODUsImV4cCI6MTc2NDM5MTk4NX0._OjBwIyMVG4Y09xi34ymzpfym4sruOQzTP_d9IwLllqt81CS-FI2ANKhnwEoBFEV7SvI80silPToX7KrDwAyEA",
 									"type": "string"
 								}
 							]
@@ -1811,14 +1811,14 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/users/roleId/{userID}",
+							"raw": "{{BaseURL}}/users/roleId/",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
 								"roleId",
-								"{userID}"
+								""
 							]
 						}
 					},
