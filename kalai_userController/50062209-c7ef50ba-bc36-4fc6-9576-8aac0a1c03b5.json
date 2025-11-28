@@ -1266,8 +1266,27 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/logoutlms",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"logoutlms"
+							]
+						}
 					},
 					"response": []
 				}
