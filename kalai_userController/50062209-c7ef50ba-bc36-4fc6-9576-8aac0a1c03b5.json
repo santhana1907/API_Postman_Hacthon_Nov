@@ -1321,7 +1321,7 @@
 							"script": {
 								"id": "151861f5-9a61-46f3-baa8-85b65476d289",
 								"exec": [
-									"if (pm.response.code === 201) {",
+									"if (pm.response.code === 200) {",
 									"    var jsonData = pm.response.json();",
 									"    pm.test(\"Response has 'Email sent'\", function () {",
 									"        pm.expect(pm.response.json().status).to.include(pm.variables.get(\"expectedMessage\"));",
