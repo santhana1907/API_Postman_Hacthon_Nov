@@ -1415,6 +1415,10 @@
 		{
 			"key": "token",
 			"value": ""
+		},
+		{
+			"key": "BearerToken",
+			"value": ""
 		}
 	]
 }
