@@ -1293,6 +1293,90 @@
 			"item": [
 				{
 					"name": "Create New Skill",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "dc72b0ef-75f6-4029-97e0-c6e25bf4a9f0",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
+									"    pm.request.body.update({",
+									"        mode: 'none'",
+									"    });",
+									"}",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    pm.request.headers.upsert({",
+									"        key : \"Content-Type\",",
+									"        value: \"text/plain\"",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "151861f5-9a61-46f3-baa8-85b65476d289",
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var jsonData = pm.response.json();",
+									"    pm.test(\"Response has 'Email sent'\", function () {",
+									"        pm.expect(pm.response.json().status).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"",
+									"    pm.test(\"Response contains 'token'\", function () {",
+									"        pm.expect(jsonData).to.have.property('token');",
+									"    });",
+									"",
+									"    pm.test(\"Response contains 'type'\", function () {",
+									"        pm.expect(jsonData).to.have.property('type');",
+									"        pm.expect(jsonData.type).to.equal(\"Bearer\");",
+									"    });",
+									"",
+									"    pm.test(\"Respone has userId\", function() {",
+									"        pm.expect(jsonData).to.have.property('userId');",
+									"    });",
+									"",
+									"    pm.test(\"Response has user email\", function() {",
+									"        pm.expect(jsonData).to.have.property('email');",
+									"        pm.expect(jsonData.email).to.equal(pm.variables.get(\"userEmail\")); ",
+									"    });",
+									"",
+									"    pm.test(\"Response has user role\", function() {",
+									"        pm.expect(jsonData).to.have.property('roles');",
+									"        let expectedRole = pm.variables.get(\"expectedRoles\");",
+									"        pm.expect(jsonData.roles).to.have.members(expectedRole.split(\",\")); ",
+									"    });",
+									"",
+									"    pm.test(\"Response has passwordExpired\", function() {",
+									"        pm.expect(jsonData).to.have.property('passwordExpired');",
+									"        pm.expect(jsonData.passwordExpired).to.be.false;",
+									"    });",
+									"}",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {",
+									"    pm.test(\"Response has expected text message\", function() {",
+									"        console.log(\"Checking plain text message \" + pm.response.text());",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"}",
+									"else {",
+									"    pm.test(\"Response has expected json message\", function() {",
+									"        var jsonData = pm.response.json();",
+									"        console.log(\"Checking response json message: \" + jsonData.message);",
+									"        pm.expect(jsonData).to.have.property('message');",
+									"        pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-d9c0fdd2-a52a-4c17-93e5-0255045aa967",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
