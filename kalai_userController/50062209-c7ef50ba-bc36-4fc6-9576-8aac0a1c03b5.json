@@ -1190,7 +1190,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a9b40b34-e9d5-44d1-a2ee-bf1442ed60c6",
+				"id": "6cf5056b-d3f6-41a6-908a-41aa1018dd70",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1325,7 +1325,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "64e951a9-093a-4285-9431-8942fffd20c2",
+				"id": "c310f401-9afb-470a-b34a-268c8fecbed8",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1335,7 +1335,7 @@
 					"});\r",
 					"\r",
 					"pm.test(\"Verify status message\", function () {\r",
-					"    pm.response.to.have.\r",
+					"    pm.expect(pm)\r",
 					"});"
 				]
 			}
