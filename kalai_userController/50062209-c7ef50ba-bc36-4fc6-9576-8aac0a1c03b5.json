@@ -1292,7 +1292,7 @@
 			"name": "SkillMasterController",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Create New Skill",
 					"event": [
 						{
 							"listen": "test",
