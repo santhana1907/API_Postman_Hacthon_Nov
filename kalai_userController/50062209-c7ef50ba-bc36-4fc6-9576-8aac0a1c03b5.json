@@ -1190,7 +1190,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f00eda70-5249-44f5-aad1-c5f4bacc9474",
+				"id": "0702ab78-b704-4090-8010-df97d4322d92",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1325,13 +1325,13 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ef0e4ed8-a51a-4815-bda2-2c886f59c337",
+				"id": "896aede0-2204-4680-9fb9-b12f0e5e2137",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
 				"exec": [
 					"pm.test(\"Verify status code\", function () {\r",
-					"    pm.response.to.have.status(200);\r",
+					"    pm.response.to.have.status(pm.variables.get(\"\"));\r",
 					"});"
 				]
 			}
