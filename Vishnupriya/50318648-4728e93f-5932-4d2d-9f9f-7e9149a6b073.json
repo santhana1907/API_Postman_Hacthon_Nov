@@ -221,6 +221,35 @@
 				},
 				{
 					"name": "GetAllProgramswithUsers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d3f13c0-5048-4454-a9fb-c12395c6c26f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50318648-b6156285-9a12-456e-9b5a-050b8cae9893",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -231,7 +260,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDMyMzgsImV4cCI6MTc2NDAzMjAzOH0.OLbKcoCijbUsjNmf4s2v8fPuzYqZBcakzi7m4yHhY1shGAWyMV_idKC5KL7TNGe5GDzSMveQNvWbBkk24obUlg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzc4MzksImV4cCI6MTc2NDIwNjYzOX0.hXXzSic9WcLlDs_uQ1kp3VLW9xuTB0zi7RADpTVnXHZ9TgPVDu4zibVEsRIIUVr7qaquhXWpuQVm5HMZQUmX6g",
 									"type": "string"
 								}
 							]
@@ -239,15 +268,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/allProgramsWithUsers",
-							"protocol": "https",
+							"raw": "{{BaseURL}}/allProgramsWithUsers",
 							"host": [
-								"lms-hackathon-nov-2025-8dd40899c026",
-								"herokuapp",
-								"com"
+								"{{BaseURL}}"
 							],
 							"path": [
-								"lms",
 								"allProgramsWithUsers"
 							]
 						}
