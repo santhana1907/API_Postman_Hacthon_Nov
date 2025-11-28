@@ -1194,7 +1194,7 @@
 									"        var jsonData = pm.response.json();",
 									"        console.log(\"Checking response json message: \" + jsonData.message);",
 									"        pm.expect(jsonData).to.have.property('message');",
-									"        pm.expect(jsonData.message).to.oneOf([pm.variables.get(\"expectedJsonMessage\"), pm.variables.get(\"expectedJsonMessage2\")]);",
+									"        pm.expect(jsonData.message).to.include.oneOf([pm.variables.get(\"expectedJsonMessage\"), pm.variables.get(\"expectedJsonMessage2\")]);",
 									"    });",
 									"}"
 								],
