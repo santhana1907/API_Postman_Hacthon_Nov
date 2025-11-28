@@ -743,7 +743,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{authToken}}",
+									"value": "{{bearer}}",
 									"type": "string"
 								}
 							]
