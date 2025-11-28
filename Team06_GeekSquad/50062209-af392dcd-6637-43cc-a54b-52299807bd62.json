@@ -1811,14 +1811,13 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/users/roleId/",
+							"raw": "{{BaseURL}}/users/roleId",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
-								"roleId",
-								""
+								"roleId"
 							]
 						}
 					},
