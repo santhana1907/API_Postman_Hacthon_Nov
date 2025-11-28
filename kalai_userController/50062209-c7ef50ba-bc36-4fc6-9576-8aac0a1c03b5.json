@@ -943,7 +943,7 @@
 									"    pm.test(\"Response contains 'token'\", function () {\r",
 									"        pm.expect(jsonData).to.have.property('token');\r",
 									"        if (jsonData.token) {\r",
-									"            pm.collectionVariables.set(\"token\", jsonData.token);\r",
+									"            pm.collectionVariables.set(\"BearerToken\", jsonData.token);\r",
 									"        }\r",
 									"    });\r",
 									"    \r",
