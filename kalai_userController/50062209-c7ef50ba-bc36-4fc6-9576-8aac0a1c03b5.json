@@ -1113,6 +1113,28 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b52947e7-89ef-4d46-8d62-1b7b36014c76",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"missing request\")) {\r",
+									"    pm.request.body.update({\r",
+									"        mode: 'none'\r",
+									"    });\r",
+									"}\r",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {\r",
+									"    pm.request.headers.upsert({\r",
+									"        key : \"Content-Type\",\r",
+									"        value: \"text/plain\"\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50319862-554f92a3-d4b8-4856-b6ea-915cfafb9053",
