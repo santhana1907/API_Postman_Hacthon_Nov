@@ -1,0 +1,1389 @@
+{
+	"info": {
+		"_postman_id": "50319866-5395fcc2-1d3b-4b1f-8343-81deea1056c8",
+		"name": "LMS-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserLoginController",
+			"item": [
+				{
+					"name": "UserSignIn",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "980d156a-ea7b-499c-8236-60abac06f337",
+								"exec": [
+									"if (pm.response.code === 200)\r",
+									"{\r",
+									"    let response = pm.response.json(); \r",
+									"    pm.environment.set(\"BearerToken\", response.token);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "50319866-05a48703-a04c-4b12-9a31-ee3038c8b7ef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"{{password}}\",\r\n    \"userLoginEmailId\": \"{{username}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50319866-a425467b-82d1-4ff3-bcc9-c276d9c3cc7b"
+		},
+		{
+			"name": "ProgramController",
+			"item": [
+				{
+					"name": "AddNewProgram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c0139d4-a843-447c-acba-705c72086f95",
+								"exec": [
+									"if (pm.response.code === 201) {  \r",
+									"    var jsonData = pm.response.json();\r",
+									"    console.log(\"Full API Response:\", JSON.stringify(jsonData, null, 1));\r",
+									"\r",
+									"   \r",
+									"    let programIds = pm.environment.get(\"programIds\");\r",
+									"\r",
+									"    try {\r",
+									"        //storing program id in to callection veriable to delete in future\r",
+									"        programIds = programIds ? JSON.parse(programIds) : [];\r",
+									"\r",
+									"    } catch (e) {\r",
+									"        console.log(\"Error parsing programIds, resetting to empty array.\");\r",
+									"        programIds = [];\r",
+									"    }\r",
+									"\r",
+									"    if (jsonData.programId && !programIds.includes(jsonData.programId)) {\r",
+									"        programIds.push(jsonData.programId);\r",
+									"        pm.environment.set(\"programIds\", JSON.stringify(programIds));\r",
+									"        console.log(\"Updated programIds array:\", programIds);\r",
+									"        pm.environment.set(\"programID\",String(programIds[0]));\r",
+									"    } else {\r",
+									"        console.log(\"programId already exists or not found in response.\");\r",
+									"    }\r",
+									"\r",
+									" \r",
+									"    let ProgramNames = pm.environment.get(\"ProgramNames\");\r",
+									"\r",
+									"    try {\r",
+									"   \r",
+									"        ProgramNames = ProgramNames ? JSON.parse(ProgramNames) : [];\r",
+									"\r",
+									"    } catch (e) {\r",
+									"        console.log(\"Error parsing programNames, resetting to empty array.\");\r",
+									"        ProgramNames = [];\r",
+									"    }\r",
+									"\r",
+									"    if (jsonData.programName && !ProgramNames.includes(jsonData.programName)) {\r",
+									"        ProgramNames.push(jsonData.programName);\r",
+									"        pm.environment.set(\"ProgramNames\", JSON.stringify(ProgramNames));\r",
+									"        pm.environment.set(\"ProgramName\", String(ProgramNames[1]));\r",
+									"        // pm.environment.set(\"ProgramName\",ProgramNames[1] );\r",
+									"        console.log(\"Updated programName array:\",pm.environment.get(\"ProgramName\"));\r",
+									"    } else {\r",
+									"        console.log(\"programName already exists or not found in response.\");\r",
+									"    }\r",
+									"}\r",
+									"else \r",
+									"{\r",
+									"console.log(\"201 not found in responce\", pm.response.code);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319866-958d4cd5-ce09-4ee3-b20e-ef55ccd22914",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"programDescription\": \"{{programDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/saveprogram",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"saveprogram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post data",
+					"id": "50319866-facf39a9-d323-4ef8-b1b5-3e2904fc8e04",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get data",
+					"id": "50319866-01236564-35ab-4406-b86a-f7a8c2fe453e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ProgramId",
+					"id": "50319866-b382ab53-9f01-4a20-b9cd-1e4edecedfb8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Program Users",
+					"id": "50319866-430966ec-0e5a-4835-b963-f6bea2b56e08",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update by ProgramName",
+					"id": "50319866-734acc95-d80c-4971-a564-dd2db8e4bbb7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update by Program ID",
+					"id": "50319866-561d60cf-560f-4c59-9d3e-b15f14e47117",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "50319866-9a4cb814-87b6-4118-a845-1bedab5b8307",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b665a1f7-9d14-4735-95a5-a62e4f6295ee",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a26efc3-e47e-41e8-b46c-5d82e0971faf",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "ProgramBatchModule",
+			"item": [
+				{
+					"name": "CreateNewBatch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7940809e-6dcf-49ec-8344-d10d581ed46f",
+								"exec": [
+									"if (pm.response.code === 201) {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the batchId field\r",
+									"    if (jsonData && jsonData.batchId && jsonData.batchName) {\r",
+									"    \r",
+									"        pm.environment.set(\"BatchId\", jsonData.batchId);              \r",
+									"        pm.environment.set(\"BatchName\", jsonData.batchName);\r",
+									"        console.log(\"Batch ID: \" + jsonData.batchId + \" Batch Name: \" + jsonData.batchName);  \r",
+									"            \r",
+									"    } else {\r",
+									"        console.log(\"Batch ID/Batch Name not found in the response.\");\r",
+									"    }\r",
+									"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319866-1b5a7065-35d3-43d3-939c-e51bcc86dcd7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\":\"{{programId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/batches",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllBatches",
+					"id": "50319866-4d7ab450-85ac-4141-9a94-7b3c801b9695",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/batches",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBatchbyBatchId",
+					"id": "50319866-ffee0902-6b0e-4352-a9cb-5b0c338fe091",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}//batches/batchId/{batchId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"",
+								"batches",
+								"batchId",
+								"{batchId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBatchbyBatchName",
+					"id": "50319866-ae0060ac-f020-4f53-82f8-19bdae66f526",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/batches/batchName/{batchName}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches",
+								"batchName",
+								"{batchName}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBatchbyProgramId",
+					"id": "50319866-4dc775e4-5eb3-4fe4-b24b-417401ac1619",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/batches/program/{programId}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"batches",
+								"program",
+								"{programId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatebyBatchId",
+					"id": "50319866-8f608e39-6ec9-4903-be94-c80d747bda82",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"batchDescription\": \"string\",\r\n\"batchId\": 0,\r\n\"batchName\": \"string\",\r\n\"batchNoOfClasses\": 0,\r\n\"batchStatus\": \"string\",\r\n\"programId\": 0,\r\n\"programName\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/batches/{batchId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches",
+								"{batchId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletebatchbyBatchId",
+					"id": "50319866-f0a835b3-9f11-40fa-b61c-dd1337e650ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/batches/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50319866-5794d5ff-dd07-4d0c-aa88-2700d804fdbe",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ce8abf18-0126-475f-881d-e0752b44f384",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "dad2135f-ab1e-4ae1-bbad-2ec2951081aa",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "UserController-1",
+			"item": [
+				{
+					"name": "UserLogin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f806eb0b-e80e-41ad-a996-5cec6743d89f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319866-42cfe32d-4a3d-4054-9a33-21375f9143a3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ApiHackathon@6",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "team6@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/login",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "50319866-1e3c00e3-c549-4cb3-83e2-9c8ecb1ce3f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "50319866-bc60e3e2-bcc4-497c-b268-6ab205d70279"
+		},
+		{
+			"name": "UserController-2",
+			"item": [
+				{
+					"name": "UserLogin",
+					"id": "50319866-08419c84-1a61-45f6-98e6-8ee368a661fc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ApiHackathon@6",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "team6@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"ApiHackathon@6\",\r\n    \"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/login",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ea206f1c-dd93-4ba5-b2de-e529881b90e7",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Status message is 'Created'\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8362cdd2-0e78-4e54-8b56-e1bb169c95d9",
+								"exec": [
+									"let randomPhonenumber = \"+1\" + Math.floor(1000000000 + Math.random() * 9000000000);\r",
+									"pm.environment.set(\"phoneNumber\", randomPhonenumber);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319866-6b897bcd-842f-4c58-9836-c04996514db7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"userComments\": \"New user\", \r\n\"userEduPg\": \"MBA\", \r\n\"userEduUg\": \"BBA\", \r\n\"userFirstName\": \"Kevin\", \r\n\"userLastName\": \"Arthur\", \r\n\"userLinkedinUrl\": \"www.linkedin.com/in/Kevin-Arthur\", \r\n\"userLocation\": \"England\", \r\n\"userMiddleName\": \"Lee\", \r\n\"userPhoneNumber\": \"{{phoneNumber}}\", \r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"R03\", \r\n\"userRoleStatus\": \"Active\" \r\n} \r\n], \r\n\"userTimeZone\": \"PST\", \r\n\"userVisaStatus\": \"NA\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"Kev123@gmail.com\", \r\n   \"loginStatus\" : \"Active\", \r\n  \"status\":  \"Active\" \r\n  }   } ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/roleStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersforProgram",
+					"id": "50319866-05045aca-35b6-4eab-b539-44b2657f8eb8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/programs/{programId}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"programs",
+								"{programId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersByProgramBatches",
+					"id": "50319866-815a7ddc-e5ba-4281-860a-5f5e3a39ee84",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}} /users/programBatch/{batchId} ",
+							"host": [
+								"{{BaseURL}} "
+							],
+							"path": [
+								"users",
+								"programBatch",
+								"{batchId} "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserDetailsByID",
+					"id": "50319866-45551492-2014-4a2e-a6f1-7095c3560366",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/details/{id} ",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"details",
+								"{id} "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCountofActiveandInactiveUsers",
+					"id": "50319866-bdfab20e-9dc1-4451-8ae3-82beb2347d4d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/byStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"byStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetallActiveUsers",
+					"id": "50319866-292246c2-30c4-45ad-9cdd-3be6820dc6cd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/activeUsers",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"activeUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllRoles",
+					"id": "50319866-d4d0e704-f110-4adb-8c7a-d1a9575af49d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/roles",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEmailofAllUserwithActiveuser",
+					"id": "50319866-945144cd-1615-41c3-afa3-c1f2770fb940",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/fetch-emails",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"fetch-emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserRoleProgramBatchStatus",
+					"id": "50319866-dfe1c401-fed0-45db-9722-19b8d37aa0ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/{userId}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleProgramBatchStatus",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUserRoleID",
+					"id": "50319866-493c933a-201e-42df-b985-6e6a24981585",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/roleId/{userID}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleId",
+								"{userID}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50319866-ade7e73e-4c58-4664-87f8-c21621ecf458"
+		},
+		{
+			"name": "SkillMasterController",
+			"item": [],
+			"id": "50319866-947a9bdf-15a8-47cd-8d54-527857ee4844"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "380ef114-a5dc-420b-8e44-6384395407ac",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					"try {\r",
+					"\r",
+					"    if (typeof pm.variables.get('requestData') !== 'object') {\r",
+					"        pm.variables.set('requestData', pm.iterationData.toObject());\r",
+					"    }\r",
+					"\r",
+					"    const requestData = pm.variables.get('requestData');\r",
+					"    \r",
+					"    if (typeof requestData !== 'object' || !requestData.requests || !Array.isArray(requestData.requests)) {\r",
+					"        console.log('Invalid data structure or no requests array found');\r",
+					"        return;\r",
+					"    }\r",
+					"    if (Object.keys(requestData).length === 0) {\r",
+					"        console.log('No external data provided/data set is empty');\r",
+					"        return;\r",
+					"    }\r",
+					"    // Find current request data \r",
+					"    const currentRequest = requestData.requests.find(({ request }) => request === pm.info.requestName);\r",
+					"\r",
+					"    if (!currentRequest) {\r",
+					"        console.log(`Request '${pm.info.requestName}' has no data defined in JSON file.`);\r",
+					"        return;\r",
+					"    }\r",
+					"\r",
+					"    \r",
+					"    if (!currentRequest.data || !Array.isArray(currentRequest.data) || currentRequest.data.length === 0) {\r",
+					"        console.log(`No test data available for request '${pm.info.requestName}'`);\r",
+					"        return;\r",
+					"    }\r",
+					"\r",
+					"    // Get the next test case data\r",
+					"    const scenarioData = currentRequest.data[0]; // Use first element instead of shift to avoid mutation issues\r",
+					"\r",
+					"    if (!scenarioData || typeof scenarioData !== 'object') {\r",
+					"        console.log('Invalid test case data');\r",
+					"        return;\r",
+					"    }\r",
+					"    \r",
+					"    Object.entries(scenarioData).forEach(([key, value]) => {\r",
+					"        if (value !== undefined && value !== null) {\r",
+					"            pm.variables.set(key, value.toString());\r",
+					"        }\r",
+					"    });\r",
+					"   \r",
+					"    logTestCaseInfo(scenarioData);    \r",
+					"    configureRequestURL(scenarioData);    \r",
+					"    // Configure Authorization header\r",
+					"    configureAuthorization(scenarioData);\r",
+					"\r",
+					"    // Remove the used test case from the data array\r",
+					"    currentRequest.data = currentRequest.data.slice(1);\r",
+					"    \r",
+					"    // Update the requestData with modified data\r",
+					"    pm.variables.set('requestData', requestData);\r",
+					"\r",
+					"    // Set up next iteration for the same request if more data exists\r",
+					"    if (currentRequest.data.length > 0) {\r",
+					"        pm.execution.setNextRequest(pm.info.requestName);\r",
+					"    } else {\r",
+					"        console.log(`All test cases completed for request: ${pm.info.requestName}`);\r",
+					"    }\r",
+					"\r",
+					"} catch (error) {\r",
+					"    console.error('Error in pre-request script:', error.message);\r",
+					"    console.error('Stack trace:', error.stack);\r",
+					"}\r",
+					"\r",
+					"// function to configure request URL\r",
+					"function configureRequestURL(scenarioData) {\r",
+					"    try {\r",
+					"        const scenario = scenarioData.scenario || \"\";\r",
+					"        const endpoint = scenarioData.endpoint || \"\";\r",
+					"        \r",
+					"        let baseUrl;\r",
+					"\r",
+					"        if (scenario.toLowerCase().includes(\"invalidbaseurl\")) {\r",
+					"            baseUrl = pm.variables.get(\"invalidBase_URL\") || \"https://invalid-base-url.example.com\";\r",
+					"            console.warn(\"Using invalid base URL for scenario:\", scenario);\r",
+					"        } else {\r",
+					"            baseUrl = pm.environment.get(\"baseURL\") || pm.collectionVariables.get(\"baseURL\");\r",
+					"        }\r",
+					"\r",
+					"        if (!baseUrl) {\r",
+					"            console.error(\"Base URL is not defined\");\r",
+					"            return;\r",
+					"        }\r",
+					"\r",
+					"        // Clean up URL formatting\r",
+					"        const cleanBaseUrl = baseUrl.replace(/\\/+$/, ''); // Remove trailing slashes\r",
+					"        const cleanEndpoint = endpoint.replace(/^\\/+/, ''); // Remove leading slashes\r",
+					"        \r",
+					"        const newUrl = `${cleanBaseUrl}/${cleanEndpoint}`;\r",
+					"        pm.request.url = newUrl;\r",
+					"        console.log(\"Configured URL for scenario '\" + scenario + \"':\", newUrl);\r",
+					"        \r",
+					"    } catch (error) {\r",
+					"        console.error(\"Error configuring URL:\", error.message);\r",
+					"    }\r",
+					"}\r",
+					"\r",
+					"// function to configure authorization\r",
+					"function configureAuthorization(scenarioData) {\r",
+					"    try {\r",
+					"        const includeAuth = (scenarioData.auth || \"\").toString().toLowerCase();\r",
+					"        \r",
+					"        \r",
+					"        pm.request.headers.remove(\"Authorization\");\r",
+					"        \r",
+					"        switch (includeAuth) {\r",
+					"            case 'true':\r",
+					"                const validToken = pm.environment.get('BearerToken') || pm.collectionVariables.get('BearerToken');\r",
+					"                if (validToken) {\r",
+					"                    pm.request.headers.add({ \r",
+					"                        key: 'Authorization', \r",
+					"                        value: `Bearer ${validToken}` \r",
+					"                    });\r",
+					"                    console.log(\"Added valid Authorization header:\"+ validToken);\r",
+					"                } else {\r",
+					"                    console.warn(\"Valid BearerToken not found in environment/collection variables\");\r",
+					"                }\r",
+					"                break;\r",
+					"                \r",
+					"            case 'invalid':\r",
+					"                const invalidToken = scenarioData.invalidToken || \"Invalid_Token_Value_12345\";\r",
+					"                pm.request.headers.add({ \r",
+					"                    key: 'Authorization', \r",
+					"                    value: `Bearer ${invalidToken}` \r",
+					"                });\r",
+					"                console.log(\"Added invalid Authorization header for testing\");\r",
+					"                break;\r",
+					"                \r",
+					"            case 'false':\r",
+					"                console.log(\"No Authorization header added as per test case\");\r",
+					"                break;\r",
+					"                \r",
+					"            default:\r",
+					"                console.log(\"No specific Authorization configuration needed\");\r",
+					"                break;\r",
+					"        }\r",
+					"        \r",
+					"    } catch (error) {\r",
+					"        console.error(\"Error configuring authorization:\", error.message);\r",
+					"    }\r",
+					"}\r",
+					"\r",
+					"// FUNCTION  MAIN FLOW \r",
+					"function logTestCaseInfo(scenarioData) {\r",
+					"    console.log(`--- Test Case: ${scenarioData.scenario || 'Unnamed Scenario'} ---`);\r",
+					"    console.log(`Request: ${pm.info.requestName}`);\r",
+					"    console.log(`Iteration: ${pm.info.iteration} of ${pm.info.iterationCount}`);\r",
+					"    console.log(`Endpoint: ${scenarioData.endpoint}`);\r",
+					"    console.log(`Expected Status: ${scenarioData.expectedStatusCode}`);\r",
+					"    console.log('---');\r",
+					"}\r",
+					"\r",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "66630ce4-6b40-4fbe-ae40-86aa816d63f2",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					"// Common validation methods for all requests in the collection\r",
+					"\r",
+					"//const code = pm.variables.get(\"expectedStatusCode\");\r",
+					"//const message = pm.variables.get(\"expectedStatusMessage\");\r",
+					"// ====================\r",
+					"//  COMMON TESTS\r",
+					"// ====================\r",
+					"\r",
+					"const testSuite = {\r",
+					"    // Core validations\r",
+					"    checkStatus: function(code, message) {\r",
+					"        pm.test(`Status should be ${code}`, () => {\r",
+					"            pm.response.to.have.status(Number(code));\r",
+					"        });\r",
+					"        \r",
+					"        if (message) {\r",
+					"            pm.test(`Status text: \"${message}\"`, () => {\r",
+					"                pm.expect(pm.response.status).to.equal(message);\r",
+					"            });\r",
+					"        }\r",
+					"    },\r",
+					"\r",
+					"    checkHeaders: function() {\r",
+					"        const contentType = pm.variables.get('contentType') || 'application/json';\r",
+					"        pm.test(` Content-Type: ${contentType}`, () => {\r",
+					"            pm.response.to.have.header('Content-Type', contentType);\r",
+					"        });\r",
+					"    },\r",
+					"\r",
+					"    checkPerformance: function() {\r",
+					"        const timeout = pm.variables.get('maxResponseTime') || 2000;\r",
+					"        pm.test(`⚡ Response time under ${timeout}ms`, () => {\r",
+					"            pm.expect(pm.response.responseTime).to.be.below(timeout);\r",
+					"        });\r",
+					"    },\r",
+					"\r",
+					"    checkBodyExists: function() {\r",
+					"        pm.test('📦 Response has body', () => {\r",
+					"            pm.response.to.be.withBody;\r",
+					"        });\r",
+					"    },\r",
+					"\r",
+					"    checkJsonFormat: function() {\r",
+					"        pm.test('🔷 Valid JSON format', () => {\r",
+					"            pm.response.to.be.json;\r",
+					"        });\r",
+					"    },\r",
+					"\r",
+					"    // Data structure validations\r",
+					"    checkArrayStructure: function() {\r",
+					"        pm.test('📋 Response is array', () => {\r",
+					"            const data = pm.response.json();\r",
+					"            pm.expect(data).to.be.an('array');\r",
+					"        });\r",
+					"    },\r",
+					"\r",
+					"    checkObjectStructure: function() {\r",
+					"        pm.test('📄 Response is object', () => {\r",
+					"            const data = pm.response.json();\r",
+					"            pm.expect(data).to.be.an('object').and.not.an('array');\r",
+					"        });\r",
+					"    },\r",
+					"\r",
+					"    checkDataIntegrity: function() {\r",
+					"        const requiredFields = pm.variables.get('requiredFields');\r",
+					"        if (requiredFields && Array.isArray(requiredFields)) {\r",
+					"            pm.test('🔍 Required fields present', () => {\r",
+					"                const data = pm.response.json();\r",
+					"                requiredFields.forEach(field => {\r",
+					"                    pm.expect(data).to.have.nested.property(field);\r",
+					"                });\r",
+					"            });\r",
+					"        }\r",
+					"    }\r",
+					"};\r",
+					"\r",
+					"// Test configuration\r",
+					"const config = {\r",
+					"    expectedCode: pm.variables.get('expectedStatusCode') || 200,\r",
+					"    expectedMessage: pm.variables.get('expectedStatusMessage'),\r",
+					"    skipTests: pm.variables.get('skipTests') === 'true',\r",
+					"    testScenario: pm.variables.get('testScenario'),\r",
+					"    isSuccess: [200, 201].includes(pm.response.code)\r",
+					"};\r",
+					"\r",
+					"// Test execution controller\r",
+					"function runTestSuite() {\r",
+					"    if (config.skipTests) {\r",
+					"        console.log('🚫 Tests skipped:', pm.info.requestName);\r",
+					"        return;\r",
+					"    }\r",
+					"\r",
+					"    console.log(`🧪 Running tests for: ${pm.info.requestName}`);\r",
+					"    \r",
+					"    // Always execute these\r",
+					"    testSuite.checkStatus(config.expectedCode, config.expectedMessage);\r",
+					"    testSuite.checkPerformance();\r",
+					"\r",
+					"    // Success-specific tests\r",
+					"    if (config.isSuccess) {\r",
+					"        testSuite.checkBodyExists();\r",
+					"        testSuite.checkJsonFormat();\r",
+					"        testSuite.checkHeaders();\r",
+					"        \r",
+					"        // Structure validation based on scenario\r",
+					"        switch(config.testScenario) {\r",
+					"            case 'array':\r",
+					"                testSuite.checkArrayStructure();\r",
+					"                break;\r",
+					"            case 'object':\r",
+					"                testSuite.checkObjectStructure();\r",
+					"                break;\r",
+					"        }\r",
+					"        \r",
+					"        // Data integrity check\r",
+					"        testSuite.checkDataIntegrity();\r",
+					"    }\r",
+					"\r",
+					"    console.log('✅ Common tests completed');\r",
+					"}\r",
+					"\r",
+					"// Execute the test suite\r",
+					"runTestSuite();\r",
+					""
+				]
+			}
+		}
+	]
+}
