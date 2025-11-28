@@ -1365,11 +1365,18 @@
 									"        mode: 'none'",
 									"    });",
 									"}",
+									"",
 									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
 									"    console.log(\"Updating request header content type to text\");",
 									"    pm.request.headers.upsert({",
 									"        key : \"Content-Type\",",
 									"        value: \"text/plain\"",
+									"    });",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty skill name\")) {",
+									"    pm.request.body.update({",
+									"        \"skillName\": \"\"",
 									"    });",
 									"}"
 								],
@@ -1388,7 +1395,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T22:26:58.778Z\",\n  \"lastModTime\": \"2025-11-28T22:26:58.778Z\"\n}",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{$randomString}}\",\n  \"creationTime\": \"2025-11-28T22:26:58.778Z\",\n  \"lastModTime\": \"2025-11-28T22:26:58.778Z\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
