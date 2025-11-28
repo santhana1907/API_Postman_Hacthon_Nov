@@ -1212,7 +1212,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "061c0f6a-9433-4fd4-bb87-f6251194bec0",
+				"id": "a4fc2dc5-32b5-4800-8c07-9d7a20075d64",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1347,7 +1347,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4a53d837-24e4-4669-b693-5e4f287f1e99",
+				"id": "1d1b5335-c4a9-458d-957b-1658b9205894",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
