@@ -24,6 +24,151 @@
 			"id": "50062209-c54a4833-6cab-4322-9b86-a77d86eb3c71"
 		},
 		{
+			"name": "ProgramController",
+			"item": [
+				{
+					"name": "Post data",
+					"id": "50062209-082c1e1f-743e-4255-ba2b-300bddef7b8a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ApiHackathon@6",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "team6@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\": \"team6@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/login",
+							"protocol": "https",
+							"host": [
+								"lms-hackathon-nov-2025-8dd40899c026",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"lms",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get data",
+					"id": "50062209-5efa853b-4e18-41c7-902b-237af103ec99",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ProgramId",
+					"id": "50062209-8a018d74-fd53-4150-95f8-f07f7a23e2ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDE5ODUsImV4cCI6MTc2NDAzMDc4NX0.BgtX52o0TukATTlxt-XVzZWn0ntaQe4jo_3NHKYePrJHy4f7o-mzQ3SShsFQsLfhG8J39aK_J2VcfATHqVmnxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/programs/:programId",
+							"protocol": "https",
+							"host": [
+								"lms-hackathon-nov-2025-8dd40899c026",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"lms",
+								"programs",
+								":programId"
+							],
+							"variable": [
+								{
+									"key": "programId",
+									"value": "{{programId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by Program Users",
+					"id": "50062209-56c91c42-520c-46b9-9d18-da805c633b02",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update by ProgramName",
+					"id": "50062209-b519455c-859d-4d8f-88ae-f867082a228c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update by Program ID",
+					"id": "50062209-6f621b77-c01d-4a37-90ca-4a0778ebdf15",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "50062209-51d7088b-103f-44bf-b897-bf6ebd3b53be"
+		},
+		{
 			"name": "UserController-2",
 			"item": [
 				{
@@ -461,151 +606,6 @@
 			"name": "ProgramBatchController",
 			"item": [],
 			"id": "50062209-f7bffb69-e9e1-4400-9b67-0e8ba36fbbe2"
-		},
-		{
-			"name": "ProgramController",
-			"item": [
-				{
-					"name": "Post data",
-					"id": "50062209-082c1e1f-743e-4255-ba2b-300bddef7b8a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "ApiHackathon@6",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "team6@gmail.com",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\": \"team6@gmail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/login",
-							"protocol": "https",
-							"host": [
-								"lms-hackathon-nov-2025-8dd40899c026",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"lms",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get data",
-					"id": "50062209-5efa853b-4e18-41c7-902b-237af103ec99",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Get by ProgramId",
-					"id": "50062209-8a018d74-fd53-4150-95f8-f07f7a23e2ff",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMDE5ODUsImV4cCI6MTc2NDAzMDc4NX0.BgtX52o0TukATTlxt-XVzZWn0ntaQe4jo_3NHKYePrJHy4f7o-mzQ3SShsFQsLfhG8J39aK_J2VcfATHqVmnxQ",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/programs/:programId",
-							"protocol": "https",
-							"host": [
-								"lms-hackathon-nov-2025-8dd40899c026",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"lms",
-								"programs",
-								":programId"
-							],
-							"variable": [
-								{
-									"key": "programId",
-									"value": "{{programId}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get by Program Users",
-					"id": "50062209-56c91c42-520c-46b9-9d18-da805c633b02",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Update by ProgramName",
-					"id": "50062209-b519455c-859d-4d8f-88ae-f867082a228c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Update by Program ID",
-					"id": "50062209-6f621b77-c01d-4a37-90ca-4a0778ebdf15",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			],
-			"id": "50062209-51d7088b-103f-44bf-b897-bf6ebd3b53be"
 		},
 		{
 			"name": "UserController-1",
