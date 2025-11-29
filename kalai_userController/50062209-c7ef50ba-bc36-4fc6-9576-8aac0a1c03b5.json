@@ -1569,6 +1569,9 @@
 								"exec": [
 									"if (pm.response.code === 200) {",
 									"    const jsonData = pm.response.json();",
+									"    pm.test(\"check response is array\", function() {",
+									"        pm.expect.jsonData.to.be.an(\"array\");",
+									"    });",
 									"    pm.test(\"check all members have skillId\", function () {",
 									"        const hasSkillId = jsonData.every(member => member.hasOwnProperty(\"skillId\"));",
 									"        pm.expect(hasSkillId).to.be.true;",
