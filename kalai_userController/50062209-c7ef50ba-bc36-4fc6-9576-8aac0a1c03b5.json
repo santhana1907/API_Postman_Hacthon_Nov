@@ -838,7 +838,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n\"batchDescription\": \"string\", \r\n\"batchId\": 0, \r\n\"batchName\": \"string\", \r\n\"batchNoOfClasses\": 0, \r\n\"batchStatus\": \"string\", \r\n\"programId\": 0, \r\n\"programName\": \"string\" \r\n}\r\n\r\n",
+							"raw": "{ \r\n\"batchDescription\": \"{{batchDescription}}\", \r\n\"batchId\": {{programId}}, \r\n\"batchName\": \"{{batchName}}\", \r\n\"batchNoOfClasses\": {{batchNoOfClasses}}, \r\n\"batchStatus\": \"{{batchStatus}}\", \r\n\"programId\":{{programId}} , \r\n\"programName\": \"{{programName}}\" \r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
