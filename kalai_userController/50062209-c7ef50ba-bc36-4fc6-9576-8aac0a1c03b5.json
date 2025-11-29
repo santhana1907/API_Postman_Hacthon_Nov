@@ -138,7 +138,7 @@
 									"    return out;\r",
 									"}\r",
 									"pm.variables.set(\"ProgramName\", randomSkillName(10));\r",
-									"pm.collectionVariables.set(\"ProgramName\", randomProgramName(10));"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
