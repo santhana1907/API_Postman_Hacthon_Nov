@@ -1439,7 +1439,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a4fc2dc5-32b5-4800-8c07-9d7a20075d64",
+				"id": "88e99eba-9fd1-449f-aaeb-bb4277513185",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1574,7 +1574,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1d1b5335-c4a9-458d-957b-1658b9205894",
+				"id": "e7db5b1d-fa8e-4081-a622-742e5eb2428c",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1608,10 +1608,6 @@
 		},
 		{
 			"key": "BearerToken",
-			"value": ""
-		},
-		{
-			"key": "skillName",
 			"value": ""
 		},
 		{
