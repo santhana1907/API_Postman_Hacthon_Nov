@@ -1631,6 +1631,18 @@
 							"script": {
 								"id": "a0e53788-2896-40a1-a66b-f0a5e2304248",
 								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "789394da-d5b6-42c3-bc34-a6c8248f418f",
+								"exec": [
 									"if (pm.response.code === 200) {",
 									"    var jsonData = pm.response.json();",
 									"    pm.test(\"Response has given skill name\", function () {",
