@@ -123,6 +123,27 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4a0ac9a8-a2c4-4afc-884b-f0003fcda61d",
+								"exec": [
+									"function randomProgramName(length) {\r",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+									"    let out = \"\";\r",
+									"    for (let i = 0; i < length; i++) {\r",
+									"        out += chars.charAt(Math.floor(Math.random() * chars.length));\r",
+									"    }\r",
+									"    return out;\r",
+									"}\r",
+									"pm.variables.set(\"ProgramName\", randomSkillName(10));\r",
+									"pm.collectionVariables.set(\"ProgramName\", randomProgramName(10));"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50062209-082c1e1f-743e-4255-ba2b-300bddef7b8a",
