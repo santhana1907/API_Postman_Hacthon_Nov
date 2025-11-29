@@ -1464,6 +1464,52 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "75af2513-5b60-47cd-9689-271b23265e84",
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var jsonData = pm.response.json();",
+									"    pm.test(\"Response has given skill name\", function () {",
+									"        pm.expect(jsonData).to.have.property('skillName');",
+									"        pm.expect(jsonData.skillName).to.equal(pm.variables.get(\"skillName\"));",
+									"    });",
+									"",
+									"    pm.test(\"Response has new skill Id\", function() {",
+									"        pm.expect(jsonData).to.have.property('skillId');",
+									"        pm.collectionVariables.set(\"skillId\", jsonData.skillId);",
+									"    });",
+									"",
+									"    pm.test(\"Response has creation time\", function () {",
+									"        pm.expect(jsonData).to.have.property('creationTime');",
+									"    });",
+									"",
+									"    pm.test(\"Response has last modified time\", function () {",
+									"        pm.expect(jsonData).to.have.property('lastModTime');",
+									"    });",
+									"",
+									"}",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {",
+									"    pm.test(\"Response has expected text message\", function() {",
+									"        console.log(\"Checking plain text message \" + pm.response.text());",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"}",
+									"else if (pm.response.code === 400) {",
+									"    pm.test(\"Response has expected json message\", function() {",
+									"        var jsonData = pm.response.json();",
+									"        console.log(\"Checking response json message: \" + jsonData.message);",
+									"        pm.expect(jsonData).to.have.property('message');",
+									"        pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50319862-2b551d2e-60f2-41a3-a8d2-662e1fd13300",
