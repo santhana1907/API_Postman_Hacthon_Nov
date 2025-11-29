@@ -1449,11 +1449,17 @@
 									"    pm.request.body.raw = JSON.stringify(body);",
 									"}",
 									"",
-									"else if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill id\")) {",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill id\")) {",
 									"    const body = JSON.parse(pm.request.body.raw);",
-									"    body.skillId = 12345;",
+									"    body.skillId = pm.collectionVariables.get(\"invalidSkillId\");",
 									"    pm.request.body.raw = JSON.stringify(body);",
 									"    console.log(\"Updating skill Id to invalid \" + pm.collectionVariables.get(\"invalidSkillId\"));",
+									"}",
+									"else {",
+									"    console.log(\"Updating skill Id with \" + pm.collectionVariables.get(\"skillId\")); ",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillId = pm.collectionVariables.get(\"skillId\");",
+									"    pm.request.body.raw = JSON.stringify(body);",
 									"}",
 									"",
 									"function randomSkillName(length) {",
@@ -1528,7 +1534,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"skillId\": {{skillId}},\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
