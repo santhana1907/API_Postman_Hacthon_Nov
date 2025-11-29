@@ -863,13 +863,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/batches/{id}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"batches",
-								"{id}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
