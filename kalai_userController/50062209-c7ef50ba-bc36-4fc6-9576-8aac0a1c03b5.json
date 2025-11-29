@@ -604,12 +604,15 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "GetBatchbyProgramId",
 					"id": "50319866-008a5905-9955-4173-9340-f2be09546569",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
