@@ -1345,7 +1345,7 @@
 							"script": {
 								"id": "70d48597-34cf-45a1-ab76-6042dac9fe17",
 								"exec": [
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
 									"    console.log(\"Updating request body to none\");",
 									"    pm.request.body.update({",
 									"        mode: 'none'",
@@ -1427,7 +1427,7 @@
 							"script": {
 								"id": "348c550c-2427-41e4-9eee-cfc51a1cb3a3",
 								"exec": [
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
 									"    console.log(\"Updating request body to none\");",
 									"    pm.request.body.update({",
 									"        mode: 'none'",
