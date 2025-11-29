@@ -1830,7 +1830,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQwMTM2NjQsImV4cCI6MTc2NDA0MjQ2NH0.sp7Bhsxm5q_5BicvEQAHQbsCEe-Zo9qtHJt94_YaSxai6pfyx5dUPKpCdCu74xDrit76UFR3SU0krTGUNEN81Q",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
 									"type": "string"
 								}
 							]
