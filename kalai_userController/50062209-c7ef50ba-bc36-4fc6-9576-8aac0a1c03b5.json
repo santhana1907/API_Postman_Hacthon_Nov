@@ -527,7 +527,7 @@
 					"response": []
 				},
 				{
-					"name": "G Request",
+					"name": "GetAllBatches",
 					"id": "50319866-f934154b-8509-4ec9-85ee-c2963b8ff24e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
