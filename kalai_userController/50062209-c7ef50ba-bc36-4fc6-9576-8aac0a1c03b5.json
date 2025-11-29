@@ -515,9 +515,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}",
+							"raw": "{{baseURL}}/batches",
 							"host": [
 								"{{baseURL}}"
+							],
+							"path": [
+								"batches"
 							]
 						}
 					},
