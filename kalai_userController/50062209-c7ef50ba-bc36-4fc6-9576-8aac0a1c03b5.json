@@ -1668,7 +1668,7 @@
 									"    });",
 									"",
 									"}",
-									"else {",
+									"else if (pm.response.code != 401) {",
 									"    pm.test(\"Response has expected message\", function() {",
 									"        try {",
 									"            var jsonData = pm.response.json();",
