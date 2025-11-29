@@ -1615,8 +1615,21 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/skills/{{skillName}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"skills",
+								"{{skillName}}"
+							]
+						}
 					},
 					"response": []
 				}
