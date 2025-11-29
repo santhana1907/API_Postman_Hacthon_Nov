@@ -1420,7 +1420,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Update Skill By Id",
 					"id": "50319862-2b551d2e-60f2-41a3-a8d2-662e1fd13300",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
