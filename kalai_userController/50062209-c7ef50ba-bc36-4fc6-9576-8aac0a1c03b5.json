@@ -490,74 +490,6 @@
 					]
 				},
 				{
-					"name": "GetallUsers with facets/filters",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "9c74a2b7-af0d-4c43-8a79-6e12f22dfe54",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Response contains 'OK' message\",function(){\r",
-									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Schema validation\",() => {\r",
-									"    const Schema = {\r",
-									"\r",
-									"\r",
-									"        \r",
-									"    };\r",
-									"    pm.response.to.have.jsonSchema(Schema);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50062209-133150bc-9917-4926-a169-e6879680324a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/v2/users",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"v2",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Get User Information by Id",
 					"event": [
 						{
@@ -739,6 +671,74 @@
 							"body": "{\n    \"user\": {\n        \"userId\": \"U20\",\n        \"userFirstName\": \"sasha\",\n        \"userLastName\": \"prabhu\",\n        \"userMiddleName\": \"string\",\n        \"userPhoneNumber\": \"+91 2345869989\",\n        \"userLocation\": \"string\",\n        \"userTimeZone\": \"EST\",\n        \"userLinkedinUrl\": \"www.linkedin.com/in/sashaprabhu\",\n        \"userEduUg\": \"string\",\n        \"userEduPg\": \"string\",\n        \"userComments\": \"string\",\n        \"userVisaStatus\": \"H4-EAD\",\n        \"userLoginEmail\": \"sashaprabhu32@gmail.com\"\n    },\n    \"roles\": [\n        {\n            \"roleId\": \"R01\",\n            \"userRoleStatus\": \"Active\"\n        }\n    ],\n    \"programBatches\": [\n        {\n            \"programId\": 3,\n            \"programName\": \"Testing\",\n            \"batches\": [\n                {\n                    \"batchId\": 38,\n                    \"batchName\": \"ABCBAtch\",\n                    \"userBatchStatus\": \"active\"\n                }\n            ]\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "GetallUsers with facets/filters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c74a2b7-af0d-4c43-8a79-6e12f22dfe54",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response contains 'OK' message\",function(){\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Schema validation\",() => {\r",
+									"    const Schema = {\r",
+									"\r",
+									"\r",
+									"        \r",
+									"    };\r",
+									"    pm.response.to.have.jsonSchema(Schema);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-133150bc-9917-4926-a169-e6879680324a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/v2/users",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"v2",
+								"users"
+							]
+						}
+					},
+					"response": []
 				},
 				{
 					"name": "Get User Batch Id by User Id",
