@@ -1379,6 +1379,13 @@
 									"    const body = JSON.parse(pm.request.body.raw);",
 									"    body.skillName = \"\";",
 									"    pm.request.body.raw = JSON.stringify(body);",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"existing skill name\")) {",
+									"    console.log(\"Updating skill name to empty\");",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillName = \"Java\";",
+									"    pm.request.body.raw = JSON.stringify(body);",
 									"}"
 								],
 								"type": "text/javascript",
