@@ -1011,7 +1011,7 @@
 									"});\r",
 									"pm.test[\"Status Code is 401\"], function(){\r",
 									"\tpm.response.to.have.status(401)\r",
-									"});\r",
+									"};\r",
 									"pm.test(\"Schema validation\",() => {\r",
 									"    const Schema = {\r",
 									"\r",
