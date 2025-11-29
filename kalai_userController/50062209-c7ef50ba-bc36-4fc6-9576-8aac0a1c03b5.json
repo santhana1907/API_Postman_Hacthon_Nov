@@ -1316,7 +1316,7 @@
 									"    });",
 									"",
 									"    pm.test(\"Response has last modified time\", function () {",
-									"        pm.expect(jsonData).to.have.property('lastModifiedTime');",
+									"        pm.expect(jsonData).to.have.property('lastModTime');",
 									"    });",
 									"",
 									"}",
