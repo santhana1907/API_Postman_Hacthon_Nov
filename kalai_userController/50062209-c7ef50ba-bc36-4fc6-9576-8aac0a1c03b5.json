@@ -673,6 +673,137 @@
 					]
 				},
 				{
+					"name": "Get all User with Roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "94ae9c89-038c-4bef-a6c7-e4d2e7e26047",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response contains 'OK' message\",function(){\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"schema validation\",() => {\r",
+									"    const schema = {\r",
+									"        \"type\": \"array\",\r",
+									"  \"properties\": {\r",
+									"    \"roleId\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"roleName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userId\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userFirstName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLastName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userMiddleName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userPhoneNumber\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLocation\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userTimeZone\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLinkedinUrl\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduUg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduPg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userComments\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userVisaStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLoginEmail\": {\r",
+									"      \"type\": \"null\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"roleId\",\r",
+									"    \"roleName\",\r",
+									"    \"userId\",\r",
+									"    \"userFirstName\",\r",
+									"    \"userLastName\",\r",
+									"    \"userMiddleName\",\r",
+									"    \"userPhoneNumber\",\r",
+									"    \"userLocation\",\r",
+									"    \"userTimeZone\",\r",
+									"    \"userLinkedinUrl\",\r",
+									"    \"userEduUg\",\r",
+									"    \"userEduPg\",\r",
+									"    \"userComments\",\r",
+									"    \"userVisaStatus\",\r",
+									"    \"userLoginEmail\"\r",
+									"  ]\r",
+									"};\r",
+									"pm.response.to.have.jsonSchema(schema);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318661-eeb58052-418e-494a-9ba9-f21c2538057b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/roles",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetallUsers with facets/filters",
 					"event": [
 						{
@@ -806,137 +937,6 @@
 									"key": "userId",
 									"value": "{{userId}}"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all User with Roles",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "94ae9c89-038c-4bef-a6c7-e4d2e7e26047",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Response contains 'OK' message\",function(){\r",
-									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"schema validation\",() => {\r",
-									"    const schema = {\r",
-									"        \"type\": \"array\",\r",
-									"  \"properties\": {\r",
-									"    \"roleId\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"roleName\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userId\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userFirstName\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userLastName\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userMiddleName\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userPhoneNumber\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userLocation\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userTimeZone\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userLinkedinUrl\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userEduUg\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userEduPg\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userComments\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userVisaStatus\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"userLoginEmail\": {\r",
-									"      \"type\": \"null\"\r",
-									"    }\r",
-									"  },\r",
-									"  \"required\": [\r",
-									"    \"roleId\",\r",
-									"    \"roleName\",\r",
-									"    \"userId\",\r",
-									"    \"userFirstName\",\r",
-									"    \"userLastName\",\r",
-									"    \"userMiddleName\",\r",
-									"    \"userPhoneNumber\",\r",
-									"    \"userLocation\",\r",
-									"    \"userTimeZone\",\r",
-									"    \"userLinkedinUrl\",\r",
-									"    \"userEduUg\",\r",
-									"    \"userEduPg\",\r",
-									"    \"userComments\",\r",
-									"    \"userVisaStatus\",\r",
-									"    \"userLoginEmail\"\r",
-									"  ]\r",
-									"};\r",
-									"pm.response.to.have.jsonSchema(schema);\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50318661-eeb58052-418e-494a-9ba9-f21c2538057b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/users/roles",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"roles"
 							]
 						}
 					},
