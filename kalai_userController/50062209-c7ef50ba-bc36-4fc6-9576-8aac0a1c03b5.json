@@ -630,7 +630,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "UpdatebyBatchId",
 					"id": "50319866-7ab71104-d842-4a3b-a741-756527e77315",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
