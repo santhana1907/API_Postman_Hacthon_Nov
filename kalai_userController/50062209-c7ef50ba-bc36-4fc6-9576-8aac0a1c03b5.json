@@ -1421,13 +1421,82 @@
 				},
 				{
 					"name": "Update Skill By Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "348c550c-2427-41e4-9eee-cfc51a1cb3a3",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {",
+									"    console.log(\"Updating request body to none\");",
+									"    pm.request.body.update({",
+									"        mode: 'none'",
+									"    });",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    console.log(\"Updating request header content type to text\");",
+									"    pm.request.headers.upsert({",
+									"        key : \"Content-Type\",",
+									"        value: \"text/plain\"",
+									"    });",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty skill name\")) {",
+									"    console.log(\"Updating skill name to empty\");",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillName = \"\";",
+									"    pm.request.body.raw = JSON.stringify(body);",
+									"}",
+									"",
+									"function randomSkillName(length) {",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+									"    let out = \"\";",
+									"    for (let i = 0; i < length; i++) {",
+									"        out += chars.charAt(Math.floor(Math.random() * chars.length));",
+									"    }",
+									"    return out;",
+									"}",
+									"",
+									"pm.variables.set(\"skillName\", randomSkillName(10));"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-2b551d2e-60f2-41a3-a8d2-662e1fd13300",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/updateSkills/{{skillId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"updateSkills",
+								"{{skillId}}"
+							]
+						}
 					},
 					"response": []
 				}
