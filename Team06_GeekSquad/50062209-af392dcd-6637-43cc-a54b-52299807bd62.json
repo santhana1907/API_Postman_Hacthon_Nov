@@ -519,7 +519,14 @@
 									"  ]\r",
 									"};\r",
 									"pm.response.to.have.jsonSchema(schema);\r",
-									"});"
+									"});\r",
+									"//Get the response result\r",
+									"var data = pm.response.json();\r",
+									"\r",
+									"//Validate the response body\r",
+									"pm.test('Schema is valid', function() {\r",
+									"pm.expect(tv4.validate(data, schema)).to.be.true;\r",
+									" });"
 								],
 								"type": "text/javascript",
 								"packages": {},
