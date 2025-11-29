@@ -1451,7 +1451,7 @@
 									"    pm.request.body.raw = JSON.stringify(body);",
 									"}",
 									"",
-									"else if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill Id\")) {",
+									"else if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill id\")) {",
 									"    console.log(\"Updating skill Id to invalid\");",
 									"    pm.variables.set(\"updateSkillId\", 123456);",
 									"}",
