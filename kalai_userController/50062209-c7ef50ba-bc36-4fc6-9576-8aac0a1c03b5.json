@@ -774,14 +774,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/batches/batchId/{batchId}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"batches",
-								"batchId",
-								"{batchId}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
