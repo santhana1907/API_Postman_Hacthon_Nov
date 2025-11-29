@@ -1375,9 +1375,10 @@
 									"}",
 									"",
 									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty skill name\")) {",
-									"    pm.request.body.update({",
-									"        \"skillName\": \"\"",
-									"    });",
+									"    console.log(\"Updating skill name to empty\");",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillName = \"\";",
+									"    pm.request.body.raw = JSON.stringify(body);",
 									"}"
 								],
 								"type": "text/javascript",
