@@ -930,7 +930,7 @@
 					"response": []
 				},
 				{
-					"name": "GetallUsers with facets/filters",
+					"name": "Gets Users by roleId V2",
 					"event": [
 						{
 							"listen": "test",
