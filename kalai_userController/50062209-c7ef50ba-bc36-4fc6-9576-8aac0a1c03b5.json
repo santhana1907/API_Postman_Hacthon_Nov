@@ -1715,6 +1715,36 @@
 				},
 				{
 					"name": "Delete Skill by Skill Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4f6b44a4-61b3-48dc-8c92-e934721042a6",
+								"exec": [
+									"if (pm.response.code == 200) {",
+									"    console.log(\"Skill successfully deleted\");",
+									"}",
+									"else if (pm.response.code != 401) {",
+									"    pm.test(\"Response has expected message\", function() {",
+									"        try {",
+									"            var jsonData = pm.response.json();",
+									"            console.log(\"Checking response json message: \" + jsonData.message);",
+									"            pm.expect(jsonData).to.have.property('message');",
+									"            pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"        }",
+									"        catch (e) {",
+									"            console.log(\"Response is not JSON\");",
+									"            pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"        }",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-b41eeb57-f496-40bb-b4b0-74d42042b0ea",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
