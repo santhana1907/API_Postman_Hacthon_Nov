@@ -1010,18 +1010,6 @@
 							"script": {
 								"id": "ab08078c-39c2-4e8f-a666-7c54d3a8cc19",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"pm.test(\"Status message is 'OK'\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Response time is less than 300ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
-									"});\r",
 									"pm.test(\"Schema validation\", () => {\r",
 									"const schema = {\r",
 									"  \"type\": \"array\",\r",
@@ -1050,6 +1038,20 @@
 									"    \"userLoginEmail\"\r",
 									"  ]\r",
 									"};\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"pm.test(\"Schema validation\", () => {\r",
 									"pm.response.to.have.jsonSchema(schema);\r",
 									"});\r",
 									"//Get the response result\r",
@@ -1077,7 +1079,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzNjMxODUsImV4cCI6MTc2NDM5MTk4NX0._OjBwIyMVG4Y09xi34ymzpfym4sruOQzTP_d9IwLllqt81CS-FI2ANKhnwEoBFEV7SvI80silPToX7KrDwAyEA",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
