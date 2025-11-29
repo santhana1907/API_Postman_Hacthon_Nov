@@ -816,14 +816,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/batches/program/{{programId}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"batches",
-								"program",
-								"{{programId}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
