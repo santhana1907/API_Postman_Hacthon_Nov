@@ -602,7 +602,18 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/batches/program/{{programId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches",
+								"program",
+								"{{programId}"
+							]
+						}
 					},
 					"response": []
 				}
