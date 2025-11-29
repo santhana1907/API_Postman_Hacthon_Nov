@@ -670,6 +670,119 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"user\": {\n        \"userId\": \"U20\",\n        \"userFirstName\": \"sasha\",\n        \"userLastName\": \"prabhu\",\n        \"userMiddleName\": \"string\",\n        \"userPhoneNumber\": \"+91 2345869989\",\n        \"userLocation\": \"string\",\n        \"userTimeZone\": \"EST\",\n        \"userLinkedinUrl\": \"www.linkedin.com/in/sashaprabhu\",\n        \"userEduUg\": \"string\",\n        \"userEduPg\": \"string\",\n        \"userComments\": \"string\",\n        \"userVisaStatus\": \"H4-EAD\",\n        \"userLoginEmail\": \"sashaprabhu32@gmail.com\"\n    },\n    \"roles\": [\n        {\n            \"roleId\": \"R01\",\n            \"userRoleStatus\": \"Active\"\n        }\n    ],\n    \"programBatches\": [\n        {\n            \"programId\": 3,\n            \"programName\": \"Testing\",\n            \"batches\": [\n                {\n                    \"batchId\": 38,\n                    \"batchName\": \"ABCBAtch\",\n                    \"userBatchStatus\": \"active\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						{
+							"id": "50318661-c61314fa-3b14-4c72-ba6b-1330ff5b4697",
+							"name": "Get User Information by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/users/:id",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 19:05:15 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=HJ2yk0812tOe%2FqbCRdXzPOfLvFSIaAeX3ByxecgIUsM%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764443115\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=HJ2yk0812tOe%2FqbCRdXzPOfLvFSIaAeX3ByxecgIUsM%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764443115\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Length",
+									"value": "384"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"user\": {\n        \"userId\": \"U82\",\n        \"userFirstName\": \"Yogi\",\n        \"userLastName\": \"Sh\",\n        \"userMiddleName\": \"S\",\n        \"userPhoneNumber\": \"+1 4563325624\",\n        \"userLocation\": \"USA\",\n        \"userTimeZone\": \"CST\",\n        \"userLinkedinUrl\": \"www.linkedin.com/123\",\n        \"userEduUg\": \"string\",\n        \"userEduPg\": \"string\",\n        \"userComments\": \"string\",\n        \"userVisaStatus\": \"NA\",\n        \"userLoginEmail\": \"Jeffrey@gmail.com\"\n    },\n    \"roles\": [\n        {\n            \"roleId\": \"R03\",\n            \"userRoleStatus\": \"Active\"\n        }\n    ]\n}"
 						}
 					]
 				},
