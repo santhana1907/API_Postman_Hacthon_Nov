@@ -1541,13 +1541,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/updateSkills/{{skillId}}",
+							"raw": "{{baseURL}}/updateSkills/{{updateSkillId}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"updateSkills",
-								"{{skillId}}"
+								"{{updateSkillId}}"
 							]
 						}
 					},
