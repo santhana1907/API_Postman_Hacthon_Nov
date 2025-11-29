@@ -2318,7 +2318,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"check\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
