@@ -134,25 +134,13 @@
 					},
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "ApiHackathon@6",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "team6@gmail.com",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\": \"team6@gmail.com\"\r\n}",
+							"raw": "{\r\n\"programDescription\": \"{{programDescription}}\",\r\n\"programName\": \"{{programName}}\",\r\n\"programStatus\": \"{{programStatus}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
