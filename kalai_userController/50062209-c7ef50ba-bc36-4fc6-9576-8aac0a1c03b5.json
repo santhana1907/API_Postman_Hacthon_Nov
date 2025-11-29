@@ -277,6 +277,37 @@
 					"response": []
 				},
 				{
+					"name": "GetAllRoles",
+					"id": "50062209-274d204a-79f3-4159-a71b-ba8b858ebf3d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/roles",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetallActiveUsers",
 					"id": "50062209-5f919f74-337d-4765-91fb-17c2cc3202f9",
 					"protocolProfileBehavior": {
@@ -303,37 +334,6 @@
 							"path": [
 								"users",
 								"activeUsers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GetAllRoles",
-					"id": "50062209-274d204a-79f3-4159-a71b-ba8b858ebf3d",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BaseURL}}/roles",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"roles"
 							]
 						}
 					},
