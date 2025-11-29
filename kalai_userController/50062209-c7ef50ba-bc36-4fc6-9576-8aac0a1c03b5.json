@@ -1552,7 +1552,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "88e99eba-9fd1-449f-aaeb-bb4277513185",
+				"id": "77fc47a5-c93c-4637-b661-7999d269bfe9",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1687,7 +1687,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e7db5b1d-fa8e-4081-a622-742e5eb2428c",
+				"id": "5b7c1cb3-2469-4b29-8813-0f6db72f6354",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1713,10 +1713,6 @@
 		},
 		{
 			"key": "userId",
-			"value": ""
-		},
-		{
-			"key": "token",
 			"value": ""
 		},
 		{
