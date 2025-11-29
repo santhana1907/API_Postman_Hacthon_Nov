@@ -419,6 +419,17 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response contains 'OK' message\",function(){\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Schema validation\",() => {\r",
+									"    const Schema = {\r",
+									"\r",
+									"\r",
+									"        \r",
+									"    };\r",
+									"    pm.response.to.have.jsonSchema(Schema);\r",
 									"});"
 								],
 								"type": "text/javascript",
