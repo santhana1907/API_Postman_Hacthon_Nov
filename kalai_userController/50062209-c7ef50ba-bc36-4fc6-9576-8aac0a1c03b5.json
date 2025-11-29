@@ -1383,7 +1383,7 @@
 									"    return out;",
 									"}",
 									"",
-									"pm.collectionVariables.set(\"skillName\", randomSkillName(10));"
+									"pm.variables.set(\"skillName\", randomSkillName(10));"
 								],
 								"type": "text/javascript",
 								"packages": {},
