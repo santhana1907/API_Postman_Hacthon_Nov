@@ -812,7 +812,7 @@
 					"response": []
 				},
 				{
-					"name": "Get User Roles",
+					"name": "Get all User with Roles",
 					"event": [
 						{
 							"listen": "test",
