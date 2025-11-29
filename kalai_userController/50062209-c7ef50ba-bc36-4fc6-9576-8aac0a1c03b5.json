@@ -834,7 +834,7 @@
 						"auth": {
 							"type": "noauth"
 						},
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
 						"url": {
 							"raw": "{{baseURL}}{{endpoint}}",
