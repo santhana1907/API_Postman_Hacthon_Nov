@@ -1645,7 +1645,7 @@
 								"exec": [
 									"if (pm.response.code === 200) {",
 									"    var jsonData = pm.response.json();",
-									"    pm.expect(\"Response is not an array\", function () {",
+									"    pm.test(\"Response is not an array\", function () {",
 									"        pm.expect(Array.isArray(jsonData)).to.be.false;",
 									"    });",
 									"    ",
@@ -1654,7 +1654,7 @@
 									"        pm.expect(jsonData.skillName).to.equal(pm.collectionVariables.get(\"skillName\"));",
 									"    });",
 									"",
-									"    pm.test(\"Response has new skill Id\", function() {",
+									"    pm.test(\"Response has skill Id\", function() {",
 									"        pm.expect(jsonData).to.have.property('skillId');",
 									"        pm.expect(jsonData.skillId).to.equal(pm.collectionVariables.get(\"skillId\"));",
 									"    });",
