@@ -145,12 +145,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/saveprogram",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"saveprogram"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
