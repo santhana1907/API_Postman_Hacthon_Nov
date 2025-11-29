@@ -505,6 +505,7 @@
 									"});\r",
 									"pm.test(\"Schema validation\",() => {\r",
 									"    const Schema = {\r",
+									"        \r",
 									"\r",
 									"\r",
 									"        \r",
