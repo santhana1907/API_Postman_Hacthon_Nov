@@ -7,20 +7,7 @@
 	"item": [
 		{
 			"name": "UserLoginController",
-			"item": [
-				{
-					"name": "New Request",
-					"id": "50062209-d34cc30a-dab8-46a6-9d56-00dc2d10ae95",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			],
+			"item": [],
 			"id": "50062209-c54a4833-6cab-4322-9b86-a77d86eb3c71"
 		},
 		{
