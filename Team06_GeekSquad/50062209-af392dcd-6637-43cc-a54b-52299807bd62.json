@@ -907,7 +907,7 @@
 							"script": {
 								"id": "ab08078c-39c2-4e8f-a666-7c54d3a8cc19",
 								"exec": [
-									"pm.test(\"Schema validation\", () => {\r",
+									"\r",
 									"const schema = {\r",
 									"  \"type\": \"array\",\r",
 									"  \"properties\": {\r",
