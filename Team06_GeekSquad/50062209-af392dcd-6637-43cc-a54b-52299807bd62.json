@@ -409,7 +409,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{token}}",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzNjMxODUsImV4cCI6MTc2NDM5MTk4NX0._OjBwIyMVG4Y09xi34ymzpfym4sruOQzTP_d9IwLllqt81CS-FI2ANKhnwEoBFEV7SvI80silPToX7KrDwAyEA",
 									"type": "string"
 								}
 							]
