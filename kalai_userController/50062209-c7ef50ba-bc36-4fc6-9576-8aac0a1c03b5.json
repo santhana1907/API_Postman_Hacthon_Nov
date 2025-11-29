@@ -497,7 +497,7 @@
 			"name": "ProgramBatchModule",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "CreateNewBatch",
 					"id": "50319866-7b9d15af-fa51-4834-8f8e-da8a552f72d7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
