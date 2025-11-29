@@ -656,7 +656,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "DeleteBatchbyBatchId",
 					"id": "50319866-ce0f4261-64ba-47e7-81ec-e2682bc64480",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
