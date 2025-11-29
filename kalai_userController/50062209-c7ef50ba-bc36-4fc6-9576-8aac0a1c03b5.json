@@ -1561,6 +1561,26 @@
 				},
 				{
 					"name": "Get All Skill Master",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d62362c7-c007-484c-9c21-0f8853e07b4a",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const jsonData = pm.response.json();",
+									"    pm.test(\"check all members have skillId\", function () {",
+									"        const hasSkillId = jsonData.forEach(member => member.hasOwnProperty(\"skillId\"));",
+									"        pm.expect(hasSkillId).to.be.true;",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-0fbb61e1-8308-4c3c-accb-d3a8b9d4a0cc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
