@@ -1624,13 +1624,34 @@
 				},
 				{
 					"name": "Get Skill By Skill Name",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a0e53788-2896-40a1-a66b-f0a5e2304248",
+								"exec": [
+									"console.log(\"skill name \" + pm.collectionVariables.get(\"skillName\"));"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-bed3e2a4-8716-4b82-9c9e-fa1780a655d1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearerToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
