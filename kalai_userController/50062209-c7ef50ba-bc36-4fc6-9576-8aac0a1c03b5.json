@@ -1427,8 +1427,6 @@
 							"script": {
 								"id": "348c550c-2427-41e4-9eee-cfc51a1cb3a3",
 								"exec": [
-									"pm.variables.set(\"updateSkillId\", pm.collectionVariables.get(\"skillId\"));",
-									"",
 									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
 									"    console.log(\"Updating request body to none\");",
 									"    pm.request.body.update({",
@@ -1451,9 +1449,12 @@
 									"    pm.request.body.raw = JSON.stringify(body);",
 									"}",
 									"",
-									"else if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill id\")) {",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill id\")) {",
 									"    console.log(\"Updating skill Id to invalid\");",
 									"    pm.variables.set(\"updateSkillId\", 123456);",
+									"}",
+									"else {",
+									"    pm.variables.set(\"updateSkillId\", pm.variables.get(\"skillId\"));",
 									"}",
 									"",
 									"function randomSkillName(length) {",
