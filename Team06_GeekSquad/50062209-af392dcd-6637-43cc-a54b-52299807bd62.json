@@ -1421,7 +1421,7 @@
 									"\r",
 									"const schema={\r",
 									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
-									"  \"type\": \"object\",\r",
+									"  \"type\": \"array\",\r",
 									"  \"properties\": {\r",
 									"    \"userComments\": {\r",
 									"      \"type\": \"string\"\r",
