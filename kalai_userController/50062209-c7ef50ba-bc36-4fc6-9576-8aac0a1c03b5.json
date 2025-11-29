@@ -572,14 +572,25 @@
 					"response": []
 				},
 				{
-					"name": "GetBatchbyBatch",
+					"name": "GetBatchbyBatchName",
 					"id": "50319866-dae6430a-df09-4efc-af40-a7f96997212b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/batches/batchName/{batchName}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches",
+								"batchName",
+								"{batchName}"
+							]
+						}
 					},
 					"response": []
 				}
