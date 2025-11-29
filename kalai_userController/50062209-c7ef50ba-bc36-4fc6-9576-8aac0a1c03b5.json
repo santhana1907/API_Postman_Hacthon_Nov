@@ -1476,7 +1476,8 @@
 									"    return out;",
 									"}",
 									"",
-									"pm.variables.set(\"skillName\", randomSkillName(10));"
+									"pm.variables.set(\"skillName\", randomSkillName(10));",
+									"pm.collectionVariables.set(\"skillName\", pm.variables.get(\"skillName\"));"
 								],
 								"type": "text/javascript",
 								"packages": {},
