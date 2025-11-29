@@ -1467,7 +1467,8 @@
 									"    return out;",
 									"}",
 									"",
-									"pm.variables.set(\"skillName\", randomSkillName(10));"
+									"pm.variables.set(\"skillName\", randomSkillName(10));",
+									"console.log(\"local variable skillId: \"+ pm.variables.get(\"updateSkillId\"));"
 								],
 								"type": "text/javascript",
 								"packages": {},
