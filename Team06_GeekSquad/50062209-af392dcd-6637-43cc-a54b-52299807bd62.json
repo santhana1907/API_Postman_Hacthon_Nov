@@ -2043,6 +2043,31 @@
 				},
 				{
 					"name": "UpdateUserRoleID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "771202c8-ba93-4a1b-8cd3-ee1fb43ae5d8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50062209-c80021fc-d0d6-4ad0-9f3c-d5e3c428d4ad",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
