@@ -1714,7 +1714,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Skill By Id",
+					"name": "Delete Skill By Skill Id",
 					"id": "50319862-b41eeb57-f496-40bb-b4b0-74d42042b0ea",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
