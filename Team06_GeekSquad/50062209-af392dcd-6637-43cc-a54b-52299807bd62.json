@@ -2276,6 +2276,29 @@
 			"item": [
 				{
 					"name": "New Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "78271f7b-3745-48db-b831-d97d4eaeec9d",
+								"exec": [
+									"function randomSkillName(length) {",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+									"    let out = \"\";",
+									"    for (let i = 0; i < length; i++) {",
+									"        out += chars.charAt(Math.floor(Math.random() * chars.length));",
+									"    }",
+									"    return out;",
+									"}",
+									"",
+									"pm.collectionVariables.set(\"skillName\", randomSkillName(12));"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-33364800-a3bd-4ad4-b6b5-36d1ab8e4583",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2295,7 +2318,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{$randomString}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2367,6 +2390,10 @@
 		},
 		{
 			"key": "userId",
+			"value": ""
+		},
+		{
+			"key": "skillName",
 			"value": ""
 		}
 	]
