@@ -10,6 +10,24 @@
 			"item": [
 				{
 					"name": "UserSignIn",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bb2c4daf-9155-4685-83b2-971b57fa189e",
+								"exec": [
+									"if (pm.response.code === 200)\r",
+									"{\r",
+									"    let response = pm.response.json(); \r",
+									"    pm.environment.set(\"BearerToken\", response.token);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319866-44bbe069-698a-4442-b1b3-6ac05b1152e0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
