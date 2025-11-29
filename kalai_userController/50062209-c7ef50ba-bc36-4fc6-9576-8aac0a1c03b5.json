@@ -1601,6 +1601,10 @@
 		{
 			"key": "skillName",
 			"value": ""
+		},
+		{
+			"key": "skillId",
+			"value": ""
 		}
 	]
 }
