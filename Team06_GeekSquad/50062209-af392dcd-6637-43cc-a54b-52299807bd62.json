@@ -1237,7 +1237,7 @@
 									"});\r",
 									"pm.test(\"Schema validation\", () => {\r",
 									"const schema = {\r",
-									"  \"type\": \"object\",\r",
+									"  \"type\": \"array\",\r",
 									"  \"properties\": {\r",
 									"    \"status\": {\r",
 									"      \"type\": \"string\"\r",
@@ -1278,7 +1278,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "{{token}}",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
 									"type": "string"
 								}
 							]
