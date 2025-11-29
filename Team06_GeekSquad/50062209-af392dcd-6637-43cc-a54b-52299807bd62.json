@@ -1837,7 +1837,16 @@
 									"});\r",
 									"pm.test(\"Response time is less than 100ms\", function () {\r",
 									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
-									"});"
+									"});\r",
+									"const schema= {\r",
+									"  \"type\": \"array\",\r",
+									"  \"items\": [\r",
+									"    {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  ]\r",
+									"}\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
