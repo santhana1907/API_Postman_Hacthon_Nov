@@ -539,7 +539,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "GetBatchbyBatch",
 					"id": "50319866-4729990c-e7b3-44ec-ad1d-f6340a47ca8d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
