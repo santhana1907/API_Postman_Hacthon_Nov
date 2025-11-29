@@ -1631,7 +1631,7 @@
 						"auth": {
 							"type": "noauth"
 						},
-						"method": "POST",
+						"method": "GET",
 						"header": [],
 						"url": {
 							"raw": "{{baseURL}}/skills/{{skillName}}",
