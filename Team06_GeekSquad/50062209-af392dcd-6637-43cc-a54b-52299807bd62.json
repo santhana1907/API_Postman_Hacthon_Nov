@@ -2053,7 +2053,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzNjMxODUsImV4cCI6MTc2NDM5MTk4NX0._OjBwIyMVG4Y09xi34ymzpfym4sruOQzTP_d9IwLllqt81CS-FI2ANKhnwEoBFEV7SvI80silPToX7KrDwAyEA",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
 									"type": "string"
 								}
 							]
@@ -2062,7 +2062,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n  \"userRoleList\": [ \r\n    { \r\n      \"roleId\": \"R02\", \r\n      \"userRoleStatus\": \"Activ\" \r\n    } \r\n  ] \r\n} \r\n",
+							"raw": "{ \r\n  \"userRoleList\": [ \r\n    { \r\n      \"roleId\": \"R02\", \r\n      \"userRoleStatus\": \"Active\" \r\n    } \r\n  ] \r\n} \r\n",
 							"options": {
 								"raw": {
 									"language": "json"
