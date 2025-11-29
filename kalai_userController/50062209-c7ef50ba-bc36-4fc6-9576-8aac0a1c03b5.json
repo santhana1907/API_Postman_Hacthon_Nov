@@ -534,7 +534,17 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}//batches",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"",
+								"batches"
+							]
+						}
 					},
 					"response": []
 				},
