@@ -1660,7 +1660,7 @@
 									"            pm.expect(jsonData).to.have.property('message');",
 									"            pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
 									"        }",
-									"        catch {",
+									"        catch (e) {",
 									"            console.log(\"Response is not JSON\");",
 									"            pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
 									"        }",
