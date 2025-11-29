@@ -1489,7 +1489,7 @@
 							"script": {
 								"id": "8fbf2b8f-cd52-4ccf-a322-af2eb822c1c5",
 								"exec": [
-									"if (pm.response.code === 201) {",
+									"if (pm.response.code === 200) {",
 									"    var jsonData = pm.response.json();",
 									"    pm.test(\"Response has given skill name\", function () {",
 									"        pm.expect(jsonData).to.have.property('skillName');",
