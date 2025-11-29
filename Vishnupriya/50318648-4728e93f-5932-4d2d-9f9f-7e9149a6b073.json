@@ -90,6 +90,71 @@
 					"response": []
 				},
 				{
+					"name": "AddNewprogram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0183678c-3c27-4976-9c4b-24c10902586c",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"});\r",
+									"pm.test(\"Status message is Created\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-e5764edd-4175-4d15-b5ca-bc767b0ca2ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzMTM4MDUsImV4cCI6MTc2NDM0MjYwNX0.VwAzIQSoqxvlMmhaRh1WtApYgeKiqHPKngDi6nF7aJmhzCfqCe0Gn4_0x9h2J-hqLOm6h8RUJvv5lfDzq6k_rQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"BDDCucumber\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/saveprogram",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"saveprogram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetAllPrograms",
 					"event": [
 						{
@@ -530,71 +595,6 @@
 							"path": [
 								"deletebyprogname",
 								"Testing"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "AddNewprogram",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "0183678c-3c27-4976-9c4b-24c10902586c",
-								"exec": [
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"pm.test(\"Response time is less than 1000ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
-									"});\r",
-									"pm.test(\"Status message is Created\", function () {\r",
-									"    pm.response.to.have.status(\"Created\");\r",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50318648-e5764edd-4175-4d15-b5ca-bc767b0ca2ac",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzMTM4MDUsImV4cCI6MTc2NDM0MjYwNX0.VwAzIQSoqxvlMmhaRh1WtApYgeKiqHPKngDi6nF7aJmhzCfqCe0Gn4_0x9h2J-hqLOm6h8RUJvv5lfDzq6k_rQ",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"BDDCucumber\",\r\n    \"programStatus\": \"Active\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/saveprogram",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"saveprogram"
 							]
 						}
 					},
