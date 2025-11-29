@@ -1816,6 +1816,10 @@
 			"key": "invalidSkillId",
 			"value": "",
 			"type": "default"
+		},
+		{
+			"key": "skillName",
+			"value": ""
 		}
 	]
 }
