@@ -1562,7 +1562,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "77fc47a5-c93c-4637-b661-7999d269bfe9",
+				"id": "70d9b9dc-a4c0-4031-8c3d-bd4eb1493e81",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1697,7 +1697,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5b7c1cb3-2469-4b29-8813-0f6db72f6354",
+				"id": "dc8ba57b-b67b-4c33-a5c5-f993b29f8a21",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1732,6 +1732,11 @@
 		{
 			"key": "skillId",
 			"value": ""
+		},
+		{
+			"key": "invalidSkillId",
+			"value": "",
+			"type": "default"
 		}
 	]
 }
