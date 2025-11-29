@@ -1555,13 +1555,132 @@
 				},
 				{
 					"name": "New Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5e614620-f4d9-4925-82f2-ba6fb52cc6ad",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
+									"    console.log(\"Updating request body to none\");",
+									"    pm.request.body.update({",
+									"        mode: 'none'",
+									"    });",
+									"}",
+									"",
+									"else if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    console.log(\"Updating request header content type to text\");",
+									"    pm.request.headers.upsert({",
+									"        key : \"Content-Type\",",
+									"        value: \"text/plain\"",
+									"    });",
+									"}",
+									"",
+									"else if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty skill name\")) {",
+									"    console.log(\"Updating skill name to empty\");",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillName = \"\";",
+									"    pm.request.body.raw = JSON.stringify(body);",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill id\")) {",
+									"    pm.variables.set(\"updateSkillId\", 123456);",
+									"    console.log(\"Updating skill Id to invalid \" + pm.variables.get(\"updateSkillId\") + \" from collection variable\");",
+									"}",
+									"else {",
+									"    console.log(\"Update skill Id from collection variable\");",
+									"    pm.variables.set(\"updateSkillId\", pm.variables.get(\"skillId\"));",
+									"}",
+									"",
+									"function randomSkillName(length) {",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+									"    let out = \"\";",
+									"    for (let i = 0; i < length; i++) {",
+									"        out += chars.charAt(Math.floor(Math.random() * chars.length));",
+									"    }",
+									"    return out;",
+									"}",
+									"",
+									"pm.variables.set(\"skillName\", randomSkillName(10));"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8fbf2b8f-cd52-4ccf-a322-af2eb822c1c5",
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var jsonData = pm.response.json();",
+									"    pm.test(\"Response has given skill name\", function () {",
+									"        pm.expect(jsonData).to.have.property('skillName');",
+									"        pm.expect(jsonData.skillName).to.equal(pm.variables.get(\"skillName\"));",
+									"    });",
+									"",
+									"    pm.test(\"Response has new skill Id\", function() {",
+									"        pm.expect(jsonData).to.have.property('skillId');",
+									"        pm.collectionVariables.set(\"skillId\", jsonData.skillId);",
+									"    });",
+									"",
+									"    pm.test(\"Response has creation time\", function () {",
+									"        pm.expect(jsonData).to.have.property('creationTime');",
+									"    });",
+									"",
+									"    pm.test(\"Response has last modified time\", function () {",
+									"        pm.expect(jsonData).to.have.property('lastModTime');",
+									"    });",
+									"",
+									"}",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {",
+									"    pm.test(\"Response has expected text message\", function() {",
+									"        console.log(\"Checking plain text message \" + pm.response.text());",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"}",
+									"else if (pm.response.code === 400) {",
+									"    pm.test(\"Response has expected json message\", function() {",
+									"        var jsonData = pm.response.json();",
+									"        console.log(\"Checking response json message: \" + jsonData.message);",
+									"        pm.expect(jsonData).to.have.property('message');",
+									"        pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319862-70058db6-e4d4-484f-8e33-f5980928f4a6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"skillId\": {{updateSkillId}},\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/updateSkills/{{updateSkillId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"updateSkills",
+								"{{updateSkillId}}"
+							]
+						}
 					},
 					"response": []
 				}
