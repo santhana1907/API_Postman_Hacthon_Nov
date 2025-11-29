@@ -1566,8 +1566,20 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/allSkillMaster",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"allSkillMaster"
+							]
+						}
 					},
 					"response": []
 				}
