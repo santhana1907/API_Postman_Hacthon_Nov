@@ -1573,6 +1573,11 @@
 									"        const hasSkillId = jsonData.every(member => member.hasOwnProperty(\"skillId\"));",
 									"        pm.expect(hasSkillId).to.be.true;",
 									"    });",
+									"",
+									"    pm.test(\"check all members have skillName\", function () {",
+									"        const hasSkillId = jsonData.every(member => member.hasOwnProperty(\"skillName\"));",
+									"        pm.expect(hasSkillId).to.be.true;",
+									"    });",
 									"}"
 								],
 								"type": "text/javascript",
