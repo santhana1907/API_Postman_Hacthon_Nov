@@ -1450,8 +1450,11 @@
 									"}",
 									"",
 									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill id\")) {",
-									"    pm.variables.set(\"updateSkillId\", 123456);",
-									"    console.log(\"Updating skill Id to invalid \" + pm.variables.get(\"updateSkillId\") + \" from collection variable\");",
+									"    pm.variables.set(\"invalidSkillId\", 123456);",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillId = \"\";",
+									"    pm.request.body.raw = JSON.stringify(body);",
+									"    console.log(\"Updating skill Id to invalid \" + pm.variables.get(\"invalidSkillId\"));",
 									"}",
 									"else {",
 									"    console.log(\"Update skill Id from collection variable\");",
@@ -1531,7 +1534,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"skillId\": {{updateSkillId}},\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
+							"raw": "{\n  \"skillId\": {{skillId}},\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1539,13 +1542,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/updateSkills/{{updateSkillId}}",
+							"raw": "{{baseURL}}/updateSkills/{{skillId}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"updateSkills",
-								"{{updateSkillId}}"
+								"{{skillId}}"
 							]
 						}
 					},
