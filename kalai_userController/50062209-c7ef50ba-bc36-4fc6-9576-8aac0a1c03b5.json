@@ -9,7 +9,7 @@
 			"name": "UserLoginController",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "UserSignIn",
 					"id": "50319866-44bbe069-698a-4442-b1b3-6ac05b1152e0",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
