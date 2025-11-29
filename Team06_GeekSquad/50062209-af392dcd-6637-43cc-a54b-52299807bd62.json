@@ -1065,7 +1065,9 @@
 									"pm.test('Schema is valid', function() {\r",
 									"    var tv4 = require('tv4');\r",
 									"pm.expect(tv4.validate(data, schema)).to.be.true;\r",
-									" });"
+									" }\r",
+									"});\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
