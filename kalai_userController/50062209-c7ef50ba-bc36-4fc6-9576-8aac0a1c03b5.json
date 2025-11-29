@@ -604,7 +604,7 @@
 									"pm.test(\"Response contains 'OK' message\",function(){\r",
 									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
 									"});\r",
-									"pm.test(\"Schema validation\",() => {\r",
+									"\r",
 									"     const Schema = {\r",
 									"        \"type\": \"array\",\r",
 									"  \"properties\": {\r",
@@ -684,6 +684,7 @@
 									"    \"userRoleStatus\"\r",
 									"        ]\r",
 									"   };\r",
+									"   pm.test(\"Schema validation\",() => {\r",
 									"     pm.response.to.have.jsonSchema(Schema);\r",
 									"});"
 								],
