@@ -63,7 +63,7 @@
 			"name": "ProgramController",
 			"item": [
 				{
-					"name": "Post data",
+					"name": "AddNewProgram",
 					"id": "50062209-082c1e1f-743e-4255-ba2b-300bddef7b8a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
