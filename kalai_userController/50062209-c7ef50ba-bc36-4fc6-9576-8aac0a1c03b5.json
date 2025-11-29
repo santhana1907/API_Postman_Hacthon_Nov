@@ -1454,6 +1454,7 @@
 									"    pm.variables.set(\"updateSkillId\", 123456);",
 									"}",
 									"else {",
+									"    console.log(\"Update skill Id from collection variable\");",
 									"    pm.variables.set(\"updateSkillId\", pm.variables.get(\"skillId\"));",
 									"}",
 									"",
