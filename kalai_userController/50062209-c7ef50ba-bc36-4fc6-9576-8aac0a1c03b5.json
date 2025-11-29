@@ -1560,7 +1560,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get All Skill Master",
 					"id": "50319862-0fbb61e1-8308-4c3c-accb-d3a8b9d4a0cc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
