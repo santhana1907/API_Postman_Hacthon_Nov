@@ -1966,10 +1966,7 @@
 									"  \"userTimeZone\": \"String\",\r",
 									"  \"userVisaStatus\": \"String\"\r",
 									"};\r",
-									"\r",
-									"        \r",
-									"\r",
-									"    pm.response.to.have.jsonSchema(Schema);\r",
+									" pm.response.to.have.jsonSchema(Schema);\r",
 									"});"
 								],
 								"type": "text/javascript",
