@@ -185,7 +185,7 @@
 			"name": "ProgramBatchModule",
 			"item": [
 				{
-					"name": "CreateNewBatch Copy",
+					"name": "CreateNewBatch",
 					"event": [
 						{
 							"listen": "test",
