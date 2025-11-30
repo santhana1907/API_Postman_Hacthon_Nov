@@ -1811,20 +1811,14 @@
 							"raw": "\r\n"
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/roles/:roleId",
+							"raw": "{{BaseURL}}/users/roles/{{roleId}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
 								"roles",
-								":roleId"
-							],
-							"variable": [
-								{
-									"key": "roleId",
-									"value": "{{roleId}}"
-								}
+								"{{roleId}}"
 							]
 						}
 					},
