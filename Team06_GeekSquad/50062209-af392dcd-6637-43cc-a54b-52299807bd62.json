@@ -386,7 +386,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MzMyMTAsImV4cCI6MTc2NDU2MjAxMH0.7a-dOVadggof7Xo9_mISp53bPRnwoLivAqSWCpcZDs_tZrh1ooCjEKVfmMp1-GvUzH2ODeZ3RwHMjtGAVqy5dg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1Mzg1OTAsImV4cCI6MTc2NDU2NzM5MH0.ziy6QMx37lCcVJJfRWMu8ZXDZemX9DhPPymNM5wNBoALmX9ruypLkb6hYTqMbriMHRWyDtC37u0XzUIdPwY9og",
 									"type": "string"
 								}
 							]
