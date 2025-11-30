@@ -403,9 +403,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/roleStatus",
+							"raw": "{{baseURL}}/users/roleStatus",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"users",
