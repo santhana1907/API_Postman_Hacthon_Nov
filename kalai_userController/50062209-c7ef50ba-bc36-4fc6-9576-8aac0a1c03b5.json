@@ -1415,7 +1415,154 @@
 		},
 		{
 			"name": "SkillMasterController",
-			"item": [],
+			"item": [
+				{
+					"name": "Create New Skill",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "98409f5b-100a-486b-ad3d-49002a1f4299",
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var jsonData = pm.response.json();",
+									"    var schema = ",
+									"    {",
+									"        \"type\": \"object\",",
+									"  \"properties\": {",
+									"    \"skillId\": {",
+									"      \"type\": \"integer\"",
+									"    },",
+									"    \"skillName\": {",
+									"      \"type\": \"string\"",
+									"    },",
+									"    \"creationTime\": {",
+									"      \"type\": \"string\"",
+									"    },",
+									"    \"lastModTime\": {",
+									"      \"type\": \"string\"",
+									"    }",
+									"  },",
+									"  \"required\": [",
+									"    \"skillId\",",
+									"    \"skillName\",",
+									"    \"creationTime\",",
+									"    \"lastModTime\"",
+									"  ]",
+									"    }",
+									"",
+									"    pm.test(\"Response schema is valid\", function() {",
+									"        pm.expect(jsonData).to.be.jsonSchema(schema);",
+									"    });",
+									"",
+									"    pm.collectionVariables.set(\"skillId\", jsonData.skillId);",
+									"",
+									"    pm.test(\"Response has given skill name\", function () {",
+									"        pm.expect(jsonData.skillName).to.equal(pm.collectionVariables.get(\"skillName\"));",
+									"    });",
+									"",
+									"}",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {",
+									"    pm.test(\"Response has expected text message\", function() {",
+									"        console.log(\"Checking plain text message \" + pm.response.text());",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"}",
+									"else if (pm.response.code === 400) {",
+									"    pm.test(\"Response has expected json message\", function() {",
+									"        var jsonData = pm.response.json();",
+									"        console.log(\"Checking response json message: \" + jsonData.message);",
+									"        pm.expect(jsonData).to.have.property('message');",
+									"        pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "70d48597-34cf-45a1-ab76-6042dac9fe17",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
+									"    console.log(\"Updating request body to none\");",
+									"    pm.request.body.update({",
+									"        mode: 'none'",
+									"    });",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    console.log(\"Updating request header content type to text\");",
+									"    pm.request.headers.upsert({",
+									"        key : \"Content-Type\",",
+									"        value: \"text/plain\"",
+									"    });",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty skill name\")) {",
+									"    console.log(\"Updating skill name to empty\");",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillName = \"\";",
+									"    pm.request.body.raw = JSON.stringify(body);",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"existing skill name\")) {",
+									"    console.log(\"Updating skill name to empty\");",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillName = \"Java\";",
+									"    pm.request.body.raw = JSON.stringify(body);",
+									"}",
+									"",
+									"function randomSkillName(length) {",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+									"    let out = \"\";",
+									"    for (let i = 0; i < length; i++) {",
+									"        out += chars.charAt(Math.floor(Math.random() * chars.length));",
+									"    }",
+									"    return out;",
+									"}",
+									"",
+									"pm.variables.set(\"skillName\", randomSkillName(10));",
+									"pm.collectionVariables.set(\"skillName\", pm.variables.get(\"skillName\"));"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-87468a30-7194-4c4a-812f-a265ce2413ba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T22:26:58.778Z\",\n  \"lastModTime\": \"2025-11-28T22:26:58.778Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/SaveSkillMaster",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"SaveSkillMaster"
+							]
+						}
+					},
+					"response": []
+				}
+			],
 			"id": "50062209-ea169146-1f2b-400d-8cc9-fe5cfd0d23e0"
 		}
 	],
