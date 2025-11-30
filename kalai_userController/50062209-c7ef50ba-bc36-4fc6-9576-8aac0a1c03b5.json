@@ -721,13 +721,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/{{id}}",
+							"raw": "{{BaseURL}}/users/{{userid}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
-								"{{id}}"
+								"{{userid}}"
 							]
 						}
 					},
