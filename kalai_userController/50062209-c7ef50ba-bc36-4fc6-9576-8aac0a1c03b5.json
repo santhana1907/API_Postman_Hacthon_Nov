@@ -1680,6 +1680,8 @@
 									"    var jsonData = pm.response.json();\r",
 									"    const schema = {\r",
 									"         \"type\": \"array\",\r",
+									"        \"items\": {\r",
+									"            \"type\": \"object\",\r",
 									"  \"properties\": {\r",
 									"    \r",
 									"    \"userId\": {\r",
