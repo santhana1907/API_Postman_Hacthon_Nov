@@ -550,9 +550,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/saveprogram",
+							"raw": "{{baseURL}}/saveprogram",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"saveprogram"
@@ -640,9 +640,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/allPrograms",
+							"raw": "{{baseURL}}/allPrograms",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"allPrograms"
