@@ -324,12 +324,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/login",
+							"raw": "{{BaseURL}}/logi",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
-								"login"
+								"logi"
 							]
 						}
 					},
