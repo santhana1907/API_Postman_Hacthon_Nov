@@ -570,13 +570,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/progrms/:{programId1}",
+							"raw": "{{baseURL}}/users/programs/:{programId1}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"users",
-								"progrms",
+								"programs",
 								":{programId1}"
 							],
 							"variable": [
