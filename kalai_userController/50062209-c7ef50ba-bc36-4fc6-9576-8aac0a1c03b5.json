@@ -732,15 +732,7 @@
 							"script": {
 								"id": "da00f875-1186-4256-ba66-41af1853219e",
 								"exec": [
-									"function randomProgramName(length) {\r",
-									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
-									"    let out = \"\";\r",
-									"    for (let i = 0; i < length; i++) {\r",
-									"        out += chars.charAt(Math.floor(Math.random() * chars.length));\r",
-									"    }\r",
-									"    return out;\r",
-									"}\r",
-									"pm.variables.set(\"ProgramName\", randomSkillName(10));"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
