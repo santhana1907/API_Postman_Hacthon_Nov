@@ -1249,13 +1249,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/users/byStatus",
+							"raw": "{{baseURL}}/users/byStatus?Id=R04",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"users",
 								"byStatus"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "R04",
+									"type": "text"
+								}
 							]
 						}
 					},
