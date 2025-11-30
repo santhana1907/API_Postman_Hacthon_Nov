@@ -221,6 +221,96 @@
 					"response": []
 				},
 				{
+					"name": "GetAllPrograms Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "925d8536-84c6-4df6-b0c2-160f2fc2761c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"pm.test(\"Status message is OK\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.expect(pm.response.text()).to.not.be.empty;",
+									"});",
+									"pm.test(\"Response body is an array\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an(\"array\");",
+									"});",
+									"pm.test(\"Schema validation: array of program objects with required fields and types\", function () {",
+									"    const schema = {",
+									"        type: \"array\",",
+									"        items: {",
+									"            type: \"object\",",
+									"            additionalProperties: true,",
+									"            required: [",
+									"                \"programId\",",
+									"                \"programName\",",
+									"                \"programDescription\",",
+									"                \"programStatus\",",
+									"                \"creationTime\",",
+									"                \"lastModTime\"",
+									"            ],",
+									"            properties: {",
+									"                programId: { type: \"integer\" },",
+									"                programName: { type: \"string\" },",
+									"                programDescription: { anyOf: [{ type: \"string\" }, { type: \"null\" }] },",
+									"                programStatus: { type: \"string\" },",
+									"                creationTime: { type: \"string\", format: \"date-time\" },",
+									"                lastModTime: { type: \"string\", format: \"date-time\" }",
+									"            }",
+									"        }",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-8d5a29ab-3ff6-41a0-98e3-592947e918c5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/allPrograms",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"allPrograms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetProgrambyProgramId",
 					"event": [
 						{
@@ -281,6 +371,96 @@
 						}
 					],
 					"id": "50318648-73f18e58-c7e2-43cb-ab45-c6f683d7b961",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/programs/37",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"programs",
+								"37"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProgrambyProgramId Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb8c7e05-8659-4f64-873a-dc9e4c286021",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 1000ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"});",
+									"pm.test(\"Status message is OK\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Program name is Cucumber\", function () {",
+									"    pm.expect(pm.response.json().programName).to.eql(\"Cucumber\");",
+									"});",
+									"pm.test(\"Program description is QA Test Assure\", function () {",
+									"    pm.expect(pm.response.json().programDescription).to.eql(\"QA Test Assure\");",
+									"});",
+									"pm.test(\"Program status is Inactive\", function () {",
+									"    pm.expect(pm.response.json().programStatus).to.eql(\"Inactive\");",
+									"});",
+									"pm.test(\"Schema validation\", function () {",
+									"    const schema = {",
+									"        type: \"object\",",
+									"        properties: {",
+									"            programId: { type: \"integer\" },",
+									"            programName: { type: \"string\" },",
+									"            programDescription: { type: \"string\" },",
+									"            programStatus: { type: \"string\" },",
+									"            creationTime: { type: \"string\" },",
+									"            lastModTime: { type: \"string\" }",
+									"        },",
+									"        required: [",
+									"            \"programId\",",
+									"            \"programName\",",
+									"            \"programDescription\",",
+									"            \"programStatus\",",
+									"            \"creationTime\",",
+									"            \"lastModTime\"",
+									"        ],",
+									"        additionalProperties: false",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-475665d2-8df3-43f6-b82a-d0171ff6b196",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -458,6 +638,153 @@
 					"response": []
 				},
 				{
+					"name": "GetAllProgramswithUsers Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d3f13c0-5048-4454-a9fb-c12395c6c26f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 1000ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"});",
+									"pm.test(\"Status message is OK\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"",
+									"// Schema validation using Ajv v6",
+									"(function () {",
+									"    // Ensure body is an array first",
+									"    pm.test(\"Response body is an array\", function () {",
+									"        const data = pm.response.json();",
+									"        pm.expect(Array.isArray(data)).to.be.true;",
+									"    });",
+									"",
+									"    const Ajv = require('ajv');",
+									"    const ajv = new Ajv({ allErrors: true, coerceTypes: false, useDefaults: false });",
+									"",
+									"    // Define user schema",
+									"    const userSchema = {",
+									"        type: \"object\",",
+									"        properties: {",
+									"            userId: { type: \"string\" },",
+									"            userFirstName: { type: \"string\" },",
+									"            userLastName: { type: \"string\" },",
+									"            userMiddleName: { type: \"string\" }, // optional",
+									"            userPhoneNumber: { type: \"string\" },",
+									"            userLocation: { type: \"string\" },",
+									"            userTimeZone: { type: \"string\" },",
+									"            userLinkedinUrl: { type: \"string\" },",
+									"            userEduUg: { type: \"string\" },",
+									"            userEduPg: { type: \"string\" },",
+									"            userComments: { type: \"string\" }, // optional",
+									"            userVisaStatus: { type: \"string\" },",
+									"            userLoginEmail: { type: \"string\" }",
+									"        },",
+									"        required: [",
+									"            \"userId\",",
+									"            \"userFirstName\",",
+									"            \"userLastName\",",
+									"            \"userPhoneNumber\",",
+									"            \"userLocation\",",
+									"            \"userTimeZone\",",
+									"            \"userLinkedinUrl\",",
+									"            \"userEduUg\",",
+									"            \"userEduPg\",",
+									"            \"userVisaStatus\",",
+									"            \"userLoginEmail\"",
+									"        ],",
+									"        additionalProperties: true",
+									"    };",
+									"",
+									"    // Define program schema",
+									"    const programSchema = {",
+									"        type: \"object\",",
+									"        properties: {",
+									"            programId: { type: \"number\" },",
+									"            programName: { type: \"string\" },",
+									"            programDescription: { type: \"string\" },",
+									"            programStatus: { type: \"string\" },",
+									"            programUsers: {",
+									"                type: \"array\",",
+									"                items: userSchema",
+									"            },",
+									"            creationTime: { type: \"string\" },",
+									"            lastModTime: { type: \"string\" }",
+									"        },",
+									"        required: [",
+									"            \"programId\",",
+									"            \"programName\",",
+									"            \"programDescription\",",
+									"            \"programStatus\",",
+									"            \"programUsers\",",
+									"            \"creationTime\",",
+									"            \"lastModTime\"",
+									"        ],",
+									"        additionalProperties: true",
+									"    };",
+									"",
+									"    const rootSchema = {",
+									"        type: \"array\",",
+									"        items: programSchema",
+									"    };",
+									"",
+									"    const validate = ajv.compile(rootSchema);",
+									"    const data = pm.response.json();",
+									"    const valid = validate(data);",
+									"",
+									"    pm.test(\"Schema validation passes\", function () {",
+									"        if (!valid) {",
+									"            const errors = (validate.errors || []).map(e => `${e.dataPath || e.instancePath || ''} ${e.message}`).join(\" | \");",
+									"            pm.expect(valid, errors).to.be.true;",
+									"        } else {",
+									"            pm.expect(valid).to.be.true;",
+									"        }",
+									"    });",
+									"})();"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-b2315b6b-ce04-40fd-83c3-67f52cf18f17",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTkyMzgsImV4cCI6MTc2NDU0ODAzOH0.WMRnGH8WnGZ6Wcc0lH75YnMWvF3_qp9g1lhQNC3Qh-oi0sc77kL_MeEEmpspsVu2FFKr7vfryDp8QXKULJW_LA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/allProgramsWithUsers",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"allProgramsWithUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "UpdateProgrambyProgramName",
 					"event": [
 						{
@@ -521,6 +848,108 @@
 						}
 					],
 					"id": "50318648-ba40540c-d645-4d53-8f64-5e9ddf0bbc9a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzMTM4MDUsImV4cCI6MTc2NDM0MjYwNX0.VwAzIQSoqxvlMmhaRh1WtApYgeKiqHPKngDi6nF7aJmhzCfqCe0Gn4_0x9h2J-hqLOm6h8RUJvv5lfDzq6k_rQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"BDDCucumber\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/program/BDDCucumber",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"program",
+								"BDDCucumber"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProgrambyProgramName Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a9133101-9e00-4779-8d05-8962a7a0abab",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 600ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
+									"});\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Schema validation\", () => {\r",
+									"const schema = {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"programId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"programDescription\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"programStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"creationTime\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"lastModTime\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"programId\",\r",
+									"    \"programName\",\r",
+									"    \"programDescription\",\r",
+									"    \"programStatus\",\r",
+									"    \"creationTime\",\r",
+									"    \"lastModTime\"\r",
+									"  ]\r",
+									"};\r",
+									"pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-4db9d6dc-b012-402f-901d-d6fbc776138a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
