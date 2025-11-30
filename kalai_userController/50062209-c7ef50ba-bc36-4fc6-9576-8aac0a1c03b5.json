@@ -1151,6 +1151,32 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "771981fb-374a-436c-b142-2c5d4fbd684e",
+								"exec": [
+									"if (pm.response.code === 201) {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the UserId field\r",
+									"    if (jsonData && jsonData.userId ) {\r",
+									"    \r",
+									"        pm.collectionVariables.set(\"userId\", jsonData.userId);              \r",
+									"        console.log (\"userId is set to \" + pm.collectionVariables.get (\"userId\")); \r",
+									"            \r",
+									"    } else {\r",
+									"        console.log(\"User Id not found in the response.\");\r",
+									"    }\r",
+									"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50318661-572984fe-7c73-4f2f-839c-b11e1139f510",
