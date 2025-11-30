@@ -173,18 +173,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Update by Program ID",
-					"id": "50062209-6f621b77-c01d-4a37-90ca-4a0778ebdf15",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
 				}
 			],
 			"id": "50062209-51d7088b-103f-44bf-b897-bf6ebd3b53be"
