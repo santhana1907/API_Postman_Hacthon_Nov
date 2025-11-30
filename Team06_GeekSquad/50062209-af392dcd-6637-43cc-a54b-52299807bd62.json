@@ -1475,7 +1475,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDE5NzIsImV4cCI6MTc2NDU3MDc3Mn0.7d3mklXvGkF6b9R4A09ln6KLXN1f-cu90IkhJjf7TBUdnMiTsxKNXBmSLEHPb2bi16QuPGm4Q_deRIts5FdlvA",
 									"type": "string"
 								}
 							]
@@ -1483,9 +1483,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/users/activeUsers",
+							"raw": "{{baseURL}}/users/activeUsers",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"users",
