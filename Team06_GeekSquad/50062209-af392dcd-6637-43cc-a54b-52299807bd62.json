@@ -1997,54 +1997,6 @@
 					]
 				},
 				{
-					"name": "UpdateUserRoleProgramBatchStatus",
-					"id": "50062209-86928530-88fd-4ef1-81e9-9e0729d83d09",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \r\n  \"programId\": 9, \r\n  \"roleId\": \"R03\", \r\n  \"userId\": \"U67\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": 9, \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"Active\" \r\n    } \r\n  ] \r\n} ",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/:userId",
-							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"roleProgramBatchStatus",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "userId",
-									"value": "{{id}}"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "UpdateUserRoleProgramBatchStatus Copy",
 					"id": "50062209-262a8672-7caa-4ac3-a517-0917cfbb0d30",
 					"protocolProfileBehavior": {
