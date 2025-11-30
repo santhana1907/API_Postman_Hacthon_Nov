@@ -1195,7 +1195,7 @@
 					]
 				},
 				{
-					"name": "Get User By RoleId",
+					"name": "Gets Users By roleId",
 					"event": [
 						{
 							"listen": "test",
