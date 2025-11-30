@@ -1739,6 +1739,7 @@
 									"    \"userVisaStatus\",\r",
 									"    \"userLoginEmail\"\r",
 									"  ]\r",
+									"        }\r",
 									"};\r",
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
