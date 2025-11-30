@@ -721,19 +721,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/:id",
+							"raw": "{{BaseURL}}/users/{{id}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{id}}"
-								}
+								"{{id}}"
 							]
 						}
 					},
