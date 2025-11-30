@@ -470,55 +470,6 @@
 			"name": "ProgramModule",
 			"item": [
 				{
-					"name": "Post data",
-					"id": "50062209-082c1e1f-743e-4255-ba2b-300bddef7b8a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "ApiHackathon@6",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "team6@gmail.com",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"password\": \"ApiHackathon@6\",\r\n    \"userLoginEmailId\": \"team6@gmail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://lms-hackathon-nov-2025-8dd40899c026.herokuapp.com/lms/login",
-							"protocol": "https",
-							"host": [
-								"lms-hackathon-nov-2025-8dd40899c026",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"lms",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Get data",
 					"id": "50062209-5efa853b-4e18-41c7-902b-237af103ec99",
 					"protocolProfileBehavior": {
