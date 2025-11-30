@@ -470,6 +470,96 @@
 			"name": "ProgramModule",
 			"item": [
 				{
+					"name": "GetAllPrograms",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "925d8536-84c6-4df6-b0c2-160f2fc2761c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"pm.test(\"Status message is OK\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Response body is not empty\", function () {",
+									"    pm.expect(pm.response.text()).to.not.be.empty;",
+									"});",
+									"pm.test(\"Response body is an array\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an(\"array\");",
+									"});",
+									"pm.test(\"Schema validation: array of program objects with required fields and types\", function () {",
+									"    const schema = {",
+									"        type: \"array\",",
+									"        items: {",
+									"            type: \"object\",",
+									"            additionalProperties: true,",
+									"            required: [",
+									"                \"programId\",",
+									"                \"programName\",",
+									"                \"programDescription\",",
+									"                \"programStatus\",",
+									"                \"creationTime\",",
+									"                \"lastModTime\"",
+									"            ],",
+									"            properties: {",
+									"                programId: { type: \"integer\" },",
+									"                programName: { type: \"string\" },",
+									"                programDescription: { anyOf: [{ type: \"string\" }, { type: \"null\" }] },",
+									"                programStatus: { type: \"string\" },",
+									"                creationTime: { type: \"string\", format: \"date-time\" },",
+									"                lastModTime: { type: \"string\", format: \"date-time\" }",
+									"            }",
+									"        }",
+									"    };",
+									"",
+									"    pm.response.to.have.jsonSchema(schema);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-7f788f76-fabd-4d1a-9c41-87fae9aa57dd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/allPrograms",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"allPrograms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "AddNewprogram",
 					"event": [
 						{
@@ -1898,96 +1988,6 @@
 				}
 			],
 			"id": "50062209-ea169146-1f2b-400d-8cc9-fe5cfd0d23e0"
-		},
-		{
-			"name": "GetAllPrograms",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "925d8536-84c6-4df6-b0c2-160f2fc2761c",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"pm.test(\"Content-Type is present\", function () {",
-							"    pm.response.to.have.header(\"Content-Type\");",
-							"});",
-							"pm.test(\"Response time is less than 500ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);",
-							"});",
-							"pm.test(\"Status message is OK\", function () {",
-							"    pm.response.to.have.status(\"OK\");",
-							"});",
-							"pm.test(\"Response body is not empty\", function () {",
-							"    pm.expect(pm.response.text()).to.not.be.empty;",
-							"});",
-							"pm.test(\"Response body is an array\", function () {",
-							"    pm.expect(pm.response.json()).to.be.an(\"array\");",
-							"});",
-							"pm.test(\"Schema validation: array of program objects with required fields and types\", function () {",
-							"    const schema = {",
-							"        type: \"array\",",
-							"        items: {",
-							"            type: \"object\",",
-							"            additionalProperties: true,",
-							"            required: [",
-							"                \"programId\",",
-							"                \"programName\",",
-							"                \"programDescription\",",
-							"                \"programStatus\",",
-							"                \"creationTime\",",
-							"                \"lastModTime\"",
-							"            ],",
-							"            properties: {",
-							"                programId: { type: \"integer\" },",
-							"                programName: { type: \"string\" },",
-							"                programDescription: { anyOf: [{ type: \"string\" }, { type: \"null\" }] },",
-							"                programStatus: { type: \"string\" },",
-							"                creationTime: { type: \"string\", format: \"date-time\" },",
-							"                lastModTime: { type: \"string\", format: \"date-time\" }",
-							"            }",
-							"        }",
-							"    };",
-							"",
-							"    pm.response.to.have.jsonSchema(schema);",
-							"});",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {}
-					}
-				}
-			],
-			"id": "50062209-7f788f76-fabd-4d1a-9c41-87fae9aa57dd",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BaseURL}}/allPrograms",
-					"host": [
-						"{{BaseURL}}"
-					],
-					"path": [
-						"allPrograms"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"event": [
