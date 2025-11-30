@@ -180,6 +180,7 @@
 									"pm.test(\"Response body is an array\", function () {\r",
 									"    pm.expect(pm.response.json()).to.be.an(\"array\");\r",
 									"});\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
