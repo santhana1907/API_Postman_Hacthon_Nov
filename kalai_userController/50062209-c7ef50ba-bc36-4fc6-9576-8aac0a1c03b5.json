@@ -93,7 +93,7 @@
 									"    }\r",
 									"\r",
 									" \r",
-									"    let ProgramNames = pm.environment.get(\"ProgramNames\");\r",
+									"    let ProgramNames = pm.collectionVariables.get(\"ProgramNames\");\r",
 									"\r",
 									"    try {\r",
 									"   \r",
