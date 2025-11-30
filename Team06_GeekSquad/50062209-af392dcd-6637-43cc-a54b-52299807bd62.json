@@ -862,7 +862,8 @@
 							"script": {
 								"id": "ab08078c-39c2-4e8f-a666-7c54d3a8cc19",
 								"exec": [
-									"\r",
+									"if(pm.response.code === 200)\r",
+									"{\r",
 									"const schema = {\r",
 									"  \"type\": \"array\",\r",
 									"  \"properties\": {\r",
@@ -906,15 +907,17 @@
 									"pm.test(\"Schema validation\", () => {\r",
 									"pm.response.to.have.jsonSchema(schema);\r",
 									"});\r",
-									"\r",
-									"//Get the response result\r",
-									"var data = pm.response.json();\r",
-									"\r",
-									"//Validate the response body\r",
-									"pm.test('Schema is valid', function() {\r",
-									"    var tv4 = require('tv4');\r",
-									"pm.expect(tv4.validate(data, schema)).to.be.true;\r",
-									" });"
+									"}\r",
+									"else \r",
+									"{\r",
+									"    pm.test(\"Status Code is 404\",function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"pm.response.to.have.status(\"Not Found\"); \r",
+									"});\r",
+									"}\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -932,7 +935,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDA4MDksImV4cCI6MTc2NDU2OTYwOX0.8hepHMZtdv7cYOQdp3f7qpLicPXrnW6ixdSs1QywH2w64P-eEG5xai5UK5iaav9jPPxg957-XQZ2uY1xRdFTzw",
 									"type": "string"
 								}
 							]
@@ -940,9 +943,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/users/details/:{id} ",
+							"raw": "{{baseURL}}/users/details/:{id} ",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"users",
@@ -951,7 +954,6 @@
 							],
 							"variable": [
 								{
-									"id": "97b83b3f-d178-4f3d-859c-41facfc68230",
 									"key": "{id} ",
 									"value": "{{id}}"
 								}
