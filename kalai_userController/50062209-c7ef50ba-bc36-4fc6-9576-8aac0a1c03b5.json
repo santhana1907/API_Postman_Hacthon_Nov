@@ -2395,6 +2395,89 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c01b0c0d-d41d-4cb3-bd7f-c51d21a2f948",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 1400ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1400);\r",
+									"});\r",
+									"pm.test(\"status message is 'OK' \",function(){\r",
+									"   pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Schema validation\",() => {\r",
+									"    const Schema = {\r",
+									"        \r",
+									"  \"userComments\": \"String\",\r",
+									"  \"userEduPg\": \"String\",\r",
+									"  \"userEduUg\": \"String\",\r",
+									"  \"userFirstName\": \"String\",\r",
+									"  \"userId\": \"String\",\r",
+									"  \"userLastName\": \"String\",\r",
+									"  \"userMiddleName\": \"string\",\r",
+									"  \"userLinkedinUrl\": \"String\",\r",
+									"  \"userLocation\": \"String\",\r",
+									"  \"userLoginEmail\": \"\",\r",
+									"  \"userPhoneNumber\": 0,\r",
+									"  \"userTimeZone\": \"String\",\r",
+									"  \"userVisaStatus\": \"String\"\r",
+									"};\r",
+									" pm.response.to.have.jsonSchema(Schema);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318661-a9d5f6a6-96f9-419f-8ada-9eab41ad0257",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"userComments\": \"dskdlsd\",\r\n\"userEduPg\": \"computer science\",\r\n\"userEduUg\": \"computer application\",\r\n\"userFirstName\": \"sasha\",\r\n\"userId\": \"{{userId}}\",\r\n\"userLastName\": \"prabhu\",\r\n\"userMiddleName\": \"\",\r\n\"userLinkedinUrl\": \"www.linkedin.com/in/sashaprabhu\",\r\n\"userLocation\": \"india\",\r\n\"userLoginEmail\":\"sashaprabhu32@gmail.com\",\r\n\"userPhoneNumber\":\"+91 234586992\",\r\n\"userTimeZone\": \"EST\",\r\n\"userVisaStatus\": \"H4-EAD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/{{userId}}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50062209-c1a1449b-fc95-4357-b8e7-818ce5fcdb6d",
