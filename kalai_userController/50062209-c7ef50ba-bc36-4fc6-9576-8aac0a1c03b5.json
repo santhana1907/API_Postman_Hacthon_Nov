@@ -109,7 +109,7 @@
 									"        ProgramNames.push(jsonData.programName);\r",
 									"        pm.collectionVariables.set(\"ProgramNames\", JSON.stringify(ProgramNames));\r",
 									"        pm.collectionVariables.set(\"ProgramName\", String(ProgramNames[0]));\r",
-									"         pm.collectionVariables.set(\"ProgramName1\", String(ProgramNames[1]));\r",
+									"        pm.collectionVariables.set(\"ProgramName1\", String(ProgramNames[1]));\r",
 									"        // pm.collectionVariables.set(\"ProgramName\",ProgramNames[1] );\r",
 									"        console.log(\"Updated programName array:\",pm.collectionVariables.get(\"ProgramName\"));\r",
 									"    } else {\r",
