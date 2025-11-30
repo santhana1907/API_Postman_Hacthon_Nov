@@ -1748,6 +1748,32 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "684b5ab7-e2cc-4045-b4bc-18ab452f6683",
+								"exec": [
+									"if (pm.response.code === 201) {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the roleId field\r",
+									"    if (jsonData && jsonData.userId ) {\r",
+									"    \r",
+									"        pm.collectionVariables.set(\"roleId\", jsonData.roleId);              \r",
+									"        console.log (\"roleId is set to \" + pm.collectionVariables.get (\"roleId\")); \r",
+									"            \r",
+									"    } else {\r",
+									"        console.log(\"roleId  not found in the response.\");\r",
+									"    }\r",
+									"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50318661-0c7e0bcd-a30d-4c74-a11d-af93f9d57a5e",
@@ -1783,7 +1809,6 @@
 							],
 							"variable": [
 								{
-									"id": "97fee69d-0011-4d2e-8ce2-f9832ee87595",
 									"key": "roleId",
 									"value": "{{roleId}}"
 								}
