@@ -149,9 +149,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/login",
+							"raw": "{{baseURL}}/login",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"login"
