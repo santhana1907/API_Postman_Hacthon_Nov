@@ -4968,6 +4968,85 @@
 					"response": []
 				},
 				{
+					"name": "Delete User Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "466e83cb-4795-40ce-9bde-db02157bb2fd",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1400ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1400);\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK' \", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"const Schema = {\r",
+									"        \"type\": \"null\",\r",
+									"       // \"properties\": {\r",
+									"      //      \"message\": {\"type\": \"string\"}\r",
+									"      ////\"required\": [\"message\"]\r",
+									" };\r",
+									" pm.test(\"Schema validation\",() => {\r",
+									"    pm.response.to.have.jsonSchema(Schema);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318661-cc5282b9-e7e5-44d6-a368-e4478224a293",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/:userID",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								":userID"
+							],
+							"variable": [
+								{
+									"id": "3bbd513d-657b-4e41-ace1-b383f230e9d6",
+									"key": "userID",
+									"value": "U183"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Update User",
 					"event": [
 						{
