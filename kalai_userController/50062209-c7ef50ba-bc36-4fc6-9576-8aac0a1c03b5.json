@@ -68,7 +68,7 @@
 									"\r",
 									"    pm.test(\"Response contains 'token'\", function () {\r",
 									"        //pm.collectionVariables.set(\"BearerToken\", jsonData.token);\r",
-									"        pm.environment.set(\"BearerToken\", response.token);\r",
+									"        pm.environment.set(\"BearerToken\", jsonData.token);\r",
 									"    });\r",
 									"    \r",
 									"    pm.test(\"Response contains 'type'\", function () {\r",
