@@ -2058,7 +2058,7 @@
 									"if(pm.response.code === 200)\r",
 									"{\r",
 									"    var jsonData = pm.response.json();\r",
-									"    const Schema = {\r",
+									"    const schema = {\r",
 									"        \r",
 									"  \"facets\": {\r",
 									"    \"facetedFields\": [\r",
