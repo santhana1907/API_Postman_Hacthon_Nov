@@ -2489,14 +2489,14 @@
 							"raw": "\r\n"
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/user/{{userId}}",
+							"raw": "{{BaseURL}}/users/user/{userId}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
 								"user",
-								"{{userId}}"
+								"{userId}"
 							]
 						}
 					},
