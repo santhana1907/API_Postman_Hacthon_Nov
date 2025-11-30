@@ -2078,6 +2078,153 @@
 				}
 			],
 			"id": "50062209-ea169146-1f2b-400d-8cc9-fe5cfd0d23e0"
+		},
+		{
+			"name": "GetAllProgramswithUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d3f13c0-5048-4454-a9fb-c12395c6c26f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"pm.test(\"Status message is OK\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"",
+							"// Schema validation using Ajv v6",
+							"(function () {",
+							"    // Ensure body is an array first",
+							"    pm.test(\"Response body is an array\", function () {",
+							"        const data = pm.response.json();",
+							"        pm.expect(Array.isArray(data)).to.be.true;",
+							"    });",
+							"",
+							"    const Ajv = require('ajv');",
+							"    const ajv = new Ajv({ allErrors: true, coerceTypes: false, useDefaults: false });",
+							"",
+							"    // Define user schema",
+							"    const userSchema = {",
+							"        type: \"object\",",
+							"        properties: {",
+							"            userId: { type: \"string\" },",
+							"            userFirstName: { type: \"string\" },",
+							"            userLastName: { type: \"string\" },",
+							"            userMiddleName: { type: \"string\" }, // optional",
+							"            userPhoneNumber: { type: \"string\" },",
+							"            userLocation: { type: \"string\" },",
+							"            userTimeZone: { type: \"string\" },",
+							"            userLinkedinUrl: { type: \"string\" },",
+							"            userEduUg: { type: \"string\" },",
+							"            userEduPg: { type: \"string\" },",
+							"            userComments: { type: \"string\" }, // optional",
+							"            userVisaStatus: { type: \"string\" },",
+							"            userLoginEmail: { type: \"string\" }",
+							"        },",
+							"        required: [",
+							"            \"userId\",",
+							"            \"userFirstName\",",
+							"            \"userLastName\",",
+							"            \"userPhoneNumber\",",
+							"            \"userLocation\",",
+							"            \"userTimeZone\",",
+							"            \"userLinkedinUrl\",",
+							"            \"userEduUg\",",
+							"            \"userEduPg\",",
+							"            \"userVisaStatus\",",
+							"            \"userLoginEmail\"",
+							"        ],",
+							"        additionalProperties: true",
+							"    };",
+							"",
+							"    // Define program schema",
+							"    const programSchema = {",
+							"        type: \"object\",",
+							"        properties: {",
+							"            programId: { type: \"number\" },",
+							"            programName: { type: \"string\" },",
+							"            programDescription: { type: \"string\" },",
+							"            programStatus: { type: \"string\" },",
+							"            programUsers: {",
+							"                type: \"array\",",
+							"                items: userSchema",
+							"            },",
+							"            creationTime: { type: \"string\" },",
+							"            lastModTime: { type: \"string\" }",
+							"        },",
+							"        required: [",
+							"            \"programId\",",
+							"            \"programName\",",
+							"            \"programDescription\",",
+							"            \"programStatus\",",
+							"            \"programUsers\",",
+							"            \"creationTime\",",
+							"            \"lastModTime\"",
+							"        ],",
+							"        additionalProperties: true",
+							"    };",
+							"",
+							"    const rootSchema = {",
+							"        type: \"array\",",
+							"        items: programSchema",
+							"    };",
+							"",
+							"    const validate = ajv.compile(rootSchema);",
+							"    const data = pm.response.json();",
+							"    const valid = validate(data);",
+							"",
+							"    pm.test(\"Schema validation passes\", function () {",
+							"        if (!valid) {",
+							"            const errors = (validate.errors || []).map(e => `${e.dataPath || e.instancePath || ''} ${e.message}`).join(\" | \");",
+							"            pm.expect(valid, errors).to.be.true;",
+							"        } else {",
+							"            pm.expect(valid).to.be.true;",
+							"        }",
+							"    });",
+							"})();"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "50062209-b6156285-9a12-456e-9b5a-050b8cae9893",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTkyMzgsImV4cCI6MTc2NDU0ODAzOH0.WMRnGH8WnGZ6Wcc0lH75YnMWvF3_qp9g1lhQNC3Qh-oi0sc77kL_MeEEmpspsVu2FFKr7vfryDp8QXKULJW_LA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/allProgramsWithUsers",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"allProgramsWithUsers"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
