@@ -1407,6 +1407,98 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetAllBatches",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "136b88eb-f5bf-469c-8ec2-688391f6f298",
+								"exec": [
+									"// Parse response safely\r",
+									"let data;\r",
+									"try {\r",
+									"  data = pm.response.json();\r",
+									"} catch (e) {\r",
+									"  data = null;\r",
+									"}\r",
+									"\r",
+									"// Quick sanity tests (kept lightweight so as not to duplicate existing tests)\r",
+									"pm.test(\"📦 Response is an array\", function () {\r",
+									"  pm.expect(Array.isArray(data)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"// Draft-07 schema for an array of batch objects\r",
+									"const batchItemSchema = {\r",
+									"  type: \"object\",\r",
+									"  properties: {\r",
+									"    batchId: { type: \"integer\" },\r",
+									"    batchName: { type: \"string\" },\r",
+									"    batchDescription: { type: \"string\" },\r",
+									"    batchStatus: { type: \"string\" },\r",
+									"    batchNoOfClasses: { type: \"integer\" },\r",
+									"    programId: { type: \"integer\" },\r",
+									"    programName: { type: \"string\" }\r",
+									"  },\r",
+									"  required: [\r",
+									"    \"batchId\",\r",
+									"    \"batchName\",\r",
+									"    \"batchDescription\",\r",
+									"    \"batchStatus\",\r",
+									"    \"batchNoOfClasses\",\r",
+									"    \"programId\",\r",
+									"    \"programName\"\r",
+									"  ],\r",
+									"  additionalProperties: false\r",
+									"};\r",
+									"\r",
+									"const arraySchema = {\r",
+									"  // Ajv in Postman defaults to draft-07; no $schema is necessary\r",
+									"  type: \"array\",\r",
+									"  items: batchItemSchema\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Schema validation\", function () {\r",
+									"  const Ajv = require('ajv');\r",
+									"  const ajv = new Ajv({ allErrors: true, strict: false });\r",
+									"\r",
+									"  const validate = ajv.compile(arraySchema);\r",
+									"  const valid = validate(data);\r",
+									"\r",
+									"  if (!valid) {\r",
+									"    // Build a useful error message to help debugging schema mismatches\r",
+									"    const errMsg = validate.errors\r",
+									"      .map(err => `${err.instancePath || '(root)'} ${err.message}`)\r",
+									"      .join('; ');\r",
+									"    throw new Error(`Schema validation failed: ${errMsg}`);\r",
+									"  }\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-f934154b-8509-4ec9-85ee-c2963b8ff24e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{endpoint}}",
+							"host": [
+								"{{baseURL}}{{endpoint}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50062209-f7bffb69-e9e1-4400-9b67-0e8ba36fbbe2"
