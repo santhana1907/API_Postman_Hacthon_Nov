@@ -3230,6 +3230,156 @@
 			"name": "UserController",
 			"item": [
 				{
+					"name": "CreateUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ea206f1c-dd93-4ba5-b2de-e529881b90e7",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Status message is 'Created'\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+									"});\r",
+									"const schema = {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"array\",\r",
+									"  \"properties\": {\r",
+									"    \"userComments\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduPg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduUg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userFirstName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userId\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLastName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLinkedinUrl\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLocation\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userMiddleName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userPhoneNumber\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userTimeZone\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userVisaStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLoginEmail\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"userComments\",\r",
+									"    \"userEduPg\",\r",
+									"    \"userEduUg\",\r",
+									"    \"userFirstName\",\r",
+									"    \"userId\",\r",
+									"    \"userLastName\",\r",
+									"    \"userLinkedinUrl\",\r",
+									"    \"userLocation\",\r",
+									"    \"userMiddleName\",\r",
+									"    \"userPhoneNumber\",\r",
+									"    \"userTimeZone\",\r",
+									"    \"userVisaStatus\",\r",
+									"    \"userLoginEmail\"\r",
+									"  ]\r",
+									"};\r",
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
+									"//Get the response result\r",
+									"var data = pm.response.json();\r",
+									"//Validate the response body\r",
+									"pm.test('Schema is valid', function() {   \r",
+									"     var tv4 = require('tv4');\r",
+									"     pm.expect(tv4.validate(data, schema)).to.be.true;\r",
+									" });"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8362cdd2-0e78-4e54-8b56-e1bb169c95d9",
+								"exec": [
+									"let randomPhonenumber = \"+1\" + Math.floor(1000000000 + Math.random() * 9000000000);\r",
+									"pm.environment.set(\"phoneNumber\", randomPhonenumber);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-9d4e9533-e54a-4749-9073-e29ff7dd2349",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTc3NzcsImV4cCI6MTc2NDU0NjU3N30.46Nz716fDI2traJiIAkMLZ5y5nBeJ6iYreS_a6x_YxkKz8Z_h1_R5s0y_0gcRHXWgazvxflacOxRTrMws8CZSQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"userComments\": \"{{userComments}}\", \r\n\"userEduPg\": \"{{userEduPg}}\", \r\n\"userEduUg\": \"{{userEduUg}}\", \r\n\"userFirstName\": \"{{userFirstName}}\", \r\n\"userLastName\": \"{{userLastName}}\", \r\n\"userLinkedinUrl\": \"{{userLinkedinUrl}}\", \r\n\"userLocation\": \"{{userLocation}}\", \r\n\"userMiddleName\": \"{{userMiddleName}}\", \r\n\"userPhoneNumber\": \"{{userPhoneNumber}}\", \r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"{{roleId}}\", \r\n\"userRoleStatus\": \"{{userRoleStatus}}\" \r\n} \r\n], \r\n\"userTimeZone\": \"{{userTimeZone}}\", \r\n\"userVisaStatus\": \"{{userVisaStatus}}\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"{{userLoginEmail}}\", \r\n   \"loginStatus\" : \"{{loginStatus}}\", \r\n  \"status\":  \"{{status}}\" \r\n  }   \r\n  } ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/roleStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetallUsers",
 					"event": [
 						{
