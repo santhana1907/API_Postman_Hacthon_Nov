@@ -808,13 +808,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/programs/37",
+							"raw": "{{baseURL}}/programs/{{programID}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"programs",
-								"37"
+								"{{programID}}"
 							]
 						}
 					},
@@ -1057,13 +1057,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/program/BDDCucumber",
+							"raw": "{{baseURL}}/program/{{ProgramName}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"program",
-								"BDDCucumber"
+								"{{ProgramName}}"
 							]
 						}
 					},
@@ -1221,13 +1221,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/deletebyprogid/37",
+							"raw": "{{baseURL}}/deletebyprogid/{{programID}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"deletebyprogid",
-								"37"
+								"{{programID}}"
 							]
 						}
 					},
