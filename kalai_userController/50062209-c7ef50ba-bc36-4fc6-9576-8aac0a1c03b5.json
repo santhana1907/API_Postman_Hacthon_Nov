@@ -2197,20 +2197,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/userLogin/:userId",
+							"raw": "{{BaseURL}}/users/userLogin/{{userId}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
 								"userLogin",
-								":userId"
-							],
-							"variable": [
-								{
-									"key": "userId",
-									"value": "{{userId}}"
-								}
+								"{{userId}}"
 							]
 						}
 					},
