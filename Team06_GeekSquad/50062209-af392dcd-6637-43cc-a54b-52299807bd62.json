@@ -1798,7 +1798,7 @@
 					]
 				},
 				{
-					"name": "GetEmailofAllUserwithActiveuser Copy",
+					"name": "GetEmailofAllUserwithActivestatus Copy",
 					"event": [
 						{
 							"listen": "test",
