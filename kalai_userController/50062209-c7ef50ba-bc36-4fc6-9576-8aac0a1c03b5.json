@@ -257,6 +257,85 @@
 					"response": []
 				},
 				{
+					"name": "UserLogin Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f806eb0b-e80e-41ad-a996-5cec6743d89f",
+								"exec": [
+									"\r",
+									"    pm.test(\"Login Successful\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"   var jsonData = pm.response.json();\r",
+									"    pm.environment.set(\"accessToken\",jsonData.accessToken);\r",
+									"    pm.test(\"Token is present in response\",function (){\r",
+									"        pm.expect (responseJson).to.have.property('access_token');\r",
+									"    });"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c6f2a892-410a-4d1e-aa0b-c7f3ea066079",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318661-1da49c74-b763-4bc5-ae0d-f80659717ee7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{userLoginEmailId}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"{{password}}\",\r\n    \"userLoginEmailId\":\"{{userLoginEmailId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/login",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetallUsers",
 					"event": [
 						{
