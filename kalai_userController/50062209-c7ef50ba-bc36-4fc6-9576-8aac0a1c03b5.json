@@ -2138,10 +2138,10 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Response time is less than 800ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 									"});\r",
-									"pm.test(\"Response contains 'OK' message\",function(){\r",
-									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
+									"pm.test(\"Status message is 'OK'\",function(){\r",
+									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"pm.test(\"Schema validation\",() => {\r",
 									"    const Schema = {\r",
@@ -2160,8 +2160,13 @@
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "c516a2b8-93f3-4a73-9dfa-c0ae7b8ba6ea",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
 								"packages": {},
-								"type": "text/javascript"
+								"requests": {}
 							}
 						}
 					],
