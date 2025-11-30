@@ -1281,13 +1281,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/deletebyprogname/Testing",
+							"raw": "{{baseURL}}/deletebyprogname/{{ProgramName}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"deletebyprogname",
-								"Testing"
+								"{{ProgramName}}"
 							]
 						}
 					},
