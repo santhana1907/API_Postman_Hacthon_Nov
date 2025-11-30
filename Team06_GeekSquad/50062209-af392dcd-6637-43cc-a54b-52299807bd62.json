@@ -1674,7 +1674,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDMxNjMsImV4cCI6MTc2NDU3MTk2M30.HzkzGcBTdAhmXosxfEzfy26kE6XIX2eo1BZBqlhJPQpCg-gxL7qZcj9MxpziRALsR3gzkaFfoAMClM0z5SE-lw",
 									"type": "string"
 								}
 							]
@@ -1682,9 +1682,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/roles",
+							"raw": "{{baseURL}}/roles",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"roles"
