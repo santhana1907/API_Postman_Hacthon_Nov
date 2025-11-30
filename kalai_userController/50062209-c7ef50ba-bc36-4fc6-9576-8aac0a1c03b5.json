@@ -2434,6 +2434,63 @@
 				}
 			],
 			"id": "50062209-ea169146-1f2b-400d-8cc9-fe5cfd0d23e0"
+		},
+		{
+			"name": "DeleteProgramByProgramID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b21e27d1-1b8c-49df-8e36-aa88daef3a2d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Status message is No Content\", function () {\r",
+							"    pm.response.to.have.status(\"No Content\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "50062209-3701298a-f37b-49c3-a340-4da615ba4ff4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzc4MzksImV4cCI6MTc2NDIwNjYzOX0.hXXzSic9WcLlDs_uQ1kp3VLW9xuTB0zi7RADpTVnXHZ9TgPVDu4zibVEsRIIUVr7qaquhXWpuQVm5HMZQUmX6g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/deletebyprogid/37",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"deletebyprogid",
+						"37"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
