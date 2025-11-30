@@ -362,8 +362,8 @@
 									"    pm.test(\"Program description is QA Test Assure\", function () {\r",
 									"        pm.expect(pm.response.json().programDescription).to.eql(\"QA Test Assure\");\r",
 									"        });\r",
-									"        pm.test(\"Program status is Active\", function () {\r",
-									"            pm.expect(pm.response.json().programStatus).to.eql(\"Active\");\r",
+									"        pm.test(\"Program status is Inactive\", function () {\r",
+									"            pm.expect(pm.response.json().programStatus).to.eql(\"Inactive\");\r",
 									"            });\r",
 									"            pm.test(\"Schema validation\", () => {\r",
 									"const schema = {\r",
@@ -419,7 +419,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzMTM4MDUsImV4cCI6MTc2NDM0MjYwNX0.VwAzIQSoqxvlMmhaRh1WtApYgeKiqHPKngDi6nF7aJmhzCfqCe0Gn4_0x9h2J-hqLOm6h8RUJvv5lfDzq6k_rQ",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
 									"type": "string"
 								}
 							]
