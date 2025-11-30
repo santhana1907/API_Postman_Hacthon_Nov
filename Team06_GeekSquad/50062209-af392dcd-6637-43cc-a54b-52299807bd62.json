@@ -2061,9 +2061,9 @@
 									"pm.test(\"Response time is less than 500ms\", function () {\r",
 									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
 									"});\r",
-									"pm.test(\"Response text includes 'Role Id Updated for User: userId'\"){\r",
+									"pm.test(\"Response text includes 'Role Id Updated for User: userId'\", function(){\r",
 									"    pm.response.to.have.text(\"Role Id Updated for User: userId\");\r",
-									"};"
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {},
