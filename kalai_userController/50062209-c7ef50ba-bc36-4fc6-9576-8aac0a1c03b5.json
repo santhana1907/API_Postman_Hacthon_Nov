@@ -1499,6 +1499,74 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetBatchbyBatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d8601273-7659-4494-aca7-71ebdd0303e6",
+								"exec": [
+									"const schema= {\r",
+									"  \r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"batchId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"batchName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchDescription\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchNoOfClasses\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  required: [\r",
+									"    \"batchId\",\r",
+									"    \"batchName\",\r",
+									"    \"batchDescription\",\r",
+									"    \"batchStatus\",\r",
+									"    \"batchNoOfClasses\",\r",
+									"    \"programId\",\r",
+									"    \"programName\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-4729990c-e7b3-44ec-ad1d-f6340a47ca8d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{endpoint}}",
+							"host": [
+								"{{baseURL}}{{endpoint}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50062209-f7bffb69-e9e1-4400-9b67-0e8ba36fbbe2"
