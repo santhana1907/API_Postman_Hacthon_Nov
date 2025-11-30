@@ -1202,9 +1202,9 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/deletebyprogname/Testing",
+							"raw": "{{baseURL}}/deletebyprogname/Testing",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"deletebyprogname",
