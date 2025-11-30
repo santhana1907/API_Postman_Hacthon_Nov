@@ -591,7 +591,7 @@
 					]
 				},
 				{
-					"name": "Get User Information by Id",
+					"name": "Get User information by Id",
 					"event": [
 						{
 							"listen": "test",
