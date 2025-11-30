@@ -470,6 +470,98 @@
 			"name": "ProgramModule",
 			"item": [
 				{
+					"name": "AddNewprogram",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0183678c-3c27-4976-9c4b-24c10902586c",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 1000ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"});",
+									"pm.test(\"Status message is Created\", function () {",
+									"    pm.response.to.have.status(\"Created\");",
+									"});",
+									"pm.test(\"Schema validation\", function () {",
+									"    var schema = {",
+									"        type: \"object\",",
+									"        properties: {",
+									"            programId: { type: \"integer\" },",
+									"            programName: { type: \"string\" },",
+									"            programDescription: { type: \"string\" },",
+									"            programStatus: { type: \"string\" },",
+									"            creationTime: { type: \"string\" },",
+									"            lastModTime: { type: \"string\" }",
+									"        },",
+									"        required: [",
+									"            \"programId\",",
+									"            \"programName\",",
+									"            \"programDescription\",",
+									"            \"programStatus\",",
+									"            \"creationTime\",",
+									"            \"lastModTime\"",
+									"        ],",
+									"        additionalProperties: false",
+									"    };",
+									"",
+									"    var data = pm.response.json();",
+									"    var result = tv4.validateResult(data, schema);",
+									"",
+									"    pm.expect(result.valid, (result.error && (result.error.message + (result.error.dataPath ? (\" at \" + result.error.dataPath) : \"\"))) || \"Validation failed\").to.be.true;",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-e5764edd-4175-4d15-b5ca-bc767b0ca2ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"CucumberTestingAPI\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/saveprogram",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"saveprogram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get data",
 					"id": "50062209-5efa853b-4e18-41c7-902b-237af103ec99",
 					"protocolProfileBehavior": {
@@ -1896,98 +1988,6 @@
 				}
 			],
 			"id": "50062209-ea169146-1f2b-400d-8cc9-fe5cfd0d23e0"
-		},
-		{
-			"name": "AddNewprogram",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "0183678c-3c27-4976-9c4b-24c10902586c",
-						"exec": [
-							"pm.test(\"Status code is 201\", function () {",
-							"    pm.response.to.have.status(201);",
-							"});",
-							"pm.test(\"Content-Type is present\", function () {",
-							"    pm.response.to.have.header(\"Content-Type\");",
-							"});",
-							"pm.test(\"Response time is less than 1000ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
-							"});",
-							"pm.test(\"Status message is Created\", function () {",
-							"    pm.response.to.have.status(\"Created\");",
-							"});",
-							"pm.test(\"Schema validation\", function () {",
-							"    var schema = {",
-							"        type: \"object\",",
-							"        properties: {",
-							"            programId: { type: \"integer\" },",
-							"            programName: { type: \"string\" },",
-							"            programDescription: { type: \"string\" },",
-							"            programStatus: { type: \"string\" },",
-							"            creationTime: { type: \"string\" },",
-							"            lastModTime: { type: \"string\" }",
-							"        },",
-							"        required: [",
-							"            \"programId\",",
-							"            \"programName\",",
-							"            \"programDescription\",",
-							"            \"programStatus\",",
-							"            \"creationTime\",",
-							"            \"lastModTime\"",
-							"        ],",
-							"        additionalProperties: false",
-							"    };",
-							"",
-							"    var data = pm.response.json();",
-							"    var result = tv4.validateResult(data, schema);",
-							"",
-							"    pm.expect(result.valid, (result.error && (result.error.message + (result.error.dataPath ? (\" at \" + result.error.dataPath) : \"\"))) || \"Validation failed\").to.be.true;",
-							"});"
-						],
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {}
-					}
-				}
-			],
-			"id": "50062209-e5764edd-4175-4d15-b5ca-bc767b0ca2ac",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"CucumberTestingAPI\",\r\n    \"programStatus\": \"Active\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{BaseURL}}/saveprogram",
-					"host": [
-						"{{BaseURL}}"
-					],
-					"path": [
-						"saveprogram"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"event": [
