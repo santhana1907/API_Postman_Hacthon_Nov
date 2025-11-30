@@ -2082,7 +2082,48 @@
 					]
 				}
 			],
-			"id": "50062209-d8d428f2-918d-4010-8dde-6f95aa9a10f3"
+			"id": "50062209-d8d428f2-918d-4010-8dde-6f95aa9a10f3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "24f8144c-484b-4450-b0d3-06450dcd5c4a",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fad11c6d-ada5-43d5-9259-2a7da3f0c7c9",
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							"if (pm.response.code === 201) {\r",
+							"\r",
+							"    var jsonData = pm.response.json();\r",
+							"\r",
+							"    // Check if the response contains the batchId field\r",
+							"    if (jsonData && jsonData.batchId && jsonData.batchName) {\r",
+							"    \r",
+							"        pm.collectionVariables.set(\"BatchId\", jsonData.batchId);              \r",
+							"        pm.collectionVariables.set(\"BatchName\", jsonData.batchName);\r",
+							"        console.log(\"Batch ID: \" + jsonData.batchId + \" Batch Name: \" + jsonData.batchName);  \r",
+							"            \r",
+							"    } else {\r",
+							"        console.log(\"Batch ID/Batch Name not found in the response.\");\r",
+							"    }\r",
+							"\r",
+							"}"
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "SkillMasterController",
