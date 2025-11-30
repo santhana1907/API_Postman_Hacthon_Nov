@@ -2194,7 +2194,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"loginStatus\": \"Active\",\r\n\"password\": \"adfdlgd\",\r\n\"roleIds\": [\r\n\"R02\"\r\n],\r\n\"status\": \"updated\",\r\n\"userLoginEmail\": \"sashaprabhu32@gmail.com\"\r\n}\r\n",
+							"raw": "{\r\n\"loginStatus\": \"Active\",\r\n\"password\": \"\",\r\n\"roleIds\": [\r\n\"R02\"\r\n],\r\n\"status\": \"updated\",\r\n\"userLoginEmail\": \"sashaprabhu32@gmail.com\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
