@@ -1627,13 +1627,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/v2/users",
+							"raw": "{{BaseURL}}/v2/users/",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"v2",
-								"users"
+								"users",
+								""
 							]
 						}
 					},
