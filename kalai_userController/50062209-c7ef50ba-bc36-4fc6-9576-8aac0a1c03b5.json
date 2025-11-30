@@ -1855,7 +1855,7 @@
 					]
 				},
 				{
-					"name": "Get User Batch Id by User Id",
+					"name": "Get User BatchId by User Id",
 					"event": [
 						{
 							"listen": "test",
