@@ -657,7 +657,7 @@
 									"                \"type\": \"string\"\r",
 									"            },\r",
 									"            \"userRoleStatus\": {\r",
-									"                \"type\": \"string\"\r",
+									"                \"type\": \"boolean\"\r",
 									"            }\r",
 									"        },\r",
 									"        \r",
