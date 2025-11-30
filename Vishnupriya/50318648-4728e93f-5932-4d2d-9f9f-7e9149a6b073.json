@@ -1096,6 +1096,113 @@
 					"response": []
 				},
 				{
+					"name": "UpdateProgrambyProgramID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b78f1191-5dc3-4906-86d2-7f0ecb90926a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 400ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Program ID is 37\", function () {\r",
+									"    pm.expect(pm.response.json().programId).to.equal(37);\r",
+									"});\r",
+									"pm.test(\"Program Name is Cucumber\", function () {\r",
+									"    pm.expect(pm.response.json().programName).to.equal(\"Cucumber\");\r",
+									"});\r",
+									"pm.test(\"Schema validation\", () => {\r",
+									"const schema = {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"programId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"programDescription\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"programStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"creationTime\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"lastModTime\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"programId\",\r",
+									"    \"programName\",\r",
+									"    \"programDescription\",\r",
+									"    \"programStatus\",\r",
+									"    \"creationTime\",\r",
+									"    \"lastModTime\"\r",
+									"  ]\r",
+									"};\r",
+									"pm.response.to.have.jsonSchema(schema);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-18146f11-1533-4ce7-ade0-61de5479b191",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzMTM4MDUsImV4cCI6MTc2NDM0MjYwNX0.VwAzIQSoqxvlMmhaRh1WtApYgeKiqHPKngDi6nF7aJmhzCfqCe0Gn4_0x9h2J-hqLOm6h8RUJvv5lfDzq6k_rQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"programDescription\": \"QA Test Assure\",\r\n    \"programName\": \"Cucumber\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/putprogram/37",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"putprogram",
+								"37"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "DeleteProgramByProgramID",
 					"event": [
 						{
@@ -1123,6 +1230,63 @@
 						}
 					],
 					"id": "50318648-3701298a-f37b-49c3-a340-4da615ba4ff4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzc4MzksImV4cCI6MTc2NDIwNjYzOX0.hXXzSic9WcLlDs_uQ1kp3VLW9xuTB0zi7RADpTVnXHZ9TgPVDu4zibVEsRIIUVr7qaquhXWpuQVm5HMZQUmX6g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/deletebyprogid/37",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"deletebyprogid",
+								"37"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProgramByProgramID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b21e27d1-1b8c-49df-8e36-aa88daef3a2d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Status message is No Content\", function () {\r",
+									"    pm.response.to.have.status(\"No Content\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-f3010ac6-c30a-4caa-96b0-06633301ae5b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1183,6 +1347,66 @@
 						}
 					],
 					"id": "50318648-838cd015-fc8c-4b7f-adc6-59fb58c3bfe1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzc4MzksImV4cCI6MTc2NDIwNjYzOX0.hXXzSic9WcLlDs_uQ1kp3VLW9xuTB0zi7RADpTVnXHZ9TgPVDu4zibVEsRIIUVr7qaquhXWpuQVm5HMZQUmX6g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/deletebyprogname/Testing",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"deletebyprogname",
+								"Testing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProgramByProgramName Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3c60fef3-ce14-4c1b-9720-b775876a6485",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Status message is No Content\", function () {\r",
+									"    pm.response.to.have.status(\"No Content\");\r",
+									"});\r",
+									"pm.test(\"Response body contains the correct message\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Program Name -Cucumber is deleted Successfully!\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-f5100f1c-330e-4fc3-a3f8-ce516ef88c89",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
