@@ -1298,7 +1298,117 @@
 		},
 		{
 			"name": "ProgramBatchModule",
-			"item": [],
+			"item": [
+				{
+					"name": "CreateNewBatch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2572b72b-afb4-4c62-95b1-3758cf1e3ab3",
+								"exec": [
+									"if (pm.response.code === 201) {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the batchId field\r",
+									"    if (jsonData && jsonData.batchId && jsonData.batchName) {\r",
+									"    \r",
+									"        pm.collectionVariables.set(\"BatchId\", jsonData.batchId);              \r",
+									"        pm.collectionVariables.set(\"BatchName\", jsonData.batchName);\r",
+									"        console.log(\"Batch ID: \" + jsonData.batchId + \" Batch Name: \" + jsonData.batchName);  \r",
+									"            \r",
+									"    } else {\r",
+									"        console.log(\"Batch ID/Batch Name not found in the response.\");\r",
+									"    }\r",
+									"\r",
+									"}\r",
+									"\r",
+									"const schema = {\r",
+									"  \r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"batchId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"batchName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchDescription\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchNoOfClasses\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  required: [\r",
+									"    \"batchId\",\r",
+									"    \"batchName\",\r",
+									"    \"batchDescription\",\r",
+									"    \"batchStatus\",\r",
+									"    \"batchNoOfClasses\",\r",
+									"    \"programId\",\r",
+									"    \"programName\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "da00f875-1186-4256-ba66-41af1853219e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-7b9d15af-fa51-4834-8f8e-da8a552f72d7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\":\"{{programId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{endpoint}}",
+							"host": [
+								"{{baseURL}}{{endpoint}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
 			"id": "50062209-f7bffb69-e9e1-4400-9b67-0e8ba36fbbe2"
 		},
 		{
@@ -2633,117 +2743,7 @@
 		},
 		{
 			"name": "UserController",
-			"item": [
-				{
-					"name": "CreateNewBatch",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2572b72b-afb4-4c62-95b1-3758cf1e3ab3",
-								"exec": [
-									"if (pm.response.code === 201) {\r",
-									"\r",
-									"    var jsonData = pm.response.json();\r",
-									"\r",
-									"    // Check if the response contains the batchId field\r",
-									"    if (jsonData && jsonData.batchId && jsonData.batchName) {\r",
-									"    \r",
-									"        pm.collectionVariables.set(\"BatchId\", jsonData.batchId);              \r",
-									"        pm.collectionVariables.set(\"BatchName\", jsonData.batchName);\r",
-									"        console.log(\"Batch ID: \" + jsonData.batchId + \" Batch Name: \" + jsonData.batchName);  \r",
-									"            \r",
-									"    } else {\r",
-									"        console.log(\"Batch ID/Batch Name not found in the response.\");\r",
-									"    }\r",
-									"\r",
-									"}\r",
-									"\r",
-									"const schema = {\r",
-									"  \r",
-									"  \"type\": \"object\",\r",
-									"  \"properties\": {\r",
-									"    \"batchId\": {\r",
-									"      \"type\": \"integer\"\r",
-									"    },\r",
-									"    \"batchName\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"batchDescription\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"batchStatus\": {\r",
-									"      \"type\": \"string\"\r",
-									"    },\r",
-									"    \"batchNoOfClasses\": {\r",
-									"      \"type\": \"integer\"\r",
-									"    },\r",
-									"    \"programId\": {\r",
-									"      \"type\": \"integer\"\r",
-									"    },\r",
-									"    \"programName\": {\r",
-									"      \"type\": \"string\"\r",
-									"    }\r",
-									"  },\r",
-									"  required: [\r",
-									"    \"batchId\",\r",
-									"    \"batchName\",\r",
-									"    \"batchDescription\",\r",
-									"    \"batchStatus\",\r",
-									"    \"batchNoOfClasses\",\r",
-									"    \"programId\",\r",
-									"    \"programName\"\r",
-									"  ]\r",
-									"}\r",
-									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "da00f875-1186-4256-ba66-41af1853219e",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50062209-7b9d15af-fa51-4834-8f8e-da8a552f72d7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\":\"{{programId}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}{{endpoint}}",
-							"host": [
-								"{{baseURL}}{{endpoint}}"
-							]
-						}
-					},
-					"response": []
-				}
-			],
+			"item": [],
 			"id": "50062209-d533d48f-6007-4c7c-b0fb-583922f2d810"
 		}
 	],
