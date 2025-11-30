@@ -3683,6 +3683,55 @@
 					"response": []
 				},
 				{
+					"name": "UpdateUserRoleProgramBatchStatus Copy",
+					"id": "50062209-262a8672-7caa-4ac3-a517-0917cfbb0d30",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"programId\": 9, \r\n  \"roleId\": \"R03\", \r\n  \"userId\": \"U67\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": 9, \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"Active\" \r\n    } \r\n  ] \r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/:userId",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleProgramBatchStatus",
+								":userId"
+							],
+							"variable": [
+								{
+									"id": "33079b27-235f-4d4b-be6d-e171e3d8fd95",
+									"key": "userId",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "UpdateUserRoleID",
 					"event": [
 						{
@@ -3757,6 +3806,196 @@
 					"response": [
 						{
 							"id": "50062209-18e56389-92c6-40dc-ac59-03d5991db976",
+							"name": "UpdateUserRoleID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n  \"userRoleList\": [ \r\n    { \r\n      \"roleId\": \"R02\", \r\n      \"userRoleStatus\": \"Active\" \r\n    } \r\n  ] \r\n} \r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/users/roleId/:{userID}",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"users",
+										"roleId",
+										":{userID}"
+									],
+									"variable": [
+										{
+											"key": "{userID}",
+											"value": "U67"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Nov 2025 21:03:31 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=wcG%2BmW7E40KaPOwrM1EU6pzt5myne9kllWXaHiL4oHw%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764363811\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=wcG%2BmW7E40KaPOwrM1EU6pzt5myne9kllWXaHiL4oHw%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764363811\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "Role Id Updated for User: U67"
+						}
+					]
+				},
+				{
+					"name": "UpdateUserRoleID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "771202c8-ba93-4a1b-8cd3-ee1fb43ae5d8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Response text is correct\", () => pm.response.text() === \"Role Id Updated for User\");"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-bf67c0f8-f44a-411f-ab56-5471637a0d2e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTM4NjMsImV4cCI6MTc2NDU0MjY2M30.88h3PMtHyPFTSLgjqw7vDqGXG8e5fTYZrROhIDijPA6tuQ5Nm5PVgJ9DOWas2QjHFWvazPOetuqaZaHnLD7_Yg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"userRoleList\": [ \r\n    { \r\n      \"roleId\": \"{{roleId}}\", \r\n      \"userRoleStatus\": \"{{userRoleStatus}}\" \r\n    } \r\n  ] \r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/roleId/:{userID}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"roleId",
+								":{userID}"
+							],
+							"variable": [
+								{
+									"id": "640c96c0-fa2c-4637-adee-14041fcbe618",
+									"key": "{userID}",
+									"value": "U67"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "50062209-9e737a19-ffda-4c5c-9923-070bd256d13c",
 							"name": "UpdateUserRoleID",
 							"originalRequest": {
 								"method": "PUT",
