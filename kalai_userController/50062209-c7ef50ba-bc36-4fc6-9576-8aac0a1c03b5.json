@@ -1721,6 +1721,79 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get All Skill Master",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d62362c7-c007-484c-9c21-0f8853e07b4a",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const jsonData = pm.response.json();",
+									"",
+									"    var schema = {",
+									"        \"type\": \"array\",",
+									"  \"items\": [",
+									"    {",
+									"      \"type\": \"object\",",
+									"      \"properties\": {",
+									"        \"skillId\": {",
+									"          \"type\": \"integer\"",
+									"        },",
+									"        \"skillName\": {",
+									"          \"type\": \"string\"",
+									"        },",
+									"        \"creationTime\": {",
+									"          \"type\": \"string\"",
+									"        },",
+									"        \"lastModTime\": {",
+									"          \"type\": \"string\"",
+									"        }",
+									"      },",
+									"      \"required\": [",
+									"        \"skillId\",",
+									"        \"skillName\",",
+									"        \"creationTime\",",
+									"        \"lastModTime\"",
+									"      ]",
+									"    }",
+									"  ]",
+									"    }",
+									"    pm.test(\"Response has valid schema\", function () {",
+									"        pm.expect(jsonData).to.have.jsonSchema(schema);",
+									"    });",
+									"",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-0fbb61e1-8308-4c3c-accb-d3a8b9d4a0cc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/allSkillMaster",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"allSkillMaster"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50062209-ea169146-1f2b-400d-8cc9-fe5cfd0d23e0"
