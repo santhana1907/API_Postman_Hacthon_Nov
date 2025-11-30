@@ -1751,7 +1751,7 @@
 									"pm.test(\"Status Code is 404\",function(){\r",
 									"    pm.response.to.have.status(404);\r",
 									"});\r",
-									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"pm.test(\"Status message is 'Not Found'\",function(){\r",
 									"pm.response.to.have.status(\"Not Found\");    \r",
 									"});\r",
 									"}\r",
