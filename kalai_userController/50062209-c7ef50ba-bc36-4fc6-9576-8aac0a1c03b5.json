@@ -877,9 +877,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/allProgramsWithUsers",
+							"raw": "{{baseURL}}/allProgramsWithUsers",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"allProgramsWithUsers"
@@ -978,9 +978,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/program/BDDCucumber",
+							"raw": "{{baseURL}}/program/BDDCucumber",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"program",
@@ -1142,9 +1142,9 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/deletebyprogid/37",
+							"raw": "{{baseURL}}/deletebyprogid/37",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"deletebyprogid",
