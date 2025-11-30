@@ -621,7 +621,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"CucumberTestingAPI\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n\"programDescription\": \"{{programDescription}}\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"{{programStatus}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
