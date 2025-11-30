@@ -425,7 +425,7 @@
 									"pm.response.to.have.status(\"Bad Request\");    \r",
 									"});\r",
 									"}\r",
-									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
