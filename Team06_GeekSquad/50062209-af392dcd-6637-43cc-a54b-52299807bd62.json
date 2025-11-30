@@ -304,22 +304,6 @@
 							"script": {
 								"id": "8362cdd2-0e78-4e54-8b56-e1bb169c95d9",
 								"exec": [
-									"pm.variables.set(\"userComments\", pm.iterationData.get(\"userComments\"));\r",
-									"pm.variables.set(\"userEduPg\", pm.iterationData.get(\"userEduPg\"));\r",
-									"pm.variables.set(\"userEduUg\", pm.iterationData.get(\"userEduUg\"));\r",
-									"pm.variables.set(\"userFirstName\", pm.iterationData.get(\"userFirstName\"));\r",
-									"pm.variables.set(\"userLastName\", pm.iterationData.get(\"userLastName\"));\r",
-									"pm.variables.set(\"userLinkedinUrl\", pm.iterationData.get(\"userLinkedinUrl\"));\r",
-									"pm.variables.set(\"userLocation\", pm.iterationData.get(\"userLocation\"));\r",
-									"pm.variables.set(\"userMiddleName\", pm.iterationData.get(\"userMiddleName\"));\r",
-									"pm.variables.set(\"userPhoneNumber\", pm.iterationData.get(\"userPhoneNumber\"));\r",
-									"pm.variables.set(\"roleId\", pm.iterationData.get(\"roleId\"));\r",
-									"pm.variables.set(\"userRoleStatus\", pm.iterationData.get(\"userRoleStatus\"));\r",
-									"pm.variables.set(\"userTimeZone\", pm.iterationData.get(\"userTimeZone\"));\r",
-									"pm.variables.set(\"userVisaStatus\", pm.iterationData.get(\"userVisaStatus\"));\r",
-									"pm.variables.set(\"userLoginEmail\", pm.iterationData.get(\"userLoginEmail\"));\r",
-									"pm.variables.set(\"loginStatus\", pm.iterationData.get('loginStatus'));\r",
-									"pm.variables.set(\"status\", pm.iterationData.get('status'));\r",
 									""
 								],
 								"type": "text/javascript",
