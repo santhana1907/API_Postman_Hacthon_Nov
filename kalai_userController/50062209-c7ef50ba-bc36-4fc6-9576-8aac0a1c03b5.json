@@ -2592,18 +2592,18 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/:userId",
+							"raw": "{{BaseURL}}/users/:userID",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
-								":userId"
+								":userID"
 							],
 							"variable": [
 								{
-									"key": "userId",
-									"value": "U208"
+									"key": "userID",
+									"value": ""
 								}
 							]
 						}
