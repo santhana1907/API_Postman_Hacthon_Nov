@@ -976,6 +976,63 @@
 				},
 				{
 					"name": "GetBatchbyBatchName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d3482a93-aa58-4748-a1ba-1e7f1e8a7ae4",
+								"exec": [
+									"const schema= \r",
+									"  \r",
+									"  {\r",
+									"  \r",
+									"  \"type\": \"array\",\r",
+									"  \"items\": [\r",
+									"    {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"batchId\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"batchName\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"batchDescription\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"batchStatus\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"batchNoOfClasses\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"programId\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        },\r",
+									"        \"programName\": {\r",
+									"          \"type\": \"string\"\r",
+									"        }\r",
+									"      },\r",
+									"      required: [\r",
+									"        \"batchId\",\r",
+									"        \"batchName\",\r",
+									"        \"batchDescription\",\r",
+									"        \"batchStatus\",\r",
+									"        \"batchNoOfClasses\",\r",
+									"        \"programId\",\r",
+									"        \"programName\"\r",
+									"      ]\r",
+									"    }\r",
+									"  ]\r",
+									"}\r",
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319866-dae6430a-df09-4efc-af40-a7f96997212b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
