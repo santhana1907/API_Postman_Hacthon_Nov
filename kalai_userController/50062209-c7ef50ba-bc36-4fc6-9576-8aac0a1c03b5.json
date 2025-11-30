@@ -1843,6 +1843,166 @@
 					"response": []
 				},
 				{
+					"name": "Update Skill By Id Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5e614620-f4d9-4925-82f2-ba6fb52cc6ad",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"no request body\")) {",
+									"    console.log(\"Updating request body to none\");",
+									"    pm.request.body.update({",
+									"        mode: 'none'",
+									"    });",
+									"}",
+									"",
+									"else if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    console.log(\"Updating request header content type to text\");",
+									"    pm.request.headers.upsert({",
+									"        key : \"Content-Type\",",
+									"        value: \"text/plain\"",
+									"    });",
+									"}",
+									"",
+									"else if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty skill name\")) {",
+									"    console.log(\"Updating skill name to empty\");",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillName = \"\";",
+									"    pm.request.body.raw = JSON.stringify(body);",
+									"}",
+									"",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid skill id\")) {",
+									"    const body = JSON.parse(pm.request.body.raw);",
+									"    body.skillId = pm.collectionVariables.get(\"invalidSkillId\");",
+									"    pm.request.body.raw = JSON.stringify(body);",
+									"    console.log(\"Updating skill Id to invalid \" + pm.collectionVariables.get(\"invalidSkillId\"));",
+									"}",
+									"else {",
+									"    if (!pm.request.body || !pm.request.body.raw) {",
+									"        console.log(\"Request body is empty — cannot parse\");",
+									"    } else {",
+									"        console.log(\"Updating skill Id with \" + pm.collectionVariables.get(\"skillId\")); ",
+									"        const body = JSON.parse(pm.request.body.raw);",
+									"        body.skillId = pm.collectionVariables.get(\"skillId\");",
+									"        pm.request.body.raw = JSON.stringify(body);",
+									"    }",
+									"}",
+									"",
+									"function randomSkillName(length) {",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+									"    let out = \"\";",
+									"    for (let i = 0; i < length; i++) {",
+									"        out += chars.charAt(Math.floor(Math.random() * chars.length));",
+									"    }",
+									"    return out;",
+									"}",
+									"",
+									"pm.variables.set(\"skillName\", randomSkillName(10));",
+									"pm.collectionVariables.set(\"skillName\", pm.variables.get(\"skillName\"));"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8fbf2b8f-cd52-4ccf-a322-af2eb822c1c5",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var jsonData = pm.response.json();",
+									"    var schema = ",
+									"    {",
+									"        \"type\": \"object\",",
+									"  \"properties\": {",
+									"    \"skillId\": {",
+									"      \"type\": \"integer\"",
+									"    },",
+									"    \"skillName\": {",
+									"      \"type\": \"string\"",
+									"    },",
+									"    \"creationTime\": {",
+									"      \"type\": \"string\"",
+									"    },",
+									"    \"lastModTime\": {",
+									"      \"type\": \"string\"",
+									"    }",
+									"  },",
+									"  \"required\": [",
+									"    \"skillId\",",
+									"    \"skillName\",",
+									"    \"creationTime\",",
+									"    \"lastModTime\"",
+									"  ]",
+									"    }",
+									"",
+									"    pm.test(\"Response schema is valid\", function() {",
+									"        pm.expect(jsonData).to.be.jsonSchema(schema);",
+									"    });",
+									"",
+									"    pm.test(\"Response has given skill name\", function () {",
+									"        pm.expect(jsonData.skillName).to.equal(pm.collectionVariables.get(\"skillName\"));",
+									"    });",
+									"",
+									"    pm.test(\"Response has given skill Id\", function() {",
+									"        pm.expect(jsonData.skillId).to.equal(pm.collectionVariables.get(\"skillId\"));",
+									"    });",
+									"",
+									"}",
+									"else {",
+									"    pm.test(\"Response has expected message\", function() {",
+									"        try {",
+									"            var jsonData = pm.response.json();",
+									"            console.log(\"Checking response json message: \" + jsonData.message);",
+									"            pm.expect(jsonData).to.have.property('message');",
+									"            pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"        }",
+									"        catch {",
+									"            console.log(\"Response is not JSON\");",
+									"            pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"        }",
+									"    });",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319862-0082d674-380c-4690-9b73-f7d829bf8676",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"skillId\": 0,\n  \"skillName\": \"{{skillName}}\",\n  \"creationTime\": \"2025-11-28T23:41:36.411Z\",\n  \"lastModTime\": \"2025-11-28T23:41:36.411Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/updateSkills/{{skillId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"updateSkills",
+								"{{skillId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get All Skill Master",
 					"event": [
 						{
@@ -1894,6 +2054,79 @@
 						}
 					],
 					"id": "50319862-0fbb61e1-8308-4c3c-accb-d3a8b9d4a0cc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/allSkillMaster",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"allSkillMaster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Skill Master Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d62362c7-c007-484c-9c21-0f8853e07b4a",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    const jsonData = pm.response.json();",
+									"",
+									"    var schema = {",
+									"        \"type\": \"array\",",
+									"  \"items\": [",
+									"    {",
+									"      \"type\": \"object\",",
+									"      \"properties\": {",
+									"        \"skillId\": {",
+									"          \"type\": \"integer\"",
+									"        },",
+									"        \"skillName\": {",
+									"          \"type\": \"string\"",
+									"        },",
+									"        \"creationTime\": {",
+									"          \"type\": \"string\"",
+									"        },",
+									"        \"lastModTime\": {",
+									"          \"type\": \"string\"",
+									"        }",
+									"      },",
+									"      \"required\": [",
+									"        \"skillId\",",
+									"        \"skillName\",",
+									"        \"creationTime\",",
+									"        \"lastModTime\"",
+									"      ]",
+									"    }",
+									"  ]",
+									"    }",
+									"    pm.test(\"Response has valid schema\", function () {",
+									"        pm.expect(jsonData).to.have.jsonSchema(schema);",
+									"    });",
+									"",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319862-612624ec-7b24-4714-aa19-9384ab4c3202",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
