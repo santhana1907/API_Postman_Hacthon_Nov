@@ -1085,9 +1085,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/putprogram/37",
+							"raw": "{{baseURL}}/putprogram/37",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"putprogram",
