@@ -170,6 +170,275 @@
 					"response": []
 				},
 				{
+					"name": "ForgotPasswordConfirmEmail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d57c47f4-7255-4dbc-89dc-d1cd9ac60b6e",
+								"exec": [
+									"if (pm.response.code === 201) {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var schema = \r",
+									"        {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"token\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"type\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userId\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"email\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"roles\": {\r",
+									"      \"type\": \"array\",\r",
+									"      \"items\": [\r",
+									"        {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        {\r",
+									"          \"type\": \"string\"\r",
+									"        }\r",
+									"      ]\r",
+									"    },\r",
+									"    \"status\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"passwordExpired\": {\r",
+									"      \"type\": \"boolean\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"token\",\r",
+									"    \"type\",\r",
+									"    \"userId\",\r",
+									"    \"email\",\r",
+									"    \"roles\",\r",
+									"    \"status\",\r",
+									"    \"passwordExpired\"\r",
+									"  ]\r",
+									"        }\r",
+									"\r",
+									"    pm.test(\"Response has valid JSON schema\", function () {\r",
+									"        pm.expect(jsonData).to.be.jsonSchema(schema);\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response has 'Email sent'\", function () {\r",
+									"        pm.expect(pm.response.json().status).to.include(pm.variables.get(\"expectedMessage\"));\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response contains 'type'\", function () {\r",
+									"        pm.expect(jsonData.type).to.equal(\"Bearer\");\r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response has user email\", function() {\r",
+									"        pm.expect(jsonData.email).to.equal(pm.variables.get(\"userEmail\")); \r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response has user role\", function() {\r",
+									"        let expectedRole = pm.variables.get(\"expectedRoles\");\r",
+									"        pm.expect(jsonData.roles).to.have.members(expectedRole.split(\",\")); \r",
+									"    });\r",
+									"\r",
+									"    pm.test(\"Response has passwordExpired\", function() {\r",
+									"        pm.expect(jsonData.passwordExpired).to.be.false;\r",
+									"    });\r",
+									"}\r",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {\r",
+									"    pm.test(\"Response has expected text message\", function() {\r",
+									"        console.log(\"Checking plain text message \" + pm.response.text());\r",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));\r",
+									"    });\r",
+									"}\r",
+									"else {\r",
+									"    pm.test(\"Response has expected json message\", function() {\r",
+									"        var jsonData = pm.response.json();\r",
+									"        console.log(\"Checking response json message: \" + jsonData.message);\r",
+									"        pm.expect(jsonData).to.have.property('message');\r",
+									"        pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b52947e7-89ef-4d46-8d62-1b7b36014c76",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"missing request\")) {\r",
+									"    pm.request.body.update({\r",
+									"        mode: 'none'\r",
+									"    });\r",
+									"}\r",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {\r",
+									"    pm.request.headers.upsert({\r",
+									"        key : \"Content-Type\",\r",
+									"        value: \"text/plain\"\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-554f92a3-d4b8-4856-b6ea-915cfafb9053",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userLoginEmailId\":\"{{userEmail}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/login/forgotpassword/confirmEmail",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login",
+								"forgotpassword",
+								"confirmEmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetPassword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "39e4752f-bbc2-4e98-98ef-181e6713a8ae",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var jsonData = pm.response.json();",
+									"    var schema = {",
+									"        \"type\": \"object\",",
+									"  \"properties\": {",
+									"    \"message\": {",
+									"      \"type\": \"string\"",
+									"    },",
+									"    \"success\": {",
+									"      \"type\": \"boolean\"",
+									"    }",
+									"  },",
+									"  \"required\": [",
+									"    \"message\",",
+									"    \"success\"",
+									"  ]",
+									"    }",
+									"    pm.test(\"Response has valid schema\", function () {",
+									"        pm.expect(jsonData).to.be.jsonSchema(schema);",
+									"    });",
+									"",
+									"    pm.test(\"Response has 'Password saved'\", function () {",
+									"        pm.expect(pm.response.json().message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
+									"",
+									"    pm.test(\"Response has 'success' as true\", function () {",
+									"        pm.expect(jsonData.success).to.be.true;",
+									"    });",
+									"}",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {",
+									"    pm.test(\"Response has expected text message\", function() {",
+									"        console.log(\"Checking plain text message \" + pm.response.text());",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"}",
+									"else if (pm.response.code === 400) {",
+									"    pm.test(\"Response has expected json message\", function() {",
+									"        var jsonData = pm.response.json();",
+									"        console.log(\"Checking response json message: \" + jsonData.message);",
+									"        pm.expect(jsonData).to.have.property('message');",
+									"        pm.expect(jsonData.message).to.include.oneOf([pm.variables.get(\"expectedJsonMessage\"), pm.variables.get(\"expectedJsonMessage2\")]);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2d9c9c41-809f-4718-bb72-e96906cee765",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {",
+									"    pm.request.body.update({",
+									"        mode: 'none'",
+									"    });",
+									"}",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    pm.request.headers.upsert({",
+									"        key : \"Content-Type\",",
+									"        value: \"text/plain\"",
+									"    });",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-f879c46f-5b9d-45a4-bd58-be3632c2f2d1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"{{password}}\",\r\n    \"userLoginEmailId\":\"{{userEmail}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/login/resetPassword",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "New Request",
 					"id": "50062209-d34cc30a-dab8-46a6-9d56-00dc2d10ae95",
 					"protocolProfileBehavior": {
@@ -178,6 +447,30 @@
 					"request": {
 						"method": "GET",
 						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "User LogOut",
+					"id": "50062209-7ed0d6bb-c8e8-4a37-9881-8ec050704394",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/logoutlms",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"logoutlms"
+							]
+						}
 					},
 					"response": []
 				}
