@@ -802,9 +802,9 @@
 							"raw": "\r\n"
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users",
+							"raw": "{{baseURL}}/users",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"users"
