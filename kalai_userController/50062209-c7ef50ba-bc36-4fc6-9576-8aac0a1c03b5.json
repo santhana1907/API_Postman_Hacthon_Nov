@@ -758,6 +758,86 @@
 					"response": []
 				},
 				{
+					"name": "UpdatebyBatchId Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3243b913-8d43-4694-ad40-aae6f8681771",
+								"exec": [
+									"const schema=\r",
+									"{\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"batchId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"batchName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchDescription\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchNoOfClasses\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programId\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"programName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  required: [\r",
+									"    \"batchId\",\r",
+									"    \"batchName\",\r",
+									"    \"batchDescription\",\r",
+									"    \"batchStatus\",\r",
+									"    \"batchNoOfClasses\",\r",
+									"    \"programId\",\r",
+									"    \"programName\"\r",
+									"  ]\r",
+									"}\r",
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319866-2f3e0530-f6bc-4078-bbb4-a419813cb77b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"batchDescription\": \"{{batchDescription}}\", \r\n\"batchId\": {{programId}}, \r\n\"batchName\": \"{{batchName}}\", \r\n\"batchNoOfClasses\": {{batchNoOfClasses}}, \r\n\"batchStatus\": \"{{batchStatus}}\", \r\n\"programId\":{{programId}} , \r\n\"programName\": \"{{programName}}\" \r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{endpoint}}",
+							"host": [
+								"{{baseURL}}{{endpoint}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "DeleteBatchbyBatchId",
 					"id": "50319866-ce0f4261-64ba-47e7-81ec-e2682bc64480",
 					"protocolProfileBehavior": {
