@@ -2254,6 +2254,10 @@
 		{
 			"key": "userId",
 			"value": ""
+		},
+		{
+			"key": "skillName",
+			"value": ""
 		}
 	]
 }
