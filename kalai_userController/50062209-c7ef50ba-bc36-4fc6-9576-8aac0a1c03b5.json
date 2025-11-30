@@ -414,6 +414,8 @@
 									"    pm.test(\"Response time is less than 1000ms\", function () {\r",
 									"        pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 									"    });\r",
+									"\r",
+									" pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
 									"}\r",
 									"else{\r",
 									"pm.test(\"Status Code is 400\",function(){\r",
