@@ -479,12 +479,12 @@
 							"raw": "\r\n"
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users",
+							"raw": "{{BaseURL}}/user",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
-								"users"
+								"user"
 							]
 						}
 					},
