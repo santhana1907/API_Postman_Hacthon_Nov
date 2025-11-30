@@ -175,30 +175,6 @@
 					"response": []
 				},
 				{
-					"name": "Get by Program Users",
-					"id": "50062209-56c91c42-520c-46b9-9d18-da805c633b02",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Update by ProgramName",
-					"id": "50062209-b519455c-859d-4d8f-88ae-f867082a228c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
 					"name": "Update by Program ID",
 					"id": "50062209-6f621b77-c01d-4a37-90ca-4a0778ebdf15",
 					"protocolProfileBehavior": {
