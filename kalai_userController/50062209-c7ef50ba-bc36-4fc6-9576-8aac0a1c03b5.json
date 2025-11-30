@@ -1037,7 +1037,7 @@
 								"exec": [
 									"if(pm.response.code === 200)\r",
 									"{\r",
-									"     const Schema = {\r",
+									"     const schema = {\r",
 									"        \"type\": \"array\",\r",
 									"  \"properties\": {\r",
 									"    \"userId\": {\r",
