@@ -1805,6 +1805,18 @@
 							"script": {
 								"id": "81a78059-6a20-4409-af2f-e5269f5c6d39",
 								"exec": [
+									"if(pm.response.code === 200){\r",
+									"const schema= {\r",
+									"  \"type\": \"array\",\r",
+									"  \"items\": [\r",
+									"    {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  ]\r",
+									"};\r",
+									"pm.test(\"Schema validation\", () => {\r",
+									"pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
@@ -1817,25 +1829,17 @@
 									"pm.test(\"Response time is less than 200ms\", function () {\r",
 									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
 									"});\r",
-									"const schema= {\r",
-									"  \"type\": \"array\",\r",
-									"  \"items\": [\r",
-									"    {\r",
-									"      \"type\": \"string\"\r",
-									"    }\r",
-									"  ]\r",
-									"};\r",
-									"pm.test(\"Schema validation\", () => {\r",
-									"pm.response.to.have.jsonSchema(schema);\r",
+									"}\r",
+									"else{\r",
+									"     {\r",
+									"    pm.test(\"Status Code is 404\",function(){\r",
+									"    pm.response.to.have.status(404);\r",
 									"});\r",
-									"//Get the response result\r",
-									"var data = pm.response.json();\r",
-									"\r",
-									"//Validate the response body\r",
-									"pm.test('Schema is valid', function() {\r",
-									"    var tv4 = require('tv4');\r",
-									"pm.expect(tv4.validate(data, schema)).to.be.true;\r",
-									" });\r",
+									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"pm.response.to.have.status(\"Not Found\");    \r",
+									"}); \r",
+									"}   \r",
+									"}\r",
 									"\r",
 									""
 								],
@@ -1855,7 +1859,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDM2MjEsImV4cCI6MTc2NDU3MjQyMX0.SCqbq-1UhMiJ2O_Bn-ki65jm5qMIIDk23w4NCvyeR65SH0Priw-xxLDzzwmN8ZXtnHuQ7BVBhvVQMJD6jc3cXA",
 									"type": "string"
 								}
 							]
@@ -1863,9 +1867,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/fetch-emails",
+							"raw": "{{baseURL}}/fetch-emails",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"fetch-emails"
