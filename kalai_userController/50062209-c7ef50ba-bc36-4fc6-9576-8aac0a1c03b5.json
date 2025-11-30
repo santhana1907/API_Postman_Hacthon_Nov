@@ -1759,7 +1759,7 @@
 									"    var jsonData = pm.response.json();\r",
 									"\r",
 									"    // Check if the response contains the roleId field\r",
-									"    if (jsonData && jsonData.userId ) {\r",
+									"    if (jsonData && jsonData.roleId ) {\r",
 									"    \r",
 									"        pm.collectionVariables.set(\"roleId\", jsonData.roleId);              \r",
 									"        console.log (\"roleId is set to \" + pm.collectionVariables.get (\"roleId\")); \r",
