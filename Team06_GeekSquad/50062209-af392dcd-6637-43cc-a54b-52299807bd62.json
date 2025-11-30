@@ -515,6 +515,32 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "56b58b7f-68fa-4051-913c-185d182b64a7",
+								"exec": [
+									"if (pm.response.code === 201) {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the ProgramId field\r",
+									"    if (jsonData && jsonData.programId1 ) {\r",
+									"    \r",
+									"        pm.collectionVariables.set(\"programId\", jsonData.programId1);              \r",
+									"        console.log (\"programId is set to \" + pm.collectionVariables.get (\"programId\")); \r",
+									"            \r",
+									"    } else {\r",
+									"        console.log(\"programId not found in the response.\");\r",
+									"    }\r",
+									"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50062209-e07fec5d-b711-441e-8a5d-fbe06f0cd7ca",
