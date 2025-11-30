@@ -2439,6 +2439,32 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "06f1e869-6d80-409f-913a-55c77342b6df",
+								"exec": [
+									"if (pm.response.code === 201) {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the UserId field\r",
+									"    if (jsonData && jsonData.userId ) {\r",
+									"    \r",
+									"        pm.collectionVariables.set(\"userId\", jsonData.userId);              \r",
+									"        console.log (\"userId is set to \" + pm.collectionVariables.get (\"userId\")); \r",
+									"            \r",
+									"    } else {\r",
+									"        console.log(\"User Id not found in the response.\");\r",
+									"    }\r",
+									"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50318661-b5927bcc-f001-41af-b488-69f893a4236a",
@@ -2463,21 +2489,14 @@
 							"raw": "\r\n"
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/user/:userId",
+							"raw": "{{BaseURL}}/users/user/{{userId}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"users",
 								"user",
-								":userId"
-							],
-							"variable": [
-								{
-									"id": "b07109e1-c640-4c7d-b299-87b9182f3244",
-									"key": "userId",
-									"value": "{{userId}}"
-								}
+								"{{userId}}"
 							]
 						}
 					},
