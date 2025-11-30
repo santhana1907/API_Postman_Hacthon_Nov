@@ -841,20 +841,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}} /users/programBatch/:batchId ",
+							"raw": "{{baseURL}} /users/programBatch/{batchId} ",
 							"host": [
 								"{{baseURL}} "
 							],
 							"path": [
 								"users",
 								"programBatch",
-								":batchId "
-							],
-							"variable": [
-								{
-									"key": "batchId ",
-									"value": "{{batchId}}"
-								}
+								"{batchId} "
 							]
 						}
 					},
