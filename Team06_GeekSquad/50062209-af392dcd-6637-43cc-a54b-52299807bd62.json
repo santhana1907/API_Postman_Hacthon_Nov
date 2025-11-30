@@ -1310,6 +1310,142 @@
 					"response": []
 				},
 				{
+					"name": "GetUsersByProgramBatches Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c5f249d1-ddb6-40e2-be6e-2a4d6319a543",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"const schema={\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"userComments\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduPg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduUg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userFirstName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userId\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLastName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLinkedinUrl\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLocation\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLoginEmail\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userMiddleName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userPhoneNumber\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"userTimeZone\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userVisaStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"userComments\",\r",
+									"    \"userEduPg\",\r",
+									"    \"userEduUg\",\r",
+									"    \"userFirstName\",\r",
+									"    \"userId\",\r",
+									"    \"userLastName\",\r",
+									"    \"userLinkedinUrl\",\r",
+									"    \"userLocation\",\r",
+									"    \"userLoginEmail\",\r",
+									"    \"userMiddleName\",\r",
+									"    \"userPhoneNumber\",\r",
+									"    \"userTimeZone\",\r",
+									"    \"userVisaStatus\"\r",
+									"  ]\r",
+									"};\r",
+									"pm.test(\"Schema validation\", () => {\r",
+									"pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"//Get the response result\r",
+									"var data = pm.response.json();\r",
+									"\r",
+									"//Validate the response body\r",
+									"pm.test('Schema is valid', function() {\r",
+									"    var tv4 = require('tv4');\r",
+									"pm.expect(tv4.validate(data, schema)).to.be.true;\r",
+									" });"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-59800aa4-2075-4ded-8934-49ab8ef9b09d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}} /users/programBatch/:batchId ",
+							"host": [
+								"{{BaseURL}} "
+							],
+							"path": [
+								"users",
+								"programBatch",
+								":batchId "
+							],
+							"variable": [
+								{
+									"id": "3628639f-1f7d-47c2-a809-fb33cdd7d772",
+									"key": "batchId ",
+									"value": "{{batchId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetUserDetailsByID",
 					"event": [
 						{
@@ -1520,6 +1656,323 @@
 						},
 						{
 							"id": "50062209-f3dafe5d-0a4d-457a-b18c-6dfbea16f59f",
+							"name": "GetUserDetailsByID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/users/details/:{id} ",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"users",
+										"details",
+										":{id} "
+									],
+									"variable": [
+										{
+											"key": "{id} ",
+											"value": "{{id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Nov 2025 23:53:03 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=17dStVfDg4p6nAnD0nWyM5mg1kn9pzBW2J4G1vhn%2BWE%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764373983\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=17dStVfDg4p6nAnD0nWyM5mg1kn9pzBW2J4G1vhn%2BWE%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764373983\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"programName\": \"Apiboot\",\n        \"batchName\": \"B2CBatch\",\n        \"userFirstName\": \"Kevin\",\n        \"userLastName\": \"Arthur\",\n        \"userLoginEmail\": \"Kev123@gmail.com\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GetUserDetailsByID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ab08078c-39c2-4e8f-a666-7c54d3a8cc19",
+								"exec": [
+									"\r",
+									"const schema = {\r",
+									"  \"type\": \"array\",\r",
+									"  \"properties\": {\r",
+									"    \"programName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"batchName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userFirstName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLastName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLoginEmail\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"programName\",\r",
+									"    \"batchName\",\r",
+									"    \"userFirstName\",\r",
+									"    \"userLastName\",\r",
+									"    \"userLoginEmail\"\r",
+									"  ]\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 300ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"pm.test(\"Schema validation\", () => {\r",
+									"pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"//Get the response result\r",
+									"var data = pm.response.json();\r",
+									"\r",
+									"//Validate the response body\r",
+									"pm.test('Schema is valid', function() {\r",
+									"    var tv4 = require('tv4');\r",
+									"pm.expect(tv4.validate(data, schema)).to.be.true;\r",
+									" });"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-5de846a0-89cf-4673-a882-a5f48498a505",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/users/details/:{id} ",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"details",
+								":{id} "
+							],
+							"variable": [
+								{
+									"id": "97b83b3f-d178-4f3d-859c-41facfc68230",
+									"key": "{id} ",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "50062209-5bb97b45-8865-4dab-9cfe-7cc5a6738944",
+							"name": "GetUserDetailsByID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/users/details/:{id} ",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"users",
+										"details",
+										":{id} "
+									],
+									"variable": [
+										{
+											"key": "{id} ",
+											"value": "{{id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Nov 2025 20:28:21 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=xEERif%2FhZBd8KlDjo70mxaX%2F%2FVnZHzVhAdP2ah1Q9ZA%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764016101\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=xEERif%2FhZBd8KlDjo70mxaX%2F%2FVnZHzVhAdP2ah1Q9ZA%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764016101\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[]"
+						},
+						{
+							"id": "50062209-26b5bd81-db36-44e5-b77b-ea74ee3e3071",
 							"name": "GetUserDetailsByID",
 							"originalRequest": {
 								"method": "GET",
