@@ -1149,6 +1149,7 @@
 									"    pm.test(\"Response has valid JSON schema\", function () {\r",
 									"        pm.expect(jsonData).to.be.jsonSchema(schema);\r",
 									"    });\r",
+									"    \r",
 									"    pm.test(\"Response has 'Email sent'\", function () {\r",
 									"        pm.expect(pm.response.json().status).to.include(pm.variables.get(\"expectedMessage\"));\r",
 									"    });\r",
