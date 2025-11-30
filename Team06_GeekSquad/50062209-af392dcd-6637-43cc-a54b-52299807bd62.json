@@ -720,6 +720,15 @@
 							"script": {
 								"id": "c5f249d1-ddb6-40e2-be6e-2a4d6319a543",
 								"exec": [
+									"if(pm.response.code === 201) {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    if (jsonData && jsonData.BatchId) {\r",
+									"        pm.collectionVariables.set(\"batchId\", jsonData.BatchId);\r",
+									"        console.log(\"batchId is set to \" + pm.collectionVariables.get(\"batchId\"));\r",
+									"    } else {\r",
+									"        console.log(\"batchId not found in the response.\");\r",
+									"    }\r",
+									"}\r",
 									"if(pm.response.code === 200)\r",
 									"{\r",
 									"const schema={\r",
@@ -832,9 +841,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}} /users/programBatch/:batchId ",
+							"raw": "{{baseURL}} /users/programBatch/:batchId ",
 							"host": [
-								"{{BaseURL}} "
+								"{{baseURL}} "
 							],
 							"path": [
 								"users",
