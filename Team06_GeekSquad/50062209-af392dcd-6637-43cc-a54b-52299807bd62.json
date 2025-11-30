@@ -1222,6 +1222,7 @@
 									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
 									"pm.response.to.have.status(\"Not Found\");    \r",
 									"}); \r",
+									"}\r",
 									"}"
 								],
 								"type": "text/javascript",
@@ -1240,7 +1241,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDE0OTMsImV4cCI6MTc2NDU3MDI5M30.S6LBDBQrzwIsYCpsGLJZ_gOQRtz14khdRxWetZJjiOdkWGQ3iB_a2jUtf0O84-PukjN8r883P1j-D-wtTPmo6w",
 									"type": "string"
 								}
 							]
