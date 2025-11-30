@@ -2220,6 +2220,113 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\n    \"message\": \"userLastName must contain one or more alphabets only\",\n    \"success\": false\n}"
+						},
+						{
+							"id": "50318661-14f98be9-0e1f-42d7-86c6-7f3b99b330c9",
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userComments\": \"dskdlsd\",\r\n\"userEduPg\": \"computer science\",\r\n\"userEduUg\": \"computer application\",\r\n\"userFirstName\": \"sasha\",\r\n\"userId\": \"{{userId}}\",\r\n\"userLastName\": \"prabhu\",\r\n\"userMiddleName\": \"sk\",\r\n\"userLinkedinUrl\": \"www.linkedin.com/in/sashaprabhu\",\r\n\"userLocation\": \"india\",\r\n\"userLoginEmail\":\"sashaprabhu32@gmail.com\",\r\n\"userPhoneNumber\":\"+91 2345869921\",\r\n\"userTimeZone\": \"EST\",\r\n\"userVisaStatus\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/users/{{userId}}",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"users",
+										"{{userId}}"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 Nov 2025 05:27:40 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=on86H0y95M5iWgzyH03qXfIEP6iv74LfzVZCzNvXCXg%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764480460\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=on86H0y95M5iWgzyH03qXfIEP6iv74LfzVZCzNvXCXg%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764480460\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"message\": \"Failed to update user, as 'Visa Status' is invalid !! \",\n    \"success\": false\n}"
 						}
 					]
 				},
