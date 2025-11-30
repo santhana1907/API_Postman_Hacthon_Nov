@@ -423,7 +423,15 @@
 							"script": {
 								"id": "3440efb5-e55d-453d-8c7d-8e1a017b6b10",
 								"exec": [
-									"\r",
+									"if(pm.response.code === 201) {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    if (jsonData && jsonData.programId1) {\r",
+									"        pm.collectionVariables.set(\"programId\", jsonData.programId1);\r",
+									"        console.log(\"programId is set to \" + pm.collectionVariables.get(\"programId\"));\r",
+									"    } else {\r",
+									"        console.log(\"programId not found in the response.\");\r",
+									"    }\r",
+									"}\r",
 									"if(pm.response.code === 200)\r",
 									"{\r",
 									"    var jsonData = pm.response.json();\r",
