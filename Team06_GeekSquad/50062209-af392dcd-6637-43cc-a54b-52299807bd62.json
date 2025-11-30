@@ -1517,7 +1517,7 @@
 							"script": {
 								"id": "73650507-220e-4340-8e78-bee83022e108",
 								"exec": [
-									"let jsonData = pm.response.json();\r",
+									"let jsonData = pm.response.text();\r",
 									"pm.environment.set(\"userId\", jsonData.userId);"
 								],
 								"type": "text/javascript",
