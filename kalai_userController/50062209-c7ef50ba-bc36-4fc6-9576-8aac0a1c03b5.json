@@ -1994,7 +1994,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"userComments\": \"string\",\r\n\"userEduPg\": \"string\",\r\n\"userEduUg\": \"string\",\r\n\"userFirstName\": \"sasha\",\r\n\"userId\": \"{{userId}}\",\r\n\"userLastName\": \"prabhu\",\r\n\"userMiddleName\": \"string\",\r\n\"userLinkedinUrl\": \"www.linkedin.com/in/sashaprabhu\",\r\n\"userLocation\": \"string\",\r\n\"userLoginEmail\":\"sashaprabhu32@gmail.com\",\r\n\"userPhoneNumber\":\"+91 2345869989\",\r\n\"userTimeZone\": \"EST\",\r\n\"userVisaStatus\": \"H4-EAD\"\r\n}",
+							"raw": "{\r\n\"userComments\": \"dskdlsd\",\r\n\"userEduPg\": \"computer science\",\r\n\"userEduUg\": \"computer application\",\r\n\"userFirstName\": \"sasha\",\r\n\"userId\": \"{{userId}}\",\r\n\"userLastName\": \"prabhu\",\r\n\"userMiddleName\": \"\",\r\n\"userLinkedinUrl\": \"www.linkedin.com/in/sashaprabhu\",\r\n\"userLocation\": \"india\",\r\n\"userLoginEmail\":\"sashaprabhu32@gmail.com\",\r\n\"userPhoneNumber\":\"+91 2345869989\",\r\n\"userTimeZone\": \"EST\",\r\n\"userVisaStatus\": \"H4-EAD\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
