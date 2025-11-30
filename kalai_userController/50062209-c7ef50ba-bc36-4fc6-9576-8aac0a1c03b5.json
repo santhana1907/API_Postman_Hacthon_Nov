@@ -595,8 +595,145 @@
 					"response": []
 				},
 				{
+					"name": "ResetPassword Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "39e4752f-bbc2-4e98-98ef-181e6713a8ae",
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var jsonData = pm.response.json();",
+									"    var schema = {",
+									"        \"type\": \"object\",",
+									"  \"properties\": {",
+									"    \"message\": {",
+									"      \"type\": \"string\"",
+									"    },",
+									"    \"success\": {",
+									"      \"type\": \"boolean\"",
+									"    }",
+									"  },",
+									"  \"required\": [",
+									"    \"message\",",
+									"    \"success\"",
+									"  ]",
+									"    }",
+									"    pm.test(\"Response has valid schema\", function () {",
+									"        pm.expect(jsonData).to.be.jsonSchema(schema);",
+									"    });",
+									"",
+									"    pm.test(\"Response has 'Password saved'\", function () {",
+									"        pm.expect(pm.response.json().message).to.include(pm.variables.get(\"expectedJsonMessage\"));",
+									"    });",
+									"",
+									"    pm.test(\"Response has 'success' as true\", function () {",
+									"        pm.expect(jsonData.success).to.be.true;",
+									"    });",
+									"}",
+									"else if (pm.response.code === 404 || pm.response.code === 415) {",
+									"    pm.test(\"Response has expected text message\", function() {",
+									"        console.log(\"Checking plain text message \" + pm.response.text());",
+									"        pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));",
+									"    });",
+									"}",
+									"else if (pm.response.code === 400) {",
+									"    pm.test(\"Response has expected json message\", function() {",
+									"        var jsonData = pm.response.json();",
+									"        console.log(\"Checking response json message: \" + jsonData.message);",
+									"        pm.expect(jsonData).to.have.property('message');",
+									"        pm.expect(jsonData.message).to.include.oneOf([pm.variables.get(\"expectedJsonMessage\"), pm.variables.get(\"expectedJsonMessage2\")]);",
+									"    });",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2d9c9c41-809f-4718-bb72-e96906cee765",
+								"exec": [
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {",
+									"    pm.request.body.update({",
+									"        mode: 'none'",
+									"    });",
+									"}",
+									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {",
+									"    pm.request.headers.upsert({",
+									"        key : \"Content-Type\",",
+									"        value: \"text/plain\"",
+									"    });",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319862-d6c526a5-b62a-453f-ac27-c42b4de1fd2f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"{{password}}\",\r\n    \"userLoginEmailId\":\"{{userEmail}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/login/resetPassword",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "User LogOut",
 					"id": "50319862-7ed0d6bb-c8e8-4a37-9881-8ec050704394",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/logoutlms",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"logoutlms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User LogOut Copy",
+					"id": "50319862-64186e1f-ad1c-442e-bf01-ec2715bdf934",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
