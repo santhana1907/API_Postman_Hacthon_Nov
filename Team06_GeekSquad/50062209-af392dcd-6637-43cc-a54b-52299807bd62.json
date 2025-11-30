@@ -1511,6 +1511,19 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "73650507-220e-4340-8e78-bee83022e108",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"pm.environment.set(\"userId\", jsonData.userId);"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50062209-acde1929-90ef-4ba1-a035-1f8daa79e962",
