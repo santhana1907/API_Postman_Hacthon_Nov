@@ -765,13 +765,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/program/{{ProgramName}}",
+							"raw": "{{BaseURL}}/program/{{programName}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"program",
-								"{{ProgramName}}"
+								"{{programName}}"
 							]
 						}
 					},
