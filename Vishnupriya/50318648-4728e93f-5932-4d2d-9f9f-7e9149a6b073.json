@@ -1741,7 +1741,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8e1ce93d-07b1-4e1a-ad47-2d84ba22e3fe",
+				"id": "30ffe10d-05a4-4b41-b6fd-76e9b884800a",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1876,7 +1876,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "45e195ab-e5cc-4b50-a438-264e43cdc817",
+				"id": "a4f3c6e8-40e3-4118-a116-a5f5e7b38688",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1904,7 +1904,8 @@
 		},
 		{
 			"key": "ProgramName",
-			"value": ""
+			"value": "",
+			"description": "programName"
 		},
 		{
 			"key": "ProgramName2",
