@@ -458,7 +458,7 @@
 									"    pm.response.to.have.status(\"OK\");",
 									"});",
 									"pm.test(\"Program name is Cucumber\", function () {",
-									"    pm.expect(pm.response.json().programName).to.eql(\"CucumberBDD\");",
+									"    pm.expect(pm.response.json().programName).to.eql(pm.collectionVariables.get(\"programName\"));",
 									"});",
 									"pm.test(\"Program description is QA Test Assure\", function () {",
 									"    pm.expect(pm.response.json().programDescription).to.eql(\"QA Test Assure API\");",
@@ -507,7 +507,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NjE4NzksImV4cCI6MTc2NDU5MDY3OX0.BirvjxuiEU3Uf7unLyYnHsUHQ_Zf8asB4l3zivEO9MjGEmk0g5MGmvMgbaLTInZe7MEUtIvAlEuwb3scj-irvQ",
+									"value": "{{BearerToken}}",
 									"type": "string"
 								}
 							]
@@ -515,13 +515,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/programs/37",
+							"raw": "{{BaseURL}}/programs/{{programId}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"programs",
-								"37"
+								"{{programId}}"
 							]
 						}
 					},
@@ -655,7 +655,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTkyMzgsImV4cCI6MTc2NDU0ODAzOH0.WMRnGH8WnGZ6Wcc0lH75YnMWvF3_qp9g1lhQNC3Qh-oi0sc77kL_MeEEmpspsVu2FFKr7vfryDp8QXKULJW_LA",
+									"value": "{{BearerToken}}",
 									"type": "string"
 								}
 							]
