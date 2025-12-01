@@ -124,13 +124,13 @@
 									"    pm.response.to.have.status(\"OK\");",
 									"});",
 									"pm.test(\"Program name is Cucumber\", function () {",
-									"    pm.expect(pm.response.json().programName).to.eql(\"Cucumber\");",
+									"    pm.expect(pm.response.json().programName).to.eql(\"CucumberBDD\");",
 									"});",
 									"pm.test(\"Program description is QA Test Assure\", function () {",
-									"    pm.expect(pm.response.json().programDescription).to.eql(\"QA Test Assure\");",
+									"    pm.expect(pm.response.json().programDescription).to.eql(\"QA Test Assure API\");",
 									"});",
 									"pm.test(\"Program status is Inactive\", function () {",
-									"    pm.expect(pm.response.json().programStatus).to.eql(\"Inactive\");",
+									"    pm.expect(pm.response.json().programStatus).to.eql(\"Active\");",
 									"});",
 									"pm.test(\"Schema validation\", function () {",
 									"    const schema = {",
@@ -173,7 +173,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NjE4NzksImV4cCI6MTc2NDU5MDY3OX0.BirvjxuiEU3Uf7unLyYnHsUHQ_Zf8asB4l3zivEO9MjGEmk0g5MGmvMgbaLTInZe7MEUtIvAlEuwb3scj-irvQ",
 									"type": "string"
 								}
 							]
