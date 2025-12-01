@@ -14,6 +14,98 @@
 			"name": "ProgramController",
 			"item": [
 				{
+					"name": "AddNewprogram Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0183678c-3c27-4976-9c4b-24c10902586c",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Response time is less than 1000ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"});",
+									"pm.test(\"Status message is Created\", function () {",
+									"    pm.response.to.have.status(\"Created\");",
+									"});",
+									"pm.test(\"Schema validation\", function () {",
+									"    var schema = {",
+									"        type: \"object\",",
+									"        properties: {",
+									"            programId: { type: \"integer\" },",
+									"            programName: { type: \"string\" },",
+									"            programDescription: { type: \"string\" },",
+									"            programStatus: { type: \"string\" },",
+									"            creationTime: { type: \"string\" },",
+									"            lastModTime: { type: \"string\" }",
+									"        },",
+									"        required: [",
+									"            \"programId\",",
+									"            \"programName\",",
+									"            \"programDescription\",",
+									"            \"programStatus\",",
+									"            \"creationTime\",",
+									"            \"lastModTime\"",
+									"        ],",
+									"        additionalProperties: false",
+									"    };",
+									"",
+									"    var data = pm.response.json();",
+									"    var result = tv4.validateResult(data, schema);",
+									"",
+									"    pm.expect(result.valid, (result.error && (result.error.message + (result.error.dataPath ? (\" at \" + result.error.dataPath) : \"\"))) || \"Validation failed\").to.be.true;",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50318648-3f953f86-9019-4875-8359-13576a6d64d3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{BearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"CucumberTestingAPI\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/saveprogram",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"saveprogram"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetAllPrograms Copy",
 					"event": [
 						{
