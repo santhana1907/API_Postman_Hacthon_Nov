@@ -3762,20 +3762,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/programs/{{programId}}",
+							"raw": "{{baseURL}}/users/programs/{{programID}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"users",
 								"programs",
-								"{{programId}}"
-							],
-							"variable": [
-								{
-									"key": "programId",
-									"value": "{{programId}}"
-								}
+								"{{programID}}"
 							]
 						}
 					},
