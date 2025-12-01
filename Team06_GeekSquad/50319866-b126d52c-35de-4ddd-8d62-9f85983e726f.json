@@ -4960,14 +4960,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/users/details/{id} ",
+							"raw": "{{baseURL}}/users/details/{{userId}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"users",
 								"details",
-								"{id} "
+								"{{userId}}"
 							]
 						}
 					},
