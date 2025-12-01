@@ -2351,6 +2351,419 @@
 			"name": "UserController",
 			"item": [
 				{
+					"name": "Get User informationbyUserIdCopy Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "da2d2220-bfb6-46a1-86af-669637bbbcd9",
+								"exec": [
+									"if(pm.response.code === 200)\r",
+									"{\r",
+									"     var jsonData = pm.response.json();\r",
+									"     const schema = {\r",
+									"        \"type\": \"array\",\r",
+									"  \"properties\": {\r",
+									"    \"userId\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userFirstName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLastName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userMiddleName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userPhoneNumber\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLocation\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userTimeZone\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLinkedinUrl\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduUg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduPg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userComments\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userVisaStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLoginEmail\": {\r",
+									"      \"type\": \"null\"\r",
+									"    },\r",
+									"    \r",
+									"   \r",
+									"     \"roles\" : \r",
+									"    {\r",
+									"        \"type\": \"array\",\r",
+									"        \"properties\": {\r",
+									"            \"roleId\": {\r",
+									"                \"type\": \"string\"\r",
+									"            },\r",
+									"            \"userRoleStatus\": {\r",
+									"                \"type\": \"boolean\"\r",
+									"            }\r",
+									"        },\r",
+									"        \r",
+									"    }\r",
+									"  \r",
+									"  },\r",
+									"\r",
+									"    \r",
+									"  \"required\": [\r",
+									"    \"userId\",\r",
+									"    \"userFirstName\",\r",
+									"    \"userLastName\",\r",
+									"    \"userMiddleName\",\r",
+									"    \"userPhoneNumber\",\r",
+									"    \"userLocation\",\r",
+									"    \"userTimeZone\",\r",
+									"    \"userLinkedinUrl\",\r",
+									"    \"userEduUg\",\r",
+									"    \"userEduPg\",\r",
+									"    \"userComments\",\r",
+									"    \"userVisaStatus\",\r",
+									"    \"userLoginEmail\",\r",
+									"    \"roleId\",\r",
+									"    \"userRoleStatus\"\r",
+									"        ]\r",
+									"   };\r",
+									"   pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"status message is 'OK'\",function(){\r",
+									"    pm.response.to.have.status(\"OK\");  \r",
+									"});\r",
+									"    pm.test(\"Response time is less than 1000ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+									"    });\r",
+									"\r",
+									" pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);\r",
+									" });\r",
+									"}\r",
+									"else if(pm.response.code === 404) {\r",
+									"pm.test(\"Status Code is 404\",function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"pm.response.to.have.status(\"Not Found\");    \r",
+									"});\r",
+									"}\r",
+									"else {\r",
+									"pm.test(\"Status Code is 200\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"    pm.test(\"Status message is 'OK'\",function(){\r",
+									"pm.response.to.have.status(\"OK\");    \r",
+									"});\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "771981fb-374a-436c-b142-2c5d4fbd684e",
+								"exec": [
+									"//if (pm.response.code === 201) {\r",
+									"\r",
+									"   // var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the Userid field\r",
+									"   // if (jsonData && jsonData.userid ) {\r",
+									"    \r",
+									"   //     pm.collectionVariables.set(\"userid\", jsonData.userid);              \r",
+									"   //     console.log (\"userid is set to \" + pm.collectionVariables.get (\"userid\")); \r",
+									"            \r",
+									"   // } else {\r",
+									"        //console.log(\"Userid not found in the response.\");\r",
+									"   // }\r",
+									"\r",
+									"//}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-cc88e4fa-fa6c-4938-b16d-7175be690042",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/{{userid}}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"{{userid}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "50062209-5dc1fe7e-3382-4f4d-ada9-334c6c68c433",
+							"name": "Get User Information by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n"
+								},
+								"url": {
+									"raw": "{{BaseURL}}/users/:id",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Nov 2025 05:21:04 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=bJxZzIfyCna3pbjxIB9IzS%2FV5IVKPwIUQazgwTnXtzY%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764048064\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=bJxZzIfyCna3pbjxIB9IzS%2FV5IVKPwIUQazgwTnXtzY%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764048064\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Length",
+									"value": "555"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"user\": {\n        \"userId\": \"U20\",\n        \"userFirstName\": \"sasha\",\n        \"userLastName\": \"prabhu\",\n        \"userMiddleName\": \"string\",\n        \"userPhoneNumber\": \"+91 2345869989\",\n        \"userLocation\": \"string\",\n        \"userTimeZone\": \"EST\",\n        \"userLinkedinUrl\": \"www.linkedin.com/in/sashaprabhu\",\n        \"userEduUg\": \"string\",\n        \"userEduPg\": \"string\",\n        \"userComments\": \"string\",\n        \"userVisaStatus\": \"H4-EAD\",\n        \"userLoginEmail\": \"sashaprabhu32@gmail.com\"\n    },\n    \"roles\": [\n        {\n            \"roleId\": \"R01\",\n            \"userRoleStatus\": \"Active\"\n        }\n    ],\n    \"programBatches\": [\n        {\n            \"programId\": 3,\n            \"programName\": \"Testing\",\n            \"batches\": [\n                {\n                    \"batchId\": 38,\n                    \"batchName\": \"ABCBAtch\",\n                    \"userBatchStatus\": \"active\"\n                }\n            ]\n        }\n    ]\n}"
+						},
+						{
+							"id": "50062209-ff3f0f2e-a257-4f5b-b097-8d91ace12a68",
+							"name": "Get User Information by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseURL}}/users/:id",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "{{id}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 29 Nov 2025 19:05:15 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=HJ2yk0812tOe%2FqbCRdXzPOfLvFSIaAeX3ByxecgIUsM%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764443115\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=HJ2yk0812tOe%2FqbCRdXzPOfLvFSIaAeX3ByxecgIUsM%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764443115\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Length",
+									"value": "384"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"user\": {\n        \"userId\": \"U82\",\n        \"userFirstName\": \"Yogi\",\n        \"userLastName\": \"Sh\",\n        \"userMiddleName\": \"S\",\n        \"userPhoneNumber\": \"+1 4563325624\",\n        \"userLocation\": \"USA\",\n        \"userTimeZone\": \"CST\",\n        \"userLinkedinUrl\": \"www.linkedin.com/123\",\n        \"userEduUg\": \"string\",\n        \"userEduPg\": \"string\",\n        \"userComments\": \"string\",\n        \"userVisaStatus\": \"NA\",\n        \"userLoginEmail\": \"Jeffrey@gmail.com\"\n    },\n    \"roles\": [\n        {\n            \"roleId\": \"R03\",\n            \"userRoleStatus\": \"Active\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
 					"name": "GetallUsers Copy 2",
 					"event": [
 						{
