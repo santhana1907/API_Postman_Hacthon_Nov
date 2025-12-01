@@ -2005,7 +2005,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n  \"programId\": 9, \r\n  \"roleId\": \"R03\", \r\n  \"userId\": \"U67\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": 9, \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"Active\" \r\n    } \r\n  ] \r\n} ",
+							"raw": "{ \r\n  \"programId\": {{programId}}, \r\n  \"roleId\": \"{{roleId}}\", \r\n  \"userId\": \"{{userId}}\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": {{batchId}}, \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"{{userRoleProgramBatchStatus}}\" \r\n    } \r\n  ] \r\n} ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2013,9 +2013,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/:userId",
+							"raw": "{{baseURL}}/users/roleProgramBatchStatus/:userId",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"users",
@@ -2024,7 +2024,6 @@
 							],
 							"variable": [
 								{
-									"id": "33079b27-235f-4d4b-be6d-e171e3d8fd95",
 									"key": "userId",
 									"value": "{{id}}"
 								}
