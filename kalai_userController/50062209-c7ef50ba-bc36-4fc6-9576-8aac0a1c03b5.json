@@ -519,7 +519,7 @@
 					"response": []
 				},
 				{
-					"name": "GetBatchbyBatchId Copy",
+					"name": "GetBatchbyBatchId",
 					"event": [
 						{
 							"listen": "test",
