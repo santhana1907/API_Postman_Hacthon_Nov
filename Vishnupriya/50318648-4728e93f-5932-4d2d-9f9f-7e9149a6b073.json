@@ -182,6 +182,7 @@
 									"});",
 									"pm.test(\"Status message is Created\", function () {",
 									"    pm.response.to.have.status(\"Created\");",
+									"    pm.collectionVariables.set(\"programId\", pm.response.json().programId); // Store programId in collection variable for future use",
 									"});",
 									"pm.test(\"Schema validation\", function () {",
 									"    var schema = {",
@@ -236,7 +237,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"CucumberTestingAPI\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
