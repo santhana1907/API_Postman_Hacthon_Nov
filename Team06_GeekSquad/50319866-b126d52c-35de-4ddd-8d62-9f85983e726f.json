@@ -1987,6 +1987,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "49b69212-55fd-4b1b-a917-7382dd7f4776",
 								"exec": [
 									"\r",
 									"// if(pm.response.code === 201){\r",
@@ -2077,38 +2078,37 @@
 									"\r",
 									"// pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
 									"\r",
-									"// if (pm.response.code === 201) {\r",
+									"if (pm.response.code === 201) {\r",
 									"\r",
-									"//     var jsonData = pm.response.json();\r",
+									"    var jsonData = pm.response.json();\r",
 									"\r",
-									"//     // Check if the response contains the UserId field\r",
-									"//     if (jsonData && jsonData.userId ) {\r",
+									"    // Check if the response contains the UserId field\r",
+									"    if (jsonData && jsonData.userId ) {\r",
 									"    \r",
-									"//         pm.collectionVariables.set(\"userId\", jsonData.userIdId);              \r",
-									"//         console.log (\"userId is set to \" + pm.collectionVariables.get (\"userId\")); \r",
+									"        pm.collectionVariables.set(\"userId\", jsonData.userIdId);              \r",
+									"        console.log (\"userId is set to \" + pm.collectionVariables.get (\"userId\")); \r",
 									"            \r",
-									"//     } else {\r",
-									"//         console.log(\"User Id not found in the response.\");\r",
-									"//     }\r",
+									"    } else {\r",
+									"        console.log(\"User Id not found in the response.\");\r",
+									"    }\r",
 									"\r",
 									"// }"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "49b69212-55fd-4b1b-a917-7382dd7f4776"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "9fd4d422-6635-4354-a670-1005ac7ac15a",
 								"exec": [
 									""
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "9fd4d422-6635-4354-a670-1005ac7ac15a"
+								"requests": {}
 							}
 						}
 					],
