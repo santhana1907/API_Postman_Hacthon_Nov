@@ -5952,7 +5952,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "782f6997-888f-47b9-b619-b28a7f92d3b6",
+				"id": "536e0dd0-af10-4e01-90ab-134b4d43083f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6119,7 +6119,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "05a1401d-45c3-4e02-a73d-a8bfd468f687",
+				"id": "c7e2d143-7eb0-4a4c-82bb-a1a394fae1f4",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6238,14 +6238,6 @@
 		}
 	],
 	"variable": [
-		{
-			"key": "usedId",
-			"value": ""
-		},
-		{
-			"key": "BaseURL",
-			"value": ""
-		},
 		{
 			"key": "skillName",
 			"value": ""
