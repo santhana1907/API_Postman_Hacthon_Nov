@@ -747,7 +747,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NTg2MTAsImV4cCI6MTc2NDU4NzQxMH0.YbfWokwWFPxJtOHHtTpYuFvzOa_VE3-BfDdH-jK5e2jh6DtD-LSLdBgTdbll_WBbVtTLz1QYw0R8r1QWsj5gUg",
+									"value": "{{BearerToken}}",
 									"type": "string"
 								}
 							]
@@ -797,10 +797,11 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"pm.test(\"Program ID is 37\", function () {\r",
-									"    pm.expect(pm.response.json().programId).to.equal(37);\r",
+									"    pm.expect(pm.response.json().programId).to.equal(pm.collectionVariables.get(\"programId\"));\r",
+									"    \r",
 									"});\r",
 									"pm.test(\"Program Name is Cucumber\", function () {\r",
-									"    pm.expect(pm.response.json().programName).to.equal(\"Cucumber\");\r",
+									"    pm.expect(pm.response.json().programName).to.equal(pm.collectionVariables.get(\"programName\"));\r",
 									"});\r",
 									"pm.test(\"Schema validation\", () => {\r",
 									"const schema = {\r",
@@ -854,7 +855,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NTg2MTAsImV4cCI6MTc2NDU4NzQxMH0.YbfWokwWFPxJtOHHtTpYuFvzOa_VE3-BfDdH-jK5e2jh6DtD-LSLdBgTdbll_WBbVtTLz1QYw0R8r1QWsj5gUg",
+									"value": "{{BearerToken}}",
 									"type": "string"
 								}
 							]
@@ -863,7 +864,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"QA Test Assure API\",\r\n    \"programName\": \"CucumberBDD\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n    \"programDescription\": \"QA Test Assure API\",\r\n    \"programName\": {{ProgramName}},\r\n    \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -871,13 +872,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/putprogram/37",
+							"raw": "{{BaseURL}}/putprogram/{{programId}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"putprogram",
-								"37"
+								"{{programId}}"
 							]
 						}
 					},
