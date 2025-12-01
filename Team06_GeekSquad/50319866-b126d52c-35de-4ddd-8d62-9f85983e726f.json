@@ -3788,6 +3788,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "32ac2f44-1345-42b7-95fc-27cbd33becce",
 								"exec": [
 									"if(pm.response.code === 201) {\r",
 									"    var jsonData = pm.response.json();\r",
@@ -3887,8 +3888,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "32ac2f44-1345-42b7-95fc-27cbd33becce"
+								"requests": {}
 							}
 						}
 					],
@@ -3898,14 +3898,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -3930,7 +3923,6 @@
 							],
 							"variable": [
 								{
-									"id": "659136d2-16c5-4ae3-836b-756dec783317",
 									"key": "programId",
 									"value": "{{programId}}"
 								}
@@ -4051,6 +4043,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "62a4d9be-fc6d-45f3-a99a-776898d1629f",
 								"exec": [
 									"\r",
 									"\r",
@@ -4141,13 +4134,13 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "62a4d9be-fc6d-45f3-a99a-776898d1629f"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "28273fb1-5a4c-450d-b631-13e28eca3a52",
 								"exec": [
 									"//if (pm.response.code === 201) {\r",
 									"\r",
@@ -4167,8 +4160,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "28273fb1-5a4c-450d-b631-13e28eca3a52"
+								"requests": {}
 							}
 						}
 					],
@@ -4178,14 +4170,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -4429,6 +4414,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "8ce71301-1229-46a1-848a-cf94fd131e05",
 								"exec": [
 									"\r",
 									"if(pm.response.code === 200)\r",
@@ -4495,16 +4481,19 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "8ce71301-1229-46a1-848a-cf94fd131e05"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
+								"id": "ab45ff22-9cf4-47fb-b189-c1010dcfcb3a",
+								"exec": [
+									""
+								],
 								"type": "text/javascript",
-								"id": "ab45ff22-9cf4-47fb-b189-c1010dcfcb3a"
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -4514,14 +4503,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -4750,6 +4732,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "38304d10-c8f7-4b2b-bbd3-5ad973983103",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -4769,8 +4752,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "38304d10-c8f7-4b2b-bbd3-5ad973983103"
+								"requests": {}
 							}
 						}
 					],
@@ -4780,14 +4762,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
