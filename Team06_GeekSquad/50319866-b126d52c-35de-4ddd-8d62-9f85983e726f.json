@@ -3331,6 +3331,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "5e44e6c9-7186-4aae-adc2-93817c74eeba",
 								"exec": [
 									"\r",
 									"if(pm.response.code === 200)\r",
@@ -3424,8 +3425,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "5e44e6c9-7186-4aae-adc2-93817c74eeba"
+								"requests": {}
 							}
 						}
 					],
@@ -3435,14 +3435,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -3474,6 +3467,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "c1a0d2f8-eb98-4b4e-9988-421dd2cc5da2",
 								"exec": [
 									"\r",
 									"if(pm.response.code === 200){\r",
@@ -3521,8 +3515,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "c1a0d2f8-eb98-4b4e-9988-421dd2cc5da2"
+								"requests": {}
 							}
 						}
 					],
@@ -3532,14 +3525,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
