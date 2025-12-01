@@ -6827,7 +6827,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "{{b}}",
+				"value": "{{BearerToken}}",
 				"type": "string"
 			}
 		]
@@ -6836,7 +6836,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "250ea7a5-1c43-4887-99b6-ff9014b3016e",
+				"id": "c9585c84-2c55-483a-b4e4-23353dd482cf",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -7003,7 +7003,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "fe11b9ad-cbd3-46f5-9b0c-aa4fe9d3ad0b",
+				"id": "b0fb669f-7c6b-4ca6-b699-d9ff3050a0b6",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
