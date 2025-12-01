@@ -805,7 +805,6 @@
 									"});\r",
 									"pm.test(\"Schema validation\", () => {\r",
 									"const schema = {\r",
-									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
 									"  \"type\": \"object\",\r",
 									"  \"properties\": {\r",
 									"    \"programId\": {\r",
