@@ -2150,6 +2150,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "637855b5-40f2-4461-bcca-8d358b12e8bd",
 								"exec": [
 									"if(pm.response.code === 200)\r",
 									"{\r",
@@ -2215,20 +2216,19 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "637855b5-40f2-4461-bcca-8d358b12e8bd"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "fb3eaa5e-295a-4e65-8801-54fb8d7959c4",
 								"exec": [
 									""
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "fb3eaa5e-295a-4e65-8801-54fb8d7959c4"
+								"requests": {}
 							}
 						}
 					],
@@ -2238,14 +2238,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{Token}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
