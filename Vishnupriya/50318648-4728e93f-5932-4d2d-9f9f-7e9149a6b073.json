@@ -963,7 +963,7 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"pm.test(\"Response body contains the correct message\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Program Name -JavaFramework is deleted Successfully!\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Program Name -TDD is deleted Successfully!\");\r",
 									"});"
 								],
 								"type": "text/javascript",
