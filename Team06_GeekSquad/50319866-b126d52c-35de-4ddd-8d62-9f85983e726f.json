@@ -732,6 +732,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "dd3d0f36-b0f7-4f9e-815c-436f80510a80",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -781,8 +782,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "dd3d0f36-b0f7-4f9e-815c-436f80510a80"
+								"requests": {}
 							}
 						}
 					],
@@ -792,14 +792,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -822,6 +815,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "4a77bfd9-2e2a-44ce-a245-5dde41f5d522",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -929,8 +923,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "4a77bfd9-2e2a-44ce-a245-5dde41f5d522"
+								"requests": {}
 							}
 						}
 					],
@@ -940,14 +933,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{BearerToken}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -969,6 +955,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "ab0ae172-642c-4752-ba71-d784e9450d55",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -1021,8 +1008,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "ab0ae172-642c-4752-ba71-d784e9450d55"
+								"requests": {}
 							}
 						}
 					],
@@ -1032,14 +1018,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzMTM4MDUsImV4cCI6MTc2NDM0MjYwNX0.VwAzIQSoqxvlMmhaRh1WtApYgeKiqHPKngDi6nF7aJmhzCfqCe0Gn4_0x9h2J-hqLOm6h8RUJvv5lfDzq6k_rQ",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
@@ -1071,6 +1050,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "afc58c84-9721-44d9-86a8-fb6276a872ed",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -1128,8 +1108,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "afc58c84-9721-44d9-86a8-fb6276a872ed"
+								"requests": {}
 							}
 						}
 					],
@@ -1139,14 +1118,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzMTM4MDUsImV4cCI6MTc2NDM0MjYwNX0.VwAzIQSoqxvlMmhaRh1WtApYgeKiqHPKngDi6nF7aJmhzCfqCe0Gn4_0x9h2J-hqLOm6h8RUJvv5lfDzq6k_rQ",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
