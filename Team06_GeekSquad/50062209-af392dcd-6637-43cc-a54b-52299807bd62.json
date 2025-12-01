@@ -1986,6 +1986,45 @@
 				},
 				{
 					"name": "UpdateUserRoleProgramBatchStatus Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2f38aefe-58a8-4a33-83f0-c700ed5d358c",
+								"exec": [
+									"let res = pm.response.json();\r",
+									"\r",
+									"// Extract and save variables\r",
+									"pm.environment.set(\"userId\", res.userId);\r",
+									"pm.environment.set(\"programId\", res.programId);\r",
+									"pm.environment.set(\"roleId\", res.roleId);\r",
+									"\r",
+									"// Print extracted values\r",
+									"console.log(\"User ID:\", res.userId);\r",
+									"console.log(\"Program ID:\", res.programId);\r",
+									"console.log(\"Role ID:\", res.roleId);\r",
+									"\r",
+									"\r",
+									"if(pm.response.code === 200){\r",
+									"\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"    pm.test(\"Verify success message exists\", () => {\r",
+									"    pm.expect(res.message).to.include(\"successfully assigned\");\r",
+									"    });\r",
+									"    pm.test(\"Validate userId is not empty\", () => {\r",
+									"    pm.expect(res.userId).to.not.be.empty;\r",
+									"    });\r",
+									"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50062209-262a8672-7caa-4ac3-a517-0917cfbb0d30",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
