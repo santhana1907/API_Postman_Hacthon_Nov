@@ -237,7 +237,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"TestAssure\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1741,7 +1741,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "4fdbb7c2-6872-410c-a8e1-d4f507e17b77",
+				"id": "96b7a0a2-2322-49f7-9d16-3a390db8e6ae",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1876,7 +1876,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "02ceafc8-c47d-48c3-8f9c-e3647fdf25e0",
+				"id": "263cbb8d-40e0-4cfc-8488-275c61e987e9",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
