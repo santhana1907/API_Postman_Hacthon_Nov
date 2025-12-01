@@ -3697,14 +3697,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/programs/{{programID}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"programs",
-								"{{programID}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
