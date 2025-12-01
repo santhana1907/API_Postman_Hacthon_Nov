@@ -343,7 +343,7 @@
 									"    }\r",
 									"    return out;\r",
 									"}\r",
-									"pm.collectionVariables.set(\"programName2\", randomProgramName(10));"
+									"pm.collectionVariables.set(\"programName2\", randomProgramName2(10));"
 								],
 								"type": "text/javascript",
 								"packages": {},
