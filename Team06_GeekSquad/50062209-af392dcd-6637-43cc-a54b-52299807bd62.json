@@ -2139,7 +2139,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTM4NjMsImV4cCI6MTc2NDU0MjY2M30.88h3PMtHyPFTSLgjqw7vDqGXG8e5fTYZrROhIDijPA6tuQ5Nm5PVgJ9DOWas2QjHFWvazPOetuqaZaHnLD7_Yg",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NTU0ODAsImV4cCI6MTc2NDU4NDI4MH0.VfqFHnn5JFeKvROKS8suDHnU3-ukA10u2wCFAe71x9mg7p89wMNf5kOKnIuClefKhGqpVvNjpc7sQRo5VTb__Q",
 									"type": "string"
 								}
 							]
