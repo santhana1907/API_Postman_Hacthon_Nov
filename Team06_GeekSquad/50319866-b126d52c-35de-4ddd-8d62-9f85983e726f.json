@@ -4342,15 +4342,6 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{baseURL}}/v2/users",
 							"host": [
@@ -4601,10 +4592,6 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n"
-						},
 						"url": {
 							"raw": "{{baseURL}}/users/user/{{userId}}",
 							"host": [
