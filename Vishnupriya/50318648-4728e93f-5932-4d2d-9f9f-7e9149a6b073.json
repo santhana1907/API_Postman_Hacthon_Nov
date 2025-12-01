@@ -329,7 +329,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"Testing QA Automation\",\r\n    \"programName\": \"{{programName2}}\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"{{programName2}}\",\r\n    \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
