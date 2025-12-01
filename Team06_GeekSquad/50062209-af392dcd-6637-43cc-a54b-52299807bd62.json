@@ -935,7 +935,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDA4MDksImV4cCI6MTc2NDU2OTYwOX0.8hepHMZtdv7cYOQdp3f7qpLicPXrnW6ixdSs1QywH2w64P-eEG5xai5UK5iaav9jPPxg957-XQZ2uY1xRdFTzw",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ2MzA5MjIsImV4cCI6MTc2NDY1OTcyMn0.viylU3YTx7XcE3ey--BxXKt9J48il_NuvkSSdhYiPDTrIC7xPq111vPmOSrjE0WqIT7Hq8_bYU1_SVLOWNjmpQ",
 									"type": "string"
 								}
 							]
@@ -955,7 +955,7 @@
 							"variable": [
 								{
 									"key": "{id} ",
-									"value": "{{id}}"
+									"value": ""
 								}
 							]
 						}
