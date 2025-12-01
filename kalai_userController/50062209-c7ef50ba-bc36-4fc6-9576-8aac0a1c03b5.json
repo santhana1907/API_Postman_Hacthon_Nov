@@ -6040,7 +6040,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"loginStatus\": \"{{loginStatus}}\",\r\n\"password\": \"{{password}}\",\r\n\"roleIds\": \"{{roleI}}\",\r\n\"status\": \"{{status}}\",\r\n\"userLoginEmail\": \"{{userLoginEmail}}\"\r\n}\r\n",
+							"raw": "{\r\n\"loginStatus\": \"{{loginStatus}}\",\r\n\"password\": \"{{password}}\",\r\n\"roleIds\": \"{{roleId}}\",\r\n\"status\": \"{{status}}\",\r\n\"userLoginEmail\": \"{{userLoginEmail}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
