@@ -1200,6 +1200,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "363762c8-509d-43ef-a86c-00a2759ccec1",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -1219,8 +1220,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "363762c8-509d-43ef-a86c-00a2759ccec1"
+								"requests": {}
 							}
 						}
 					],
@@ -1230,14 +1230,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQxNzc4MzksImV4cCI6MTc2NDIwNjYzOX0.hXXzSic9WcLlDs_uQ1kp3VLW9xuTB0zi7RADpTVnXHZ9TgPVDu4zibVEsRIIUVr7qaquhXWpuQVm5HMZQUmX6g",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "DELETE",
 						"header": [],
