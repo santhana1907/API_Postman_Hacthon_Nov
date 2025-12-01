@@ -4978,6 +4978,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "97605d8c-9a64-46e9-807c-c80fada154cc",
 								"exec": [
 									"if(pm.response.code === 200)\r",
 									"{\r",
@@ -5033,8 +5034,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "97605d8c-9a64-46e9-807c-c80fada154cc"
+								"requests": {}
 							}
 						}
 					],
@@ -5044,14 +5044,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
@@ -5083,6 +5076,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "fe4be338-c602-4593-af3d-f97cd0610e76",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -5100,8 +5094,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "fe4be338-c602-4593-af3d-f97cd0610e76"
+								"requests": {}
 							}
 						}
 					],
@@ -5111,14 +5104,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTM4NjMsImV4cCI6MTc2NDU0MjY2M30.88h3PMtHyPFTSLgjqw7vDqGXG8e5fTYZrROhIDijPA6tuQ5Nm5PVgJ9DOWas2QjHFWvazPOetuqaZaHnLD7_Yg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
