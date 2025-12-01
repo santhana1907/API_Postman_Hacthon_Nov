@@ -3172,13 +3172,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/users/{{userid}}",
+							"raw": "{{baseURL}}/users/{{userId}}",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"users",
-								"{{userid}}"
+								"{{userId}}"
 							]
 						}
 					},
