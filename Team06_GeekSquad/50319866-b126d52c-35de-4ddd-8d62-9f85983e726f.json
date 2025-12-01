@@ -3097,7 +3097,8 @@
 							"script": {
 								"id": "ae9b7c81-e745-4cd1-ad41-688a5a3fe82d",
 								"exec": [
-									" console.log (\"userId from create user \" + pm.collectionVariables.get (\"userId\"));"
+									" console.log (\"userId from create user \" + pm.collectionVariables.get (\"userId\"));\r",
+									" console.log (\"endpoint fpr get user by userid \" + pm.variables.get (\"endpoint\"));"
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -5918,7 +5919,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "536e0dd0-af10-4e01-90ab-134b4d43083f",
+				"id": "4a7dd6a0-7453-4211-bb68-ff3d0342eff5",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6085,7 +6086,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c7e2d143-7eb0-4a4c-82bb-a1a394fae1f4",
+				"id": "2c79eafc-1f9e-4dae-b20e-a74dbba02477",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
