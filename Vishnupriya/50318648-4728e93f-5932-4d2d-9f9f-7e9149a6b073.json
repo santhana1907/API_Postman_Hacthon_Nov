@@ -990,13 +990,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/deletebyprogname/{{ProgramName2}}",
+							"raw": "{{BaseURL}}/deletebyprogname/{{programName2}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"deletebyprogname",
-								"{{ProgramName2}}"
+								"{{programName2}}"
 							]
 						}
 					},
