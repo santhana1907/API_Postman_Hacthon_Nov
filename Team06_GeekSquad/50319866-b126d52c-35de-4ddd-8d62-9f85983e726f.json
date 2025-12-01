@@ -4625,14 +4625,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/users/details/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"details",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
@@ -4774,13 +4769,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
@@ -4866,14 +4857,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/roleId/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"roleId",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
