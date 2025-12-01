@@ -5332,6 +5332,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "365c83c8-b133-4918-b46f-70fc9c66084f",
 								"exec": [
 									"\r",
 									"if (pm.response.code === 200){\r",
@@ -5373,20 +5374,19 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "365c83c8-b133-4918-b46f-70fc9c66084f"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "9a3d7df6-f2c6-4658-9244-6504dfbd4c3d",
 								"exec": [
 									""
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "9a3d7df6-f2c6-4658-9244-6504dfbd4c3d"
+								"requests": {}
 							}
 						}
 					],
@@ -5396,14 +5396,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
@@ -5545,6 +5538,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "0a9ac12b-9a93-4f30-b514-1715c74a8bdb",
 								"exec": [
 									"\r",
 									"if(pm.response.code ===200)\r",
@@ -5581,8 +5575,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "0a9ac12b-9a93-4f30-b514-1715c74a8bdb"
+								"requests": {}
 							}
 						}
 					],
@@ -5592,14 +5585,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "DELETE",
 						"header": [],
