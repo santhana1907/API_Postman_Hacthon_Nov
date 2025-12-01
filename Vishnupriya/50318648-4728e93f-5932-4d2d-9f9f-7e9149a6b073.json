@@ -223,7 +223,7 @@
 								"id": "23331ad7-6f96-466f-af33-bdf4ee67ea40",
 								"exec": [
 									"function randomProgramName(length) {\r",
-									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\";\r",
 									"    let out = \"\";\r",
 									"    for (let i = 0; i < length; i++) {\r",
 									"        out += chars.charAt(Math.floor(Math.random() * chars.length));\r",
