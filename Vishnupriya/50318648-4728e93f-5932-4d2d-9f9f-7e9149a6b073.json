@@ -865,7 +865,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"QA Test Assure API\",\r\n    \"programName\": {{ProgramName}},\r\n    \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
