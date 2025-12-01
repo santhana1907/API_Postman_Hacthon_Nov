@@ -2242,10 +2242,6 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n"
-						},
 						"url": {
 							"raw": "{{baseURL}}/users",
 							"host": [
