@@ -963,7 +963,7 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"pm.test(\"Response body contains the correct message\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Program Name -SQLP is deleted Successfully!\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Program Name -JavaFramework is deleted Successfully!\");\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -1741,7 +1741,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a43ba006-1c9d-4152-b249-fb2784242df0",
+				"id": "441ed763-4d3a-48f7-9875-e2d7bbf24c77",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1876,7 +1876,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b60a7d89-54f6-453d-a737-b5dca0f1d3e8",
+				"id": "c09f0cdb-ec6a-4ff6-b7eb-931039de4aae",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
