@@ -329,6 +329,26 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "32d98b0d-a777-4743-96f2-99b3f2bb4e84",
+								"exec": [
+									"function randomProgramName2(length) {\r",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+									"    let out = \"\";\r",
+									"    for (let i = 0; i < length; i++) {\r",
+									"        out += chars.charAt(Math.floor(Math.random() * chars.length));\r",
+									"    }\r",
+									"    return out;\r",
+									"}\r",
+									"pm.collectionVariables.set(\"programName2\", randomProgramName(10));"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50318648-bbd31182-b933-464b-8661-bef58f94fe57",
