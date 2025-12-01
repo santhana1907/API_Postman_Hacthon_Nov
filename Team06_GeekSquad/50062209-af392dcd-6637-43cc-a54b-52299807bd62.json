@@ -3846,6 +3846,113 @@
 					]
 				},
 				{
+					"name": "Get User BatchId by User Id Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51158472-d756-4dbc-b5fa-3ff8accb9e3f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains 'OK' message\",function(){\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
+									"});\r",
+									"//if(pm.response.code === 200)\r",
+									"//{\r",
+									"  ///  var jsonData = pm.response.json();\r",
+									"//pm.test(\"Schema validation\",() => {\r",
+									"  //  const schema = {\r",
+									"\r",
+									"\r",
+									"        \r",
+									"   // };\r",
+									"  //// pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);\r",
+									" //});\r",
+									"//}\r",
+									"//else {\r",
+									"//pm.test(\"Status Code is 404\",function(){\r",
+									"    //pm.response.to.have.status(404);\r",
+									"//});\r",
+									"//pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"//pm.response.to.have.status(\"Not Found\");    \r",
+									"//});\r",
+									"//}\r",
+									"     \r",
+									"    \r",
+									"    \r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "06f1e869-6d80-409f-913a-55c77342b6df",
+								"exec": [
+									"//if (pm.response.code === 201) {\r",
+									"\r",
+									"  //  var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Check if the response contains the UserId field\r",
+									"  //  if (jsonData && jsonData.userId ) {\r",
+									"    \r",
+									"     //   pm.collectionVariables.set(\"userId\", jsonData.userId);              \r",
+									"     //   console.log (\"userId is set to \" + pm.collectionVariables.get (\"userId\")); \r",
+									"            \r",
+									"   // } else {\r",
+									"   //     console.log(\"User Id not found in the response.\");\r",
+									"   // }\r",
+									"\r",
+									"//}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-a1afdb81-8824-44ae-be2a-bb2109db8a1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n"
+						},
+						"url": {
+							"raw": "{{BaseURL}}/users/user/{{userId}}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"users",
+								"user",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get all User with Roles Copy 2",
 					"event": [
 						{
