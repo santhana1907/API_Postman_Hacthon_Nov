@@ -427,7 +427,7 @@
 					"response": []
 				},
 				{
-					"name": "GetAllBatches Copy",
+					"name": "GetAllBatches",
 					"event": [
 						{
 							"listen": "test",
