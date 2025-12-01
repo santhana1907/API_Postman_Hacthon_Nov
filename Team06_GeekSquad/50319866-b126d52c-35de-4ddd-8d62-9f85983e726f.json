@@ -5919,7 +5919,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "956dd039-47ca-4d86-bf9c-09ae416d4101",
+				"id": "13ae5f3c-80e8-48ce-99c0-7b8f0690726c",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6086,7 +6086,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c0d5f1b8-8dc4-4a1c-ba90-7c9abaf77d19",
+				"id": "4f35c372-2ab9-41b6-a3e7-91b3b8a870d5",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6243,10 +6243,6 @@
 		},
 		{
 			"key": "BatchName",
-			"value": ""
-		},
-		{
-			"key": "userId",
 			"value": ""
 		}
 	]
