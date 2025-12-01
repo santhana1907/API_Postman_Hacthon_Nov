@@ -891,7 +891,7 @@
 					"response": []
 				},
 				{
-					"name": "DeleteBatchbyBatchId Copy",
+					"name": "DeleteBatchbyBatchId",
 					"event": [
 						{
 							"listen": "test",
