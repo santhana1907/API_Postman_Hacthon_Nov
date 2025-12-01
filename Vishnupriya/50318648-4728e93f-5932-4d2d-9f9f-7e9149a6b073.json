@@ -464,7 +464,7 @@
 									"pm.test(\"Program description is QA Test Assure\", function () {",
 									"    pm.expect(pm.response.json().programDescription).to.eql(\"APIPostman\");",
 									"});",
-									"pm.test(\"Program status is Inactive\", function () {",
+									"pm.test(\"Program status is Active\", function () {",
 									"    pm.expect(pm.response.json().programStatus).to.eql(\"Active\");",
 									"});",
 									"pm.test(\"Schema validation\", function () {",
