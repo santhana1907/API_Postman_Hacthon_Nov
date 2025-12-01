@@ -5061,14 +5061,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/roleProgramBatchStatus/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"roleProgramBatchStatus",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
