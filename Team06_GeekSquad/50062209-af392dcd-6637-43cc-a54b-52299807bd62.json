@@ -1241,7 +1241,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDE0OTMsImV4cCI6MTc2NDU3MDI5M30.S6LBDBQrzwIsYCpsGLJZ_gOQRtz14khdRxWetZJjiOdkWGQ3iB_a2jUtf0O84-PukjN8r883P1j-D-wtTPmo6w",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ2MzE3MDksImV4cCI6MTc2NDY2MDUwOX0.K9WypLJ_G285MAbTgDIEmmVNOf_uMGn-FtEZhN2HdRT2AkYBslZhvDPtpPqvCKXM0wzDPSTHrv1yJsQ8xOZwig",
 									"type": "string"
 								}
 							]
@@ -1260,8 +1260,7 @@
 							"query": [
 								{
 									"key": "Id",
-									"value": "R04",
-									"type": "text"
+									"value": "R04"
 								}
 							]
 						}
