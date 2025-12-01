@@ -2027,7 +2027,7 @@
 									"    var jsonData = pm.response.json();\r",
 									"\r",
 									"    // Check if the response contains the UserId field\r",
-									"    if (jsonData && jsonData.user.userId ) {\r",
+									"    if (jsonData.user && jsonData.user.userId ) {\r",
 									"    \r",
 									"        pm.collectionVariables.set(\"userId\", jsonData.user.userId);              \r",
 									"        console.log (\"userId is set to \" + pm.collectionVariables.get (\"userId\")); \r",
