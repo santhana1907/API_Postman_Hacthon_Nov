@@ -1249,7 +1249,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/users/byStatus?Id=R04",
+							"raw": "{{baseURL}}/users/byStatus?Id=%26*",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -1260,7 +1260,7 @@
 							"query": [
 								{
 									"key": "Id",
-									"value": "R04"
+									"value": "&*"
 								}
 							]
 						}
