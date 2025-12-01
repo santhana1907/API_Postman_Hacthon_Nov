@@ -6823,13 +6823,20 @@
 		}
 	],
 	"auth": {
-		"type": "bearer"
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{b}}",
+				"type": "string"
+			}
+		]
 	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fa58acc4-77ae-4ca3-9c74-bddef39b03ed",
+				"id": "250ea7a5-1c43-4887-99b6-ff9014b3016e",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6996,7 +7003,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3b889dcb-5136-41e8-9d06-38b424653c4d",
+				"id": "fe11b9ad-cbd3-46f5-9b0c-aa4fe9d3ad0b",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
