@@ -2092,7 +2092,7 @@
 									"        console.log(\"User Id not found in the response.\");\r",
 									"    }\r",
 									"\r",
-									"// }"
+									" }"
 								],
 								"type": "text/javascript",
 								"packages": {},
