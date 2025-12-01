@@ -587,7 +587,7 @@
 					"response": []
 				},
 				{
-					"name": "GetBatchbyBatchName Copy",
+					"name": "GetBatchbyBatchName",
 					"event": [
 						{
 							"listen": "test",
