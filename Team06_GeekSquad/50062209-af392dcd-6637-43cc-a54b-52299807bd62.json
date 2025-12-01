@@ -1985,193 +1985,6 @@
 					]
 				},
 				{
-					"name": "GetEmailofAllUserwithActivestatus Copy 2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "81a78059-6a20-4409-af2f-e5269f5c6d39",
-								"exec": [
-									"if(pm.response.code === 200){\r",
-									"const schema= {\r",
-									"  \"type\": \"array\",\r",
-									"  \"items\": [\r",
-									"    {\r",
-									"      \"type\": \"string\"\r",
-									"    }\r",
-									"  ]\r",
-									"};\r",
-									"pm.test(\"Schema validation\", () => {\r",
-									"pm.response.to.have.jsonSchema(schema);\r",
-									"});\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"pm.test(\"Status message is 'OK'\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Response time is less than 200ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-									"});\r",
-									"pm.test(\"Each item is a valid email\", function () {\r",
-									"    const response = pm.response.json();\r",
-									"\r",
-									"    response.forEach(email => {\r",
-									"        pm.expect(email).to.be.a('string');\r",
-									"        pm.expect(email).to.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/);\r",
-									"    });\r",
-									"});\r",
-									"}\r",
-									"else{\r",
-									"     {\r",
-									"    pm.test(\"Status Code is 404\",function(){\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
-									"pm.response.to.have.status(\"Not Found\");    \r",
-									"}); \r",
-									"}   \r",
-									"}\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50062209-a5647bbd-d792-42f2-817d-02626135a2b5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDM2MjEsImV4cCI6MTc2NDU3MjQyMX0.SCqbq-1UhMiJ2O_Bn-ki65jm5qMIIDk23w4NCvyeR65SH0Priw-xxLDzzwmN8ZXtnHuQ7BVBhvVQMJD6jc3cXA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseURL}}/fetch-emails",
-							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"fetch-emails"
-							]
-						}
-					},
-					"response": [
-						{
-							"id": "50062209-035a06c8-fa24-4835-a7b5-39552fc98ce9",
-							"name": "GetEmailofAllUserwithActiveuser",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BaseURL}}/fetch-emails",
-									"host": [
-										"{{BaseURL}}"
-									],
-									"path": [
-										"fetch-emails"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": [
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 25 Nov 2025 03:27:35 GMT"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "Nel",
-									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Report-To",
-									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=4kZ2EUPXCk4Yaw4dzWeaT7aWwyySZEVRzfHapQ1Eyso%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764041255\"}],\"max_age\":3600}"
-								},
-								{
-									"key": "Reporting-Endpoints",
-									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=4kZ2EUPXCk4Yaw4dzWeaT7aWwyySZEVRzfHapQ1Eyso%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764041255\""
-								},
-								{
-									"key": "Server",
-									"value": "Heroku"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000 ; includeSubDomains"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Method"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Headers"
-								},
-								{
-									"key": "Via",
-									"value": "1.1 heroku-router"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "X-Xss-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1149"
-								}
-							],
-							"cookie": [],
-							"responseTime": null,
-							"body": "[\n    \"shemeebapunathil@gmail.com\",\n    \"numpy@gmail.com\",\n    \"numpy0025@gmail.com\",\n    \"numpy0035@gmail.com\",\n    \"niumpy0039@gmail.com\",\n    \"niumpy00390@gmail.com\",\n    \"numpy.ninja.dev@gmail.com\",\n    \"steve.job@gmail.com\",\n    \"SarahU07@NumpyNinja.com\",\n    \"Robert.Louis@gmail.com\",\n    \"John.Matthew@gmail.com\",\n    \"team82@gmail.com\",\n    \"sitharasadiq@gmail.com\",\n    \"team12@gmail.com\",\n    \"Arun@gmail.com\",\n    \"ElamathiRamkumarss@gmail.com\",\n    \"raman34@gmail.com\",\n    \"ems112000@gmail.com\",\n    \"team2@gmail.com\",\n    \"numpyninja02@gmail.com\",\n    \"team5@gmail.com\",\n    \"raj456@gmail.com\",\n    \"lHyz0S4Ja7kgH8xR5pIPQLivP5N0HzhlFpAF@gmail.com\",\n    \"team22@gmail.com\",\n    \"don@gmail.com\",\n    \"Herta@gmail.com\",\n    \"don1@gmail.com\",\n    \"test578@gmail.com\",\n    \"test778@gmail.com\",\n    \"Bradford@gmail.com\",\n    \"Alex@gmail.com\",\n    \"team1@gmail.com\",\n    \"rahul@gmail.com\",\n    \"sri@gmail.com\",\n    \"John1@gmail.com\",\n    \"sana123@gmail.com\",\n    \"Kev123@gmail.com\",\n    \"team9@gmail.com\",\n    \"suchitra.mentee@gmail.com\",\n    \"sricopy8@gmail.com\",\n    \"puchitra.mentee@gmail.com\",\n    \"team4@gmail.com\",\n    \"priyskir@gmail.com\",\n    \"team3@gmail.com\",\n    \"Genoveva@gmail.com\",\n    \"team77@gmail.com\",\n    \"guchitra.mentee@gmail.com\",\n    \"fuchitra.mentee@gmail.com\",\n    \"Yesenia@gmail.com\",\n    \"Dolores@gmail.com\",\n    \"RamRajiv@gmail.com\",\n    \"maha1@gmail.com\",\n    \"team6@gmail.com\"\n]"
-						}
-					]
-				},
-				{
 					"name": "UpdateUserRoleProgramBatchStatus Copy",
 					"event": [
 						{
@@ -6821,6 +6634,287 @@
 							"body": "[\n    {\n        \"roleId\": \"R01\",\n        \"roleName\": \"ROLE_ADMIN\",\n        \"roleDesc\": \"LMS_Admin\",\n        \"creationTime\": \"2021-10-04T18:06:42.970+00:00\",\n        \"lastModTime\": \"2021-10-04T18:06:42.970+00:00\"\n    },\n    {\n        \"roleId\": \"R02\",\n        \"roleName\": \"ROLE_STAFF\",\n        \"roleDesc\": \"LMS_Staff\",\n        \"creationTime\": \"2021-10-04T18:06:42.970+00:00\",\n        \"lastModTime\": \"2021-10-04T18:06:42.970+00:00\"\n    },\n    {\n        \"roleId\": \"R03\",\n        \"roleName\": \"ROLE_STUDENT\",\n        \"roleDesc\": \"LMS_User\",\n        \"creationTime\": \"2021-10-04T18:06:42.970+00:00\",\n        \"lastModTime\": \"2021-10-04T18:06:42.970+00:00\"\n    }\n]"
 						}
 					]
+				},
+				{
+					"name": "GetEmailofAllUserwithActivestatus Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "81a78059-6a20-4409-af2f-e5269f5c6d39",
+								"exec": [
+									"if(pm.response.code === 200){\r",
+									"const schema= {\r",
+									"  \"type\": \"array\",\r",
+									"  \"items\": [\r",
+									"    {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  ]\r",
+									"};\r",
+									"pm.test(\"Schema validation\", () => {\r",
+									"pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Each item is a valid email\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"\r",
+									"    response.forEach(email => {\r",
+									"        pm.expect(email).to.be.a('string');\r",
+									"        pm.expect(email).to.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/);\r",
+									"    });\r",
+									"});\r",
+									"}\r",
+									"else{\r",
+									"     {\r",
+									"    pm.test(\"Status Code is 404\",function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"pm.response.to.have.status(\"Not Found\");    \r",
+									"}); \r",
+									"}   \r",
+									"}\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-a5647bbd-d792-42f2-817d-02626135a2b5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NDM2MjEsImV4cCI6MTc2NDU3MjQyMX0.SCqbq-1UhMiJ2O_Bn-ki65jm5qMIIDk23w4NCvyeR65SH0Priw-xxLDzzwmN8ZXtnHuQ7BVBhvVQMJD6jc3cXA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/fetch-emails",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fetch-emails"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "50062209-035a06c8-fa24-4835-a7b5-39552fc98ce9",
+							"name": "GetEmailofAllUserwithActiveuser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseURL}}/fetch-emails",
+									"host": [
+										"{{BaseURL}}"
+									],
+									"path": [
+										"fetch-emails"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Nov 2025 03:27:35 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=4kZ2EUPXCk4Yaw4dzWeaT7aWwyySZEVRzfHapQ1Eyso%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1764041255\"}],\"max_age\":3600}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=\"https://nel.heroku.com/reports?s=4kZ2EUPXCk4Yaw4dzWeaT7aWwyySZEVRzfHapQ1Eyso%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1764041255\""
+								},
+								{
+									"key": "Server",
+									"value": "Heroku"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 heroku-router"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1149"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    \"shemeebapunathil@gmail.com\",\n    \"numpy@gmail.com\",\n    \"numpy0025@gmail.com\",\n    \"numpy0035@gmail.com\",\n    \"niumpy0039@gmail.com\",\n    \"niumpy00390@gmail.com\",\n    \"numpy.ninja.dev@gmail.com\",\n    \"steve.job@gmail.com\",\n    \"SarahU07@NumpyNinja.com\",\n    \"Robert.Louis@gmail.com\",\n    \"John.Matthew@gmail.com\",\n    \"team82@gmail.com\",\n    \"sitharasadiq@gmail.com\",\n    \"team12@gmail.com\",\n    \"Arun@gmail.com\",\n    \"ElamathiRamkumarss@gmail.com\",\n    \"raman34@gmail.com\",\n    \"ems112000@gmail.com\",\n    \"team2@gmail.com\",\n    \"numpyninja02@gmail.com\",\n    \"team5@gmail.com\",\n    \"raj456@gmail.com\",\n    \"lHyz0S4Ja7kgH8xR5pIPQLivP5N0HzhlFpAF@gmail.com\",\n    \"team22@gmail.com\",\n    \"don@gmail.com\",\n    \"Herta@gmail.com\",\n    \"don1@gmail.com\",\n    \"test578@gmail.com\",\n    \"test778@gmail.com\",\n    \"Bradford@gmail.com\",\n    \"Alex@gmail.com\",\n    \"team1@gmail.com\",\n    \"rahul@gmail.com\",\n    \"sri@gmail.com\",\n    \"John1@gmail.com\",\n    \"sana123@gmail.com\",\n    \"Kev123@gmail.com\",\n    \"team9@gmail.com\",\n    \"suchitra.mentee@gmail.com\",\n    \"sricopy8@gmail.com\",\n    \"puchitra.mentee@gmail.com\",\n    \"team4@gmail.com\",\n    \"priyskir@gmail.com\",\n    \"team3@gmail.com\",\n    \"Genoveva@gmail.com\",\n    \"team77@gmail.com\",\n    \"guchitra.mentee@gmail.com\",\n    \"fuchitra.mentee@gmail.com\",\n    \"Yesenia@gmail.com\",\n    \"Dolores@gmail.com\",\n    \"RamRajiv@gmail.com\",\n    \"maha1@gmail.com\",\n    \"team6@gmail.com\"\n]"
+						}
+					]
+				},
+				{
+					"name": "UpdateUserRoleProgramBatchStatus Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2f38aefe-58a8-4a33-83f0-c700ed5d358c",
+								"exec": [
+									"\r",
+									"if (pm.response.code === 200) {\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"    pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"} else if(pm.response.code === 400) {\r",
+									"    pm.test(\"Status Code is 400\",function(){\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"    pm.test(\"Status message is 'Bad Request'\",function(){\r",
+									"pm.response.to.have.status(\"Bad Request\");    \r",
+									"}); \r",
+									"} \r",
+									"else{\r",
+									"      pm.test(\"Status Code is 404\",function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"pm.response.to.have.status(\"Not Found\");    \r",
+									"});\r",
+									"} \r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-a555580d-882f-4470-8800-c5325ec714c0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NTMxMzcsImV4cCI6MTc2NDU4MTkzN30.4PU1J2ixW3OUrCwIYswBolXDdW68P3m5w8t8raHp1mpqiJn1b3UxN-MSIZtacNUleOwqRfGaP7gb3mUSgzVxhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n  \"programId\": \"{{programId}}\", \r\n  \"roleId\": \"{{roleId}}\", \r\n  \"userId\": \"{{userId}}\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": \"{{batchId}}\", \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"{{userRoleProgramBatchStatus}}\" \r\n    } \r\n  ] \r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/roleProgramBatchStatus/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"roleProgramBatchStatus",
+								":userId"
+							],
+							"variable": [
+								{
+									"id": "822434e3-44ba-4e6b-b91a-60047157fb2a",
+									"key": "userId",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "50062209-afc0ba5c-91f6-403d-919a-81f7983ccaa8"
