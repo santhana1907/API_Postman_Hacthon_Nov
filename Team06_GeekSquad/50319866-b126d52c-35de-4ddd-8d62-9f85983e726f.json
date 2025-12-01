@@ -5252,6 +5252,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "072431d8-7293-48ac-816f-73e37e0d19d1",
 								"exec": [
 									"\r",
 									"if (pm.response.code === 200) {\r",
@@ -5288,8 +5289,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "072431d8-7293-48ac-816f-73e37e0d19d1"
+								"requests": {}
 							}
 						}
 					],
@@ -5299,14 +5299,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
