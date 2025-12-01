@@ -792,17 +792,6 @@
 							"script": {
 								"id": "af870247-e0dc-4521-949e-4fb7ca2f8b25",
 								"exec": [
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {\r",
-									"    pm.request.body.update({\r",
-									"        mode: 'none'\r",
-									"    });\r",
-									"}\r",
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {\r",
-									"    pm.request.headers.upsert({\r",
-									"        key : \"Content-Type\",\r",
-									"        value: \"text/plain\"\r",
-									"    });\r",
-									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -820,7 +809,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"password\": \"{{password}}\",\r\n\"userLoginEmailId\":\"{{userEmail}}\"\r\n}",
+							"raw": "{\r\n\"password\": \"ApiHackathon@6\",\r\n\"userLoginEmailId\":\"team6@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -828,9 +817,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/login",
+							"raw": "{{BaseURL}}/login",
 							"host": [
-								"{{baseURL}}"
+								"{{BaseURL}}"
 							],
 							"path": [
 								"login"
