@@ -505,7 +505,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQzMTM4MDUsImV4cCI6MTc2NDM0MjYwNX0.VwAzIQSoqxvlMmhaRh1WtApYgeKiqHPKngDi6nF7aJmhzCfqCe0Gn4_0x9h2J-hqLOm6h8RUJvv5lfDzq6k_rQ",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NTg2MTAsImV4cCI6MTc2NDU4NzQxMH0.YbfWokwWFPxJtOHHtTpYuFvzOa_VE3-BfDdH-jK5e2jh6DtD-LSLdBgTdbll_WBbVtTLz1QYw0R8r1QWsj5gUg",
 									"type": "string"
 								}
 							]
@@ -514,7 +514,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"BDDCucumber\",\r\n    \"programStatus\": \"Active\"\r\n}",
+							"raw": "{\r\n    \"programDescription\": \"APIPostman\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -522,13 +522,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/program/BDDCucumber",
+							"raw": "{{BaseURL}}/program/{{ProgramName}}",
 							"host": [
 								"{{BaseURL}}"
 							],
 							"path": [
 								"program",
-								"BDDCucumber"
+								"{{ProgramName}}"
 							]
 						}
 					},
