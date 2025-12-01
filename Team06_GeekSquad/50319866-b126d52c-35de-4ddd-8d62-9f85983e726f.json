@@ -649,6 +649,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "0f5c6fca-8faf-4a76-b748-d3090212d49d",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -699,8 +700,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "0f5c6fca-8faf-4a76-b748-d3090212d49d"
+								"requests": {}
 							}
 						}
 					],
@@ -710,14 +710,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{BearerToken}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
