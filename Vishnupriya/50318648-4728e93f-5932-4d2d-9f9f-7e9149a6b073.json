@@ -1567,7 +1567,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a5ecc568-fe7c-42a2-b986-323aaaced9b1",
+				"id": "bf332b89-49b8-4631-915b-4572f4b78b8f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1702,7 +1702,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "46a2fff7-7ece-4656-a0a9-7d9f013e9762",
+				"id": "de703f13-2fa1-4119-943a-03c3a7df99ca",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
