@@ -4873,14 +4873,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MjQ1NDYsImV4cCI6MTc2NDU1MzM0Nn0.SSEUVVX0GCLBl4nhVdpCAStX7nJ3skQGphxNLhZLdjxSbCECEVgFncISjV9T2AQrDV3S0iv1c4ry-jnOjWTsug",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
