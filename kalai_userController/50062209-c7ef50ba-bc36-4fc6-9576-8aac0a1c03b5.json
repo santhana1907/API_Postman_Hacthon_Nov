@@ -1729,7 +1729,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "4faf898d-2bd3-41ef-8167-33e9fb8d75de",
+				"id": "8c3686ff-0213-438f-91a7-2c4270c95704",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1896,7 +1896,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "28b99c38-41bf-423b-bdff-44279379aa45",
+				"id": "289a9243-3d9b-43e2-9c97-d03ca0cff684",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1930,14 +1930,14 @@
 					"    },\r",
 					"\r",
 					"    checkBodyExists: function() {\r",
-					"        pm.test('📦 Response has body', () => {\r",
+					"        pm.test(' Response has body', () => {\r",
 					"            pm.response.to.be.withBody;\r",
 					"        });\r",
 					"    },    \r",
 					"\r",
 					"    // Data structure validations\r",
 					"    checkArrayStructure: function() {\r",
-					"        pm.test('📋 Response is array', () => {\r",
+					"        pm.test(' Response is array', () => {\r",
 					"            const data = pm.response.json();\r",
 					"            pm.expect(data).to.be.an('array');\r",
 					"        });\r",
