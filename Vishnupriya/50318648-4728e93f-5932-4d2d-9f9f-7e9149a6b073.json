@@ -902,8 +902,8 @@
 									"pm.test(\"Response time is less than 1000ms\", function () {\r",
 									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 									"});\r",
-									"pm.test(\"Status message is No Content\", function () {\r",
-									"    pm.response.to.have.status(\"No Content\");\r",
+									"pm.test(\"Status message is OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
 									"});"
 								],
 								"type": "text/javascript",
