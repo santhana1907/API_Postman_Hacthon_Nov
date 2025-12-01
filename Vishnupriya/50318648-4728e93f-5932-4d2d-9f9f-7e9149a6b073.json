@@ -1719,6 +1719,14 @@
 		},
 		{
 			"value": ""
+		},
+		{
+			"key": "BearerToken",
+			"value": ""
+		},
+		{
+			"key": "userId",
+			"value": ""
 		}
 	]
 }
