@@ -2156,7 +2156,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n  \"userRoleList\": [ \r\n    { \r\n      \"roleId\": \"{{roleId}}\", \r\n      \"userRoleStatus\": \"{{userRoleStatus}}\" \r\n    } \r\n  ] \r\n} \r\n",
+							"raw": "{ \r\n  \"userRoleList\": [ \r\n    { \r\n      \"roleId\": \"R01\", \r\n      \"userRoleStatus\": \"Inactive\" \r\n    } \r\n  ] \r\n} \r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2176,7 +2176,7 @@
 							"variable": [
 								{
 									"key": "{userID}",
-									"value": "U1000"
+									"value": "U101"
 								}
 							]
 						}
