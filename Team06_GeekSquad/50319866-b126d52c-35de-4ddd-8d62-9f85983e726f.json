@@ -3097,7 +3097,7 @@
 							"script": {
 								"id": "ae9b7c81-e745-4cd1-ad41-688a5a3fe82d",
 								"exec": [
-									" console.log (\"userId from create user \" + pm.collectionVariables.get (\"userId\"));\r",
+									" console.log (\"userId from create user \" + pm.collectionVariables.get (\"UserId\"));\r",
 									" console.log (\"endpoint fpr get user by userid \" + pm.variables.get (\"endpoint\"));"
 								],
 								"type": "text/javascript",
