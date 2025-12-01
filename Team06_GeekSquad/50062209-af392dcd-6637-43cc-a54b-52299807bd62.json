@@ -1798,6 +1798,179 @@
 					]
 				},
 				{
+					"name": "CreateUser Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ea206f1c-dd93-4ba5-b2de-e529881b90e7",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Status message is 'Created'\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 1200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+									"});\r",
+									"const schema = {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+									"  \"type\": \"array\",\r",
+									"  \"properties\": {\r",
+									"    \"userComments\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduPg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userEduUg\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userFirstName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userId\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLastName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLinkedinUrl\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLocation\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userMiddleName\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userPhoneNumber\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userTimeZone\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userVisaStatus\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userLoginEmail\": {\r",
+									"      \"type\": \"string\"\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"userComments\",\r",
+									"    \"userEduPg\",\r",
+									"    \"userEduUg\",\r",
+									"    \"userFirstName\",\r",
+									"    \"userId\",\r",
+									"    \"userLastName\",\r",
+									"    \"userLinkedinUrl\",\r",
+									"    \"userLocation\",\r",
+									"    \"userMiddleName\",\r",
+									"    \"userPhoneNumber\",\r",
+									"    \"userTimeZone\",\r",
+									"    \"userVisaStatus\",\r",
+									"    \"userLoginEmail\"\r",
+									"  ]\r",
+									"};\r",
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
+									"\r",
+									" let res = pm.response.json();\r",
+									"\r",
+									"// Validate basic fields\r",
+									"pm.test(\"Check string fields\", function () {\r",
+									"    pm.expect(res.userComments).to.be.a(\"string\");\r",
+									"    pm.expect(res.userFirstName).to.be.a(\"string\");\r",
+									"    pm.expect(res.userLastName).to.be.a(\"string\");\r",
+									"    pm.expect(res.userLocation).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Validate phone number\r",
+									"pm.test(\"Check phone number is string or number\", function () {\r",
+									"    pm.expect(res.userPhoneNumber).to.satisfy(n =>\r",
+									"        typeof n === \"string\" || typeof n === \"number\"\r",
+									"    );\r",
+									"});\r",
+									"\r",
+									"// Validate nested object\r",
+									"pm.test(\"Check userLogin object\", function () {\r",
+									"    pm.expect(res.userLogin).to.be.an(\"object\");\r",
+									"    pm.expect(res.userLogin.userLoginEmail).to.be.a(\"string\");\r",
+									"    pm.expect(res.userLogin.status).to.be.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// Validate array userRoleMaps\r",
+									"pm.test(\"Check userRoleMaps array\", function () {\r",
+									"    pm.expect(res.userRoleMaps).to.be.an(\"array\");\r",
+									"    pm.expect(res.userRoleMaps[0].roleId).to.exist;\r",
+									"    pm.expect(res.userRoleMaps[0].userRoleStatus).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8362cdd2-0e78-4e54-8b56-e1bb169c95d9",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50062209-f21cab4e-4884-4cc4-8e1a-b29eff5b926d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1Mzg1OTAsImV4cCI6MTc2NDU2NzM5MH0.ziy6QMx37lCcVJJfRWMu8ZXDZemX9DhPPymNM5wNBoALmX9ruypLkb6hYTqMbriMHRWyDtC37u0XzUIdPwY9og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"userComments\": \"{{userComments}}\", \r\n\"userEduPg\": \"{{userEduPg}}\", \r\n\"userEduUg\": \"{{userEduUg}}\", \r\n\"userFirstName\": \"{{userFirstName}}\", \r\n\"userLastName\": \"{{userLastName}}\", \r\n\"userLinkedinUrl\": \"{{userLinkedinUrl}}\", \r\n\"userLocation\": \"{{userLocation}}\", \r\n\"userMiddleName\": \"{{userMiddleName}}\", \r\n\"userPhoneNumber\": \"{{userPhoneNumber}}\", \r\n\"userRoleMaps\": [ \r\n{ \r\n\"roleId\": \"{{roleId}}\", \r\n\"userRoleStatus\": \"{{userRoleStatus}}\" \r\n} \r\n], \r\n\"userTimeZone\": \"{{userTimeZone}}\", \r\n\"userVisaStatus\": \"{{userVisaStatus}}\", \r\n\"userLogin\": { \r\n    \"userLoginEmail\": \"{{userLoginEmail}}\", \r\n   \"loginStatus\" : \"{{loginStatus}}\", \r\n  \"status\":  \"{{status}}\" \r\n  }   \r\n  } ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/roleStatus",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"roleStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetEmailofAllUserwithActivestatus Copy",
 					"event": [
 						{
