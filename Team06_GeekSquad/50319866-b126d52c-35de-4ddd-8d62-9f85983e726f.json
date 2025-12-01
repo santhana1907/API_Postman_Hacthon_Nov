@@ -4864,6 +4864,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "07b0749f-9ed5-44f0-9d5a-f134e48c65a0",
 								"exec": [
 									"if(pm.response.code === 200)\r",
 									"{\r",
@@ -4924,21 +4925,20 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "07b0749f-9ed5-44f0-9d5a-f134e48c65a0"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "aa72586b-f489-4c94-b231-4f2104417170",
 								"exec": [
 									"let jsonData = pm.response.text();\r",
 									"pm.environment.set(\"userId\", jsonData.userId);"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "aa72586b-f489-4c94-b231-4f2104417170"
+								"requests": {}
 							}
 						}
 					],
@@ -4960,9 +4960,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/users/details/{id} ",
+							"raw": "{{baseURL}}/users/details/{id} ",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"users",
