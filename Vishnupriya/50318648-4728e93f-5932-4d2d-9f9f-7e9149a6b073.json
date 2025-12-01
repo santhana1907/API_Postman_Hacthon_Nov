@@ -1002,7 +1002,7 @@
 									"    pm.response.to.have.status(\"OK\");\r",
 									"});\r",
 									"pm.test(\"Response body contains the correct message\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Program Name -SDETFramework is deleted Successfully!\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Program Name -\"+pm.collectionVariables.get(\"programName2\")+\" is deleted Successfully!\");\r",
 									"});"
 								],
 								"type": "text/javascript",
