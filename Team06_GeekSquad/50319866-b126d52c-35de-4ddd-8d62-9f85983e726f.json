@@ -3653,6 +3653,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "69601649-bd3a-4be2-889f-5816146c39ff",
 								"exec": [
 									"if(pm.response.code === 201) {\r",
 									"    var jsonData = pm.response.json();\r",
@@ -3753,8 +3754,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "69601649-bd3a-4be2-889f-5816146c39ff"
+								"requests": {}
 							}
 						}
 					],
@@ -3764,14 +3764,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjM5MzIzNzAsImV4cCI6MTc2Mzk2MTE3MH0.8fFQEbraliyFfhXzkwh3KKPGXq2ru3q9qFCy1dIXBvWGIMcBPpIVFSRN8mEb7WJYjcw1dQ5E1VKa3h2YnHdnPg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
