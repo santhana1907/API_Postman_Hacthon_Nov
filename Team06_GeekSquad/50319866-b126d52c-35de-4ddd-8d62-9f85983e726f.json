@@ -2085,7 +2085,7 @@
 									"    // Check if the response contains the UserId field\r",
 									"    if (jsonData && jsonData.userId ) {\r",
 									"    \r",
-									"        pm.collectionVariables.set(\"userId\", jsonData.userIdId);              \r",
+									"        pm.collectionVariables.set(\"userId\", jsonData.userId);              \r",
 									"        console.log (\"userId is set to \" + pm.collectionVariables.get (\"userId\")); \r",
 									"            \r",
 									"    } else {\r",
