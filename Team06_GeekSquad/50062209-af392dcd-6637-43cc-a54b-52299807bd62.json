@@ -1994,7 +1994,7 @@
 								"exec": [
 									"\r",
 									"let res = pm.response.json();\r",
-									"let expectedStatusCode = pm.iterationData.get(\"expectedStatusCode\");\r",
+									"let expectedStatusCode = pm.iterationData.get(\"validation\").expectedStatusCode;\r",
 									"let expectedMessage = pm.iterationData.get(\"expectedStatusMessage\");\r",
 									"\r",
 									"pm.test(\"Validate Status Code\", () => {\r",
