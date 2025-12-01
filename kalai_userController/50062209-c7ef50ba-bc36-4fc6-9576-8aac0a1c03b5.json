@@ -878,6 +878,27 @@
 				},
 				{
 					"name": "DeleteBatchbyBatchId Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d1b83e4-3c29-43c6-b751-9aa1e9941ac4",
+								"exec": [
+									"if (pm.response.code === 200) {\r",
+									"    let responseData = pm.response.json();\r",
+									"    \r",
+									"    // Validate batch status is Inactive\r",
+									"    pm.test(\"Batch status should be Inactive after deletion\", function() {\r",
+									"        pm.expect(responseData.batchStatus).to.equal(\"Inactive\");\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319866-7fd3344c-4c6f-40cd-96ab-9777d2f710ba",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -886,7 +907,7 @@
 						"auth": {
 							"type": "noauth"
 						},
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "{{baseURL}}{{endpoint}}",
