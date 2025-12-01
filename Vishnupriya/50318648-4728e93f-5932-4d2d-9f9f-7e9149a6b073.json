@@ -216,6 +216,27 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "23331ad7-6f96-466f-af33-bdf4ee67ea40",
+								"exec": [
+									"function randomProgramName(length) {\r",
+									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+									"    let out = \"\";\r",
+									"    for (let i = 0; i < length; i++) {\r",
+									"        out += chars.charAt(Math.floor(Math.random() * chars.length));\r",
+									"    }\r",
+									"    return out;\r",
+									"}\r",
+									"pm.collectionVariables.set(\"programName\", randomProgramName(10));\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "50318648-3f953f86-9019-4875-8359-13576a6d64d3",
