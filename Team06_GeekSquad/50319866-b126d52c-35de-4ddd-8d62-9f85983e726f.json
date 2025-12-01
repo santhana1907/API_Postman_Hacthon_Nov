@@ -6271,6 +6271,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "0c8ff5a9-0463-47aa-9b88-2bf4dd3a1332",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6431,13 +6432,13 @@
 					"}",
 					"",
 					""
-				],
-				"id": "731e1816-e24a-417a-b854-490e177b3905"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "db3841e0-856e-463f-8207-6da7832a8c77",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6551,8 +6552,7 @@
 					"// Execute the test suite",
 					"runTestSuite();",
 					""
-				],
-				"id": "81875d69-ddf9-4e7c-994c-096182a0e414"
+				]
 			}
 		}
 	],
