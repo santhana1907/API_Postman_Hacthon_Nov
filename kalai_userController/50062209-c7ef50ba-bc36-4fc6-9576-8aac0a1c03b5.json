@@ -2072,6 +2072,18 @@
 		{
 			"key": "batchID1",
 			"value": ""
+		},
+		{
+			"key": "batchNames",
+			"value": ""
+		},
+		{
+			"key": "batchName",
+			"value": ""
+		},
+		{
+			"key": "batchName1",
+			"value": ""
 		}
 	]
 }
