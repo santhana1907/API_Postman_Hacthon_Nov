@@ -462,7 +462,7 @@
 									"    pm.expect(pm.response.json().programName).to.eql(pm.collectionVariables.get(\"programName\"));",
 									"});",
 									"pm.test(\"Program description is QA Test Assure\", function () {",
-									"    pm.expect(pm.response.json().programDescription).to.eql(\"QA Test Assure API\");",
+									"    pm.expect(pm.response.json().programDescription).to.eql(\"APIPostman\");",
 									"});",
 									"pm.test(\"Program status is Inactive\", function () {",
 									"    pm.expect(pm.response.json().programStatus).to.eql(\"Active\");",
