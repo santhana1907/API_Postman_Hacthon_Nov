@@ -3659,27 +3659,13 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "38304d10-c8f7-4b2b-bbd3-5ad973983103",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Response contains 'OK' message\",function(){\r",
-									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Schema validation\",() => {\r",
-									"    const Schema = {\r",
-									"\r",
-									"\r",
-									"        \r",
-									"    };\r",
-									"    pm.response.to.have.jsonSchema(Schema);\r",
-									"});"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "38304d10-c8f7-4b2b-bbd3-5ad973983103"
+								"requests": {}
 							}
 						}
 					],
@@ -3689,30 +3675,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n"
-						},
 						"url": {
-							"raw": "{{baseURL}}/users/user/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"user",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
