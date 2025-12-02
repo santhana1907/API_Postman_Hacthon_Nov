@@ -1595,7 +1595,10 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "06e23ef3-77cc-45ac-8d3f-35219f2566d3",
 								"exec": [
+									"if (pm.response.code === 200) {\r",
+									"    var jsonData = pm.response.json();\r",
 									"const schema= {\r",
 									"  \r",
 									"  \"type\": \"object\",\r",
@@ -1632,12 +1635,12 @@
 									"    \"programName\"\r",
 									"  ]\r",
 									"}\r",
-									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "06e23ef3-77cc-45ac-8d3f-35219f2566d3"
+								"requests": {}
 							}
 						}
 					],
