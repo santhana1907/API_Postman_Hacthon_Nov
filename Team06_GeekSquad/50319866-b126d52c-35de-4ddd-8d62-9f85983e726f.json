@@ -6212,7 +6212,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0bfa343a-ebd6-4dbd-af22-92dffcc212f5",
+				"id": "75303ec8-97e7-4634-8e17-1c28dd97bd3c",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6379,7 +6379,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c9d9eb4b-3ffe-4f0d-8baa-598324f42e7c",
+				"id": "ee0e0cd5-d58e-482a-a829-576a54464712",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6471,7 +6471,7 @@
 					"    // Success-specific tests",
 					"    if (config.isSuccess) {",
 					"        testSuite.checkBodyExists();",
-					"        //testSuite.checkHeaders();",
+					"        testSuite.checkHeaders();",
 					"        ",
 					"        // Structure validation based on scenario",
 					"        switch(config.testScenario) {",
