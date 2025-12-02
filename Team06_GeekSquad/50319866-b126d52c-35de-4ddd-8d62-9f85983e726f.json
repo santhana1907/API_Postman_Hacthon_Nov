@@ -3276,14 +3276,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}} /users/programBatch/{{BatchId}}",
+							"raw": "{{baseURL}} {{endpoint}}",
 							"host": [
-								"{{baseURL}} "
-							],
-							"path": [
-								"users",
-								"programBatch",
-								"{{BatchId}}"
+								"{{baseURL}} {{endpoint}}"
 							]
 						}
 					},
