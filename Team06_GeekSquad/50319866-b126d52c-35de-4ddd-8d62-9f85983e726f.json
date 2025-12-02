@@ -1073,7 +1073,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"{{programDescription}}\",\r\n    \"programName\": \"{{ProgramName}}\",\r\n    \"programStatus\": \"{{programStatus}}\"\r\n}",
+							"raw": "{\r\n    \"programDescription\": \"{{programDescription}}\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"{{programStatus}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
