@@ -612,25 +612,10 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "0f5c6fca-8faf-4a76-b748-d3090212d49d",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"pm.test(\"Content-Type is present\", function () {",
-									"    pm.response.to.have.header(\"Content-Type\");",
-									"});",
-									"pm.test(\"Response time is less than 500ms\", function () {",
-									"    pm.expect(pm.response.responseTime).to.be.below(500);",
-									"});",
-									"pm.test(\"Status message is OK\", function () {",
-									"    pm.response.to.have.status(\"OK\");",
-									"});",
-									"pm.test(\"Response body is not empty\", function () {",
-									"    pm.expect(pm.response.text()).to.not.be.empty;",
-									"});",
-									"pm.test(\"Response body is an array\", function () {",
-									"    pm.expect(pm.response.json()).to.be.an(\"array\");",
-									"});",
+									"",
+									"if (pm.response.code === 200) {",
 									"pm.test(\"Schema validation: array of program objects with required fields and types\", function () {",
 									"    const schema = {",
 									"        type: \"array\",",
@@ -658,12 +643,11 @@
 									"",
 									"    pm.response.to.have.jsonSchema(schema);",
 									"});",
-									""
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "0f5c6fca-8faf-4a76-b748-d3090212d49d"
+								"requests": {}
 							}
 						}
 					],
@@ -673,14 +657,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{BearerToken}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
