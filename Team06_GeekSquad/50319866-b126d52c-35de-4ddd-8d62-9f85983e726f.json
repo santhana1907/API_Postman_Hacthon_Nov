@@ -4114,20 +4114,13 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"loginStatus\": \"A\",\r\n\"password\": \"poststeve\",\r\n\"roleIds\": [\"R01\",\r\n\"R02\"\r\n],\r\n\"status\": \"updated\",\r\n\"userLoginEmail\": \"steve.job@gmail.com\"\r\n}\r\n",
+							"raw": "{\r\n\"loginStatus\": \"{{loginStatus}}\",\r\n\"password\": \"{{password}}\",\r\n\"roleIds\": \"{{roleId}}\",\r\n\"status\": \"{{status}}\",\r\n\"userLoginEmail\": \"{{userLoginEmail}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4135,14 +4128,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/userLogin/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"userLogin",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
