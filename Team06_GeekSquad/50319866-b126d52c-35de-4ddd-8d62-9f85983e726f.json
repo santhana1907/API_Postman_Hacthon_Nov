@@ -1744,7 +1744,10 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "21fb7a47-b0b2-4a56-ad5d-ca3eee3f2ec1",
 								"exec": [
+									"if (pm.response.code === 200) {\r",
+									"    var jsonData = pm.response.json();\r",
 									"const schema= {\r",
 									"  \r",
 									"  \"type\": \"array\",\r",
@@ -1856,12 +1859,12 @@
 									"    }\r",
 									"  ]\r",
 									"}\r",
-									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "21fb7a47-b0b2-4a56-ad5d-ca3eee3f2ec1"
+								"requests": {}
 							}
 						}
 					],
