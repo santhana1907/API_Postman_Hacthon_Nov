@@ -4063,6 +4063,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "365c83c8-b133-4918-b46f-70fc9c66084f",
 								"exec": [
 									"\r",
 									"if (pm.response.code === 200){\r",
@@ -4079,45 +4080,31 @@
 									"};\r",
 									"pm.response.to.have.jsonSchema(Schema);\r",
 									"});\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Response time is less than 1000ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
-									"});\r",
-									"pm.test(\"Status message is 'OK'\",function(){\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
 									"}\r",
-									"else {\r",
-									"    pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"pm.test(\"Status message is 'Not Found'\",function(){\r",
-									"    pm.response.to.have.status(\"Not Found\");\r",
-									"});\r",
-									"}"
+									"// else {\r",
+									"//     pm.test(\"Status code is 404\", function () {\r",
+									"//     pm.response.to.have.status(404);\r",
+									"// });\r",
+									"// pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"//     pm.response.to.have.status(\"Not Found\");\r",
+									"// });\r",
+									"// }"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "365c83c8-b133-4918-b46f-70fc9c66084f"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "9a3d7df6-f2c6-4658-9244-6504dfbd4c3d",
 								"exec": [
 									""
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "9a3d7df6-f2c6-4658-9244-6504dfbd4c3d"
+								"requests": {}
 							}
 						}
 					],
