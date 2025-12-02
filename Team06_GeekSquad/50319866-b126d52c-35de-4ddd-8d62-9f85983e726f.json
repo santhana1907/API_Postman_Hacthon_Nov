@@ -2219,6 +2219,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "49b69212-55fd-4b1b-a917-7382dd7f4776",
 								"exec": [
 									"\r",
 									"// if(pm.response.code === 201){\r",
@@ -2327,20 +2328,19 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "49b69212-55fd-4b1b-a917-7382dd7f4776"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "9fd4d422-6635-4354-a670-1005ac7ac15a",
 								"exec": [
 									""
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "9fd4d422-6635-4354-a670-1005ac7ac15a"
+								"requests": {}
 							}
 						}
 					],
