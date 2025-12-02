@@ -4782,8 +4782,20 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "DeleteProgramId",
 					"id": "50319866-ed0cc942-5c7c-434a-b161-8f7edfb86df3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBatchId",
+					"id": "50319866-88bf020e-d447-4987-8f12-997359130a67",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
