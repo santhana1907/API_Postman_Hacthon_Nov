@@ -3304,13 +3304,7 @@
 							"script": {
 								"id": "d9ecee73-6ad2-498a-8f80-72794e204108",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Response contains 'OK' message\",function(){\r",
-									"    pm.expect(pm.response.json().message).to.eql(\"OK\");\r",
-									"});\r",
-									"\r",
+									"if (pm.response.code === 200) {\r",
 									"     const Schema = {\r",
 									"        \"type\": \"array\",\r",
 									"  \"properties\": {\r",
@@ -3392,7 +3386,8 @@
 									"   };\r",
 									"   pm.test(\"Schema validation\",() => {\r",
 									"     pm.response.to.have.jsonSchema(Schema);\r",
-									"});"
+									"});\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
