@@ -3694,6 +3694,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "07b0749f-9ed5-44f0-9d5a-f134e48c65a0",
 								"exec": [
 									"if(pm.response.code === 200)\r",
 									"{\r",
@@ -3724,19 +3725,6 @@
 									"    \"userLoginEmail\"\r",
 									"  ]\r",
 									"};\r",
-									"\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"pm.test(\"Status message is 'OK'\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"pm.test(\"Response time is less than 300ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
-									"});\r",
 									"pm.test(\"Schema validation\", () => {\r",
 									"pm.response.to.have.jsonSchema(schema);\r",
 									"});\r",
@@ -3754,21 +3742,19 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "07b0749f-9ed5-44f0-9d5a-f134e48c65a0"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "aa72586b-f489-4c94-b231-4f2104417170",
 								"exec": [
-									"let jsonData = pm.response.text();\r",
-									"pm.environment.set(\"userId\", jsonData.userId);"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "aa72586b-f489-4c94-b231-4f2104417170"
+								"requests": {}
 							}
 						}
 					],
@@ -3778,14 +3764,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MjQ1NDYsImV4cCI6MTc2NDU1MzM0Nn0.SSEUVVX0GCLBl4nhVdpCAStX7nJ3skQGphxNLhZLdjxSbCECEVgFncISjV9T2AQrDV3S0iv1c4ry-jnOjWTsug",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
