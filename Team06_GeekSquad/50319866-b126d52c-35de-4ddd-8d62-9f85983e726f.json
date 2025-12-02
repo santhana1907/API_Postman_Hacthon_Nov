@@ -1963,6 +1963,36 @@
 				},
 				{
 					"name": "DeleteBatchbyBatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60266fa8-41a6-4933-bcb7-183194c1bcc6",
+								"exec": [
+									"if (pm.response.code == 200) {\r",
+									"    console.log(\"batch id successfully deleted\");\r",
+									"}\r",
+									"else if (pm.response.code != 401) {\r",
+									"    pm.test(\"Response has expected message\", function() {\r",
+									"        try {\r",
+									"            var jsonData = pm.response.json();\r",
+									"            console.log(\"Checking response json message: \" + jsonData.message);\r",
+									"            pm.expect(jsonData).to.have.property('message');\r",
+									"            pm.expect(jsonData.message).to.include(pm.variables.get(\"expectedJsonMessage\"));\r",
+									"        }\r",
+									"        catch (e) {\r",
+									"            console.log(\"Response is not JSON\");\r",
+									"            pm.expect(pm.response.text()).to.include(pm.variables.get(\"expectedMessage\"));\r",
+									"        }\r",
+									"    });\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "50319866-6b9249b6-5e50-4b06-a2b4-e52bc735b97f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
