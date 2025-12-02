@@ -2040,7 +2040,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1NTMxMzcsImV4cCI6MTc2NDU4MTkzN30.4PU1J2ixW3OUrCwIYswBolXDdW68P3m5w8t8raHp1mpqiJn1b3UxN-MSIZtacNUleOwqRfGaP7gb3mUSgzVxhw",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ2MzczNTUsImV4cCI6MTc2NDY2NjE1NX0.RNQNwPLxfrp65BwA3v1H4aEb89rI44rAq78bUOfJfoHkt1msveNBVHuGJfqkqdeaAfAvwhdFGyFQNE1lip-k_A",
 									"type": "string"
 								}
 							]
@@ -2049,7 +2049,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n  \"programId\": \"{{programId}}\", \r\n  \"roleId\": \"{{roleId}}\", \r\n  \"userId\": \"{{userId}}\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": \"{{batchId}}\", \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"{{userRoleProgramBatchStatus}}\" \r\n    } \r\n  ] \r\n} ",
+							"raw": "{ \r\n  \"programId\": \"1\", \r\n  \"roleId\": \"R02\", \r\n  \"userId\": \"U05\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": \"24\", \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"Active\" \r\n    } \r\n  ] \r\n} ",
 							"options": {
 								"raw": {
 									"language": "json"
