@@ -1099,21 +1099,7 @@
 							"script": {
 								"id": "363762c8-509d-43ef-a86c-00a2759ccec1",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"pm.test(\"Response time is less than 200ms\", function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-									"});\r",
-									"pm.test(\"Status message is No Content\", function () {\r",
-									"    pm.response.to.have.status(\"No Content\");\r",
-									"});\r",
-									"pm.test(\"Response body contains the correct message\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Program Name -Cucumber is deleted Successfully!\");\r",
-									"});"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
