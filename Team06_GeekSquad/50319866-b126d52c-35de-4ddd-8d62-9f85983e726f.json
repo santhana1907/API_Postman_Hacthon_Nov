@@ -14,6 +14,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "a220112e-02f7-4352-a06b-0fb041ba7449",
 								"exec": [
 									"if (pm.response.code === 200) {\r",
 									"    var jsonData = pm.response.json();\r",
@@ -74,10 +75,10 @@
 									"        pm.expect(jsonData.type).to.equal(\"Bearer\");\r",
 									"    });\r",
 									"\r",
-									"    pm.test(\"Respone has userId\", function() {\r",
-									"        pm.collectionVariables.set(\"userId\", jsonData.userId);\r",
-									"        //pm.environment.set(\"userId\", jsonData.userId);\r",
-									"    });\r",
+									"    // pm.test(\"Respone has userId\", function() {\r",
+									"    //     pm.collectionVariables.set(\"userId\", jsonData.userId);\r",
+									"    //     //pm.environment.set(\"userId\", jsonData.userId);\r",
+									"    // });\r",
 									"\r",
 									"    pm.test(\"Response has user email\", function() {\r",
 									"        pm.expect(jsonData.email).to.equal(pm.variables.get(\"userEmail\")); \r",
@@ -115,13 +116,13 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "a220112e-02f7-4352-a06b-0fb041ba7449"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "0125be4f-28a4-401a-9cab-5adacf231a3b",
 								"exec": [
 									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {\r",
 									"    pm.request.body.update({\r",
@@ -138,8 +139,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "0125be4f-28a4-401a-9cab-5adacf231a3b"
+								"requests": {}
 							}
 						}
 					],
