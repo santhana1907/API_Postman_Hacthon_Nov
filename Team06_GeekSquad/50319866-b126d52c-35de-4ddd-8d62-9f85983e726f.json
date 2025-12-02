@@ -476,6 +476,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "9962dc72-ecff-4f65-add2-075842f098c7",
 								"exec": [
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -586,13 +587,13 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "9962dc72-ecff-4f65-add2-075842f098c7"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "4258f906-1b6e-469f-9515-bbccf2536eff",
 								"exec": [
 									"function randomProgramlName(length) {\r",
 									"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\";\r",
@@ -607,8 +608,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "4258f906-1b6e-469f-9515-bbccf2536eff"
+								"requests": {}
 							}
 						}
 					],
@@ -618,14 +618,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{BearerToken}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
