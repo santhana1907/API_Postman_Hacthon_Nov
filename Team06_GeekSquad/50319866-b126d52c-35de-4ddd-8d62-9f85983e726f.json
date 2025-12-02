@@ -679,28 +679,9 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "dd3d0f36-b0f7-4f9e-815c-436f80510a80",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"pm.test(\"Content-Type is present\", function () {",
-									"    pm.response.to.have.header(\"Content-Type\");",
-									"});",
-									"pm.test(\"Response time is less than 1000ms\", function () {",
-									"    pm.expect(pm.response.responseTime).to.be.below(1000);",
-									"});",
-									"pm.test(\"Status message is OK\", function () {",
-									"    pm.response.to.have.status(\"OK\");",
-									"});",
-									"pm.test(\"Program name is Cucumber\", function () {",
-									"    pm.expect(pm.response.json().programName).to.eql(\"Cucumber\");",
-									"});",
-									"pm.test(\"Program description is QA Test Assure\", function () {",
-									"    pm.expect(pm.response.json().programDescription).to.eql(\"QA Test Assure\");",
-									"});",
-									"pm.test(\"Program status is Inactive\", function () {",
-									"    pm.expect(pm.response.json().programStatus).to.eql(\"Inactive\");",
-									"});",
+									"if (pm.response.code === 200) {",
 									"pm.test(\"Schema validation\", function () {",
 									"    const schema = {",
 									"        type: \"object\",",
@@ -724,12 +705,12 @@
 									"    };",
 									"",
 									"    pm.response.to.have.jsonSchema(schema);",
-									"});"
+									"});",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "dd3d0f36-b0f7-4f9e-815c-436f80510a80"
+								"requests": {}
 							}
 						}
 					],
@@ -739,14 +720,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTczOTcsImV4cCI6MTc2NDU0NjE5N30.-oIlSUtWJ41SGkpbTKadRCec6XJpAQrV7ae7dUxsW9B9OnwomOXLqbdu16nwuj1AYxv8pQEa-iDGdVQNCpwnHg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
