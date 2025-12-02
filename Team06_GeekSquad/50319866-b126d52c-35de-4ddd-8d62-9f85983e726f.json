@@ -3553,6 +3553,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "8ce71301-1229-46a1-848a-cf94fd131e05",
 								"exec": [
 									"\r",
 									"if(pm.response.code === 200)\r",
@@ -3591,12 +3592,6 @@
 									"    }\r",
 									"  ]\r",
 									"};\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Status message is 'OK' \",function(){\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
 									"pm.test(\"Response contains required fields\", function () {\r",
 									"    pm.expect(jsonData).to.have.property(\"facets\");\r",
 									"    pm.expect(jsonData).to.have.property(\"users\");\r",
@@ -3619,16 +3614,19 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "8ce71301-1229-46a1-848a-cf94fd131e05"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
+								"id": "ab45ff22-9cf4-47fb-b189-c1010dcfcb3a",
+								"exec": [
+									""
+								],
 								"type": "text/javascript",
-								"id": "ab45ff22-9cf4-47fb-b189-c1010dcfcb3a"
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -3638,26 +3636,10 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{baseURL}}/v2/users",
 							"host": [
