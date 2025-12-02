@@ -5371,14 +5371,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/userLogin/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"userLogin",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
