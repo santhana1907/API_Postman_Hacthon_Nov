@@ -2955,6 +2955,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "5e44e6c9-7186-4aae-adc2-93817c74eeba",
 								"exec": [
 									"\r",
 									"if(pm.response.code === 200)\r",
@@ -3048,8 +3049,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "5e44e6c9-7186-4aae-adc2-93817c74eeba"
+								"requests": {}
 							}
 						}
 					],
@@ -3059,26 +3059,10 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearer}}",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{baseURL}}/users/roles",
 							"host": [
