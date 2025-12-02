@@ -3769,14 +3769,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BaseURL}}/users/details/{id} ",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"details",
-								"{id} "
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
