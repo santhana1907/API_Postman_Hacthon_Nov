@@ -4813,9 +4813,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}{{BatchId}}",
+							"raw": "{{baseURL}}/batches/{id} ",
 							"host": [
-								"{{baseURL}}{{BatchId}}"
+								"{{baseURL}}"
+							],
+							"path": [
+								"batches",
+								"{id} "
 							]
 						}
 					},
