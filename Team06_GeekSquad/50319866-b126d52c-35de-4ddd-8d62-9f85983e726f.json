@@ -6790,6 +6790,14 @@
 		{
 			"key": "BatchName1",
 			"value": ""
+		},
+		{
+			"key": "BatchId2",
+			"value": ""
+		},
+		{
+			"key": "BatchName2",
+			"value": ""
 		}
 	]
 }
