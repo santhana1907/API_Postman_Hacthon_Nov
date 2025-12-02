@@ -4810,7 +4810,7 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "{{baseURL}}{{BatchId}}",
