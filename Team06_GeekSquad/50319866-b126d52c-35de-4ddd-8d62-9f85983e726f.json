@@ -4266,21 +4266,7 @@
 							"script": {
 								"id": "28273fb1-5a4c-450d-b631-13e28eca3a52",
 								"exec": [
-									"//if (pm.response.code === 201) {\r",
-									"\r",
-									"  //  var jsonData = pm.response.json();\r",
-									"\r",
-									"    // Check if the response contains the roleId field\r",
-									"   // if (jsonData && jsonData.roleId ) {\r",
-									"    \r",
-									"   //     pm.collectionVariables.set(\"roleId\", jsonData.roleId);              \r",
-									"       // console.log (\"roleId is set to \" + pm.collectionVariables.get (\"roleId\")); \r",
-									"  //          \r",
-									"  //  } else {\r",
-									"  //      console.log(\"roleId  not found in the response.\");\r",
-									"  //  }\r",
-									"\r",
-									"//}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
