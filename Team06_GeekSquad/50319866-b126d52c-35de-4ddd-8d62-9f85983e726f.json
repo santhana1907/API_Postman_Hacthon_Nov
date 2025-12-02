@@ -5543,7 +5543,7 @@
 						"auth": {
 							"type": "noauth"
 						},
-						"method": "DELETE",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -5555,13 +5555,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
