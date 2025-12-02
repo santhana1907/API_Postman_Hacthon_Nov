@@ -2043,6 +2043,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "28f0b06b-84a9-4e07-8085-2d7cdca5f01b",
 								"exec": [
 									"const schema=\r",
 									"{\r",
@@ -2084,8 +2085,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "28f0b06b-84a9-4e07-8085-2d7cdca5f01b"
+								"requests": {}
 							}
 						}
 					],
