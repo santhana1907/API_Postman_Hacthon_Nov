@@ -606,7 +606,7 @@
 									"    return out;\r",
 									"}\r",
 									"\r",
-									"pm.collectionVariables.set(\"RProgramName\", randomProgramlName(10));"
+									"pm.variables.set(\"RProgramName\", randomProgramlName(10));"
 								],
 								"type": "text/javascript",
 								"packages": {},
