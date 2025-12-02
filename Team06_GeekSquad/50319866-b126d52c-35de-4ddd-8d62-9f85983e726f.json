@@ -533,7 +533,7 @@
 									"    ",
 									"    if (responseData.programName && !namesArray.includes(responseData.programName)) {",
 									"        namesArray.push(responseData.programName);",
-									"        pm.collectionVariables.set(\"ProgramNames\", JSON.singify(namesArray));",
+									"        pm.collectionVariables.set(\"ProgramNames\", JSON.stringify(namesArray));",
 									"        ",
 									"        // Store first name as ProgramName",
 									"        pm.collectionVariables.set(\"ProgramName\", String(namesArray[0]));",
