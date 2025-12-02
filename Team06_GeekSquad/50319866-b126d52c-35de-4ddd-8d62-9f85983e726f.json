@@ -1666,7 +1666,10 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "aebb19ce-4622-4c83-a2fe-1119db9d2b22",
 								"exec": [
+									"if (pm.response.code === 200) {\r",
+									"    var jsonData = pm.response.json();\r",
 									"const schema= \r",
 									"  \r",
 									"  {\r",
@@ -1710,12 +1713,12 @@
 									"    }\r",
 									"  ]\r",
 									"}\r",
-									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "aebb19ce-4622-4c83-a2fe-1119db9d2b22"
+								"requests": {}
 							}
 						}
 					],
