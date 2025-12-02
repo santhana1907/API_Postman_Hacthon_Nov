@@ -4210,13 +4210,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseURL}}/users/{{userID}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{baseURL}}"
-							],
-							"path": [
-								"users",
-								"{{userID}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
