@@ -3497,7 +3497,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n  \"programId\": {{programId}}, \r\n  \"roleId\": \"{{roleId}}\", \r\n  \"userId\": \"{{userId}}\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": \"{{BatchId}}\", \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"Active\" \r\n    } \r\n  ] \r\n} ",
+							"raw": "{\r\n    \"programId\": {{programId}},\r\n    \"roleId\": \"{{roleId}}\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"userRoleProgramBatches\": [\r\n        {\r\n            \"batchId\": \"{{BatchId}}\",\r\n            \"userRoleProgramBatchStatus\": \"Active\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
