@@ -3960,14 +3960,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ1MTM4NjMsImV4cCI6MTc2NDU0MjY2M30.88h3PMtHyPFTSLgjqw7vDqGXG8e5fTYZrROhIDijPA6tuQ5Nm5PVgJ9DOWas2QjHFWvazPOetuqaZaHnLD7_Yg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
