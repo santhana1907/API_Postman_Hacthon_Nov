@@ -1514,21 +1514,18 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "da08ea00-d0bd-477e-90f7-784806a8c604",
 								"exec": [
-									"// Parse response safely\r",
+									"\r",
 									"let data;\r",
 									"try {\r",
 									"  data = pm.response.json();\r",
 									"} catch (e) {\r",
 									"  data = null;\r",
 									"}\r",
-									"\r",
-									"// Quick sanity tests (kept lightweight so as not to duplicate existing tests)\r",
-									"pm.test(\"📦 Response is an array\", function () {\r",
+									"pm.test(\"Response is an array\", function () {\r",
 									"  pm.expect(Array.isArray(data)).to.be.true;\r",
 									"});\r",
-									"\r",
-									"// Draft-07 schema for an array of batch objects\r",
 									"const batchItemSchema = {\r",
 									"  type: \"object\",\r",
 									"  properties: {\r",
@@ -1564,20 +1561,12 @@
 									"\r",
 									"  const validate = ajv.compile(arraySchema);\r",
 									"  const valid = validate(data);\r",
-									"\r",
-									"  if (!valid) {\r",
-									"    // Build a useful error message to help debugging schema mismatches\r",
-									"    const errMsg = validate.errors\r",
-									"      .map(err => `${err.instancePath || '(root)'} ${err.message}`)\r",
-									"      .join('; ');\r",
-									"    throw new Error(`Schema validation failed: ${errMsg}`);\r",
-									"  }\r",
+									"  \r",
 									"});"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "da08ea00-d0bd-477e-90f7-784806a8c604"
+								"requests": {}
 							}
 						}
 					],
