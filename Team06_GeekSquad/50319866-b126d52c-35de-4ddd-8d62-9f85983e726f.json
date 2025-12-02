@@ -6212,7 +6212,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2fd092a5-6a31-4bc8-82a7-eb23b62e86b3",
+				"id": "16e4f03e-a8b0-4a3b-9f80-323b2ee61527",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6379,7 +6379,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b1f76eff-ea44-43f8-9244-261e76da9c85",
+				"id": "505139cc-b360-4c29-b18d-765ece26583c",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -6472,7 +6472,9 @@
 					"    if (config.isSuccess) {",
 					"        testSuite.checkBodyExists();",
 					"        if(pm.request.method !== \"DELETE\")",
+					"        {",
 					"        testSuite.checkHeaders();",
+					"        }",
 					"        ",
 					"        // Structure validation based on scenario",
 					"        switch(config.testScenario) {",
