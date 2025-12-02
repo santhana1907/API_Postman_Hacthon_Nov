@@ -5125,6 +5125,34 @@
 		{
 			"key": "BatchName",
 			"value": ""
+		},
+		{
+			"key": "programID2",
+			"value": ""
+		},
+		{
+			"key": "ProgramName2",
+			"value": ""
+		},
+		{
+			"key": "BatchIds",
+			"value": ""
+		},
+		{
+			"key": "BatchNames",
+			"value": ""
+		},
+		{
+			"key": "BatchId1",
+			"value": ""
+		},
+		{
+			"key": "BatchName1",
+			"value": ""
+		},
+		{
+			"key": "UserId",
+			"value": ""
 		}
 	]
 }
