@@ -1297,6 +1297,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "e9b6ce6d-54a8-47a9-846a-28d3a89a6ba4",
 								"exec": [
 									"if (pm.response.code === 201) {\r",
 									"\r",
@@ -1315,6 +1316,9 @@
 									"\r",
 									"}\r",
 									"\r",
+									"if (pm.response.code === 201) {\r",
+									"\r",
+									"    var jsonData = pm.response.json();\r",
 									"const schema = {\r",
 									"  \r",
 									"  \"type\": \"object\",\r",
@@ -1351,24 +1355,24 @@
 									"    \"programName\"\r",
 									"  ]\r",
 									"}\r",
-									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "e9b6ce6d-54a8-47a9-846a-28d3a89a6ba4"
+								"requests": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "e37b0920-483e-4a17-af79-4d7ea4e994d8",
 								"exec": [
 									""
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "e37b0920-483e-4a17-af79-4d7ea4e994d8"
+								"requests": {}
 							}
 						}
 					],
