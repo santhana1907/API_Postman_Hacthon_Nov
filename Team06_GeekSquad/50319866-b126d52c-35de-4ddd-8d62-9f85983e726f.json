@@ -1099,7 +1099,11 @@
 							"script": {
 								"id": "363762c8-509d-43ef-a86c-00a2759ccec1",
 								"exec": [
-									""
+									"if(pm.response.code === 200){\r",
+									"pm.test(\"Response body contains the correct message\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"deleted Successfully!\");\r",
+									"});\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
