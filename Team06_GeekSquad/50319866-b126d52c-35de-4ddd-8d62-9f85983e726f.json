@@ -4159,20 +4159,13 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3NjQ0NDIyMzksImV4cCI6MTc2NDQ3MTAzOX0.XrHRO4qJa9jmPZ9X9sYpYzHaAc_iMD0KZGrIy0EaujYEgskrl7-4BB1rAVOAri9s3mzAT8m3PbxNHxRgCcvglg",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \r\n  \"programId\": {{programId1}}, \r\n  \"roleId\": \"{{roleId}}\", \r\n  \"userId\": \"{{userId}}\", \r\n  \"userRoleProgramBatches\": [ \r\n    { \r\n      \"batchId\": \"{{BatchId}}\", \r\n      \r\n\"userRoleProgramBatchStatus\": \r\n\"{{userRoleProgramBatchStatus}}\" \r\n    } \r\n  ] \r\n} ",
+							"raw": "{\r\n    \"programId\": {{programId}},\r\n    \"roleId\": \"{{roleId}}\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"userRoleProgramBatches\": [\r\n        {\r\n            \"batchId\": \"{{BatchId}}\",\r\n            \"userRoleProgramBatchStatus\": \"Active\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4180,14 +4173,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/users/roleProgramBatchStatus/{{userId}}",
+							"raw": "{{baseURL}}{{endpoint}}",
 							"host": [
-								"{{BaseURL}}"
-							],
-							"path": [
-								"users",
-								"roleProgramBatchStatus",
-								"{{userId}}"
+								"{{baseURL}}{{endpoint}}"
 							]
 						}
 					},
