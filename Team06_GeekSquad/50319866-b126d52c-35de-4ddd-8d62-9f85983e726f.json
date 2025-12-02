@@ -4112,6 +4112,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "072431d8-7293-48ac-816f-73e37e0d19d1",
 								"exec": [
 									"\r",
 									"if (pm.response.code === 200) {\r",
@@ -4148,8 +4149,7 @@
 								],
 								"type": "text/javascript",
 								"packages": {},
-								"requests": {},
-								"id": "072431d8-7293-48ac-816f-73e37e0d19d1"
+								"requests": {}
 							}
 						}
 					],
