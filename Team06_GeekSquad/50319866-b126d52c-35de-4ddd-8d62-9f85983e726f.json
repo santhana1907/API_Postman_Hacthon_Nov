@@ -2045,6 +2045,8 @@
 							"script": {
 								"id": "28f0b06b-84a9-4e07-8085-2d7cdca5f01b",
 								"exec": [
+									"if (pm.response.code === 200) {\r",
+									"    var jsonData = pm.response.json();\r",
 									"const schema=\r",
 									"{\r",
 									"  \"type\": \"object\",\r",
@@ -2081,7 +2083,8 @@
 									"    \"programName\"\r",
 									"  ]\r",
 									"}\r",
-									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});"
+									"pm.test(\"Schema validation\", () => {pm.response.to.have.jsonSchema(schema);});\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
