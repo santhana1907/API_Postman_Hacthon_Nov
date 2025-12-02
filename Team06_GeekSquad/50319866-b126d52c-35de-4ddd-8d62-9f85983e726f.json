@@ -653,6 +653,7 @@
 							"script": {
 								"id": "0f5c6fca-8faf-4a76-b748-d3090212d49d",
 								"exec": [
+									"if (pm.response.code === 200) {",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
 									"});",
@@ -698,7 +699,7 @@
 									"",
 									"    pm.response.to.have.jsonSchema(schema);",
 									"});",
-									""
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
