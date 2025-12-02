@@ -4788,8 +4788,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/deletebyprogid/{{programID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"deletebyprogid",
+								"{{programID}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4801,7 +4811,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}{{BatchId}}",
+							"host": [
+								"{{baseURL}}{{BatchId}}"
+							]
+						}
 					},
 					"response": []
 				}
