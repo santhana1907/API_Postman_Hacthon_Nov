@@ -1,0 +1,3836 @@
+[
+    {
+        "requests": [
+            {
+                "request": "User SignIn",
+                "data": [
+                    {
+                        "scenario": "Admin login with invalid endpoint",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/login/1",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint",
+                        "auth": "false" 
+                    },
+                    {
+                        "scenario": "Admin login with empty credentials",
+                        "userEmail": "",
+                        "password": "",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "EmailId is mandatory" , 
+                        "expectedJsonMessage2": "Password is mandatory",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with empty request body",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Required request body is missing" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with invalid content type",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 415,
+                        "expectedStatusMessage": "Unsupported Media Type",
+                        "expectedMessage": "Content-Type not supported" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with missing email",
+                        "userEmail": "",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "EmailId is mandatory" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with missing password",
+                        "userEmail": "team6@gmail.com",
+                        "password": "",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Password is mandatory" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with wrong email",
+                        "userEmail": "team61@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Active User with given email Id Not Found" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with wrong password",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@60",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedJsonMessage": "Bad credentials" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with Invalid password without numbers",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with short password",
+                        "userEmail": "team6@gmail.com",
+                        "password": "Api@6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with long password",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@12345678912345678912345",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with invalid password - no special chars",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with invalid password - no small letters",
+                        "userEmail": "team6@gmail.com",
+                        "password": "APIHACKATHON@6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with invalid password - no capital letters",
+                        "userEmail": "team6@gmail.com",
+                        "password": "apihackathon@6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with invalid password with space",
+                        "userEmail": "team6@gmail.com",
+                        "password": "Api Hackathon@6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Admin login with valid credentials",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/login",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "expectedRoles" : "ROLE_ADMIN,ROLE_STAFF",
+                        "auth": "false"
+                    }
+                ]
+            },
+            {
+                "request": "ForgotPasswordConfirmEmail",
+                "data": [
+                    {
+                        "scenario": "Forgot password with invalid endpoint",
+                        "userEmail": "team6@gmail.com",
+                        "endpoint": "/login/forgotpassword/confirm",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Forgot password with missing request body",
+                        "userEmail": "team6@gmail.com",
+                        "endpoint": "/login/forgotpassword/confirmEmail",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Required request body is missing" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Forgot password with invalid content type",
+                        "userEmail": "team6@gmail.com",
+                        "endpoint": "/login/forgotpassword/confirmEmail",
+                        "expectedStatusCode": 415,
+                        "expectedStatusMessage": "Unsupported Media Type",
+                        "expectedMessage": "Content-Type not supported" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Forgot password with empty emailId",
+                        "userEmail": "",
+                        "endpoint": "/login/forgotpassword/confirmEmail",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "EmailId is mandatory" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Forgot password with invalid emailId",
+                        "userEmail": "team61@gmail.com",
+                        "endpoint": "/login/forgotpassword/confirmEmail",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Invalid Email" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Forgot password with valid emailId",
+                        "userEmail": "team6@gmail.com",
+                        "endpoint": "/login/forgotpassword/confirmEmail",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created",
+                        "expectedMessage": "Email sent to your registered email Id" ,
+                        "expectedRoles" : "ROLE_ADMIN,ROLE_STAFF",
+                        "auth": "false"
+                    }
+                ]
+            },
+            {
+                "request": "ResetPassword",
+                "data": [
+                    {
+                        "scenario": "Reset password with invalid endpoint",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/resetpassword",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with no authentication",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedMessage": "" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Reset password with invalid authentication",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedMessage": "" ,
+                        "auth": "invalid"
+                    },
+                    {
+                        "scenario": "Reset password with empty request body",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Required request body is missing" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with invalid content type",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 415,
+                        "expectedStatusMessage": "Unsupported Media Type",
+                        "expectedMessage": "Content-Type not supported" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with missing credentials",
+                        "userEmail": "",
+                        "password": "",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Password is mandatory" ,
+                        "expectedJsonMessage2": "EmailId is mandatory" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with missing emailId",
+                        "userEmail": "",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "EmailId is mandatory" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with missing password",
+                        "userEmail": "team6@gmail.com",
+                        "password": "",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Password is mandatory" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with wrong emailId",
+                        "userEmail": "team61@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Invalid" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with Invalid password without numbers",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with short password",
+                        "userEmail": "team6@gmail.com",
+                        "password": "Api@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with long password",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@12345678912345678912345",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password invalid password - no special chars",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with invalid password - no small letters",
+                        "userEmail": "team6@gmail.com",
+                        "password": "APIHACKATHON@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with invalid password - no capital letters",
+                        "userEmail": "team6@gmail.com",
+                        "password": "apihackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with invalid password with space",
+                        "userEmail": "team6@gmail.com",
+                        "password": "Api Hackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "password must contain atleast 8 to max 32 characters, a capital letter, a small letter, a special character, a number and no space" , 
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Reset password with valid credentials",
+                        "userEmail": "team6@gmail.com",
+                        "password": "ApiHackathon@6",
+                        "endpoint": "/resetPassword",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "expectedJsonMessage": "Password saved" , 
+                        "auth": "true"
+                    }
+                ]
+            },
+            {
+                "request": "User LogOut",
+                "data": [
+                    {
+                        "scenario": "User Logout with invalid endpoint",
+                        "endpoint": "/logoutlms/1",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "User Logout with no authentication",
+                        "endpoint": "/logoutlms",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedMessage": "" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "User Logout with invalid authentication",
+                        "endpoint": "/logoutlms",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedMessage": "" ,
+                        "auth": "invalid"
+                    },
+                    {
+                        "scenario": "User Logout with valid authentication",
+                        "endpoint": "/logoutlms",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "expectedMessage": "Logout successful" ,
+                        "auth": "true"
+                    }
+                ]
+            },
+            {
+                "request": "AddNewprogram",
+                "data": [
+                    
+                    {
+                        "scenario": "Add program without a program name",
+                        "programName": "",
+                        "programDescription": "APIPostman",
+                        "programStatus": "Active",
+                        "expectedStatusCode": 400,
+                        "endpoint": "/saveprogram",
+                        "expectedStatusMessage": "Bad Request",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Add program without a description",
+                        "programName": "{{RProgramName}}",
+                        "programDescription": "",
+                        "programStatus": "Active",
+                        "expectedStatusCode": 400,
+                        "endpoint": "/saveprogram",
+                        "expectedStatusMessage": "Bad Request",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Add program without specifying program status",
+                        "programName": "{{RProgramName}}",
+                        "programDescription": "APIPostman",
+                        "programStatus": "",
+                        "expectedStatusCode": 400,
+                        "endpoint": "/saveprogram",
+                        "expectedStatusMessage": "Bad Request",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Add new program with valid details",
+                        "programName": "{{RProgramName}}",
+                        "programDescription": "APIPostman",
+                        "programStatus": "Active",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created",
+                        "endpoint": "/saveprogram",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Add new program with valid field details",
+                        "programName": "{{RProgramName}}",
+                        "programDescription": "APIPostman",
+                        "programStatus": "Active",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created",
+                        "endpoint": "/saveprogram",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Add new program with valid field details",
+                        "programName": "{{RProgramName}}",
+                        "programDescription": "APIPostman",
+                        "programStatus": "Active",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created",
+                        "endpoint": "/saveprogram",
+                        "auth": "true"
+                    }
+                
+                ]
+            },
+            {
+                "request": "GetAllPrograms",
+                "data": [
+                    {
+                        "scenario": "Retrieve all program list",
+                        "requestType": "GET",
+                        "endpoint": "/allPrograms",
+                        "auth": "true",
+                        "queryParams": null,
+                        "expectedStatusCode": 200,                       
+                        "expectedStatusMessage": "OK",
+                        "expectedResponse": "List of all available programs"
+                    },
+                    {
+                        "scenario": "Retrieve all programs invalid endpoint",
+                        "requestType": "GET",
+                        "endpoint": "/prog",
+                        "auth": "true",
+                        "queryParams": null,
+                        "expectedStatusCode": 404,                       
+                        "expectedStatusMessage": "Not Found"
+                   
+                    },
+                    { 
+                        "scenario": "Retrieve all programs empty endpoint",
+                        "requestType": "GET",
+                        "endpoint": "",
+                        "auth": "true",
+                        "queryParams": null,
+                        "expectedStatusCode": 404,                       
+                        "expectedStatusMessage": "Not Found"
+                    },
+                    {
+                       "scenario": "Retrieve all programs invalid Auth",
+                        "requestType": "GET",
+                        "endpoint": "/allPrograms",
+                        "auth": "invalid",
+                        "queryParams": null,
+                        "expectedStatusCode": 401,                       
+                        "expectedStatusMessage": "Unauthorized"
+                    }
+                ] 
+            },
+            {
+                "request": "GetProgrambyProgramId",
+                "data": [
+
+                    {
+                        "scenario": "Fetch program with valid programId",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/programs/{{programID}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Fetch program with invalid programId",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/programs/{{ProgramID}}",
+                        "auth": "true"             
+                    },
+                    {
+                       "scenario": "Fetch program by programId without Authorization ",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "endpoint": "/programs/{{programID}}",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Fetch program by programId invalid endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                       
+                        "endpoint": "/programs/{{programID}}test",
+                        "auth": "true"
+                    }
+                ]
+            },
+            { 
+                "request": "GetAllProgramswithUsers",
+                "data": [
+
+                   {
+                       "scenario": "retrieve all programs with users list",
+                       "endpoint": "/allProgramsWithUsers",
+                       "auth": "true",
+                       "requestType": "GET",
+                       "expectedStatusCode": 200,
+                       "expectedStatusMessage": "OK"
+                   },   
+                    {
+                        "scenario": "retrieve all programs with invalid endpoint",
+                        "endpoint": "/allProgramsWitt1",
+                        "auth": "true",
+                        "requestType": "GET",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found"       
+                    }
+                ]
+            },
+            {    
+                "request": "UpdateProgrambyProgramName",
+                "data":[
+
+                    {          
+                       "scenario": "update program using valid program name with valid payload",
+                       "endpoint": "/program/{{ProgramName1}}",
+                       "requestType": "PUT",
+                       "auth": true,
+                       "programName": "RProgramNamesdfw",
+                       "programDescription": "APIPostman",
+                       "programStatus": "Active",
+                       "expectedStatusCode": 200,
+                       "expectedStatusMessage": "OK"
+                    },
+                    {
+                       "scenario": "update program with invalid program name",
+                       "endpoint": "/program/InvalidProg123",
+                       "requestType": "PUT",
+                       "auth": true,
+                       "programName": "InvalidProg123",
+                       "programDescription": "Trying to update with invalid name",
+                       "programStatus": "Active",
+                       "expectedStatusCode": 404,
+                       "expectedStatusMessage": "Not Found"
+                    },
+                    {    
+                       "scenario": "update program with missing fields",
+                       "endpoint": "/program/{{ProgramName1}}",
+                       "requestType": "PUT",
+                       "auth": true,
+                       "programName": "",
+                       "programDescription": "",
+                       "programStatus": "Active",
+                       "expectedStatusCode": 400,
+                       "expectedStatusMessage": "Bad Request"
+                    },
+                    {
+                       "scenario": "update program with invalid programStatus",
+                       "endpoint": "/program/{{ProgramName1}}",
+                       "requestType": "PUT",
+                       "auth": true,
+                       "programName": "{{RProgramName}}",
+                       "programDescription": "APIPostman",
+                       "programStatus": "Act2ve",
+                       "expectedStatusCode": 400,
+                       "expectedStatusMessage": "Bad Request"
+                    },
+                    {
+                       "scenario": "update program with too long Description",
+                       "endpoint": "/program/{{ProgramName1}}",
+                       "requestType": "PUT",
+                       "auth": true,
+                       "programName": "{{RProgramName}}",
+                       "programDescription": "This description is intentionally made extremely long to exceed the allowed character limit for program description.400 Bad Request response.",
+                       "programStatus": "Active",
+                       "expectedStatusCode": 400,
+                       "expectedStatusMessage": "Bad Request"
+                    }
+                ]    
+            },
+            {
+                "request": "UpdateProgrambyProgramID",
+                "data":[
+                    {
+                       "scenario": "update program with valid programId and valid payload",
+                       "endpoint": "/putprogram/{{programID1}}",
+                       "requestType": "PUT",
+                       "auth": true,
+                       "programName": "RRKRProgramNamedsz",
+                       "programDescription": "QA Test Assure",
+                       "programStatus": "Active",
+                       "pathParameter": {
+                       "programId": "{{programID1}}"
+                       },
+                       "expectedStatusCode": 200,
+                       "expectedStatusMessage": "OK"
+                    },
+                    {
+                       "Scenario": "Update program with invalid Program ID",
+                       "request": {
+                       "method": "PUT",
+                       "endpoint": "/putprogram/INVALID123",
+                       "auth": true,
+                       "body": {
+                       "programName": "Updated Program Name",
+                       "programDescription": "Updated description",
+                       "programStatus": "Active"
+                       }
+                       },
+                       "expectedResponse": {
+                       "statusCode": 404,
+                       "message": "Program not found",
+                       "details": "The provided Program ID 'INVALID123' does not exist."
+                       }
+                    },
+                    {
+                       "Scenario": "Update program with missing fields",
+                       "request": {
+                       "method": "PUT",
+                       "auth": true,
+                       "endpoint": "/putprogram/{{programID1}}",
+                       "body": {
+                       "programName": "",
+                       "programDescription": "",
+                       "programStatus": ""
+                       }
+                       },
+                       "expectedResponse": {
+                       "statusCode": 400,
+                       "message": "Validation Error",
+                       "details": [
+                       "Program name is required.",
+                       "Program description is required.",
+                       "Program status is required."
+                       ]
+                       }
+                    },
+                    {
+                       "scenario": "update program with too long description",
+                       "endpoint": "/putprogram/{{programID1}}",
+                       "requestType": "PUT",
+                       "auth": true,
+                       "requestPayload": {
+                       "programName": "{{RProgramName}}",
+                       "programDescription": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                       },
+                       "pathParameter": {
+                       "programId": "{{programID1}}"
+                       },
+                       "expectedStatusCode": 400,
+                       "expectedStatusMessage": "Bad Request"
+                      
+                    }
+                ]
+            },
+            {
+                "request": "DeleteProgramByProgramID",
+                "data":[
+                    {
+                       "scenario": "delete program with valid ID",
+                       "endpoint": "/deletebyprogid/{{programID1}}",
+                       "requestType": "DELETE",
+                       "auth": true,
+                       "pathParameter": {
+                       "programId": "{{programID1}}"
+                       },
+                       "expectedStatusCode": 200,
+                       "expectedStatusMessage": "OK"
+                      
+                    },
+                    {
+                       "scenario": "delete program with ID that does not exist",
+                       "endpoint": "/deletebyprogid/99999",
+                       "requestType": "DELETE",
+                       "auth": true,
+                       "pathParameter": {
+                       "programId": 99999
+                       },
+                       "expectedStatusCode": 404,
+                       "expectedStatusMessage": "Not Found"
+                       
+                    }
+                ]  
+            },
+            { 
+                "request": "DeleteProgramByProgramName",
+                "data":[
+                    {                      
+                        "scenario": "delete program with valid programName",
+                        "endpoint": "/deletebyprogname/{{ProgramName2}}",
+                        "requestType": "DELETE",
+                        "auth": true,
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK"
+                        
+                    },
+                    {
+                        "scenario": "delete program with Program Name that does not exist",
+                        "endpoint": "/deletebyprogname/asdgad",
+                        "requestType": "DELETE",
+                        "auth": true,
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found"
+                        
+                    }
+                ]  
+            },
+            
+            {
+                "request": "CreateNewBatch",
+                "data": [
+                    {
+                        "scenario": "create batch1 with all fields",
+                        "batchDescription": "Team 6 squad Batch 1",
+                        "batchName": "{{ProgramName}}11",
+                        "batchNoOfClasses": 10,                        
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                       
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with mandatory fields",
+                        "batchDescription": "",
+                        "batchName": "{{ProgramName}}22",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch without batchName",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "",
+                        "batchNoOfClasses": 10,                        
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with batchName starting with non-alphabet",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "1{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with batchName containing special characters",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "@{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with description starting with non-alphabet",
+                        "batchDescription": "6Team 6 Batch",
+                        "batchName": "1{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with description containing special characters",
+                        "batchDescription": "Team$_6 Batch",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch without batch status",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",                        
+                        "batchStatus": "",
+                        "batchNoOfClasses": 10,
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with invalid batch status",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "asd",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with no.of classes 0",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 0,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                       
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with no.of classes more than 2 digits",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 150,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with no.of classes negative number",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": -9,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with non-existing program id",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": 7788,                        
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with invalid program id",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 20,
+                        "batchStatus": "Active",                        
+                        "programId": -6,                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch with invalid endpoint",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",                        
+                        "batchNoOfClasses": 15,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                        
+                        "endpoint": "/batchestest",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create batch without Authorization",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",                        
+                        "batchNoOfClasses": 15,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "endpoint": "/batches",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "create batch with invalid token",
+                        "batchDescription": "Team 6 Batch",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 15,                        
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",                        
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "endpoint": "/batches",
+                        "auth": "invalid",
+                        "invalidToken": "Invalid_Token_Value_12345"
+                    }
+                ]
+            },
+            {
+                "request": "GetAllBatches",
+                "data": [
+                    {
+                        "scenario": " Retrieve all batches with valid endpoint",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/batches",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve all batches with search string",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/batches?searchString={{ProgramName}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve all batches invalid endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/batches1",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve all batches empty endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve all batches with No Auth",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "endpoint": "/batches",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Retrieve all batches with invalid Auth",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "endpoint": "/batches",
+                        "auth": "invalid",
+                        "invalidToken": "InvalidToken987"
+                    }
+                ]
+            },
+            {
+                "request": "GetBatchbyBatchId",
+                "data": [
+                    {
+                        "scenario": "Retrieve batch by batchId",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/batches/batchId/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve batch by invalid batchId",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                        
+                        "endpoint": "/batches/batchId/3990878",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve batch by batchId without Authorization",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",                        
+                        "endpoint": "/batches/batchId/{{BatchId}}",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Retrieve batch by batchId invalid endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                       
+                        "endpoint": "/batchestest/batchId/{{BatchId}}",
+                        "auth": "true"
+                    },                    
+                    {
+                        "scenario": "Retrieve batch by batchId with invalid Authorization",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",                        
+                        "endpoint": "/batches/batchId/{{BatchId}}",
+                        "auth": "invalid",
+                        "invalidToken": "InvalidToken9876"
+                    }
+                ]
+            },
+            {
+                "request": "GetBatchbyBatchName",
+                "data": [
+                    {
+                        "scenario": "Retrieve batch by batchName",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/batches/batchName/{{BatchName}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve batch by invalid batchName",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                        
+                        "endpoint": "/batches/batchName/@{{BatchName}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve batch by batchname invalid endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                        
+                        "endpoint": "/batchestest/batchName/{{BatchName}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Retrieve batch by batchName without Authorization",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",                        
+                        "endpoint": "/batches/batchName/{{BatchName}}",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Retrieve batch by batchName invalid Authorization",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",                        
+                        "endpoint": "/batches/batchName/{{BatchName}}",
+                        "auth": "invalid",
+                        "invalidToken": "Invalid_Token_Value_12345"
+                    }
+                ]
+            },
+            {
+                "request": "Get Batch By ProgramId",
+                "data": [
+                    {
+                        "scenario": "get batch by programId",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/batches/program/{{programID}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "get batch by invalid programId",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                        
+                        "endpoint": "/batches/program/@{{programID}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "get batch by programId without Authorization",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",                        
+                        "endpoint": "/batches/program/{{programID}}",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "get batch by programId with invalid Authorization",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",                        
+                        "endpoint": "/batches/program/{{programID}}",
+                        "auth": "invalid",
+                        "invalidToken": "Invalid_Token_Value_12345"
+                    }
+                ]
+            },
+            {
+                "request": "UpdatebyBatchId",
+                "data": [
+                    {
+                        "scenario": "update batch all fields valid",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                                       
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/batches/{{BatchId1}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with empty batch name",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with batch name starting with non alphabet",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "1{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                      
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with batch name containing special characters",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "@{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with description starting with non-alphabet",
+                         "batchDescription": "1Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with description containing special characters",
+                        "batchDescription": "Team 6$$ batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with invalid batch status",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33", 
+                        "batchNoOfClasses": 10,                       
+                        "batchStatus": "null",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with empty batch status",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with no.of classes 0",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 0,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",
+                        "programName": "{{ProgramName}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with no.of classes more than 2 digits",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 100,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                      
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with no.of classes negative number",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": -1,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",
+                        "programName": "{{ProgramName}}",                        
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with non-existing program id",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": 9999,
+                        "programName": "{{ProgramName}}",                        
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with invalid program id",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": -5, 
+                        "programName": "{{ProgramName}}",                      
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch with invalid endpoint",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/batchestest/{{BatchId}}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update batch without Authorization",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,                        
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}", 
+                        "programName": "{{ProgramName}}",                       
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "update batch with invalid Authorization",
+                        "batchDescription": "Team 6 batch description",
+                        "batchName": "{{ProgramName}}33",
+                        "batchNoOfClasses": 10,
+                        "batchStatus": "Active",                        
+                        "programId": "{{programID}}",
+                        "programName": "{{ProgramName}}",                        
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "endpoint": "/batches/{{BatchId}}",
+                        "auth": "invalid",
+                        "invalidToken": "Invalid_Token_Value_12345"
+                    }
+                ]
+            },
+            {
+                "request": "DeleteBatchbyBatchId",
+                "data": [
+                    {
+                        "scenario": "delete batch by batchId",
+                        "endpoint": "/batches/{{BatchId1}}",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",                        
+                        "auth": "true"
+                    },
+                    
+                    {
+                        "scenario": "delete batch with invalid batchId",
+                        "endpoint": "/batches/@{{BatchId1}}",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                        
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "delete batch with non-existing batchId",
+                        "endpoint": "/batches/-1",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                        
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "delete batch with invalid endpoint",
+                        "endpoint": "/batchestest/{{BatchId1}}",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",                       
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "delete batch without Authorization",
+                        "endpoint": "/batches/{{BatchId1}}",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",                        
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "delete batch with invalid Authorization",
+                        "endpoint": "/batches/{{BatchId1}}",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",                        
+                        "auth": "invalid",
+                        "invalidToken": "Invalid_Token_Value_12345"
+                    }
+                ]
+            },
+            {
+                "request": "CreateUser",
+                "data": [
+                    {
+                        "scenario": "create user with all fields",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ishwarya",
+                        "userLastName": "M",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "ben", 
+                        "userPhoneNumber": "+1 5551801088",                       
+                        "roleId": "R02",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "uidlnlkktjkja@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with all fields",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Aish",
+                        "userLastName": "M",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "ben", 
+                        "userPhoneNumber": "+1 3501891088",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "uidllkktjkja@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with all fields",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Kev",
+                        "userLastName": "M",
+                        "userLinkedinUrl": "www.linkedin.com/in/Kev",
+                        "userLocation": "USA",
+                        "userMiddleName": "ben", 
+                        "userPhoneNumber": "+1 8541801088",                       
+                        "roleId": "R03",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "idlnlkktjkja@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                     {
+                        "scenario": "create user with mandatory fields",
+                        "userFirstName": "Shell",
+                        "userLastName": "yong",
+                        "userLocation": "USA",
+                        "userPhoneNumber": "+1 8066342098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shel9htyong@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    }, 
+                    {
+                        "scenario": "create user with Invalid usercomments",
+                        "userComments": "Ne",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userEduPg",
+                        "userComments": "New User",
+                        "userEduPg": "M",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8065392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userEduUg",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "B",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userFirstName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "B",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "ben", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userLastName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Aishwarya",
+                        "userLastName": "M",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "ben", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    }, 
+                    {
+                        "scenario": "create user with Invalid userLinkedinUrl",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "ww.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    }, 
+                    {
+                        "scenario": "create user with Invalid userLocation",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "U",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userMiddleName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "p", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userPhoneNumber",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 876532098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userRoleStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Act",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userTimeZone",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "ET", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userVisaStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "P", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid userLoginEmail",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmailcom", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid loginStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Ac", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Invalid status",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Ac",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userComments",
+                        "userComments": "",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userEduPg",
+                        "userComments": "New User",
+                        "userEduPg": "",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userEduUg",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userFirstName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userLastName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userLinkedinUrl",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userLocation",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userMiddleName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userPhoneNumber",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank roleId",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userRoleStatus",
+                        "userComments": "",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userTimeZone",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank uservisaStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank userLoginEmail",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank loginStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Blank status",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userComments",
+                        "userComments": "1234",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userEduPg",
+                        "userComments": "New User",
+                        "userEduPg": "123",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userEduUg",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "987",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userFirstName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "8765",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userLastName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "345",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userLinkedinUrl",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "1234",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userLocation",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "234",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userMiddleName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "1234", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric roleId",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userRoleStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "1234",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userTimeZone",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "8765", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userVisaStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "2345", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric userLoginEmail",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "1234", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric loginstatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "2342", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with Numeric status",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "56756",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userComments",
+                        "userComments": "@#%@#",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userEduPg",
+                        "userComments": "New User",
+                        "userEduPg": "#%#$",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userEduUg",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "&*$%^",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userFirstName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "$%@",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userLastName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "#$%@#",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userLinkedinUrl",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "@#$%#",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userLocation",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "*&(%",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userMiddleName",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "*&^%", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userPhoneNumber",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "*&%^$",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character roleID",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "*&&%%$",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userRoleStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "*&^&*",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userTimeZone",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "^&**(", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userVisaStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character userLoginEmail",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "&^%$^%#", 
+                        "loginStatus" : "Active", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character loginStatus",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "#@!$#", 
+                        "status":  "Active",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "create user with special character status",
+                        "userComments": "New User",
+                        "userEduPg": "MS",
+                        "userEduUg": "BSC",
+                        "userFirstName": "Ben",
+                        "userLastName": "Matt",
+                        "userLinkedinUrl": "www.linkedin.com/in/shelbyoung",
+                        "userLocation": "USA",
+                        "userMiddleName": "pal", 
+                        "userPhoneNumber": "+1 8765392098",                       
+                        "roleId": "R01",
+                        "userRoleStatus": "Active",
+                        "userTimeZone": "EST", 
+                        "userVisaStatus": "US-Citizen", 
+                        "userLoginEmail": "shelbyoung@gmail.com", 
+                        "loginStatus" : "Active", 
+                        "status":  ")*(&^",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleStatus",
+                        "auth": "true"
+                    }
+                ]
+            },
+            {
+                "request": "GetallUsers",
+                "data": [
+                    {
+                        "scenario": "Get all Users with valid endpoint",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/users",
+                        "auth": "true"
+                    },
+                    
+                    {
+                        "scenario": "Get all Users with  Invalid Endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users1",
+                        "auth": "true"
+                    }
+                ]
+            },
+            {
+                    "request":"GetallActiveUsers",
+                    "data":[
+                    {
+                        "scenario": "Get all active users for invalid endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/activeUser",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "Get all active users",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/users/activeUsers",
+                        "auth": "true"
+                    }
+                    ]
+                },
+            {
+                    "request":"GetEmailofAllUserwithActivestatus",
+                    "data":[
+                    {
+                        "scenario": "Get all user email id",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/fetch-emails@",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "Get all user email id",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/fetch-emails",
+                        "auth": "true"
+                    }
+                    ]
+            },
+            {
+                    "request":"GetAllRoles",
+                    "data":[
+                    {
+                        "scenario": "Get all user roles for invalid endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/@roles",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "Get all user roles",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/roles",
+                        "auth": "true"
+                    }
+                    ]
+             },
+            {
+                "request": "GetUserinformationbyUserId",
+                "data": [
+                     {
+                        "scenario": "Get  User Information with valid UserId",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true"  
+                    },
+                    {
+                        "scenario": "Get User Information with Invalid UserId",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/{userId#@$5}",
+                        "auth": "true"  
+                    }
+                    
+                ]
+
+            },
+            {
+                    "request": "GetallUserwithRoles",
+                 "data": [
+                    {
+                        "scenario": "Get all user roles with valid endpoint",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/users/roles",
+                        "auth": "true" 
+
+                    },
+                     {
+                        "scenario": "Get all user roles with invalid endpoint",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/rolesi",
+                        "auth": "true"
+                    }
+                ]
+            },
+            {
+                    "request":"GetCountofActiveandInactiveUsers",
+                    "data":[
+                    {
+                        "scenario": "Get all users for a invalid input Id",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/byStatu",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "Get all users for a valid input Id",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/users/byStatus",
+                        "auth": "true"
+                    }
+                    ]
+            },
+            {
+                    "request":"GetUsersByProgramBatches",
+                    "data":[
+                    {
+                        "scenario": "Get all users for a invalid batch Id",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/programBatch/{@435batchId}",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "Get all users for a valid batch Id",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/users/programBatch/{{BatchId}}",
+                        "auth": "true"
+                    }
+                    ]
+                },
+            {
+                    "request":"GetUsersforProgram",
+                    "data":[
+                    {
+                        "scenario": "Get all users for a invalid program Id",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/programs/@{programID}",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "Get all users for a valid program Id",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/users/programs/{{programID}}",
+                        "auth": "true"
+                    }
+                    ]
+                },
+             {
+                "request": "GetsUsersByroleId",
+                 "data": [
+                    {
+                        "scenario": "Get user roles with valid roleId",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/users/roles/R02",
+                        "auth": "true" 
+
+                    },
+                     {
+                        "scenario": "Get User roles with invalid roleId",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/roles/r12oleId",
+                        "auth": "true" 
+                     }
+                ]
+
+            },
+             {
+                "request": "GetsUsersbyroleIdV2",
+                 "data": [
+                    {
+                        "scenario": " Get all users with valid Base URL and Endpoint",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/v2/users",
+                        "auth": "true" 
+
+                    },
+                     
+                     {
+                        "scenario": " Get users with Invalid Endpoint ",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/v2/users/u",
+                        "auth": "true" 
+                     }
+                     
+                ]
+
+            }, 
+            {
+                "request": "GetUserBatchIdbyUserId",
+                 "data": [
+                 
+                    {   "scenario": "Get User batch id with valid userid",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/users/user/{{UserId}}",
+                        "auth": "true" 
+                    },
+                    {
+                        "scenario": "Get User batch id with invalid userid",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/user/U@%R@serId",
+                        "auth": "true"
+                    }
+                ] 
+            },
+            {
+                    "request":"GetUserDetailsByID",
+                    "data":[
+                    {
+                        "scenario": "Get all users for a invalid user Id",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/details/U46342",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "Get all users for a valid user Id",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/users/details/{{UserId}}",
+                        "auth": "true"
+                    }
+                    ]
+            },     
+            {
+                "request": "UpdateUser",
+                "data": [
+                    {
+                        "scenario": "Update User details with  valid User id and valid Request Body",
+                        "userComments": "user update for api hackathon",
+                        "userEduPg": "computer science",
+                        "userEduUg": "computer application",
+                        "userFirstName": "sasha",
+                        "userId": "{{UserId}}",
+                        "userLastName": "prabhu",
+                        "userMiddleName": "sk",
+                        "userLinkedinUrl": "www.linkedin.com/in/sashaprabhu",
+                        "userLocation": "india",
+                        "userLoginEmail":"sasaprbu32@gmail.com",
+                        "userPhoneNumber":"+91 2723589892",
+                        "userTimeZone": "EST",
+                        "userVisaStatus": "H4-EAD",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true"  
+                    },
+                    {
+                        "scenario": "Update user details with invalid User Id and valid required fields",
+                        "userComments": "update for api",
+                        "userEduPg": "computer science",
+                        "userEduUg": "computer application",
+                        "userFirstName": "santhiya",
+                        "userId": "{{UserId}}",
+                        "userLastName": "prabha",
+                        "userMiddleName": "rk",
+                        "userLinkedinUrl": "www.linkedin.com/in/santhiyaprabha",
+                        "userLocation": "india",
+                        "userLoginEmail":"santhiyaprabha2@gmail.com",
+                        "userPhoneNumber":"+91 2323539992",
+                        "userTimeZone": "IST",
+                        "userVisaStatus": "Indian-Citizen",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true"  
+                          
+                    },
+                    {
+                        "scenario": "Update User details with Invalid Id and Invalid Required fields ",
+                        "userComments": "asdjkgdfg",
+                        "userEduPg": "computer science",
+                        "userEduUg": "computer application",
+                        "userFirstName": "null",
+                        "userId": "{{UserId}}",
+                        "userLastName": "prabhu",
+                        "userMiddleName": "",
+                        "userLinkedinUrl": "www.linkedin.com/in/sashaprabhu",
+                        "userLocation": "null",
+                        "userLoginEmail":"sashaprabhu32@gmail.com",
+                        "userPhoneNumber":"+91 2323539992",
+                        "userTimeZone": "00",
+                        "userVisaStatus": "H4-EAD",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true" 
+                    },
+                    {
+                        "scenario": "Update user details with valid Id and missing Required fields ",
+                        "userComments": "",
+                        "userEduPg": "",
+                        "userEduUg": "",
+                        "userFirstName": "",
+                        "userId": "{{UserId}}",
+                        "userLastName": "",
+                        "userMiddleName": "",
+                        "userLinkedinUrl": "",
+                        "userLocation": "",
+                        "userLoginEmail":"",
+                        "userPhoneNumber":"",
+                        "userTimeZone": "",
+                        "userVisaStatus": "",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true" 
+
+                    },
+                     {
+                        "scenario": "Update user details with  missing FirstName",
+                        "userComments": "asdjkgdfg",
+                        "userEduPg": "computer science",
+                        "userEduUg": "computer application",
+                        "userFirstName": "",
+                        "userId": "{{UserId}}",
+                        "userLastName": "prabhu",
+                        "userMiddleName": "lk",
+                        "userLinkedinUrl": "www.linkedin.com/in/sashaprabhu",
+                        "userLocation": "india",
+                        "userLoginEmail":"sashaprabhu32@gmail.com",
+                        "userPhoneNumber":"+91 2323539992",
+                        "userTimeZone": "EST",
+                        "userVisaStatus": "H4-EAD",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true" 
+
+                    },
+                     {
+                        "scenario": "Update user details with  missing LastName ",
+                        "userComments": "asdjkgdfg",
+                        "userEduPg": "computer science",
+                        "userEduUg": "computer application",
+                        "userFirstName": "sasha",
+                        "userId": "{{UserId}}",
+                        "userLastName": "",
+                        "userMiddleName": "lk",
+                        "userLinkedinUrl": "www.linkedin.com/in/sashaprabhu",
+                        "userLocation": "india",
+                        "userLoginEmail":"sashaprabhu32@gmail.com",
+                        "userPhoneNumber":"+91 2323539992",
+                        "userTimeZone": "EST",
+                        "userVisaStatus": "H4-EAD",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true" 
+                     },
+
+                     {
+                        "scenario": "Update user details with  missing ValidVisaStatus",
+                        "userComments": "asdjkgdfg",
+                        "userEduPg": "computer science",
+                        "userEduUg": "computer application",
+                        "userFirstName": "sasha",
+                        "userId": "{{UserId}}",
+                        "userLastName": "prabhu",
+                        "userMiddleName": "string",
+                        "userLinkedinUrl": "www.linkedin.com/in/sashaprabhu",
+                        "userLocation": "india",
+                        "userLoginEmail":"sashaprabhu32@gmail.com",
+                        "userPhoneNumber":"+91 2323539992",
+                        "userTimeZone": "EST",
+                        "userVisaStatus": "",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true" 
+                     }
+                ]
+
+             },
+             {
+                    "request":"UpdateUserRoleID",
+                    "data":[
+                    {
+                        "scenario": "update user role id with missing userid",
+                        "userRoleList": [ 
+                            { 
+                                "roleId": "R01", 
+                                "userRoleStatus": "Active" 
+                            } 
+                                        ], 
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/roleId/{}",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "update user role id with valid userid",
+                        "userRoleList": [ 
+                            { 
+                                "roleId": "R02", 
+                                "userRoleStatus": "Inactive" 
+                            } 
+                                        ],
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/users/roleId/{userID}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update user role id with invalid userid",
+                        "userRoleList": [ 
+                            { 
+                                "roleId": "R01", 
+                                "userRoleStatus": "Inactive" 
+                            } 
+                                        ],
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/roleId/{@userID}",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "update user role id with invalid details",
+                        "userRoleList": [ 
+                            { 
+                                "roleId": "R01", 
+                                "userRoleStatus": "Inacte" 
+                            } 
+                                        ],
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/roleId/{userID}",
+                        "auth": "true"
+                    }
+                    ]
+                },
+           {
+                    "request":"UpdateUserRoleProgramBatchStatus",
+                    "data":[
+                    {
+                        "scenario": "update user id with invalid details",
+                        "programId": "{{programID}}", 
+                        "roleId": "R04", 
+                        "userId": "{{UserId}}", 
+                        "userRoleProgramBatches": [ 
+                                            { 
+                                "batchId": "{{BatchId}}", 
+                                "userRoleProgramBatchStatus":"Inactive" 
+                                            } 
+                                                    ], 
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/roleProgramBatchStatus/{{UserId}}",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "update user id with incorrect details",
+                        "programId": "{{programID}}", 
+                        "roleId": "#$%#", 
+                        "userId": "{{UserId}}", 
+                        "userRoleProgramBatches": [ 
+                                            { 
+                                "batchId": "{{BatchId}}", 
+                                "userRoleProgramBatchStatus":"Active" 
+                                            } 
+                                                    ], 
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found", 
+                        "endpoint": "/users/roleProgramBatchStatus/{{UserId}}",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "update user id with missing details",
+                        "programId": "{{programID}}", 
+                        "roleId": "", 
+                        "userId": "{{UserId}}", 
+                        "userRoleProgramBatches": [ 
+                                            { 
+                                "batchId": "{{BatchId}}", 
+                                "userRoleProgramBatchStatus":"Active" 
+                                            } 
+                                                    ], 
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request", 
+                        "endpoint": "/users/roleProgramBatchStatus/{{UserId}}",
+                        "auth": "true"
+
+                    },
+                    {
+                        "scenario": "update user id with valid details",
+                        "programId": "{{programID}}", 
+                        "roleId": "R02", 
+                        "userId": "{{UserId}}", 
+                        "userRoleProgramBatches": [ 
+                                            { 
+                                "batchId": "{{BatchId}}", 
+                                "userRoleProgramBatchStatus":"Active" 
+                                            } 
+                                                    ], 
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK", 
+                        "endpoint": "/users/roleProgramBatchStatus/{{UserId}}",
+                        "auth": "true"
+                    }
+                    ]
+                },
+            {
+                "request": "UpdateUserLoginStatus",
+                "data": [
+                    {
+                        "scenario": "Update user login status with valid UserID",
+                        "loginStatus": "Active",
+                        "roleIds":"{{roleId}}",
+                        "status": "updated",
+                        "userLoginEmail": "sasapabdfhu3@gmail.com",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/users/userLogin/{{UserId}}",
+                        "auth": "true"  
+                    },
+                    {
+                        "scenario": "update user login status with Invalid User ID with valid request body",
+                        "loginStatus": "InActive",
+                        "password": "ApiHackathon@6",
+                        "roleIds":"{{roleId}}",
+                        "status": "updated",
+                        "userLoginEmail": "sashaprabhu2@gmail.com",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/userLogin/{{UserId}}",
+                        "auth": "true"  
+                    },
+                    {
+                        
+                        "scenario": "Update user login status with Invalid User ID with invalid request body",
+                        "loginStatus": "InActive",
+                        "password": "ApiHackathon@6",
+                        "roleIds":"{{roleId}}",
+                        "status": "",
+                        "userLoginEmail": "adksfkdg",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/userLogin/{{UserId}}",
+                        "auth": "true" 
+                    },
+                    {
+                    
+                        "scenario": "Update user login status with Not matching User ID with Missing Details",
+                        "loginStatus": "",
+                        "password": "",
+                        "roleIds":"{{roleId}}",
+                        "status": "",
+                        "userLoginEmail": "",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/users/userLogin/{{UserId}}",
+                        "auth": "true" 
+                    }
+                ]
+
+            },
+            {    
+                "request": "DeleteUser",
+                "data": [
+                    {
+                        "scenario":  "Delete User by valid User Id",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "endpoint": "/users/{{UserId}}",
+                        "auth": "true"  
+                    },
+                    {
+                        "scenario": "Delete User by invalid User Id",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "endpoint": "/users/{{userID1}}",
+                        "auth": "true"  
+                    },
+                    {
+                        "scenario": "Delete User by Empty User Id",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "endpoint": "/users/{{}}",
+                        "auth": "true" 
+                    }
+                
+                ]
+             
+            },
+            {
+                "request": "Create New Skill",
+                "data": [
+                    {
+                        "scenario": "Create new skill with invalid endpoint",
+                        "endpoint": "/saveSkillMaster",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Create new skill with no authentication",
+                        "endpoint": "/SaveSkillMaster",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedMessage": "" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Create new skill with invalid authentication",
+                        "endpoint": "/SaveSkillMaster",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedMessage": "" ,
+                        "auth": "invalid"
+                    },
+                    {
+                        "scenario": "Create new skill with invalid content type",
+                        "endpoint": "/SaveSkillMaster",
+                        "expectedStatusCode": 415,
+                        "expectedStatusMessage": "Unsupported Media Type",
+                        "expectedJsonMessage": "Content-Type not supported" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Create new skill with no request body",
+                        "endpoint": "/SaveSkillMaster",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Required request body is missing" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Create new skill with empty skill name",
+                        "endpoint": "/SaveSkillMaster",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Skill name is mandatory" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Create new skill with existing skill name",
+                        "endpoint": "/SaveSkillMaster",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "already exists" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Create new skill with new skill name",
+                        "endpoint": "/SaveSkillMaster",
+                        "expectedStatusCode": 201,
+                        "expectedStatusMessage": "Created",
+                        "auth": "true"
+                    }
+                ]
+            },
+             {
+                "request": "Update Skill By Id",
+                "data": [
+                    {
+                        "scenario": "Update skill with invalid endpoint",
+                        "endpoint": "/updateSkills/",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Update skill with no authentication",
+                        "endpoint": "/updateSkills/{{skillId}}",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedMessage": "" ,
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Update skill with invalid authentication",
+                        "endpoint": "/updateSkills/{{skillId}}",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "expectedMessage": "" ,
+                        "auth": "invalid"
+                    },
+                    {
+                        "scenario": "Update  skill with invalid content type",
+                        "endpoint": "/updateSkills/{{skillId}}",
+                        "expectedStatusCode": 415,
+                        "expectedStatusMessage": "Unsupported Media Type",
+                        "expectedJsonMessage": "Content-Type not supported" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Update skill with no request body",
+                        "endpoint": "/updateSkills/{{skillId}}",
+                        "expectedStatusCode": 400,
+                        "expectedStatusMessage": "Bad Request",
+                        "expectedJsonMessage": "Required request body is missing" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Update skill with invalid skill Id",
+                        "endpoint": "/updateSkills/{{invalidSkillId}}",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not found",
+                        "expectedJsonMessage": "not found" ,
+                        "auth": "true"
+                    },
+                     {
+                        "scenario": "Update skill with valid skill Id",
+                        "endpoint": "/updateSkills/{{skillId}}",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "auth": "true"
+                    }
+                ]
+            },
+            {
+                "request": "Get All Skill Master",
+                "data": [
+                    {
+                        "scenario": "Get All Skill with invalid endpoint",
+                        "endpoint": "/allSkillMaster/all",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Get All Skill with no authentication",
+                        "endpoint": "/allSkillMaster",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Get All Skill with invalid authentication",
+                        "endpoint": "/allSkillMaster",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "auth": "invalid"
+                    },
+                    {
+                        "scenario": "Get All Skill with valid authentication",
+                        "endpoint": "/allSkillMaster",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "auth": "true"
+                    }
+                ]
+            },
+            {
+                "request": "Get Skill By Skill Name",
+                "data": [
+                    {
+                        "scenario": "Get skill by name with invalid endpoint",
+                        "endpoint": "/skills/",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Get skill by name with no authentication",
+                        "endpoint": "/skills/{{skillName}}",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "Get skill by name with invalid authentication",
+                        "endpoint": "/skills/{{skillName}}",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "auth": "invalid"
+                    },
+                    {
+                        "scenario": "Get skill by name with invalid skill name",
+                        "endpoint": "/skills/random_skill",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedJsonMessage": "not found",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Get skill by name with valid skill name",
+                        "endpoint": "/skills/{{skillName}}",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "auth": "true"
+                    }
+                ]
+            },
+            {
+                "request": "Delete Skill by Skill Id",
+                "data": [
+                    {
+                        "scenario": "Delete Skill by Id with invalid endpoint",
+                        "endpoint": "/deletebySkillId/",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedMessage": "Invalid endpoint" ,
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Delete Sill by Id with no authentication",
+                        "endpoint": "/deletebySkillId/{{skillId}}",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "auth": "false"
+                    },
+                    {
+                        "scenario": "GDelete Sill by Id with invalid authentication",
+                        "endpoint": "/deletebySkillId/{{skillId}}",
+                        "expectedStatusCode": 401,
+                        "expectedStatusMessage": "Unauthorized",
+                        "auth": "invalid"
+                    },
+                    {
+                        "scenario": "GDelete Sill by Id with invalid skill Id",
+                        "endpoint": "/deletebySkillId/{{invalidSkillId}}",
+                        "expectedStatusCode": 404,
+                        "expectedStatusMessage": "Not Found",
+                        "expectedJsonMessage": "no record found",
+                        "auth": "true"
+                    },
+                    {
+                        "scenario": "Delete Sill by Id with valid skill Id",
+                        "endpoint": "/deletebySkillId/{{skillId}}",
+                        "expectedStatusCode": 200,
+                        "expectedStatusMessage": "OK",
+                        "auth": "true"
+                    }
+                ]
+            }
+        ]
+    }        
+]
+                    
+           
+                    
+          
+
+                
+            
+        
+    
+        
