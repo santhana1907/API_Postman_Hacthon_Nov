@@ -3164,6 +3164,81 @@
 					"response": []
 				},
 				{
+					"name": "UpdateUserRoleProgramBatchStatus",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "072431d8-7293-48ac-816f-73e37e0d19d1",
+								"exec": [
+									"\r",
+									"if (pm.response.code === 200) {\r",
+									"    pm.test(\"Status code is 200\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"    pm.test(\"Status message is 'OK'\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"} else if(pm.response.code === 400) {\r",
+									"    pm.test(\"Status Code is 400\",function(){\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"    pm.test(\"Status message is 'Bad Request'\",function(){\r",
+									"pm.response.to.have.status(\"Bad Request\");    \r",
+									"}); \r",
+									"} \r",
+									"else{\r",
+									"      pm.test(\"Status Code is 404\",function(){\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
+									"pm.response.to.have.status(\"Not Found\");    \r",
+									"});\r",
+									"} \r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "50319866-1a641715-3003-40c5-a302-ccbfbb891a46",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"programId\": {{programId}},\r\n    \"roleId\": \"{{roleId}}\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"userRoleProgramBatches\": [\r\n        {\r\n            \"batchId\": \"{{BatchId}}\",\r\n            \"userRoleProgramBatchStatus\": \"Active\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}{{endpoint}}",
+							"host": [
+								"{{baseURL}}{{endpoint}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GetUsersByProgramBatches",
 					"event": [
 						{
@@ -3967,81 +4042,6 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{ \r\n  \"userRoleList\": [ \r\n    { \r\n      \"roleId\": \"{{roleId}}\", \r\n      \"userRoleStatus\": \"{{userRoleStatus}}\" \r\n    } \r\n  ] \r\n} \r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseURL}}{{endpoint}}",
-							"host": [
-								"{{baseURL}}{{endpoint}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "UpdateUserRoleProgramBatchStatus",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "072431d8-7293-48ac-816f-73e37e0d19d1",
-								"exec": [
-									"\r",
-									"if (pm.response.code === 200) {\r",
-									"    pm.test(\"Status code is 200\", function () {\r",
-									"        pm.response.to.have.status(200);\r",
-									"    });\r",
-									"    pm.test(\"Status message is 'OK'\", function () {\r",
-									"    pm.response.to.have.status(\"OK\");\r",
-									"});\r",
-									"\r",
-									"} else if(pm.response.code === 400) {\r",
-									"    pm.test(\"Status Code is 400\",function(){\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
-									"    pm.test(\"Status message is 'Bad Request'\",function(){\r",
-									"pm.response.to.have.status(\"Bad Request\");    \r",
-									"}); \r",
-									"} \r",
-									"else{\r",
-									"      pm.test(\"Status Code is 404\",function(){\r",
-									"    pm.response.to.have.status(404);\r",
-									"});\r",
-									"    pm.test(\"Status message is 'Not Found'\",function(){\r",
-									"pm.response.to.have.status(\"Not Found\");    \r",
-									"});\r",
-									"} \r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {},
-								"requests": {}
-							}
-						}
-					],
-					"id": "50319866-1a641715-3003-40c5-a302-ccbfbb891a46",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"programId\": {{programId}},\r\n    \"roleId\": \"{{roleId}}\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"userRoleProgramBatches\": [\r\n        {\r\n            \"batchId\": \"{{BatchId}}\",\r\n            \"userRoleProgramBatchStatus\": \"Active\"\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
