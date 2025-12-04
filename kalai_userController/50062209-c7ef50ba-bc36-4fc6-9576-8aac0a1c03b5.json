@@ -1738,7 +1738,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a8dc8dfd-ecf3-4540-a38e-b243004d1be6",
+				"id": "da39938a-cb64-4a7e-b7a9-136e14b1e85f",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1905,7 +1905,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "cc23d269-831e-4458-b0c4-ede67ed21681",
+				"id": "2ff477f0-fd1c-4b18-a602-46356e28d3ac",
 				"type": "text/javascript",
 				"packages": {},
 				"requests": {},
@@ -1974,7 +1974,7 @@
 					"\r",
 					"// Test configuration\r",
 					"const config = {\r",
-					"    expectedCode: pm.variables.get('expectedStatusCode') || 200,\r",
+					"    expectedCode: pm.variables.get('expectedStatusCode') ,\r",
 					"    expectedMessage: pm.variables.get('expectedStatusMessage'),\r",
 					"    skipTests: pm.variables.get('skipTests') === 'true',\r",
 					"    testScenario: pm.variables.get('testScenario'),\r",
