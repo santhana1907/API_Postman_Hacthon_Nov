@@ -140,6 +140,21 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "team6@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "team6@gmail.com",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
