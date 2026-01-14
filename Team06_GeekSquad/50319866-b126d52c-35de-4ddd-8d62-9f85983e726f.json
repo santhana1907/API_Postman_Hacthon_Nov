@@ -585,7 +585,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtMkBnbWFpbC5jb20iLCJpYXQiOjE3Njg0MDkwOTQsImV4cCI6MTc2ODQzNzg5NH0.6wzVv3lWUys9hAg1y8j__4obki_m8Jmo2QeQHzTTXhJrloEPGdf46M65hO7GrsJGhy0CulxAXPHssH7IV-_UDw",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -599,9 +606,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{BaseURL}}/saveprogram",
+							"raw": "{{baseURL}}/saveprogram",
 							"host": [
-								"{{BaseURL}}"
+								"{{baseURL}}"
 							],
 							"path": [
 								"saveprogram"
