@@ -124,17 +124,6 @@
 							"script": {
 								"id": "0125be4f-28a4-401a-9cab-5adacf231a3b",
 								"exec": [
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"empty request\")) {\r",
-									"    pm.request.body.update({\r",
-									"        mode: 'none'\r",
-									"    });\r",
-									"}\r",
-									"if (pm.variables.get(\"scenario\").toLowerCase().includes(\"invalid content\")) {\r",
-									"    pm.request.headers.upsert({\r",
-									"        key : \"Content-Type\",\r",
-									"        value: \"text/plain\"\r",
-									"    });\r",
-									"}\r",
 									""
 								],
 								"type": "text/javascript",
