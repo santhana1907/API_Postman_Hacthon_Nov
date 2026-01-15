@@ -736,13 +736,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/programs/{{programID}}",
+							"raw": "{{baseURL}}/programs/{{programID}}/",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
 								"programs",
-								"{{programID}}"
+								"{{programID}}",
+								""
 							]
 						}
 					},
