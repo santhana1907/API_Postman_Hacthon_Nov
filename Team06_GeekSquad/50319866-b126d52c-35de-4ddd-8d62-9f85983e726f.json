@@ -2499,7 +2499,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtMkBnbWFpbC5jb20iLCJpYXQiOjE3Njg0NDE1MDgsImV4cCI6MTc2ODQ3MDMwOH0.kZC3xosr4NUg5kRXKHYyX7d89KeImb4lRW_sYqx1JZg57CynmoyFNI3BXC_hifj7j7qBFzqUDr5OXWsx4jdRxA",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
